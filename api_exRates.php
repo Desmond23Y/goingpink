@@ -29,6 +29,6 @@
 
     <script src="currency-codes.js"></script>
     <script src="api-key.js"></script>
-    <script src="script.js"></script>
+    <script src="api_exRates_script.js"></script>
   </body>
 </html>
