@@ -3,7 +3,7 @@ include('conn.php');
 include('navbar.php');
 
 function login($username, $password) {
-    global $conn;
+    global $con;
 
     
     $username = mysqli_real_escape_string($conn, $username);
