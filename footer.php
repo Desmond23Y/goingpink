@@ -15,10 +15,9 @@
         </style>
     </head>
     <body>
-    <footer>
-        <div>
+        <div class="footer">
         <p>&copy; 2023 GoingPink</p>
         </div>
-    </footer>
+
     </body>
 </html>
