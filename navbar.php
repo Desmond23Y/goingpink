@@ -49,9 +49,9 @@
         <nav>
             <div class="navbar">
               <a href="homepage.php">Home</a>
-              <a href="View Booking.php">Booking</a>
+              <a href="view_booking.php">Booking</a>
               <a href="api_exRates.php">Currency</a>
-              <a href="Ticket.php">Support</a>
+              <a href="request_form.php">Support</a>
               <a href="login.php" class="right">Login</a>
               <a href="register.php" class="right">Register</a>
               <a href="editprofile.php" class="right">Profile</a>
