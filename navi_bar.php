@@ -1,6 +1,12 @@
+<!DOCTYPE html>
 <html>
 <head>
 <style>
+body {
+    margin: 0;
+    padding: 0;
+}
+
 .navibar {
     list-style-type: none;
     margin: 0;
@@ -10,39 +16,38 @@
 }
 
 .navibar a {
-  float: left;
-  display: block;
-  color: #333;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
+    float: left;
+    display: block;
+    color: #333;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
 }
 
 .navibar a.right {
-  float: right;
+    float: right;
 }
 
 .navibar a:hover {
-  background-color: #C7949C;
-  color: white;
+    background-color: #C7949C;
+    color: white;
 }
 
 </style>
 </head>
-  
+
 <body>
     <header>
         <nav>
-            <div class="navibar">
-              <a href="index.php">HOME</a>
-              <a href="view_booking.php">BOOKING</a>
-              <a href="api_exRates.php">EXCHANGE RATES</a>
-              <a href="request_form.php">SUPPORT</a>
-              <a href="login.php" class="right">LOGIN</a>
-              <a href="register.php" class="right">REGISTER</a>
-              <a href="edit_profile.php" class="right">PROFILE</a>
-              </div>
-            </div>
+            <ul class="navibar">
+                <li><a href="index.php">HOME</a></li>
+                <li><a href="view_booking.php">BOOKING</a></li>
+                <li><a href="api_exRates.php">EXCHANGE RATES</a></li>
+                <li><a href="request_form.php">SUPPORT</a></li>
+                <li><a href="login.php" class="right">LOGIN</a></li>
+                <li><a href="register.php" class="right">REGISTER</a></li>
+                <li><a href="edit_profile.php" class="right">PROFILE</a></li>
+            </ul>
         </nav>
     </header>
 </body>
