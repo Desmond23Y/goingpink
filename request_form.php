@@ -1,3 +1,7 @@
+<?php
+include('navi_bar.php')
+?>
+
 <!DOCTYPE html>
 <head>
     <title>Customer Support Request Form</title>
