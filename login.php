@@ -1,6 +1,6 @@
 <?php
 include('conn.php');
-include('navbar.php')
+include('navbar.php');
 
 function login($username, $password) {
     global $conn;
