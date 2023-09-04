@@ -2,7 +2,7 @@
 <html>
     <head>
         <title>Going Pink Hotel Viewing</title>
-        <link rel="stylesheet" href="Style Booking.css">
+        <link rel="stylesheet" href="style_booking.css">
 
     </head>
     <body>
@@ -11,7 +11,7 @@
     </header>
 
         <?php include("conn.php");
-        $result=mysqli_query($con,"SELECT* FROM hotel_info");
+        $result=mysqli_query($con,"SELECT* FROM hotel_information");
         while($row=mysqli_fetch_array($result))
         {
         ?>
