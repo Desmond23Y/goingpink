@@ -1,0 +1,56 @@
+/* Define global styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Services section styles */
+.services {
+  background-color: #ffffff;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.services h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.service {
+  margin-bottom: 40px;
+}
+
+.service img {
+  width: 100%;
+}
+
+/* About section styles */
+.about {
+  background-color: #ffffff;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.about h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+/* Contact section styles */
+.contact {
+  background-color: #950070;
+  color: #000000;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.contact h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
