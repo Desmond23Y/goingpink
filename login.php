@@ -1,74 +1,3 @@
-<?php
-
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
-include('conn.php');
-include('navbar.php');
-
-function login($username, $password) {
-    global $conn;
-
-    
-    $username = mysqli_real_escape_string($conn, $username);
-    $password = mysqli_real_escape_string($conn, $password);
-
-    // Query all relevant tables using a UNION query
-    $query = "SELECT 'user' AS user_type, user_id FROM user WHERE username = '$username' AND password = '$password'
-              UNION
-              SELECT 'admin' AS user_type, admin_id FROM admin WHERE username = '$username' AND password = '$password'
-              UNION
-              SELECT 'support' AS user_type, support_id FROM support WHERE username = '$username' AND password = '$password'
-              UNION
-              SELECT 'transport_management' AS user_type, transport_manager_id FROM transport_management WHERE username = '$username' AND password = '$password'
-              UNION
-              SELECT 'hotel_management' AS user_type, hotel_manager_id FROM hotel_management WHERE username = '$username' AND password = '$password'";
-
-    $result = mysqli_query($conn, $query);
-
-    if ($result && mysqli_num_rows($result) === 1) {
-        // Fetch the user type and user_id
-        $row = mysqli_fetch_assoc($result);
-        $user_type = $row['user_type'];
-        $user_id = $row['user_id'];
-
-        // Redirect based on user type
-        switch ($user_type) {
-            case 'user':
-                header("Location: homepage.php?user_id=$user_id");
-                break;
-            case 'admin':
-                header("Location: homepage.php?admin_id=$user_id");
-                break;
-            case 'support':
-                header("Location: homepage.php?support_id=$user_id");
-                break;
-            case 'transport_management':
-                header("Location: homepage.php?transport_manager_id=$user_id");
-                break;
-            case 'hotel_management':
-                header("Location: homepage.php?hotel_manager_id=$user_id");
-                break;
-            default:
-                echo "Login failed. Please try again.";
-        }
-
-        exit();
-    } else {
-        echo "Login failed. Please try again.";
-    }
-}
-
-// Verify login form is submitted
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-
-    login($username, $password);
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -92,7 +21,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <input type="password" id="password" name="password" required><br><br>
             <button type="submit">Login</button>
         </form>
-        <p id="login-message"></p>
+        <p id="login-message">
+            <?php
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                // Process form submission here
+                $username = $_POST['username'];
+                $password = $_POST['password'];
+
+                // You can add your authentication logic here
+                // Example: Check the username and password against a database
+                // If the login is successful, redirect the user to a dashboard or homepage
+                // If login fails, display an error message
+                if ($username === 'your_username' && $password === 'your_password') {
+                    // Replace 'your_username' and 'your_password' with actual credentials
+                    // Successful login, redirect the user
+                    header("Location: dashboard.php");
+                    exit();
+                } else {
+                    // Failed login, display an error message
+                    echo "Login failed. Please try again.";
+                }
+            }
+            ?>
+        </p>
         <button id="logout-btn" style="display: none;">Logout</button>
     </div>
 </body>
