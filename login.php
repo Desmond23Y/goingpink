@@ -39,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST["password"];
     
     $sql = "SELECT password FROM users WHERE username = ?";
-    $stmt = $conn->prepare($sql);
+    $stmt = $con->prepare($sql);
     $stmt->bind_param("s", $username);
     $stmt->execute();
     $stmt->bind_result($userId, $username, $hashedPassword);
