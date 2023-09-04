@@ -82,11 +82,6 @@ include('navi_bar.php');
     <h1>Edit Profile</h1>
     <div class="container">
     <form action="update_profile.php" method="POST">
-        <!-- Profile Image Upload -->
-        <label for="profileImage">Profile Image:</label>
-        <input type="file" id="profileImage" name="profileImage">
-        <br><br>
-
         <!-- User Information -->
         <label for="username">Username:</label>
         <input type="text" id="username" name="username">
