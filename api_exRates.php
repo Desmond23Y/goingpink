@@ -1,3 +1,7 @@
+<?php
+include('navi_bar.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -9,7 +13,7 @@
   <body>
     <div class="wrapper">
       <div class="api-details">
-        <img src="api-icon.svg" class="api-icon" />
+        <img src="api_exRates_icon.svg" class="api-icon" />
         <br><br>
         <h1 class="api-title">Exchange Rates Converter</h1>
         <br><br>
@@ -27,8 +31,8 @@
       <p id="result"></p>
     </div>
 
-    <script src="currency-codes.js"></script>
-    <script src="api-key.js"></script>
+    <script src="api_exRates_currency_codes.js"></script>
+    <script src="api_exRates_key.js"></script>
     <script src="api_exRates_script.js"></script>
   </body>
 </html>
