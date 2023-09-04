@@ -88,7 +88,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo "Invalid phone number. Please try again.";
     } else {
         // Insert user information into the database
-        $new_user_query = "INSERT INTO user ('username', 'password', 'first_name', 'last_name', 'email', 'phone_number', 'date_of_birth', 'gender')
+        $new_user_query = "INSERT INTO `user`(`user_id`, `username`, `password`, `first_name`, `last_name`, `email`, `phone_number`, `date_of_birth`, `gender`)
                          VALUES ('$username', '$password', '$first_name', '$last_name', '$email', '$phone_number', '$date_of_birth', '$gender')";
 
         if (mysqli_query($con, $new_user_query)) {
