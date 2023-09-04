@@ -16,7 +16,7 @@ include('navbar.php')
     </header>
     <div id="login-container">
         <h2>Sign Up</h2>
-        <form id="signup-form">
+        <form id="signup-form" method="POST" action="">
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" maxlength="50" required><br><br>
 
@@ -33,21 +33,20 @@ include('navbar.php')
             <input type="text" id="email" name="email" maxlength="50" required><br><br>
 
             <label for="phone_number">Phone Number:</label>
-            <input type="int" id="phone_number" name="phone_number" maxlength="50" required><br><br>
+            <input type="text" id="phone_number" name="phone_number" maxlength="50" required><br><br>
 
             <label for="date_of_birth">Date of Birth:</label>
             <input type="date" id="date_of_birth" name="date_of_birth" required><br><br>
 
             <label>Gender:</label>
-            <input type="radio" id="html" name="gender" value="male" label for="male">Male</label><br>
-            <input type="radio" id="css" name="gender" value="female" label for="female">Female</label><br>
+            <input type="radio" id="html" name="gender" value="male"><label for="male">Male</label><br>
+            <input type="radio" id="css" name="gender" value="female"><label for="female">Female</label><br>
             <br>
             <button type="submit">Sign Up</button>
         </form>
         <p id="login-message"></p>
         <button id="logout-btn" style="display: none;">Logout</button>
     </div>
-
 </body>
 </html>
 
@@ -69,12 +68,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $check_username_query = "SELECT * FROM user WHERE username = '$username'";
     $result = mysqli_query($conn, $check_username_query);
 
-    if (strlen($username) > 5 || strlen($username) <50) {
-        echo "length of username must stay in between 5 and 50 characters"
+    if (strlen($username) < 5 || strlen($username) > 50) {
+        echo "Length of username must be between 5 and 50 characters.";
     } elseif (mysqli_num_rows($result) > 0) {
-        echo "Username already exist. Please try again";  
-    } elseif (strlen($password) > 10) || strlen($password) <50  {
-        echo "Password length must must stay in between 5 and 50 characters. Please try again.";
+        echo "Username already exists. Please try again.";
+    } elseif (strlen($password) < 5 || strlen($password) > 50) {
+        echo "Password length must be between 5 and 50 characters. Please try again.";
     } elseif (!preg_match('/[A-Z]/', $password)) {
         echo "Password must contain at least one UPPERCASE letter. Please try again.";
     } elseif (!preg_match('/[a-z]/', $password)) {
@@ -85,19 +84,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo "Invalid email address. Please try again.";
     } elseif (!strpos($email, "@") || !strpos($email, ".com")) {
         echo "Email address must contain '@' and '.com'. Please try again.";
-    } elseif (strlen($phone_number) > 10 || strlen($phone_number) < 11) {
+    } elseif (strlen($phone_number) < 11 || strlen($phone_number) > 10) {
         echo "Invalid phone number. Please try again.";
     } else {
-        // Insert user information into database
+        // Insert user information into the database
         $new_user_query = "INSERT INTO user (username, password, first_name, last_name, email, phone_number, date_of_birth, gender)
                          VALUES ('$username', '$password', '$first_name', '$last_name', '$email', '$phone_number', '$date_of_birth', '$gender')";
 
         if (mysqli_query($conn, $new_user_query)) {
             echo "Registered Successfully. You can now login.";
             // Redirect to login page
-            header('login.php');
+            header('Location: login.php');
+            exit();
         } else {
-            echo "Register failed" . mysqli_error($conn);
+            echo "Register failed: " . mysqli_error($conn);
         }
     }
 }
