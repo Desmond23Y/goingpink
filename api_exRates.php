@@ -2,35 +2,33 @@
 <html lang="en">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Currency Converter</title>
-    <!-- Google Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Stylesheet-->
-    <link rel="stylesheet" href="style.css" />
+    <title>Exchange Rates Converter</title>
+    <link rel="stylesheet" href="api_exchange_rates_style.css" />
   </head>
+
   <body>
     <div class="wrapper">
-      <div class="app-details">
-        <img src="app-icon.svg" class="app-icon" />
-        <h1 class="app-title">Currency Converter</h1>
+      <div class="api-details">
+        <img src="api-icon.svg" class="api-icon" />
+        <br><br>
+        <h1 class="api-title">Exchange Rates Converter</h1>
+        <br><br>
       </div>
+      
       <label for="amount">Amount:</label>
-      <input type="number" id="amount" value="100" />
+      <input type="number" id="amount" value="1" />
       <div class="dropdowns">
         <select id="from-currency-select"></select>
         <select id="to-currency-select"></select>
       </div>
+      
       <button id="convert-button">Convert</button>
+      <br>
       <p id="result"></p>
     </div>
-    <!-- Scipt With Array Of Supported Country Codes -->
+
     <script src="currency-codes.js"></script>
-    <!-- Script with API Key -->
     <script src="api-key.js"></script>
-    <!-- Script -->
     <script src="script.js"></script>
   </body>
 </html>
