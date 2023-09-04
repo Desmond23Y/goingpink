@@ -17,7 +17,7 @@ include('navi_bar.php')
     </header>
     <div id="login-container">
         <h2>Login</h2>
-        <form id="login-form">
+        <form id="login-form" method="POST" action="login.php">
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" required><br><br>
             <label for="password">Password:</label>
@@ -35,27 +35,26 @@ include('navi_bar.php')
 <?php
 include('conn.php');
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+    $username = $_POST["username"];
+    $password = $_POST["password"];
     
     $sql = "SELECT password FROM users WHERE username = ?";
-    
-    $stmt = mysqli_prepare($conn, $sql);
-    mysqli_stmt_bind_param($stmt, "s", $username);
-    mysqli_stmt_execute($stmt);
-    mysqli_stmt_bind_result($stmt, $hashed_password);
-    mysqli_stmt_fetch($stmt);
-    mysqli_stmt_close($stmt);
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("s", $username);
+    $stmt->execute();
+    $stmt->bind_result($userId, $username, $hashedPassword);
+    $stmt->fetch();
+    $stmt->close();
 
-    if (password_verify($password, $hashed_password)) {
-        echo "Login successfully!";
-        header("Location: index.php");
+    if (password_verify($password, $hashedPassword)) {
+        session_start();
+        $_SESSION["user_id"] = $userId;
+        header("Location: index.php"); 
         exit();
     } else {
-        // Failed login, display an error message
-        echo "Login failed. Please try again.";
+        $loginError = "Incorrect username or password. Please try again.";
     }
-
-    mysqli_close($conn);
 }
+
+$conn->close();
 ?>
