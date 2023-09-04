@@ -1,6 +1,9 @@
 <?php
 include('conn.php');
 
+// Assuming you have a way to retrieve the user's ID
+$user_id = 123; // Replace with the actual user ID
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Process the form data
     $username = $_POST['username'];
@@ -61,8 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 } else {
-    // Handle the error if it's not a POST request
-    echo "Invalid request.";
+   $errormessage = "Invalid request. ";
 }
 ?>
 <?php
