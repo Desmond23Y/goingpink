@@ -77,7 +77,7 @@ select {
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
-  background-image: url("arrow-down.svg");
+  background-image: url("api_exRates_arrow.svg");
   background-repeat: no-repeat;
   background-position: right 15px top 50%, center;
   background-size: 20px 20px;
