@@ -84,7 +84,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo "Invalid email address. Please try again.";
     } elseif (!strpos($email, "@") || !strpos($email, ".com")) {
         echo "Email address must contain '@' and '.com'. Please try again.";
-    } elseif (strlen($phone_number) < 11 || strlen($phone_number) > 10) {
+    } elseif (strlen($phone_number) < 12 || strlen($phone_number) > 9) {
         echo "Invalid phone number. Please try again.";
     } else {
         // Insert user information into the database
