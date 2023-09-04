@@ -66,7 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Check if the username is already taken
     $check_username_query = "SELECT * FROM user WHERE username = '$username'";
-    $result = mysqli_query($conn, $check_username_query);
+    $result = mysqli_query($con, $check_username_query);
 
     if (strlen($username) < 5 || strlen($username) > 50) {
         echo "Length of username must be between 5 and 50 characters.";
@@ -91,13 +91,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $new_user_query = "INSERT INTO user (username, password, first_name, last_name, email, phone_number, date_of_birth, gender)
                          VALUES ('$username', '$password', '$first_name', '$last_name', '$email', '$phone_number', '$date_of_birth', '$gender')";
 
-        if (mysqli_query($conn, $new_user_query)) {
+        if (mysqli_query($con, $new_user_query)) {
             echo "Registered Successfully. You can now login.";
             // Redirect to login page
             header('Location: login.php');
             exit();
         } else {
-            echo "Register failed: " . mysqli_error($conn);
+            echo "Register failed: " . mysqli_error($con);
         }
     }
 }
