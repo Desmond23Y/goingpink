@@ -1,5 +1,6 @@
 <?php
-include('navi_bar.php')
+include('navi_bar.php');
+include('conn.php');
 ?>
 
 <!DOCTYPE html>
