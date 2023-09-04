@@ -52,7 +52,7 @@
               <a href="View Booking.php">Booking</a>
               <a href="api_exRates.php">Currency</a>
               <a href="Ticket.php">Support</a>
-              <a href="login.php">Login class="right"></a>
+              <a href="login.php" class="right">Login</a>
               <a href="editprofile.php" class="right">Profile</a>
               </div>
             </div>
