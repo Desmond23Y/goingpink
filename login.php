@@ -36,11 +36,11 @@ include('navbar.php')
 include('conn.php'); 
 
 function login($username, $password) {
-    global $con;
+    global $conn;
 
     
-    $username = ($con, $username);
-    $password = ($con, $password);
+    $username = ($conn, $username);
+    $password = ($conn, $password);
 
     // Query all relevant tables using a UNION query
     $query = "SELECT 'user' AS user_type, user_id FROM user WHERE username = '$username' AND password = '$password'
@@ -53,7 +53,7 @@ function login($username, $password) {
               UNION
               SELECT 'hotel_management' AS user_type, hotel_manager_id FROM hotel_management WHERE username = '$username' AND password = '$password'";
 
-    $result = mysqli_query($con, $query);
+    $result = mysqli_query($conn, $query);
 
     if ($result && mysqli_num_rows($result) === 1) {
         // Fetch the user type and user_id
