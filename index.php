@@ -42,6 +42,3 @@ include('navi_bar.php');
 </body>
 </html>
 
-<?php
-include('footer.php');
-?>
