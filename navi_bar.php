@@ -1,12 +1,9 @@
 <?php
-
 ?>
-<!-- Start of HTML code -->
+
 <html>
 <head>
 <style>
-
-/*Style the top navigation bar */
 .navbar {
   overflow: hidden;
   background-color: #950070;
@@ -23,12 +20,10 @@
   font-weight: bold;
 }
 
-/* Right-aligned link */
 .navbar a.right {
   float: right;
 }
 
-/* Change color on hover */
 .navbar a:hover {
   background-color: #FFFFFF;
   color: black;
@@ -41,24 +36,23 @@
   float: left;
 }
 
-
 </style>
 </head>
+  
 <body>
     <header>
         <nav>
             <div class="navbar">
-              <a href="homepage.php">Home</a>
+              <a href="index.php">Home</a>
               <a href="view_booking.php">Booking</a>
               <a href="api_exRates.php">Currency</a>
               <a href="request_form.php">Support</a>
               <a href="login.php" class="right">Login</a>
               <a href="register.php" class="right">Register</a>
-              <a href="editprofile.php" class="right">Profile</a>
+              <a href="edit_profile.php" class="right">Profile</a>
               </div>
             </div>
         </nav>
     </header>
 </body>
 </html>
-<!-- End of HTML code -->
