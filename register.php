@@ -1,6 +1,6 @@
 <?php
-// Include the database connection
-include("conn.php");
+include('navi_bar');
+include('conn.php');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['username'];
@@ -41,10 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 ?>
-
-<?php
-include('navbar.php')
-?>
+    
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -93,5 +90,3 @@ include('navbar.php')
     </div>
 </body>
 </html>
-
-<?php
