@@ -1,7 +1,10 @@
 <?php
 include('conn.php');
 
+// Assuming you have a way to retrieve the user's ID
+$user_id = 123; // Replace with the actual user ID
 
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Process the form data
     $username = $_POST['username'];
     $first_name = $_POST['first_name'];
@@ -17,11 +20,11 @@ include('conn.php');
     $check_username_query = "SELECT * FROM user WHERE username = '$username'";
     $result = mysqli_query($con, $check_username_query);
 
-    // perform user input validation
-    if (strlen($username) > 5 || strlen($username) <50) {
-        echo "length of username must stay in between 5 and 50";
+    // Perform user input validation
+    if (strlen($username) < 5 || strlen($username) > 50) {
+        echo "Length of username must be between 5 and 50.";
     } elseif (mysqli_num_rows($result) > 0) {
-        echo "Username already exist. Please try again";  
+        echo "Username already exists. Please try again.";  
     } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         echo "Invalid email address. Please try again.";
     } elseif (!strpos($email, "@") || !strpos($email, ".com")) {
@@ -29,7 +32,7 @@ include('conn.php');
     } elseif (strlen($phone_number) > 9 || strlen($phone_number) < 12) {
         echo "Invalid phone number. Please try again.";
     } elseif (strlen($new_password) > 10 || strlen($new_password) < 50) {
-        echo "Password length must stay in between 5 and 50 characters. Please try again.";
+        echo "Password length must be between 5 and 50 characters. Please try again.";
     } elseif (!preg_match('/[A-Z]/', $new_password)) {
         echo "Password must contain at least one UPPERCASE letter. Please try again.";
     } elseif (!preg_match('/[a-z]/', $new_password)) {
@@ -39,20 +42,20 @@ include('conn.php');
     } elseif ($new_password !== $confirm_password) {
         echo "Password confirmation does not match. Please try again.";
     } else {
-        // Update the user information into the database
+        // Update the user information in the database
         $update_profile_query = "UPDATE user SET 
-                username = '$username',
-                first_name = '$first_name', 
-                last_name = '$last_name', 
-                email = '$email', 
-                phone_number = '$phone_number', 
-                date_of_birth = '$date_of_birth', 
-                gender = '$gender', 
-                password = '$new_password'
-                WHERE id = $user_id";
+            username = '$username',
+            first_name = '$first_name', 
+            last_name = '$last_name', 
+            email = '$email', 
+            phone_number = '$phone_number', 
+            date_of_birth = '$date_of_birth', 
+            gender = '$gender', 
+            password = '$new_password'
+            WHERE id = $user_id";
         if (mysqli_query($con, $update_profile_query)) {
             echo "Profile updated successfully!";
-            // Redirect to homepage
+            // Redirect to the profile page or wherever you want
             header('Location: editprofile.php');
             exit();
         } else {
@@ -61,7 +64,7 @@ include('conn.php');
         }
     }
 } else {
-    // Handle the error if its not a POST request
+    // Handle the error if it's not a POST request
     echo "Invalid request.";
 }
 ?>
