@@ -39,8 +39,8 @@ include('navbar.php')
             <input type="date" id="date_of_birth" name="date_of_birth" required><br><br>
 
             <label>Gender:</label>
-            <input type="radio" id="html" name="gender" value="male"><label for="male">Male</label><br>
-            <input type="radio" id="css" name="gender" value="female"><label for="female">Female</label><br>
+            <input type="radio" id="gender" name="gender" value="male"><label for="male">Male</label><br>
+            <input type="radio" id="gender" name="gender" value="female"><label for="female">Female</label><br>
             <br>
             <button type="submit">Sign Up</button>
         </form>
@@ -51,27 +51,13 @@ include('navbar.php')
 </html>
 
 <?php
-include('conn.php'); // Include the database connection
+ // Include the database connection
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Process the form data
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    $first_name = $_POST['first_name'];
-    $last_name = $_POST['last_name'];
-    $email = $_POST['email'];
-    $phone_number = $_POST['phone_number'];
-    $date_of_birth = $_POST['date_of_birth'];
-    $gender = $_POST['gender'];
-
-    // Check if the username is already taken
-    $check_username_query = "SELECT * FROM user WHERE username = '$username'";
-    $result = mysqli_query($con, $check_username_query);
-
+    include("conn.php");
+    
     if (strlen($username) < 5 || strlen($username) > 50) {
         echo "Length of username must be between 5 and 50 characters.";
-    } elseif (mysqli_num_rows($result) > 0) {
-        echo "Username already exists. Please try again.";
     } elseif (strlen($password) < 5 || strlen($password) > 50) {
         echo "Password length must be between 5 and 50 characters. Please try again.";
     } elseif (!preg_match('/[A-Z]/', $password)) {
@@ -87,18 +73,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } elseif (strlen($phone_number) < 12 || strlen($phone_number) > 9) {
         echo "Invalid phone number. Please try again.";
     } else {
-        // Insert user information into the database
-        $new_user_query = "INSERT INTO `user`(`user_id`, `username`, `password`, `first_name`, `last_name`, `email`, `phone_number`, `date_of_birth`, `gender`)
-                         VALUES ('$username', '$password', '$first_name', '$last_name', '$email', '$phone_number', '$date_of_birth', '$gender')";
-
-        if (mysqli_query($con, $new_user_query)) {
-            echo "Registered Successfully. You can now login.";
-            // Redirect to login page
-            header('Location: login.php');
-            exit();
-        } else {
-            echo "Register failed: " . mysqli_error($con);
+        $new_user_query = "INSERT INTO user (user_id, username, password, first_name, last_name, email, phone_number, date_of_birth, gender) 
+                            VALUES ('$_POST[]', '$_POST[username]', '$_POST[password]', '$_POST[first_name]', '$_POST[last_name]', '$_POST[email]', '$_POST[phone_number]', '_$POST[date_of_birth]', '_$POST[gender]')";
+        if(!mysqli_query($con,$sql)) {
+            die('Error:' . mysqli_error($con));
         }
+        else {
+            echo "<script>alert('This form has been submitted!');</script>";
+        }
+
+        mysqli_close($con);
+        
     }
 }
 ?>
