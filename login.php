@@ -32,10 +32,9 @@
                 // Example: Check the username and password against a database
                 // If the login is successful, redirect the user to a dashboard or homepage
                 // If login fails, display an error message
-                if ($username === 'your_username' && $password === 'your_password') {
+                if ($username === 'username' && $password === 'password') {
                     // Replace 'your_username' and 'your_password' with actual credentials
                     // Successful login, redirect the user
-                    header("Location: dashboard.php");
                     exit();
                 } else {
                     // Failed login, display an error message
