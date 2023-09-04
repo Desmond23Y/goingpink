@@ -1,7 +1,77 @@
 <?php
+include('conn.php');
+session_start(); // Start session
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Get user ID from the session 
+    $user_id = $_SESSION['user_id']; // Replace 'user_id' with the actual session variable
+
+    // Process the form data
+    $username = $_POST['username'];
+    $first_name = $_POST['first_name'];
+    $last_name = $_POST['last_name'];
+    $email = $_POST['email'];
+    $phone_number = $_POST['phone_number'];
+    $date_of_birth = $_POST['date_of_birth'];
+    $gender = $_POST['gender'];
+    $new_password = $_POST['newPassword'];
+    $confirm_password = $_POST['confirmPassword'];
+
+    // Check if the username is already taken
+    $check_username_query = "SELECT * FROM user WHERE username = '$username'";
+    $result = mysqli_query($con, $check_username_query);
+
+    // perform user input validation
+    if (strlen($username) > 5 || strlen($username) <50) {
+        echo "length of username must stay in between 5 and 50"
+    } elseif (mysqli_num_rows($result) > 0) {
+        echo "Username already exist. Please try again";  
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        echo "Invalid email address. Please try again.";
+    } elseif (!strpos($email, "@") || !strpos($email, ".com")) {
+        echo "Email address must contain '@' and '.com'. Please try again.";
+    } elseif (strlen($phone_number) > 10 || strlen($phone_number) < 11) {
+        echo "Invalid phone number. Please try again.";
+    } elseif (strlen($new_password) > 10) || strlen($new_password) <50  {
+        echo "Password length must stay in between 5 and 50 characters. Please try again.";
+    } elseif (!preg_match('/[A-Z]/', $new_password)) {
+        echo "Password must contain at least one UPPERCASE letter. Please try again.";
+    } elseif (!preg_match('/[a-z]/', $new_password)) {
+        echo "Password must contain at least one lowercase letter. Please try again.";
+    } elseif (!preg_match('/[^a-zA-Z0-9]/', $new_password)) {
+        echo "Password must contain at least one special character. Please try again.";
+    } elseif ($new_password !== $confirm_password) {
+        echo "Password confirmation does not match. Please try again.";
+    } else {
+        // Update the user information into the database
+        $update_profile_query = "UPDATE user SET 
+                username = '$username',
+                first_name = '$first_name', 
+                last_name = '$last_name', 
+                email = '$email', 
+                phone_number = '$phone_number', 
+                date_of_birth = '$date_of_birth', 
+                gender = '$gender', 
+                password = '$new_password'
+                WHERE id = $user_id";
+        if (mysqli_query($con, $update_profile_query)) {
+            echo "Profile updated successfully!";
+            // Redirect to homepage
+            header('Location: editprofile.php');
+            exit();
+        } else {
+            // Handle database error
+            echo "Error updating profile: " . mysqli_error($con);
+        }
+    }
+} else {
+    // Handle the error if its not a POST request
+    echo "Invalid request.";
+}
+?>
+<?php
 include('navbar.php');
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,6 +90,10 @@ include('navbar.php');
         <br><br>
 
         <!-- User Information -->
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username">
+        <br><br>
+
         <label for="first_name">First Name:</label>
         <input type="text" id="first_name" name="first_name">
         <br><br>
