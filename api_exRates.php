@@ -1,21 +1,36 @@
-<?php
-
-// set API Endpoint and API key
-$endpoint = 'latest';
-$access_key = 'API_KEY';
-
-// Initialize CURL:
-$ch = curl_init('https://api.exchangeratesapi.io/v1/'.$endpoint.'?access_key='.$access_key.'');
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-
-// Store the data:
-$json = curl_exec($ch);
-curl_close($ch);
-
-// Decode JSON response:
-$exchangeRates = json_decode($json, true);
-
-// Access the exchange rate values, e.g. GBP:
-echo $exchangeRates['rates']['GBP'];
-
-?>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Currency Converter</title>
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Stylesheet-->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="app-details">
+        <img src="app-icon.svg" class="app-icon" />
+        <h1 class="app-title">Currency Converter</h1>
+      </div>
+      <label for="amount">Amount:</label>
+      <input type="number" id="amount" value="100" />
+      <div class="dropdowns">
+        <select id="from-currency-select"></select>
+        <select id="to-currency-select"></select>
+      </div>
+      <button id="convert-button">Convert</button>
+      <p id="result"></p>
+    </div>
+    <!-- Scipt With Array Of Supported Country Codes -->
+    <script src="currency-codes.js"></script>
+    <!-- Script with API Key -->
+    <script src="api-key.js"></script>
+    <!-- Script -->
+    <script src="script.js"></script>
+  </body>
+</html>
