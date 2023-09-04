@@ -5,8 +5,8 @@ function login($username, $password) {
     global $conn;
 
     
-    $username = ($conn, $username);
-    $password = ($conn, $password);
+    $username = mysqli_real_escape_string($conn, $username);
+    $password = mysqli_real_escape_string($conn, $password);
 
     // Query all relevant tables using a UNION query
     $query = "SELECT 'user' AS user_type, user_id FROM user WHERE username = '$username' AND password = '$password'
