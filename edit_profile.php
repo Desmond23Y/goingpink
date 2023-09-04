@@ -68,7 +68,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 <?php
-include('navbar.php');
+include('navi_bar.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
