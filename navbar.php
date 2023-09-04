@@ -49,9 +49,10 @@
         <nav>
             <div class="navbar">
               <a href="homepage.php">Home <img src="picture/iHome.png"></a>
-              <a href="#">Booking<img src="picture/iBooking.png"></a>
+              <a href="View Booking.php">Booking<img src="picture/iBooking.png"></a>
               <a href="api_exRates.php">Currency<img src="picture/iExchange.png"></a>
-              <a href="#">Support<img src="picture/iSupport.png"></a>
+              <a href="Ticket">Support<img src="picture/iSupport.png"></a>
+              <a href="login.php">Home </a>
               <a href="editprofile.php" class="right">Profile<img src="picture/iProfile.png"></a>
               </div>
             </div>
