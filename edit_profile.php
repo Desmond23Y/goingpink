@@ -142,6 +142,3 @@ include('navi_bar.php');
     </div>
 </body>
 </html>
-<?php
-include('footer.php');
-?>
