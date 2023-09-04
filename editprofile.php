@@ -23,16 +23,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // perform user input validation
     if (strlen($username) > 5 || strlen($username) <50) {
-        echo "length of username must stay in between 5 and 50"
+        echo "length of username must stay in between 5 and 50";
     } elseif (mysqli_num_rows($result) > 0) {
         echo "Username already exist. Please try again";  
     } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         echo "Invalid email address. Please try again.";
     } elseif (!strpos($email, "@") || !strpos($email, ".com")) {
         echo "Email address must contain '@' and '.com'. Please try again.";
-    } elseif (strlen($phone_number) > 10 || strlen($phone_number) < 11) {
+    } elseif (strlen($phone_number) > 9 || strlen($phone_number) < 12) {
         echo "Invalid phone number. Please try again.";
-    } elseif (strlen($new_password) > 10) || strlen($new_password) <50  {
+    } elseif (strlen($new_password) > 10 || strlen($new_password) < 50) {
         echo "Password length must stay in between 5 and 50 characters. Please try again.";
     } elseif (!preg_match('/[A-Z]/', $new_password)) {
         echo "Password must contain at least one UPPERCASE letter. Please try again.";
