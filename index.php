@@ -2,14 +2,14 @@
 include('navbar.php')
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GoingPink | Better Travel Site</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="index_styles.css">
 </head>
+    
 <body>
     <section class="services">
         <div class="container">
@@ -48,6 +48,7 @@ include('navbar.php')
     </section>
 </body>
 </html>
+
 <?php
 include('footer.php')
 ?>
