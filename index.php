@@ -39,13 +39,6 @@ include('navi_bar.php');
         </div>
     </section>
 
-    <section class="contact">
-        <div class="container">
-            <h2>Contact Us</h2>
-            <p>If you have any questions or need assistance, feel free to contact us.</p>
-            <a href="#" class="btn">Contact Us</a>
-        </div>
-    </section>
 </body>
 </html>
 
