@@ -37,7 +37,6 @@ body {
 </head>
 
 <body>
-    <header>
         <nav>
             <ul class="navibar">
                 <li><a href="index.php">HOME</a></li>
@@ -49,6 +48,5 @@ body {
                 <li><a href="edit_profile.php" class="right">PROFILE</a></li>
             </ul>
         </nav>
-    </header>
 </body>
 </html>
