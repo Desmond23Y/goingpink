@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
     <title>Customer Support Request Form</title>
-    <link rel="stylesheet" href="Style Ticket.css">
+    <link rel="stylesheet" href="style_ticket.css">
 </head>
 
 <body>
