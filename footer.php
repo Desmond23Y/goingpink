@@ -13,7 +13,7 @@ body {
     color: #333;
     background-color: #F9B9C3;
     text-align: center;
-    padding: 10px 0;
+    padding: 14px 16px;
     position: absolute;
     width: 100%;
     bottom: 0;
