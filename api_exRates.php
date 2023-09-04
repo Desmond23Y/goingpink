@@ -3,7 +3,7 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Exchange Rates Converter</title>
-    <link rel="stylesheet" href="api_exchange_rates_style.css" />
+    <link rel="stylesheet" href="api_exRates_styles.css" />
   </head>
 
   <body>
