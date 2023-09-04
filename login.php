@@ -48,8 +48,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     mysqli_stmt_close($stmt);
 
     if (password_verify($password, $hashed_password)) {
-        // Password is correct, redirect the user to the dashboard or homepage
-        header("Location: index.php"); // Replace with your actual destination
+        echo "Login successfully!";
+        header("Location: index.php");
         exit();
     } else {
         // Failed login, display an error message
