@@ -1,39 +1,30 @@
-<?php
-?>
-
 <html>
 <head>
 <style>
-.navbar {
-  overflow: hidden;
-  background-color: #950070;
+.navibar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #F9B9C3;
 }
 
-.navbar a {
+.navibar a {
   float: left;
   display: block;
-  color: black;
+  color: #333;
   text-align: center;
-  padding: 20px 20px 20px 20px;
+  padding: 14px 16px;
   text-decoration: none;
-  font-size: 20px;
-  font-weight: bold;
 }
 
-.navbar a.right {
+.navibar a.right {
   float: right;
 }
 
-.navbar a:hover {
-  background-color: #FFFFFF;
-  color: black;
-}
-
-.navbar a img {
-  width: 25px;
-  height: 25px;
-  margin-right: 5px;
-  float: left;
+.navibar a:hover {
+  background-color: #C7949C;
+  color: white;
 }
 
 </style>
@@ -42,14 +33,14 @@
 <body>
     <header>
         <nav>
-            <div class="navbar">
-              <a href="index.php">Home</a>
-              <a href="view_booking.php">Booking</a>
-              <a href="api_exRates.php">Currency</a>
-              <a href="request_form.php">Support</a>
-              <a href="login.php" class="right">Login</a>
-              <a href="register.php" class="right">Register</a>
-              <a href="edit_profile.php" class="right">Profile</a>
+            <div class="navibar">
+              <a href="index.php">HOME</a>
+              <a href="view_booking.php">BOOKING</a>
+              <a href="api_exRates.php">EXCHANGE RATES</a>
+              <a href="request_form.php">SUPPORT</a>
+              <a href="login.php" class="right">LOGIN</a>
+              <a href="register.php" class="right">REGISTER</a>
+              <a href="edit_profile.php" class="right">PROFILE</a>
               </div>
             </div>
         </nav>
