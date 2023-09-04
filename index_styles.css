@@ -11,6 +11,7 @@ body {
 
 .services {
   background-color: #181818;
+  color: white;
   padding: 40px 0;
   text-align: center;
 }
@@ -30,6 +31,7 @@ body {
 
 .about {
   background-color: #333;
+  color: white;
   padding: 40px 0;
   text-align: center;
 }
