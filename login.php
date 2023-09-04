@@ -43,19 +43,21 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
        return $data;
     }
 
-    $username = validate($_POST['uname']);
+    $username = validate($_POST['username']);
     $password = validate($_POST['password']);
 
     if (empty($username)) {
-        header("Location: login.php?error=User Name is required");
+        header("Location: login.php");
+        echo "Error: Username is required";
         exit();
 
     }else if(empty($password)){
-        header("Location: login.php?error=Password is required");
+        header("Location: login.php");
+        echo "Error: Password is required";
         exit();
         
     }else{
-        $sql = "SELECT * FROM users WHERE username='$username' AND password='$password'";
+        $sql = "SELECT * FROM user WHERE username='$username' AND password='$password'";
         $result = mysqli_query($con, $sql);
         if (mysqli_num_rows($result) === 1) {
 
@@ -70,17 +72,10 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
                 exit();
 
             }else{
-                header("Location: login.php?error=Incorect User name or password");
+                header("Location: login.php");
+                echo "Error: Incorrect Username or Password";
                 exit();
-            }
-
-        }else{
-            header("Location: login.php?error=Incorect User name or password");
+            }else{
+            header("Location: index.php");
             exit();
         }
-    }
-    
-}else{
-    header("Location: index.php");
-    exit();
-}
