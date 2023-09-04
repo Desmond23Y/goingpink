@@ -1,3 +1,7 @@
+<?php
+include('navi_bar.php')
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -30,3 +34,7 @@
 
     </body>
 </html>
+
+<?php
+include('footer.php');
+?>
