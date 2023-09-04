@@ -1,10 +1,6 @@
 <?php
 include('conn.php');
-session_start(); // Start session
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Get user ID from the session 
-    $user_id = $_SESSION['user_id']; // Replace 'user_id' with the actual session variable
 
     // Process the form data
     $username = $_POST['username'];
