@@ -48,12 +48,12 @@
     <header>
         <nav>
             <div class="navbar">
-              <a href="homepage.php">Home <img src="picture/iHome.png"></a>
-              <a href="View Booking.php">Booking<img src="picture/iBooking.png"></a>
-              <a href="api_exRates.php">Currency<img src="picture/iExchange.png"></a>
-              <a href="Ticket">Support<img src="picture/iSupport.png"></a>
-              <a href="login.php">Home </a>
-              <a href="editprofile.php" class="right">Profile<img src="picture/iProfile.png"></a>
+              <a href="homepage.php">Home</a>
+              <a href="View Booking.php">Booking</a>
+              <a href="api_exRates.php">Currency</a>
+              <a href="Ticket.php">Support</a>
+              <a href="login.php">Login class="right"></a>
+              <a href="editprofile.php" class="right">Profile</a>
               </div>
             </div>
         </nav>
