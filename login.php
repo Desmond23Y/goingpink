@@ -30,8 +30,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $row = mysqli_fetch_assoc($result);
             $user_type = $row['user_type'];
             $user_id = $row['user_id'];
-
-            // You can use $user_type and $user_id to identify the user type and perform further actions
             echo "<script>alert('Login successful as $user_type with ID $user_id!');</script>";
             exit();
         } else {
