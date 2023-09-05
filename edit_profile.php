@@ -67,7 +67,7 @@ if (strlen($username) < 5 || strlen($username) > 50) {
         WHERE id = $user_id";
     if (mysqli_query($con, $update_profile_query)) {
         echo "Profile updated successfully!";
-        // Redirect to the profile page or wherever you want
+        // Redirect to the profile page
         header('Location: editprofile.php');
         exit();
     } else {
