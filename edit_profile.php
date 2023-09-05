@@ -13,7 +13,7 @@ if (!isset($_SESSION['user_id'])) {
 $user_id = $_SESSION['user_id'];
 
 // Fetch the existing user data
-$fetch_user_query = "SELECT * FROM user WHERE id = $user_id";
+$fetch_user_query = "SELECT * FROM user WHERE user_id = $user_id";
 $result = mysqli_query($con, $fetch_user_query);
 
 if ($result && mysqli_num_rows($result) > 0) {
