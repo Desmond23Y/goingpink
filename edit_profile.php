@@ -74,8 +74,6 @@ if (strlen($username) < 5 || strlen($username) > 50) {
         // Handle database error
         echo "Error updating profile: " . mysqli_error($con);
     }
-}
-
 } else {
    $errormessage = "Invalid request.";
 }
