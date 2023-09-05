@@ -17,8 +17,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (mysqli_num_rows($result) > 0) {
             // Login successful
             echo "<script>alert('Login successful!');</script>";
-            // Redirect to a dashboard or profile page
-            header('Location: dashboard.php');
             exit();
         } else {
             // Login failed
