@@ -12,6 +12,29 @@ if (!isset($_SESSION['user_id'])) {
 // Get the user ID from the session
 $user_id = $_SESSION['user_id'];
 
+// Fetch the existing user data
+$fetch_user_query = "SELECT * FROM user WHERE id = $user_id";
+$result = mysqli_query($con, $fetch_user_query);
+
+if ($result && mysqli_num_rows($result) > 0) {
+    $user_data = mysqli_fetch_assoc($result);
+
+    // Populate form fields with existing data
+    $username = $user_data['username'];
+    $first_name = $user_data['first_name'];
+    $last_name = $user_data['last_name'];
+    $email = $user_data['email'];
+    $phone_number = $user_data['phone_number'];
+    $date_of_birth = $user_data['date_of_birth'];
+    $gender = $user_data['gender'];
+
+    // Display the form with existing data
+} else {
+    echo "Error fetching user data: " . mysqli_error($con);
+}
+
+include('navi_bar.php');
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Process the form data
     $username = $_POST['username'];
@@ -23,8 +46,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $gender = $_POST['gender'];
     $new_password = $_POST['newPassword'];
     $confirm_password = $_POST['confirmPassword'];
-
-  
 
     // Perform user input validation
     if (strlen($username) < 5 || strlen($username) > 50) {
@@ -69,32 +90,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             echo "Error updating profile: " . mysqli_error($con);
         }
     }
-} else {
-    $errormessage = "Invalid request.";
 }
-
-// Fetch the existing user data
-$fetch_user_query = "SELECT * FROM user WHERE id = $user_id";
-$result = mysqli_query($con, $fetch_user_query);
-
-if ($result && mysqli_num_rows($result) > 0) {
-    $user_data = mysqli_fetch_assoc($result);
-
-    // Populate form fields with existing data
-    $username = $user_data['username'];
-    $first_name = $user_data['first_name'];
-    $last_name = $user_data['last_name'];
-    $email = $user_data['email'];
-    $phone_number = $user_data['phone_number'];
-    $date_of_birth = $user_data['date_of_birth'];
-    $gender = $user_data['gender'];
-
-    // Display the form with existing data
-} else {
-    echo "Error fetching user data: " . mysqli_error($con);
-}
-
-include('navi_bar.php');
 ?>
 
 <!DOCTYPE html>
