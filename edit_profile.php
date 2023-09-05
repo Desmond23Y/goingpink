@@ -1,35 +1,75 @@
 <?php
-// Include the necessary files and establish a database connection
 include('conn.php');
-
-// Function to fetch and return user data based on user ID
-function fetchUserData($con, $user_id) {
-    $user_data = array(); // Initialize an array to store user data
-
-    // Query to retrieve user data based on the user ID
-    $fetch_user_query = "SELECT * FROM user WHERE id = $user_id";
-
-    // Execute the query
-    $result = mysqli_query($con, $fetch_user_query);
-
-    if ($result && mysqli_num_rows($result) > 0) {
-        // Fetch user data into an associative array
-        $user_data = mysqli_fetch_assoc($result);
-    }
-
-    return $user_data; // Return the user data as an associative array
-}
 
 // Assuming you have a way to retrieve the user's ID
 $user_id = 123; // Replace with the actual user ID
 
-// Fetch user data using the function
-$user_data = fetchUserData($con, $user_id);
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Process the form data
+    $username = $_POST['username'];
+    $first_name = $_POST['first_name'];
+    $last_name = $_POST['last_name'];
+    $email = $_POST['email'];
+    $phone_number = $_POST['phone_number'];
+    $date_of_birth = $_POST['date_of_birth'];
+    $gender = $_POST['gender'];
+    $new_password = $_POST['newPassword'];
+    $confirm_password = $_POST['confirmPassword'];
 
-// Close the database connection
-mysqli_close($con);
+    // Check if the username is already taken
+    $check_username_query = "SELECT * FROM user WHERE username = '$username'";
+    $result = mysqli_query($con, $check_username_query);
+
+    // Perform user input validation
+    if (strlen($username) < 5 || strlen($username) > 50) {
+        echo "Length of username must be between 5 and 50.";
+    } elseif (mysqli_num_rows($result) > 0) {
+        echo "Username already exists. Please try again.";  
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        echo "Invalid email address. Please try again.";
+    } elseif (!strpos($email, "@") || !strpos($email, ".com")) {
+        echo "Email address must contain '@' and '.com'. Please try again.";
+    } elseif (strlen($phone_number) > 9 || strlen($phone_number) < 12) {
+        echo "Invalid phone number. Please try again.";
+    } elseif (strlen($new_password) > 10 || strlen($new_password) < 50) {
+        echo "Password length must be between 5 and 50 characters. Please try again.";
+    } elseif (!preg_match('/[A-Z]/', $new_password)) {
+        echo "Password must contain at least one UPPERCASE letter. Please try again.";
+    } elseif (!preg_match('/[a-z]/', $new_password)) {
+        echo "Password must contain at least one lowercase letter. Please try again.";
+    } elseif (!preg_match('/[^a-zA-Z0-9]/', $new_password)) {
+        echo "Password must contain at least one special character. Please try again.";
+    } elseif ($new_password !== $confirm_password) {
+        echo "Password confirmation does not match. Please try again.";
+    } else {
+        // Update the user information in the database
+        $update_profile_query = "UPDATE user SET 
+            username = '$username',
+            first_name = '$first_name', 
+            last_name = '$last_name', 
+            email = '$email', 
+            phone_number = '$phone_number', 
+            date_of_birth = '$date_of_birth', 
+            gender = '$gender', 
+            password = '$new_password'
+            WHERE id = $user_id";
+        if (mysqli_query($con, $update_profile_query)) {
+            echo "Profile updated successfully!";
+            // Redirect to the profile page or wherever you want
+            header('Location: editprofile.php');
+            exit();
+        } else {
+            // Handle database error
+            echo "Error updating profile: " . mysqli_error($con);
+        }
+    }
+} else {
+   $errormessage = "Invalid request. ";
+}
 ?>
-
+<?php
+include('navi_bar.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,37 +84,37 @@ mysqli_close($con);
     <form action="update_profile.php" method="POST">
         <!-- User Information -->
         <label for="username">Username:</label>
-        <input type="text" id="username" name="username" value="<?php echo $user_data['username']; ?>">
+        <input type="text" id="username" name="username">
         <br><br>
 
         <label for="first_name">First Name:</label>
-        <input type="text" id="first_name" name="first_name" value="<?php echo $user_data['first_name']; ?>">
+        <input type="text" id="first_name" name="first_name">
         <br><br>
 
-        <label for="last_name">Last Name:</label>
-        <input type="text" id="last_name" name="last_name" value="<?php echo $user_data['last_name']; ?>">
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="last_name" name="last_name">
         <br><br>
 
         <label for="email">Email:</label>
-        <input type="email" id="email" name="email" value="<?php echo $user_data['email']; ?>">
+        <input type="email" id="email" name="email">
         <br><br>
 
         <label for="phone_number">Phone Number:</label>
-        <input type="tel" id="phone_number" name="phone_number" value="<?php echo $user_data['phone_number']; ?>">
+        <input type="tel" id="phone_number" name="phonenumber">
         <br><br>
 
         <label for="date_of_birth">Date of Birth:</label>
-        <input type="date" id="date_of_birth" name="date_of_birth" value="<?php echo $user_data['date_of_birth']; ?>">
+        <input type="date" id="date_of_birth" name="date_of_birth">
         <br><br>
 
         <label>Gender:</label><br>
-        <input type="radio" id="male" name="gender" value="male" <?php if ($user_data['gender'] === 'male') echo 'checked'; ?>>
+        <input type="radio" id="male" name="gender" value="male">
         <label for="male">Male</label><br>
 
-        <input type="radio" id="female" name="gender" value="female" <?php if ($user_data['gender'] === 'female') echo 'checked'; ?>>
+        <input type="radio" id="female" name="gender" value="female">
         <label for="female">Female</label><br>
 
-        <input type="radio" id="other" name="gender" value="other" <?php if ($user_data['gender'] === 'other') echo 'checked'; ?>>
+        <input type="radio" id="other" name="gender" value="other">
         <label for="other">Other</label>
         <br><br>
 
