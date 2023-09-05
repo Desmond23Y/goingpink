@@ -79,7 +79,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             date_of_birth = '$date_of_birth', 
             gender = '$gender', 
             password = '$new_password'
-            WHERE user_id = $user_id"; // Corrected the WHERE clause
+            WHERE user_id = '$user_id'; // Corrected the WHERE clause
         if (mysqli_query($con, $update_profile_query)) {
             echo "Profile updated successfully!";
             // Redirect to the profile page
