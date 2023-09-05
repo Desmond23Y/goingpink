@@ -1,4 +1,7 @@
 <?php
+// Start or resume the session
+session_start();
+
 include('navi_bar.php');
 include('conn.php');
 
@@ -30,6 +33,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $row = mysqli_fetch_assoc($result);
             $user_type = $row['user_type'];
             $user_id = $row['user_id'];
+
+            // Store user data in the session
+            $_SESSION['user_type'] = $user_type;
+            $_SESSION['user_id'] = $user_id;
+
             echo "<script>alert('Login successful as $user_type with ID $user_id!');</script>";
             exit();
         } else {
