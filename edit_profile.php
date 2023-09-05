@@ -82,7 +82,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             WHERE user_id = '$user_id'";
         if (mysqli_query($con, $update_profile_query)) {
             echo "Profile updated successfully!";
-            header('Location: editprofile.php');
+            header('Location: edit_profile.php');
             exit();
         } else {
             // Handle database error
