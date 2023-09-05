@@ -31,10 +31,28 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $result = mysqli_query($con, $check_username_query);
 
     // Perform user input validation
-    // (rest of the validation code)
 
-    if (/* All validation checks pass */) {
-        // Update the user information in the database
+   if (strlen($username) < 5 || strlen($username) > 50) {
+        echo "Length of username must be between 5 and 50.";
+    } elseif (mysqli_num_rows($result) > 0) {
+        echo "Username already exists. Please try again.";  
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        echo "Invalid email address. Please try again.";
+    } elseif (!strpos($email, "@") || !strpos($email, ".com")) {
+        echo "Email address must contain '@' and '.com'. Please try again.";
+    } elseif (strlen($phone_number) > 9 || strlen($phone_number) < 12) {
+        echo "Invalid phone number. Please try again.";
+    } elseif (strlen($new_password) > 10 || strlen($new_password) < 50) {
+        echo "Password length must be between 5 and 50 characters. Please try again.";
+    } elseif (!preg_match('/[A-Z]/', $new_password)) {
+        echo "Password must contain at least one UPPERCASE letter. Please try again.";
+    } elseif (!preg_match('/[a-z]/', $new_password)) {
+        echo "Password must contain at least one lowercase letter. Please try again.";
+    } elseif (!preg_match('/[^a-zA-Z0-9]/', $new_password)) {
+        echo "Password must contain at least one special character. Please try again.";
+    } elseif ($new_password !== $confirm_password) {
+        echo "Password confirmation does not match. Please try again.";
+    } else {
         $update_profile_query = "UPDATE user SET 
             username = '$username',
             first_name = '$first_name', 
