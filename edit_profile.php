@@ -1,5 +1,5 @@
 <?php
-include('navbar.php');
+include('navi_bar.php');
 include('conn.php');
 
 // Assuming you have a way to retrieve the user's ID
