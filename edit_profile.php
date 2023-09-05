@@ -32,50 +32,51 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Perform user input validation
 
-  // Validate user input
-if (strlen($username) < 5 || strlen($username) > 50) {
-    echo "Length of username must be between 5 and 50.";
-} elseif (mysqli_num_rows($result) > 0) {
-    echo "Username already exists. Please try again.";  
-} elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    echo "Invalid email address. Please try again.";
-} elseif (!strpos($email, "@") || !strpos($email, ".com")) {
-    echo "Email address must contain '@' and '.com'. Please try again.";
-} elseif (strlen($phone_number) > 9 || strlen($phone_number) < 12) {
-    echo "Invalid phone number. Please try again.";
-} elseif (strlen($new_password) > 10 || strlen($new_password) < 50) {
-    echo "Password length must be between 5 and 50 characters. Please try again.";
-} elseif (!preg_match('/[A-Z]/', $new_password)) {
-    echo "Password must contain at least one UPPERCASE letter. Please try again.";
-} elseif (!preg_match('/[a-z]/', $new_password)) {
-    echo "Password must contain at least one lowercase letter. Please try again.";
-} elseif (!preg_match('/[^a-zA-Z0-9]/', $new_password)) {
-    echo "Password must contain at least one special character. Please try again.";
-} elseif ($new_password !== $confirm_password) {
-    echo "Password confirmation does not match. Please try again.";
-} else {
-    // Update the user information in the database
-    $update_profile_query = "UPDATE user SET 
-        username = '$username',
-        first_name = '$first_name', 
-        last_name = '$last_name', 
-        email = '$email', 
-        phone_number = '$phone_number', 
-        date_of_birth = '$date_of_birth', 
-        gender = '$gender', 
-        password = '$new_password'
-        WHERE id = $user_id";
-    if (mysqli_query($con, $update_profile_query)) {
-        echo "Profile updated successfully!";
-        // Redirect to the profile page
-        header('Location: editprofile.php');
-        exit();
+    // Validate user input
+    if (strlen($username) < 5 || strlen($username) > 50) {
+        echo "Length of username must be between 5 and 50.";
+    } elseif (mysqli_num_rows($result) > 0) {
+        echo "Username already exists. Please try again.";
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        echo "Invalid email address. Please try again.";
+    } elseif (!strpos($email, "@") || !strpos($email, ".com")) {
+        echo "Email address must contain '@' and '.com'. Please try again.";
+    } elseif (strlen($phone_number) > 9 || strlen($phone_number) < 12) {
+        echo "Invalid phone number. Please try again.";
+    } elseif (strlen($new_password) > 10 || strlen($new_password) < 50) {
+        echo "Password length must be between 5 and 50 characters. Please try again.";
+    } elseif (!preg_match('/[A-Z]/', $new_password)) {
+        echo "Password must contain at least one UPPERCASE letter. Please try again.";
+    } elseif (!preg_match('/[a-z]/', $new_password)) {
+        echo "Password must contain at least one lowercase letter. Please try again.";
+    } elseif (!preg_match('/[^a-zA-Z0-9]/', $new_password)) {
+        echo "Password must contain at least one special character. Please try again.";
+    } elseif ($new_password !== $confirm_password) {
+        echo "Password confirmation does not match. Please try again.";
     } else {
-        // Handle database error
-        echo "Error updating profile: " . mysqli_error($con);
+        // Update the user information in the database
+        $update_profile_query = "UPDATE user SET 
+            username = '$username',
+            first_name = '$first_name', 
+            last_name = '$last_name', 
+            email = '$email', 
+            phone_number = '$phone_number', 
+            date_of_birth = '$date_of_birth', 
+            gender = '$gender', 
+            password = '$new_password'
+            WHERE id = $user_id";
+        if (mysqli_query($con, $update_profile_query)) {
+            echo "Profile updated successfully!";
+            // Redirect to the profile page
+            header('Location: editprofile.php');
+            exit();
+        } else {
+            // Handle database error
+            echo "Error updating profile: " . mysqli_error($con);
+        }
     }
 } else {
-   $errormessage = "Invalid request.";
+    $errormessage = "Invalid request.";
 }
 
 // Fetch the existing user data
