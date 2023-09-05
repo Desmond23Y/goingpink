@@ -39,6 +39,3 @@ if (!$result) {
 
 </body>
 </html>
-<?php
-include('footer.php');
-?>
