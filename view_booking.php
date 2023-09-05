@@ -1,5 +1,5 @@
 <?php
-include('navi_bar.php')
+include('navi_bar.php');
 include("conn.php");
 
 $result = mysqli_query($con, "SELECT * FROM hotel_information");
