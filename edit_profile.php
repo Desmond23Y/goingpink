@@ -26,13 +26,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $new_password = $_POST['newPassword'];
     $confirm_password = $_POST['confirmPassword'];
 
-    // Check if the username is already taken
-    $check_username_query = "SELECT * FROM user WHERE username = '$username' AND id != $user_id";
-    $result = mysqli_query($con, $check_username_query);
+  
 
     // Perform user input validation
-
-    // Validate user input
     if (strlen($username) < 5 || strlen($username) > 50) {
         echo "Length of username must be between 5 and 50.";
     } elseif (mysqli_num_rows($result) > 0) {
@@ -115,19 +111,57 @@ include('navi_bar.php');
     <h1>Edit Profile</h1>
     <div class="container">
     <form action="profile_edit.php" method="POST">
-        <!-- User Information -->
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" value="<?php echo $username; ?>">
-        <br><br>
+       <!-- User Information -->
+<label for="username">Username:</label>
+<input type="text" id="username" name="username" value="<?php echo $username; ?>">
+<br><br>
 
-        <label for="first_name">First Name:</label>
-        <input type="text" id="first_name" name="first_name" value="<?php echo $first_name; ?>">
-        <br><br>
+<label for="first_name">First Name:</label>
+<input type="text" id="first_name" name="first_name" value="<?php echo $first_name; ?>">
+<br><br>
 
-        <!-- Rest of the form fields -->
+<label for="last_name">Last Name:</label>
+<input type="text" id="last_name" name="last_name" value="<?php echo $last_name; ?>">
+<br><br>
 
-        <!-- Submit Button -->
-        <input type="submit" value="Save Changes">
+<label for="email">Email:</label>
+<input type="email" id="email" name="email" value="<?php echo $email; ?>">
+<br><br>
+
+<label for="phone_number">Phone Number:</label>
+<input type="tel" id="phone_number" name="phone_number" value="<?php echo $phone_number; ?>">
+<br><br>
+
+<label for="date_of_birth">Date of Birth:</label>
+<input type="date" id="date_of_birth" name="date_of_birth" value="<?php echo $date_of_birth; ?>">
+<br><br>
+
+<label>Gender:</label><br>
+<input type="radio" id="male" name="gender" value="male" <?php if ($gender === "male") echo "checked"; ?>>
+<label for="male">Male</label><br>
+
+<input type="radio" id="female" name="gender" value="female" <?php if ($gender === "female") echo "checked"; ?>>
+<label for="female">Female</label><br>
+
+<input type="radio" id="other" name="gender" value="other" <?php if ($gender === "other") echo "checked"; ?>>
+<label for="other">Other</label>
+<br><br>
+
+<!-- Password Change -->
+<label for="currentPassword">Current Password:</label>
+<input type="password" id="currentPassword" name="currentPassword">
+<br><br>
+
+<label for="newPassword">New Password:</label>
+<input type="password" id="newPassword" name="newPassword">
+<br><br>
+
+<label for="confirmPassword">Confirm New Password:</label>
+<input type="password" id="confirmPassword" name="confirmPassword">
+<br><br>
+
+<!-- Submit Button -->
+<input type="submit" value="Save Changes">
     </form>
     </div>
 </body>
