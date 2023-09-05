@@ -11,9 +11,9 @@ if (!isset($_SESSION['user_id'])) {
 
 // Get the user ID from the session
 $user_id = $_SESSION['user_id'];
-
+$gender = '';
 // Fetch the existing user data
-$fetch_user_query = "SELECT * FROM user WHERE user_id = $user_id"; // Corrected the WHERE clause
+$fetch_user_query = "SELECT * FROM user WHERE user_id = '$user_id'"; // Corrected the WHERE clause
 $result = mysqli_query($con, $fetch_user_query);
 
 if ($result && mysqli_num_rows($result) > 0) {
@@ -104,7 +104,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <h1>Edit Profile</h1>
     <div class="container">
     <form action="profile_edit.php" method="POST">
-       <!-- User Information -->
+        
 <label for="username">Username:</label>
 <input type="text" id="username" name="username" value="<?php echo $username; ?>">
 <br><br>
@@ -136,10 +136,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <input type="radio" id="female" name="gender" value="female" <?php if ($gender === "female") echo "checked"; ?>>
 <label for="female">Female</label><br>
 
-<input type="radio" id="other" name="gender" value="other" <?php if ($gender === "other") echo "checked"; ?>>
-<label for="other">Other</label>
-<br><br>
-
 <!-- Password Change -->
 <label for="currentPassword">Current Password:</label>
 <input type="password" id="currentPassword" name="currentPassword">
@@ -156,4 +152,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <!-- Submit Button -->
 <input type="submit" value="Save Changes">
     </form>
-    </div
+    </div>
