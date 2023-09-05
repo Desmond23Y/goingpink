@@ -13,7 +13,7 @@ if (!isset($_SESSION['user_id'])) {
 $user_id = $_SESSION['user_id'];
 
 // Fetch the existing user data
-$fetch_user_query = "SELECT * FROM user WHERE user_id = $user_id";
+$fetch_user_query = "SELECT * FROM user WHERE user_id = $user_id"; // Corrected the WHERE clause
 $result = mysqli_query($con, $fetch_user_query);
 
 if ($result && mysqli_num_rows($result) > 0) {
@@ -79,7 +79,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             date_of_birth = '$date_of_birth', 
             gender = '$gender', 
             password = '$new_password'
-            WHERE id = $user_id";
+            WHERE user_id = $user_id"; // Corrected the WHERE clause
         if (mysqli_query($con, $update_profile_query)) {
             echo "Profile updated successfully!";
             // Redirect to the profile page
@@ -157,6 +157,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <!-- Submit Button -->
 <input type="submit" value="Save Changes">
     </form>
-    </div>
-</body>
-</html>
+    </div
