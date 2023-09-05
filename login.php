@@ -10,13 +10,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (empty($username) || empty($password)) {
         echo "Username and password are required.";
     } else {
-        // Prepare and execute the SQL query to check if the user exists
-        $check_user_query = "SELECT * FROM user WHERE username = '$username' AND password = '$password'";
-        $result = mysqli_query($con, $check_user_query);
+        // Prepare and execute the UNION query to check if the user exists in any table
+        $union_query = "
+            (SELECT 'admin' AS user_type, admin_id AS user_id FROM admin WHERE username = '$username' AND password = '$password')
+            UNION
+            (SELECT 'support' AS user_type, support_id AS user_id FROM support WHERE username = '$username' AND password = '$password')
+            UNION
+            (SELECT 'hotel_management' AS user_type, hotel_manager_id AS user_id FROM hotel_management WHERE username = '$username' AND password = '$password')
+            UNION
+            (SELECT 'transport_management' AS user_type, transport_manager_id AS user_id FROM transport_management WHERE username = '$username' AND password = '$password')
+            UNION
+            (SELECT 'user' AS user_type, user_id AS user_id FROM user WHERE username = '$username' AND password = '$password')
+        ";
+
+        $result = mysqli_query($con, $union_query);
 
         if (mysqli_num_rows($result) > 0) {
             // Login successful
-            echo "<script>alert('Login successful!');</script>";
+            $row = mysqli_fetch_assoc($result);
+            $user_type = $row['user_type'];
+            $user_id = $row['user_id'];
+
+            // You can use $user_type and $user_id to identify the user type and perform further actions
+            echo "<script>alert('Login successful as $user_type with ID $user_id!');</script>";
             exit();
         } else {
             // Login failed
