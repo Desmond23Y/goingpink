@@ -16,7 +16,15 @@ include('navi_bar.php')
     <section class="request-form">
         <h2>Help Request Form</h2>
         <?php
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        session_start();
+        include('conn.php');
+
+        // Check if the user is logged in
+        if (!isset($_SESSION['user_id'])) {
+            header('Location: login.php'); // Redirect to the login page if not logged in
+            exit();
+        }
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $user_id = $_SESSION['user_id'];
             include("conn.php");
 
