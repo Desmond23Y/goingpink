@@ -1,4 +1,5 @@
 <?php
+session_start();
 include('navi_bar.php')
 ?>
 
@@ -16,8 +17,6 @@ include('navi_bar.php')
     <section class="request-form">
         <h2>Help Request Form</h2>
         <?php
-        session_start();
-
         // Check if the user is logged in
         if (!isset($_SESSION['user_id'])) {
             header('Location: login.php'); // Redirect to the login page if not logged in
