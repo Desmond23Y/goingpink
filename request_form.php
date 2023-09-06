@@ -17,7 +17,6 @@ include('navi_bar.php')
         <h2>Help Request Form</h2>
         <?php
         session_start();
-        include('conn.php');
 
         // Check if the user is logged in
         if (!isset($_SESSION['user_id'])) {
