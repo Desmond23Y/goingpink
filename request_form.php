@@ -17,9 +17,10 @@ include('navi_bar.php')
         <h2>Help Request Form</h2>
         <?php
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            $user_id = $_SESSION['user_id'];
             include("conn.php");
 
-            $sql = "INSERT INTO ticket (contact_name, support_type, ticket_description) VALUES ('$_POST[name]', '$_POST[support]', '$_POST[description]')";
+            $sql = "INSERT INTO ticket (user_id, contact_name, support_type, ticket_description) VALUES ('$user_id', '$_POST[name]', '$_POST[support]', '$_POST[description]')";
 
             if(!mysqli_query($con,$sql)) {
                 die('Error:' . mysqli_error($con));
