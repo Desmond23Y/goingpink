@@ -47,7 +47,6 @@ body {
                 <li><a href="register.php" class="right">REGISTER</a></li>
                 <li><a href="edit_profile.php" class="right">PROFILE</a></li>
                 <li><a href="rating.php" class="right">LEAVE A RATING</a></li>
-                <li><a href="edit_rating.php" class="right">EDIT RATING</a></li>
                 <li><a href="view_rating.php" class="right">VIEW RATING</a></li>
             </ul>
         </nav>
