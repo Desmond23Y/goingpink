@@ -44,7 +44,6 @@ mysqli_close($con);
         <h1>Rate and Provide Feedback</h1>
     </header>
     <div id="rating-container">
-        <h2>Give a Rating and Feedback</h2>
         <form id="rating-form" method="POST" action="">
             <label for="rating">Rating (1-5):</label>
             <input type="number" id="rating" name="rating" min="1" max="5" required><br><br>
