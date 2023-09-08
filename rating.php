@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $user_id = $_SESSION['user_id'];
 
         // Insert the rating and feedback into the "rating" table
-        $insert_query = "INSERT INTO rating (rating_id, user_id, total_stars_rating, feedback_description) VALUES ('', '$user_id', '$rating', '$feedback')";
+        $insert_query = "INSERT INTO rating (user_id, total_stars_rating, feedback_description) VALUES ('$user_id', '$rating', '$feedback')";
 
         if (mysqli_query($con, $insert_query)) {
             echo "<script>alert('Rating and feedback submitted successfully!');</script>";
