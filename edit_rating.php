@@ -17,8 +17,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $user_type = $_SESSION['user_type'];
         $user_id = $_SESSION['user_id'];
 
+        $current_datetime = date("Y-m-d H:i:s");
+
         // Update the rating and feedback in the "rating" table
-        $update_query = "UPDATE rating SET total_stars_rating = '$new_rating', feedback_description = '$new_feedback' WHERE user_id = '$user_id'";
+        $update_query = "UPDATE rating SET total_stars_rating = '$new_rating', feedback_description = '$new_feedback', rating_date = '$current_datetime' WHERE user_id = '$user_id'";
 
         if (mysqli_query($con, $update_query)) {
             echo "<script>alert('Rating and feedback updated successfully!');</script>";
