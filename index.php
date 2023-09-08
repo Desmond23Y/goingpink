@@ -12,7 +12,6 @@ include('navi_bar.php');
     
 <body>
     <section class="services">
-        //test
         <div class="container">
             <h2>Our Services</h2>
             <div class="service">
