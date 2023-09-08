@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $current_datetime = date("Y-m-d H:i:s");
 
         // Insert the rating, feedback, and current datetime into the "rating" table
-        $insert_query = "INSERT INTO rating (user_id, total_stars_rating, feedback_description, date_time) VALUES ('$user_id', '$rating', '$feedback', '$current_datetime')";
+        $insert_query = "INSERT INTO rating (user_id, total_stars_rating, feedback_description, rating_date) VALUES ('$user_id', '$rating', '$feedback', '$current_datetime')";
 
         if (mysqli_query($con, $insert_query)) {
             echo "<script>alert('Rating and feedback submitted successfully!');</script>";
