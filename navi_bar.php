@@ -46,6 +46,7 @@ body {
                 <li><a href="login.php" class="right">LOGIN</a></li>
                 <li><a href="register.php" class="right">REGISTER</a></li>
                 <li><a href="edit_profile.php" class="right">PROFILE</a></li>
+                <li><a href="rating.php" class="right">LEAVE A RATING</a></li>
             </ul>
         </nav>
 </body>
