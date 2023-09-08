@@ -137,10 +137,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <label for="female">Female</label><br>
 
 <!-- Password Change -->
-<label for="currentPassword">Current Password:</label>
-<input type="password" id="currentPassword" name="currentPassword">
-<br><br>
-
 <label for="newPassword">New Password:</label>
 <input type="password" id="newPassword" name="newPassword">
 <br><br>
