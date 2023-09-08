@@ -17,8 +17,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $user_type = $_SESSION['user_type'];
         $user_id = $_SESSION['user_id'];
 
-        // Insert the rating and feedback into the "rating" table
-        $insert_query = "INSERT INTO rating (user_id, total_stars_rating, feedback_description) VALUES ('$user_id', '$rating', '$feedback')";
+        // Get the current date and time in MySQL format (YYYY-MM-DD HH:MM:SS)
+        $current_datetime = date("Y-m-d H:i:s");
+
+        // Insert the rating, feedback, and current datetime into the "rating" table
+        $insert_query = "INSERT INTO rating (user_id, total_stars_rating, feedback_description, date_time) VALUES ('$user_id', '$rating', '$feedback', '$current_datetime')";
 
         if (mysqli_query($con, $insert_query)) {
             echo "<script>alert('Rating and feedback submitted successfully!');</script>";
