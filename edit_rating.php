@@ -51,7 +51,6 @@ mysqli_close($con);
         <h1>Edit Rating and Feedback</h1>
     </header>
     <div id="edit-rating-container">
-        <h2>Edit Your Rating and Feedback</h2>
         <form id="edit-rating-form" method="POST" action="">
             <label for="new_rating">New Rating (1-5):</label>
             <input type="number" id="new_rating" name="new_rating" min="1" max="5" value="<?php echo $row['total_stars_rating']; ?>" required><br><br>
