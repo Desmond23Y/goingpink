@@ -51,6 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $check_username_result = mysqli_query($con, $check_username_query);
         if (mysqli_num_rows($check_username_result) > 0) {
             echo "Username already exists. Please try again.";
+        }
     } 
         elseif (!filter_var($email, FILTER_VALIDATE_EMAIL) || !strpos($email, "@") || !strpos($email, ".com")) {
             echo "Invalid email address. Please try again.";
