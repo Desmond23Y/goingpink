@@ -1,25 +1,20 @@
 <?php
-// Start or resume the session
 session_start();
 include('conn.php');
 
-// Check if the user is logged in
 if (!isset($_SESSION['user_id'])) {
-    header('Location: login.php'); // Redirect to the login page if not logged in
+    header('Location: login.php');
     exit();
 }
 
-// Get the user ID from the session
 $user_id = $_SESSION['user_id'];
 $gender = '';
-// Fetch the existing user data
-$fetch_user_query = "SELECT * FROM user WHERE user_id = '$user_id'"; // Corrected the WHERE clause
+$fetch_user_query = "SELECT * FROM user WHERE user_id = '$user_id'";
 $result = mysqli_query($con, $fetch_user_query);
 
 if ($result && mysqli_num_rows($result) > 0) {
     $user_data = mysqli_fetch_assoc($result);
 
-    // Populate form fields with existing data
     $username = $user_data['username'];
     $first_name = $user_data['first_name'];
     $last_name = $user_data['last_name'];
@@ -27,8 +22,7 @@ if ($result && mysqli_num_rows($result) > 0) {
     $phone_number = $user_data['phone_number'];
     $date_of_birth = $user_data['date_of_birth'];
     $gender = $user_data['gender'];
-
-    // Display the form with existing data
+    
 } else {
     echo "Error fetching user data: " . mysqli_error($con);
 }
@@ -36,7 +30,6 @@ if ($result && mysqli_num_rows($result) > 0) {
 include('navi_bar.php');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Process the form data
     $username = $_POST['username'];
     $first_name = $_POST['first_name'];
     $last_name = $_POST['last_name'];
@@ -47,7 +40,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $new_password = $_POST['newPassword'];
     $confirm_password = $_POST['confirmPassword'];
 
-    // Perform user input validation
     if (strlen($username) < 5 || strlen($username) > 50) {
         echo "Length of username must be between 5 and 50.";
     } elseif (mysqli_num_rows($result) > 0) {
@@ -69,7 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } elseif ($new_password !== $confirm_password) {
         echo "Password confirmation does not match. Please try again.";
     } else {
-        // Update the user information in the database
+
         $update_profile_query = "UPDATE user SET 
             username = '$username',
             first_name = '$first_name', 
@@ -85,7 +77,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             header('Location: edit_profile.php');
             exit();
         } else {
-            // Handle database error
+
             echo "Error updating profile: " . mysqli_error($con);
         }
     }
@@ -103,7 +95,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
     <h1>Edit Profile</h1>
     <div class="container">
-    <form action="profile_edit.php" method="POST">
+    <form action="edit_profile.php" method="POST">
         
 <label for="username">Username:</label>
 <input type="text" id="username" name="username" value="<?php echo $username; ?>">
