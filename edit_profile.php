@@ -40,14 +40,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $phone_number = $_POST['phone_number'];
     $date_of_birth = $_POST['date_of_birth'];
     $gender = $_POST['gender'];
-    $new_password = $_POST['newPassword'];
-    $confirm_password = $_POST['confirmPassword'];
     } 
     
 else {
     $update_profile_query = "UPDATE `user` SET 
     username = '$username',
-    password = '$new_password',
     first_name = '$first_name',
     last_name = '$last_name',
     email = '$email',
@@ -120,12 +117,6 @@ else {
 <input type="radio" id="female" name="gender" value="female" <?php if ($gender === "female") echo "checked"; ?>>
 <label for="female">Female</label><br>
 
-<label for="newPassword">New Password:</label>
-<input type="password" id="newPassword" name="newPassword">
-<br><br>
-
-<label for="confirmPassword">Confirm New Password:</label>
-<input type="password" id="confirmPassword" name="confirmPassword">
 <br><br>
 
 <input type="submit" value="Save Changes">
