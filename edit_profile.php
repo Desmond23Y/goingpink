@@ -55,11 +55,7 @@ else {
 
     $stmt = mysqli_prepare($con, $update_profile_query);
 
-    if ($stmt) {
-        // Bind parameters and execute the statement
-        mysqli_stmt_bind_param($stmt, "ssssssssi", $username, $first_name, $last_name, $email, $phone_number, $date_of_birth, $gender);
-        
-        if (mysqli_stmt_execute($stmt)) {
+    if (mysqli_stmt_execute($stmt)) {
             echo "Profile updated successfully!";
             exit();
         } else {
