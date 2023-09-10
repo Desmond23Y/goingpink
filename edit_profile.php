@@ -142,5 +142,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <br><br>
 
 <input type="submit" value="Save Changes">
-    </form>
-    </div>
+</form>
+</div>
+</body>
+</html>
