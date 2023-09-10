@@ -42,28 +42,28 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $gender = $_POST['gender'];
     $new_password = $_POST['newPassword'];
     $confirm_password = $_POST['confirmPassword'];
-    } else {
+    } 
+    
+else {
+    $update_profile_query = "UPDATE `user` SET 
+    username = '$username',
+    password = '$new_password',
+    first_name = '$first_name',
+    last_name = '$last_name',
+    email = '$email',
+    phone_number = '$phone_number',
+    date_of_birth = '$date_of_birth',
+    gender = '$gender'
+    WHERE user_id = '$user_id'";
 
-            $update_profile_query = "UPDATE `user` SET 
-            username = '$username',
-            password = '$new_password',
-            first_name = '$first_name',
-            last_name = '$last_name',
-            email = '$email',
-            phone_number = '$phone_number',
-            date_of_birth = '$date_of_birth',
-            gender = '$gender'
-            WHERE user_id = '$user_id'";
-
-       $stmt = mysqli_prepare($con, $update_profile_query);
+    $stmt = mysqli_prepare($con, $update_profile_query);
 
     if ($stmt) {
         // Bind parameters and execute the statement
-        mysqli_stmt_bind_param($stmt, "ssssssssi", $username, $new_password, $first_name, $last_name, $email, $phone_number, $date_of_birth, $gender, $user_id);
+        mysqli_stmt_bind_param($stmt, "ssssssssi", $username, $first_name, $last_name, $email, $phone_number, $date_of_birth, $gender);
         
         if (mysqli_stmt_execute($stmt)) {
             echo "Profile updated successfully!";
-            header('Location: edit_profile.php');
             exit();
         } else {
             echo "Error updating profile: " . mysqli_error($con);
