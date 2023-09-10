@@ -52,39 +52,28 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (mysqli_num_rows($check_username_result) > 0) {
             echo "Username already exists. Please try again.";
         }
-    } 
-        elseif (!filter_var($email, FILTER_VALIDATE_EMAIL) || !strpos($email, "@") || !strpos($email, ".com")) {
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL) || !strpos($email, "@") || !strpos($email, ".com")) {
             echo "Invalid email address. Please try again.";
-    } 
-        elseif (strlen($phone_number) < 10 || strlen($phone_number) > 11) {
+    } elseif (strlen($phone_number) < 10 || strlen($phone_number) > 11) {
             echo "Invalid phone number. Please try again.";
-    } 
-        elseif (strlen($new_password) < 5 || strlen($new_password) > 50 ||
+    } elseif (strlen($new_password) < 5 || strlen($new_password) > 50 ||
         !preg_match('/[A-Z]/', $new_password) ||
         !preg_match('/[a-z]/', $new_password) ||
         !preg_match('/[^a-zA-Z0-9]/', $new_password)) {
             echo "Invalid password. Please ensure it meets the requirements.";
-    }
-        elseif ($new_password !== $confirm_password) {
+    } elseif ($new_password !== $confirm_password) {
             echo "Password confirmation does not match. Please try again.";
     } else {
 
-        $update_profile_query = "UPDATE user SET 
-            username = '$username',
-            first_name = '$first_name', 
-            last_name = '$last_name', 
-            email = '$email', 
-            phone_number = '$phone_number', 
-            date_of_birth = '$date_of_birth', 
-            gender = '$gender', 
-            password = '$new_password'
-            WHERE user_id = '$user_id'";
+        $update_profile_query = "UPDATE `user` SET (username, password,first_name, last_name, email, phone_number, date_of_birth, gender)
+                                VALUES ('$userame','$password','$firstname','$last_name','$email','$phone_number',$date_of_birth','$gender')
+                                WHERE 'user_id'";
+        
         if (mysqli_query($con, $update_profile_query)) {
             echo "Profile updated successfully!";
             header('Location: edit_profile.php');
             exit();
         } else {
-
             echo "Error updating profile: " . mysqli_error($con);
         }
     }
