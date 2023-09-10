@@ -26,7 +26,10 @@ include('navi_bar.php')
             $user_id = $_SESSION['user_id'];
             include("conn.php");
 
-            $sql = "INSERT INTO ticket (user_id, contact_name, support_type, ticket_description) VALUES ('$user_id', '$_POST[name]', '$_POST[support]', '$_POST[description]')";
+            $result = mysqli_query($con, "SELECT support_id FROM support");
+            $row = mysqli_fetch_assoc($result);
+            $spt_id = $row['support_id'];
+            $sql = "INSERT INTO ticket (support_id, user_id, contact_name, support_type, ticket_description) VALUES ('$spt_id', '$user_id', '$_POST[name]', '$_POST[support]', '$_POST[description]')";
 
             if(!mysqli_query($con,$sql)) {
                 die('Error:' . mysqli_error($con));
