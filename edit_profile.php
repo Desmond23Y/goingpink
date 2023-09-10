@@ -9,10 +9,16 @@ if (!isset($_SESSION['user_id'])) {
 
 $user_id = $_SESSION['user_id'];
 $gender = '';
+
 $fetch_user_query = "SELECT * FROM user WHERE user_id = '$user_id'";
 $result = mysqli_query($con, $fetch_user_query);
 
-if ($result && mysqli_num_rows($result) > 0) {
+if (!$result) {
+    echo "Error fetching user data: " . mysqli_error($con);
+    exit();
+}
+
+if (mysqli_num_rows($result) > 0) {
     $user_data = mysqli_fetch_assoc($result);
 
     $username = $user_data['username'];
@@ -21,11 +27,7 @@ if ($result && mysqli_num_rows($result) > 0) {
     $email = $user_data['email'];
     $phone_number = $user_data['phone_number'];
     $date_of_birth = $user_data['date_of_birth'];
-    $gender = $user_data['gender'];
-    
-} else {
-    echo "Error fetching user data: " . mysqli_error($con);
-}
+    $gender = $user_data['gender'];    
 
 include('navi_bar.php');
 
@@ -42,24 +44,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if (strlen($username) < 5 || strlen($username) > 50) {
         echo "Length of username must be between 5 and 50.";
-    } elseif (mysqli_num_rows($result) > 0) {
-        echo "Username already exists. Please try again.";
-    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        echo "Invalid email address. Please try again.";
-    } elseif (!strpos($email, "@") || !strpos($email, ".com")) {
-        echo "Email address must contain '@' and '.com'. Please try again.";
-    } elseif (strlen($phone_number) > 9 || strlen($phone_number) < 12) {
-        echo "Invalid phone number. Please try again.";
-    } elseif (strlen($new_password) > 10 || strlen($new_password) < 50) {
-        echo "Password length must be between 5 and 50 characters. Please try again.";
-    } elseif (!preg_match('/[A-Z]/', $new_password)) {
-        echo "Password must contain at least one UPPERCASE letter. Please try again.";
-    } elseif (!preg_match('/[a-z]/', $new_password)) {
-        echo "Password must contain at least one lowercase letter. Please try again.";
-    } elseif (!preg_match('/[^a-zA-Z0-9]/', $new_password)) {
-        echo "Password must contain at least one special character. Please try again.";
-    } elseif ($new_password !== $confirm_password) {
-        echo "Password confirmation does not match. Please try again.";
+    }
+    elseif ($username !== $user_data['username']) {
+        $check_username_query = "SELECT * FROM user WHERE username = '$username'";
+        $check_username_result = mysqli_query($con, $check_username_query);
+        if (mysqli_num_rows($check_username_result) > 0) {
+            echo "Username already exists. Please try again.";
+    } 
+        elseif (!filter_var($email, FILTER_VALIDATE_EMAIL) || !strpos($email, "@") || !strpos($email, ".com")) {
+            echo "Invalid email address. Please try again.";
+    } 
+        elseif (strlen($phone_number) < 10 || strlen($phone_number) > 11) {
+            echo "Invalid phone number. Please try again.";
+    } 
+        elseif (strlen($new_password) < 5 || strlen($new_password) > 50 ||
+        !preg_match('/[A-Z]/', $new_password) ||
+        !preg_match('/[a-z]/', $new_password) ||
+        !preg_match('/[^a-zA-Z0-9]/', $new_password)) {
+            echo "Invalid password. Please ensure it meets the requirements.";
+    }
+        elseif ($new_password !== $confirm_password) {
+            echo "Password confirmation does not match. Please try again.";
     } else {
 
         $update_profile_query = "UPDATE user SET 
@@ -128,7 +133,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <input type="radio" id="female" name="gender" value="female" <?php if ($gender === "female") echo "checked"; ?>>
 <label for="female">Female</label><br>
 
-<!-- Password Change -->
 <label for="newPassword">New Password:</label>
 <input type="password" id="newPassword" name="newPassword">
 <br><br>
@@ -137,7 +141,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <input type="password" id="confirmPassword" name="confirmPassword">
 <br><br>
 
-<!-- Submit Button -->
 <input type="submit" value="Save Changes">
     </form>
     </div>
