@@ -91,8 +91,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
         mysqli_stmt_close($stmt);
-    } else {
-        echo "Error preparing statement: " . mysqli_error($con);
+        } else {
+            echo "Error preparing statement: " . mysqli_error($con);
+        }
     }
 }
 ?>
