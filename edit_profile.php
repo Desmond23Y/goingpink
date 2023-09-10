@@ -28,6 +28,7 @@ if (mysqli_num_rows($result) > 0) {
     $phone_number = $user_data['phone_number'];
     $date_of_birth = $user_data['date_of_birth'];
     $gender = $user_data['gender'];    
+}
 
 include('navi_bar.php');
 
