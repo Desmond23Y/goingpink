@@ -42,27 +42,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $gender = $_POST['gender'];
     $new_password = $_POST['newPassword'];
     $confirm_password = $_POST['confirmPassword'];
-
-    if (strlen($username) < 5 || strlen($username) > 50) {
-        echo "Length of username must be between 5 and 50.";
-    }
-    elseif ($username !== $user_data['username']) {
-        $check_username_query = "SELECT * FROM user WHERE username = '$username'";
-        $check_username_result = mysqli_query($con, $check_username_query);
-        if (mysqli_num_rows($check_username_result) > 0) {
-            echo "Username already exists. Please try again.";
-        }
-    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL) || !strpos($email, "@") || !strpos($email, ".com")) {
-            echo "Invalid email address. Please try again.";
-    } elseif (strlen($phone_number) < 10 || strlen($phone_number) > 11) {
-            echo "Invalid phone number. Please try again.";
-    } elseif (strlen($new_password) < 5 || strlen($new_password) > 50 ||
-        !preg_match('/[A-Z]/', $new_password) ||
-        !preg_match('/[a-z]/', $new_password) ||
-        !preg_match('/[^a-zA-Z0-9]/', $new_password)) {
-            echo "Invalid password. Please ensure it meets the requirements.";
-    } elseif ($new_password !== $confirm_password) {
-            echo "Password confirmation does not match. Please try again.";
     } else {
 
             $update_profile_query = "UPDATE `user` SET 
