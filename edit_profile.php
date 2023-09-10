@@ -65,17 +65,34 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             echo "Password confirmation does not match. Please try again.";
     } else {
 
-        $update_profile_query = "UPDATE `user` SET (username, password,first_name, last_name, email, phone_number, date_of_birth, gender)
-                                VALUES ('$userame','$password','$firstname','$last_name','$email','$phone_number',$date_of_birth','$gender')
-                                WHERE 'user_id'";
+            $update_profile_query = "UPDATE `user` SET 
+            username = '$username',
+            password = '$new_password',
+            first_name = '$first_name',
+            last_name = '$last_name',
+            email = '$email',
+            phone_number = '$phone_number',
+            date_of_birth = '$date_of_birth',
+            gender = '$gender'
+            WHERE user_id = '$user_id'";
+
+       $stmt = mysqli_prepare($con, $update_profile_query);
+
+    if ($stmt) {
+        // Bind parameters and execute the statement
+        mysqli_stmt_bind_param($stmt, "ssssssssi", $username, $new_password, $first_name, $last_name, $email, $phone_number, $date_of_birth, $gender, $user_id);
         
-        if (mysqli_query($con, $update_profile_query)) {
+        if (mysqli_stmt_execute($stmt)) {
             echo "Profile updated successfully!";
             header('Location: edit_profile.php');
             exit();
         } else {
             echo "Error updating profile: " . mysqli_error($con);
         }
+
+        mysqli_stmt_close($stmt);
+    } else {
+        echo "Error preparing statement: " . mysqli_error($con);
     }
 }
 ?>
