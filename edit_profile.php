@@ -40,33 +40,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $phone_number = $_POST['phone_number'];
     $date_of_birth = $_POST['date_of_birth'];
     $gender = $_POST['gender'];
-    } 
-    
-else {
+
     $update_profile_query = "UPDATE `user` SET 
-    username = '$username',
-    first_name = '$first_name',
-    last_name = '$last_name',
-    email = '$email',
-    phone_number = '$phone_number',
-    date_of_birth = '$date_of_birth',
-    gender = '$gender'
-    WHERE user_id = '$user_id'";
+        username = '$username',
+        first_name = '$first_name',
+        last_name = '$last_name',
+        email = '$email',
+        phone_number = '$phone_number',
+        date_of_birth = '$date_of_birth',
+        gender = '$gender'
+        WHERE user_id = '$user_id'";
 
-    $stmt = mysqli_prepare($con, $update_profile_query);
-
-    if (mysqli_stmt_execute($stmt)) {
-            echo "Profile updated successfully!";
-            exit();
-        } else {
-            echo "Error updating profile: " . mysqli_error($con);
-        }
-
-        mysqli_stmt_close($stmt);
-        } else {
-            echo "Error preparing statement: " . mysqli_error($con);
-        }
+    if (mysqli_query($con, $update_profile_query)) {
+        echo "Profile updated successfully!";
+    } else {
+        echo "Error updating profile: " . mysqli_error($con);
     }
+}
 ?>
 
 <!DOCTYPE html>
