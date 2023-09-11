@@ -44,7 +44,6 @@ include('navi_bar.php');
 <body>
     <h1>Edit Profile</h1>
     <div class="container">
-    <form action="edit_profile.php" method="POST">
         
 <label for="username">Username:</label>
 <input type="text" id="username" name="username" value="<?php echo $username; ?>">
@@ -86,7 +85,6 @@ include('navi_bar.php');
         window.location.href = redirectTo;
     });
 </script>
-</form>
 </div>
 </body>
 </html>
