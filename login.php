@@ -37,6 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // Store user data in the session
             $_SESSION['user_type'] = $user_type;
             $_SESSION['user_id'] = $user_id;
+            header('Location: navi_bar.php');
 
             echo "<script>alert('Login successful as $user_type with ID $user_id!');</script>";
             exit();
