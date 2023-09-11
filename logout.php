@@ -18,6 +18,7 @@ if (isset($_SESSION['user_type']) && isset($_SESSION['user_id'])) {
 }
 
 include('navi_bar.php'); // Moved the inclusion of 'navi_bar.php' after the potential error messages
+include('index.php');
 
 mysqli_close($con);
 ?>
