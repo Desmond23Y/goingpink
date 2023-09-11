@@ -36,6 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // Store user data in the session
             $_SESSION['user_type'] = $user_type;
             $_SESSION['user_id'] = $user_id;
+            echo "<script>alert('Login Successful as $user_type with ID $user_id!');</script>";
 
             // Check if the "Remember Me" checkbox is checked
             if (isset($_POST['remember_me'])) {
@@ -43,7 +44,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $cookie_data = json_encode(['username' => $username, 'password' => $password]);
                 setcookie('remember_me', $cookie_data, time() + (60 * 60 * 24 * 30)); // Cookie will expire in 30 days
             }
-            echo "<script>alert('Login Successful as $user_type with ID $user_id!');</script>";
             // Redirect to index.php
             header('Location: index.php');
            
