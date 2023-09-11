@@ -17,8 +17,8 @@ if (isset($_SESSION['user_type']) && isset($_SESSION['user_id'])) {
     echo "<script>alert('Please login first!');</script>";
 }
 
-include('navi_bar.php'); // Moved the inclusion of 'navi_bar.php' after the potential error messages
-include('index.php');
+include('index.php'); // Moved the inclusion of 'navi_bar.php' after the potential error messages
+
 
 mysqli_close($con);
 ?>
