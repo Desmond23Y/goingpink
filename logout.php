@@ -15,6 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['logout'])) {
 // Check if the user is already logged in
 if (isset($_SESSION['user_type']) && isset($_SESSION['user_id'])) {
     header('Location: login.php'); 
+    echo "<script>alert('Please login first!');</script>";
     exit();
 }
 
