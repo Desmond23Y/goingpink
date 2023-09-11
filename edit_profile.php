@@ -64,7 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (!empty($new_password)) {
         // Update the password in the database
         $update_password_query = "UPDATE `user` SET 
-            password = '$hashed_password'
+            password = '$new_password'
             WHERE user_id = '$user_id'";
 
         if (mysqli_query($con, $update_password_query)) {
