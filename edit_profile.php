@@ -93,6 +93,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <input type="text" id="username" name="username" value="<?php echo $username; ?>">
         <br><br>
 
+        <label for="new_password">New Password (Leave blank to keep current password):</label>
+        <input type="password" id="new_password" name="new_password">
+        <br><br>
+
         <label for="first_name">First Name:</label>
         <input type="text" id="first_name" name="first_name" value="<?php echo $first_name; ?>">
         <br><br>
@@ -121,11 +125,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <label for="female">Female</label><br>
 
         <br><br>
-
-        <label for="new_password">New Password (Leave blank to keep current password):</label>
-        <input type="password" id="new_password" name="new_password">
-        <br><br>
-
+        
         <input type="submit" value="Save Changes">
     </form>
     </div>
