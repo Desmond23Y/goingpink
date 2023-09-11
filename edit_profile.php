@@ -52,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         WHERE user_id = '$user_id'";
 
     if (mysqli_query($con, $update_profile_query)) {
-        echo "<script>alert('Profile updated successfully!');</script>"
+        echo "<script>alert('Profile updated successfully!');</script>";
     } else {
         echo "Error updating profile: " . mysqli_error($con);
     }
