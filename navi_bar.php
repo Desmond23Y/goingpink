@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-<head>
 <style>
 body {
     margin: 0;
@@ -34,7 +33,6 @@ body {
 }
 
 </style>
-</head>
 
 <body>
         <nav>
