@@ -43,10 +43,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $cookie_data = json_encode(['username' => $username, 'password' => $password]);
                 setcookie('remember_me', $cookie_data, time() + (60 * 60 * 24 * 30)); // Cookie will expire in 30 days
             }
-            
+            echo "<script>alert('Login Successful as $user_type with ID $user_id!');</script>";
             // Redirect to index.php
             header('Location: index.php');
-            echo "<script>alert('Login Successful as $user_type with ID $user_id!');</script>";
+           
             exit();
         } else {
             // Login failed
