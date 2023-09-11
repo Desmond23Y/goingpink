@@ -27,7 +27,7 @@ if (mysqli_num_rows($result) > 0) {
     $email = $user_data['email'];
     $phone_number = $user_data['phone_number'];
     $date_of_birth = $user_data['date_of_birth'];
-    $gender = $user_data['gender'];    
+    $gender = $user_data['gender'];
 }
 
 include('navi_bar.php');
@@ -40,7 +40,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $phone_number = $_POST['phone_number'];
     $date_of_birth = $_POST['date_of_birth'];
     $gender = $_POST['gender'];
+    $new_password = $_POST['new_password'];
 
+    // Update profile information
     $update_profile_query = "UPDATE `user` SET 
         username = '$username',
         first_name = '$first_name',
@@ -55,6 +57,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo "<script>alert('Profile updated successfully!');</script>";
     } else {
         echo "Error updating profile: " . mysqli_error($con);
+    }
+
+    // Check if the new password is provided and update it
+    if (!empty($new_password)) {
+        // Hash the new password before storing it
+        $hashed_password = password_hash($new_password, PASSWORD_BCRYPT);
+
+        // Update the password in the database
+        $update_password_query = "UPDATE `user` SET 
+            password = '$hashed_password'
+            WHERE user_id = '$user_id'";
+
+        if (mysqli_query($con, $update_password_query)) {
+            echo "<script>alert('Password updated successfully!');</script>";
+        } else {
+            echo "Error updating password: " . mysqli_error($con);
+        }
     }
 }
 ?>
@@ -72,41 +91,45 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class="container">
     <form action="edit_profile.php" method="POST">
         
-<label for="username">Username:</label>
-<input type="text" id="username" name="username" value="<?php echo $username; ?>">
-<br><br>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" value="<?php echo $username; ?>">
+        <br><br>
 
-<label for="first_name">First Name:</label>
-<input type="text" id="first_name" name="first_name" value="<?php echo $first_name; ?>">
-<br><br>
+        <label for="first_name">First Name:</label>
+        <input type="text" id="first_name" name="first_name" value="<?php echo $first_name; ?>">
+        <br><br>
 
-<label for="last_name">Last Name:</label>
-<input type="text" id="last_name" name="last_name" value="<?php echo $last_name; ?>">
-<br><br>
+        <label for="last_name">Last Name:</label>
+        <input type="text" id="last_name" name="last_name" value="<?php echo $last_name; ?>">
+        <br><br>
 
-<label for="email">Email:</label>
-<input type="email" id="email" name="email" value="<?php echo $email; ?>">
-<br><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" value="<?php echo $email; ?>">
+        <br><br>
 
-<label for="phone_number">Phone Number:</label>
-<input type="tel" id="phone_number" name="phone_number" value="<?php echo $phone_number; ?>">
-<br><br>
+        <label for="phone_number">Phone Number:</label>
+        <input type="tel" id="phone_number" name="phone_number" value="<?php echo $phone_number; ?>">
+        <br><br>
 
-<label for="date_of_birth">Date of Birth:</label>
-<input type="date" id="date_of_birth" name="date_of_birth" value="<?php echo $date_of_birth; ?>">
-<br><br>
+        <label for="date_of_birth">Date of Birth:</label>
+        <input type="date" id="date_of_birth" name="date_of_birth" value="<?php echo $date_of_birth; ?>">
+        <br><br>
 
-<label>Gender:</label><br>
-<input type="radio" id="male" name="gender" value="male" <?php if ($gender === "male") echo "checked"; ?>>
-<label for="male">Male</label><br>
+        <label>Gender:</label><br>
+        <input type="radio" id="male" name="gender" value="male" <?php if ($gender === "male") echo "checked"; ?>>
+        <label for="male">Male</label><br>
 
-<input type="radio" id="female" name="gender" value="female" <?php if ($gender === "female") echo "checked"; ?>>
-<label for="female">Female</label><br>
+        <input type="radio" id="female" name="gender" value="female" <?php if ($gender === "female") echo "checked"; ?>>
+        <label for="female">Female</label><br>
 
-<br><br>
+        <br><br>
 
-<input type="submit" value="Save Changes">
-</form>
-</div>
+        <label for="new_password">New Password (Leave blank to keep current password):</label>
+        <input type="password" id="new_password" name="new_password">
+        <br><br>
+
+        <input type="submit" value="Save Changes">
+    </form>
+    </div>
 </body>
 </html>
