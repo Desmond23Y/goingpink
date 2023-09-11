@@ -2,7 +2,8 @@
 // Start or resume the session
 session_start();
 
-include('conn.php'); // Moved the inclusion of 'conn.php' here
+include('conn.php');
+require_once('navi_bar.php');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['username'];
@@ -45,7 +46,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
 
             echo "<script>alert('Login successful as $user_type with ID $user_id!');</script>";
-            header('Location: index.php');
             exit();
         } else {
             // Login failed
