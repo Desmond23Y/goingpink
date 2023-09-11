@@ -57,6 +57,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 mysqli_close($con);
 ?>
 
+<?php
+include_once('navi_bar.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
