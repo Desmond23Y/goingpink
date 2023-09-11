@@ -45,6 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
 
             echo "<script>alert('Login successful as $user_type with ID $user_id!');</script>";
+            header('Location: index.php');
             exit();
         } else {
             // Login failed
