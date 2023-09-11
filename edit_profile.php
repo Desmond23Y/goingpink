@@ -41,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $phone_number = $_POST['phone_number'];
     $date_of_birth = $_POST['date_of_birth'];
     $gender = $_POST['gender'];
-    $new_password = $_POST['password'];
+    $new_password = $_POST['new_password'];
 
     // Update profile information
     $update_profile_query = "UPDATE `user` SET 
