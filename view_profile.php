@@ -1,51 +1,92 @@
 <?php
-include('navi_bar.php');
+session_start();
 include('conn.php');
+
+if (!isset($_SESSION['user_id'])) {
+    header('Location: login.php');
+    exit();
+}
+
+$user_id = $_SESSION['user_id'];
+$gender = '';
+
+$fetch_user_query = "SELECT * FROM user WHERE user_id = '$user_id'";
+$result = mysqli_query($con, $fetch_user_query);
+
+if (!$result) {
+    echo "Error fetching user data: " . mysqli_error($con);
+    exit();
+}
+
+if (mysqli_num_rows($result) > 0) {
+    $user_data = mysqli_fetch_assoc($result);
+
+    $username = $user_data['username'];
+    $first_name = $user_data['first_name'];
+    $last_name = $user_data['last_name'];
+    $email = $user_data['email'];
+    $phone_number = $user_data['phone_number'];
+    $date_of_birth = $user_data['date_of_birth'];
+    $gender = $user_data['gender'];    
+}
+
+include('navi_bar.php');
 ?>
 
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Going Pink | View Profile</title>
-    <link rel="stylesheet" href="profile_styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>View Profile</h1>
-    </header>
+    <h1>Edit Profile</h1>
+    <div class="container">
+    <form action="edit_profile.php" method="POST">
+        
+<label for="username">Username:</label>
+<input type="text" id="username" name="username" value="<?php echo $username; ?>">
+<br><br>
 
-    <form class="horizontal" id="view_profile" action="" method="post" onsubmit="return superFancy(event)">
-<fieldset>
+<label for="first_name">First Name:</label>
+<input type="text" id="first_name" name="first_name" value="<?php echo $first_name; ?>">
+<br><br>
 
-<legend>Profile Information3</legend>
+<label for="last_name">Last Name:</label>
+<input type="text" id="last_name" name="last_name" value="<?php echo $last_name; ?>">
+<br><br>
 
+<label for="email">Email:</label>
+<input type="email" id="email" name="email" value="<?php echo $email; ?>">
+<br><br>
 
-<div class="form-group">
-  <label class="col-md-4 control-label" for="user_name">Username</label>
-  <div class="col-md-4">
-  <input id="user_name" name="user_name" type="text" value="<?=$row['user_name']?>" class="form-control input-md" disabled>
-    
-  </div>
-</div>
+<label for="phone_number">Phone Number:</label>
+<input type="tel" id="phone_number" name="phone_number" value="<?php echo $phone_number; ?>">
+<br><br>
 
+<label for="date_of_birth">Date of Birth:</label>
+<input type="date" id="date_of_birth" name="date_of_birth" value="<?php echo $date_of_birth; ?>">
+<br><br>
 
-<div class="form-group">
-  <label class="col-md-4 control-label" for="user_email">Email Address</label>
-  <div class="col-md-5">
-  <input id="user_email" name="user_email" type="text" value="<?=$row['user_email']?>" class="form-control input-md" disabled>
-    
-  </div>
-</div>
+<label>Gender:</label><br>
+<input type="radio" id="male" name="gender" value="male" <?php if ($gender === "male") echo "checked"; ?>>
+<label for="male">Male</label><br>
 
+<input type="radio" id="female" name="gender" value="female" <?php if ($gender === "female") echo "checked"; ?>>
+<label for="female">Female</label><br>
 
-<div class="form-group">
-  <label class="col-md-4 control-label" for="submit">Incorrect?</label>
-  <div class="col-md-4">
-    <button id="modify" name="modify" class="btn btn-primary" >Modify</button>
-  </div>
-</div>
-
-</fieldset>
+<br><br>
+        
+<button id="redirectButton">Edit Profile</button>
+<script>
+    document.getElementById("redirectButton").addEventListener("click", function() {
+        var redirectTo = "edit_profile.php";
+        window.location.href = redirectTo;
+    });
+</script>
 </form>
-
+</div>
 </body>
 </html>
