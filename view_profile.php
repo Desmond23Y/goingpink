@@ -39,12 +39,28 @@ include('navi_bar.php');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>View Profile</title>
-    <link rel="stylesheet" href="styles.css">
+
+<style>
+    .button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+    
+</style>
 </head>
 <body>
     <h1>View Profile</h1>
     <div class="container">
-<form action="edit_profile.php" method="POST">
 <label for="username">Username:</label>
 <input type="text" id="username" name="username" value="<?php echo $username; ?>">
 <br><br>
@@ -76,16 +92,8 @@ include('navi_bar.php');
 <input type="radio" id="female" name="gender" value="female" <?php if ($gender === "female") echo "checked"; ?>>
 <label for="female">Female</label><br>
 
-<br><br>
-        
-<button id="redirectButton">Edit Profile</button>
-<script>
-    document.getElementById("redirectButton").addEventListener("click", function() {
-        var redirectTo = "edit_profile.php";
-        window.location.href = redirectTo;
-    });
-</script>
-</form>
+<br><br> 
+ <a href="edit_profile.php" class="button">Edit Profile</a>
 </div>
 </body>
 </html>
