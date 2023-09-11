@@ -9,6 +9,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['logout'])) {
     unset($_SESSION['user_type']);
     unset($_SESSION['user_id']);
 
+    // Destroy the session
+    session_destroy();
+
     echo "<script>alert('Logged out successfully!');</script>";
 }
 
@@ -19,7 +22,5 @@ if (isset($_SESSION['user_type']) && isset($_SESSION['user_id'])) {
 
 include('index.php'); // Moved the inclusion of 'navi_bar.php' after the potential error messages
 
-
 mysqli_close($con);
 ?>
-
