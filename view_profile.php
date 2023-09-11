@@ -44,7 +44,7 @@ include('navi_bar.php');
 <body>
     <h1>View Profile</h1>
     <div class="container">
-<form action="view_profile.php" method="POST">
+<form action="edit_profile.php" method="POST">
 <label for="username">Username:</label>
 <input type="text" id="username" name="username" value="<?php echo $username; ?>">
 <br><br>
