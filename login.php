@@ -36,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // Store user data in the session
             $_SESSION['user_type'] = $user_type;
             $_SESSION['user_id'] = $user_id;
-            echo "Login Successful as $user_type with ID $user_id!";
+     
 
             // Check if the "Remember Me" checkbox is checked
             if (isset($_POST['remember_me'])) {
@@ -46,6 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
             // Redirect to index.php
             header('Location: index.php');
+            echo "Login Successful as $user_type with ID $user_id!";
            
             exit();
         } else {
