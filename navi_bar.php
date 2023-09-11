@@ -46,8 +46,6 @@ body {
                 <li><a href="edit_profile.php" class="right">PROFILE</a></li>
                 <li><a href="rating.php" class="right">LEAVE A RATING</a></li>
                 <li><a href="view_rating.php" class="right">VIEW RATING</a></li>
-                <li><a href="view_policy.php" class="right">VIEW POLICY</a></li>
-                <li><a href="view_ticket.php" class="right">VIEW TICKET</a></li>
             </ul>
         </nav>
 </body>
