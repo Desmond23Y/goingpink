@@ -52,9 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 }
-
-include('navi_bar.php'); // Moved the inclusion of 'navi_bar.php' after the potential error messages
-
+ 
 mysqli_close($con);
 ?>
 
