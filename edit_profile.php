@@ -22,6 +22,7 @@ if (mysqli_num_rows($result) > 0) {
     $user_data = mysqli_fetch_assoc($result);
 
     $username = $user_data['username'];
+    $password = $user_data['password'];
     $first_name = $user_data['first_name'];
     $last_name = $user_data['last_name'];
     $email = $user_data['email'];
