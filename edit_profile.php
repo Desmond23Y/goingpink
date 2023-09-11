@@ -61,9 +61,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Check if the new password is provided and update it
     if (!empty($new_password)) {
-        // Hash the new password before storing it
-        $hashed_password = password_hash($new_password, PASSWORD_BCRYPT);
-
         // Update the password in the database
         $update_password_query = "UPDATE `user` SET 
             password = '$hashed_password'
