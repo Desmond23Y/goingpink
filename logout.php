@@ -15,7 +15,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['logout'])) {
 // Check if the user is already logged in
 if (isset($_SESSION['user_type']) && isset($_SESSION['user_id'])) {
     echo "<script>alert('Please login first!');</script>";
-    exit();
 }
 
 include('navi_bar.php'); // Moved the inclusion of 'navi_bar.php' after the potential error messages
