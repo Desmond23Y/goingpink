@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['logout'])) {
 // Check if the user is already logged in
 if (isset($_SESSION['user_type']) && isset($_SESSION['user_id'])) {
     // Redirect to the dashboard or some other page as needed
-    header('Location: dashboard.php'); // Change to your desired destination
+    header('Location: login.php'); // Change to your desired destination
     exit();
 }
 
