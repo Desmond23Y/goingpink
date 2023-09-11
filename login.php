@@ -45,8 +45,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 setcookie('remember_me', $cookie_data, time() + (60 * 60 * 24 * 30)); // Cookie will expire in 30 days
             }
             // Redirect to index.php
-            header('Location: index.php');
-            echo "Login Successful as $user_type with ID $user_id!";
+            include('Location: index.php');
+            
            
             exit();
         } else {
