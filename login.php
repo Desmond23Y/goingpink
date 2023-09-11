@@ -3,7 +3,6 @@
 session_start();
 
 include('conn.php');
-require_once('navi_bar.php');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['username'];
@@ -44,8 +43,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $cookie_data = json_encode(['username' => $username, 'password' => $password]);
                 setcookie('remember_me', $cookie_data, time() + (60 * 60 * 24 * 30)); // Cookie will expire in 30 days
             }
+            
+            // Redirect to index.php
             header('Location: index.php');
-            echo "<script>alert('Login successful as $user_type with ID $user_id!');</script>";
             exit();
         } else {
             // Login failed
@@ -53,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 }
- 
+
 mysqli_close($con);
 ?>
 
