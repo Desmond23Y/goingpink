@@ -2,45 +2,7 @@
 // Start or resume the session
 session_start();
 
-include('navi_bar.php');
-include('conn.php');
-
-// Check if the "Remember Me" cookie is set
-if (isset($_COOKIE['remember_me'])) {
-    $cookie_data = json_decode($_COOKIE['remember_me'], true);
-
-    $username = $cookie_data['username'];
-    $password = $cookie_data['password'];
-
-    // Attempt to log in using the provided credentials
-    $union_query = "
-        (SELECT 'admin' AS user_type, admin_id AS user_id FROM admin WHERE username = '$username' AND password = '$password')
-        UNION
-        (SELECT 'support' AS user_type, support_id AS user_id FROM support WHERE username = '$username' AND password = '$password')
-        UNION
-        (SELECT 'hotel_management' AS user_type, hotel_manager_id AS user_id FROM hotel_management WHERE username = '$username' AND password = '$password')
-        UNION
-        (SELECT 'transport_management' AS user_type, transport_manager_id AS user_id FROM transport_management WHERE username = '$username' AND password = '$password')
-        UNION
-        (SELECT 'user' AS user_type, user_id AS user_id FROM user WHERE username = '$username' AND password = '$password')
-    ";
-
-    $result = mysqli_query($con, $union_query);
-
-    if (mysqli_num_rows($result) > 0) {
-        // Login successful
-        $row = mysqli_fetch_assoc($result);
-        $user_type = $row['user_type'];
-        $user_id = $row['user_id'];
-
-        // Store user data in the session
-        $_SESSION['user_type'] = $user_type;
-        $_SESSION['user_id'] = $user_id;
-
-        echo "<script>alert('Login successful as $user_type with ID $user_id!');</script>";
-        exit();
-    }
-}
+include('conn.php'); // Moved the inclusion of 'conn.php' here
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['username'];
@@ -90,6 +52,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 }
+
+include('navi_bar.php'); // Moved the inclusion of 'navi_bar.php' after the potential error messages
 
 mysqli_close($con);
 ?>
