@@ -90,3 +90,14 @@ mysqli_close($con);
     </div>
 </body>
 </html>
+
+<?php
+
+ob_start(); // Start output buffering
+
+// Redirect to the index page
+header('Location: index.php');
+exit();
+
+ob_end_flush();
+?>
