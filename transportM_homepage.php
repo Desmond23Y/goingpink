@@ -7,39 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Transport Management Homepage</title>
-    <link rel="stylesheet" href="homepage_hotel_styles.css">
-<style>
-body {
-    margin: 0;
-    padding: 0;
-}
-
-.navibar {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #F9B9C3;
-}
-
-.navibar a {
-    float: left;
-    display: block;
-    color: #333;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-.navibar a.right {
-    float: right;
-}
-
-.navibar a:hover {
-    background-color: #C7949C;
-    color: white;
-}
-</style>
+    <link rel="stylesheet" href="transportM_styles.css">
     <nav>
         <ul class="navibar">
             <li><a href="index.php">HOME</a></li>
