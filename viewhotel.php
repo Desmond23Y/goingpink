@@ -1,15 +1,14 @@
 <?php
+session_start();
 include('conn.php');
 
-// Check if a hotel has been selected for booking
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['book_hotel'])) {
-    $hotel_id_to_book = $_POST['book_hotel'];
-    // Redirect to a booking page with the selected hotel ID
-    header("Location: hotelbooking.php?hotel_id=$hotel_id_to_book");
+// Check if the user is logged in
+if (!isset($_SESSION['user_type'])) {
+    header('Location: login.php');
     exit();
 }
 
-
+// Include the navigation bar
 include('navi_bar.php');
 
 $result = mysqli_query($con, "SELECT * FROM hotel_information");
@@ -39,17 +38,22 @@ if (!$result) {
                 echo '<h3> Hotel Availability: ' . $row["hotel_availability"] . '</h3>';
                 echo '<h3> Hotel Price: US$ ' . $row["hotel_price"] . '</h3>';
                 
-                // Add a form to allow users to book this hotel
-                echo '<form method="POST" action="">';
-                echo '<input type="hidden" name="book_hotel" value="' . $row["hotel_id"] . '">';
-                echo '<button type="submit">Book This Hotel</button>';
-                echo '</form>';
+                // Check the user type to determine what to display
+                if ($_SESSION['user_type'] == 'admin' || $_SESSION['user_type'] == 'hotel_management') {
+                    // Admins and hotel managers can edit hotel information
+                    echo '<a href="edithotel.php?hotel_id=' . $row["hotel_id"] . '">Edit This Hotel</a>';
+                } elseif ($_SESSION['user_type'] == 'user') {
+                    // Regular users can book hotels
+                    echo '<form method="POST" action="">';
+                    echo '<input type="hidden" name="book_hotel" value="' . $row["hotel_id"] . '">';
+                    echo '<button type="submit">Book This Hotel</button>';
+                    echo '</form>';
+                }
             }
         } else {
             echo "No hotels available.";
         }
         ?>
     </div>
-
 </body>
 </html>
