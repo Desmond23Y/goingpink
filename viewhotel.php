@@ -40,6 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['book_hotel'])) {
         <?php
         if (mysqli_num_rows($result) > 0) {
             while ($row = mysqli_fetch_assoc($result)) {
+                echo '<h3> Hotel ID: ' . $row["hotel_id"] . '</h3>';
                 echo '<h3> Hotel Name: ' . $row["hotel_name"] . '</h3>';
                 echo '<h3> Room Type: ' . $row["room_type"] . '</h3>';
                 echo '<h3> Room Availability: ' . $row["room_availability"] . '</h3>';
