@@ -7,13 +7,6 @@ if (!isset($_SESSION['user_id'])) {
     header('Location: login.php');
     exit();
 }
-// Include the navigation bar
-include('navi_bar.php');
-
-$result = mysqli_query($con, "SELECT * FROM hotel_information");
-if (!$result) {
-    die('Query Error: ' . mysqli_error($con));
-}
 
 // Initialize a variable to store the selected hotel ID
 $selectedHotelID = null;
@@ -26,6 +19,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['book_hotel'])) {
     // Redirect to the hotel booking page
     header('Location: hotelbooking.php');
     exit();
+}
+
+// Include the navigation bar (moved here to avoid output before header)
+include('navi_bar.php');
+
+$result = mysqli_query($con, "SELECT * FROM hotel_information");
+if (!$result) {
+    die('Query Error: ' . mysqli_error($con));
 }
 ?>
 
