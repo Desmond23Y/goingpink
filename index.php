@@ -9,8 +9,21 @@ include('navi_bar.php');
     <title>GoingPink | Better Travel Site</title>
     <link rel="stylesheet" href="index_styles.css">
 </head>
-    
 <body>
+    <nav>
+        <ul class="navibar">
+            <li><a href="index.php">HOME</a></li>
+            <li><a href="viewhotel.php">BOOKING</a></li>
+            <li><a href="api_exRates.php">EXCHANGE RATES</a></li>
+            <li><a href="request_form.php">SUPPORT</a></li>
+            <li><a href="view_rating.php">VIEW RATING</a></li>
+            <li><a href="rating.php">LEAVE A RATING</a></li>
+            <li><a href="logout.php" class="right">LOGOUT</a></li>
+            <li><a href="register.php" class="right">REGISTER</a></li>
+            <li><a href="login.php" class="right">LOGIN</a></li>
+            <li><a href="view_profile.php" class="right">PROFILE</a></li>
+        </ul>
+    </nav>
     <section class="services">
         <div class="container">
             <h2>Our Services</h2>
