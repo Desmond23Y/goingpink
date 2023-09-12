@@ -26,6 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['number_of_pax']) && i
 ?>
 
 <!DOCTYPE html>
+<body>
 <h2>Book a Hotel</h2>
 <form id="hotel-booking-form" method="POST" action="">
     <label for="number_of_pax">Number of Guests:</label>
@@ -40,4 +41,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['number_of_pax']) && i
     <button type="submit">Book Hotel</button>
 </form>
 <p id="booking-message"></p>
+</body>
 </html>
