@@ -16,12 +16,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['number_of_pax']) && i
     } elseif (strtotime($check_in_date) >= strtotime($check_out_date)) {
         echo "Invalid check-in or check-out dates.";
     } else {
-        $hotel_booking_query = "INSERT INTO hotel_booking (user_id, hotel_id, number_of_pax, check_in_date, check_out_date) 
-                                VALUES ('$user_id', '$selectedhotelid', '$number_of_pax', '$check_in_date', '$check_out_date')";
-        if (mysqli_query($con, $hotel_booking_query)) {
-            echo "<script>alert('Hotel booking successful!');</script>";
+        // Check if the selected hotel ID exists in the hotel_information table
+        $check_hotel_query = "SELECT * FROM hotel_information WHERE hotel_id = '$selectedhotelid'";
+        $result = mysqli_query($con, $check_hotel_query);
+
+        if (mysqli_num_rows($result) == 0) {
+            echo "Selected hotel not found.";
         } else {
-            echo "Error: " . mysqli_error($con);
+            // Insert the hotel booking
+            $hotel_booking_query = "INSERT INTO hotel_booking (user_id, hotel_id, number_of_pax, check_in_date, check_out_date) 
+                                    VALUES ('$user_id', '$selectedhotelid', '$number_of_pax', '$check_in_date', '$check_out_date')";
+            
+            if (mysqli_query($con, $hotel_booking_query)) {
+                echo "<script>alert('Hotel booking successful!');</script>";
+            } else {
+                echo "Error: " . mysqli_error($con);
+            }
         }
 
         mysqli_close($con);
@@ -51,5 +61,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['number_of_pax']) && i
     <p id="booking-message"></p>
 </body>
 </html>
-
-
