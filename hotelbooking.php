@@ -1,37 +1,29 @@
 <?php
 session_start();
 include('conn.php'); 
-
 $user_id = $_SESSION['user_id'];
+$hotel_id = $_SESSION['selected_hotel_id'];
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['number_of_pax']) && isset($_POST['check_in_date']) && isset($_POST['check_out_date'])) {
+    $number_of_pax = $_POST['number_of_pax'];
+    $check_in_date = $_POST['check_in_date'];
+    $check_out_date = $_POST['check_out_date'];
 
-// Check if 'selected_hotel_id' is set in the session
-if(isset($_SESSION['selected_hotel_id'])) {
-    $hotel_id = $_SESSION['selected_hotel_id'];
-
-    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['number_of_pax']) && isset($_POST['check_in_date']) && isset($_POST['check_out_date'])) {
-        $number_of_pax = $_POST['number_of_pax'];
-        $check_in_date = $_POST['check_in_date'];
-        $check_out_date = $_POST['check_out_date'];
-
-        // Validate user inputs
-        if ($number_of_pax < 1) {
-            echo "Number of guests must be at least 1.";
-        } elseif (strtotime($check_in_date) >= strtotime($check_out_date)) {
-            echo "Invalid check-in or check-out dates.";
+    // Validate user inputs
+    if ($number_of_pax < 1) {
+        echo "Number of guests must be at least 1.";
+    } elseif (strtotime($check_in_date) >= strtotime($check_out_date)) {
+        echo "Invalid check-in or check-out dates.";
+    } else {
+        $hotel_booking_query = "INSERT INTO hotel_booking (user_id, hotel_id, number_of_pax, check_in_date, check_out_date) 
+                                VALUES ('$user_id', '$hotel_id', '$number_of_pax', '$check_in_date', '$check_out_date')";
+        if (mysqli_query($con, $hotel_booking_query)) {
+            echo "<script>alert('Hotel booking successful!');</script>";
         } else {
-            $hotel_booking_query = "INSERT INTO hotel_booking (user_id, hotel_id, number_of_pax, check_in_date, check_out_date) 
-                                    VALUES ('$user_id', '$hotel_id', '$number_of_pax', '$check_in_date', '$check_out_date')";
-            if (mysqli_query($con, $hotel_booking_query)) {
-                echo "<script>alert('Hotel booking successful!');</script>";
-            } else {
-                echo "Error: " . mysqli_error($con);
-            }
-
-            mysqli_close($con);
+            echo "Error: " . mysqli_error($con);
         }
+
+        mysqli_close($con);
     }
-} else {
-    echo "Hotel ID not selected.";
 }
 ?>
 
@@ -57,3 +49,5 @@ if(isset($_SESSION['selected_hotel_id'])) {
     <p id="booking-message"></p>
 </body>
 </html>
+
+
