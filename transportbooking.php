@@ -23,8 +23,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['number_of_tickets']) 
             echo "Selected transport not found.";
         } else {
             // Insert the transport booking
-            $transport_booking_query = "INSERT INTO transport_booking (user_id, transport_id, number_of_tickets, departure_date) 
-                                    VALUES ('$user_id', '$selected_transport_id', '$number_of_tickets', '$departure_date')";
+            $transport_booking_query = "INSERT INTO transport_booking (user_id, transport_id, departure_date) 
+                                    VALUES ('$user_id', '$selected_transport_id', '$departure_date')";
             
             if (mysqli_query($con, $transport_booking_query)) {
                 header('Location: viewtransport.php');
@@ -46,8 +46,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['number_of_tickets']) 
 <body>
     <h2>Book a Transport</h2>
     <form id="transport-booking-form" method="POST" action="">
-        <label for="number_of_tickets">Number of Tickets:</label>
-        <input type="number" id="number_of_tickets" name="number_of_tickets" min="1" required><br><br>
 
         <label for="departure_date">Departure Date:</label>
         <input type="date" id="departure_date" name="departure_date" required><br><br>
