@@ -26,22 +26,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['number_of_pax']) && i
 ?>
 
 <!DOCTYPE html>
+<html>
 <head>
-<h2>Book a Hotel</h2>
+    <title>Hotel Booking</title>
 </head>
 <body>
-<form id="hotel-booking-form" method="POST" action="">
-    <label for="number_of_pax">Number of Guests:</label>
-    <input type="number" id="number_of_pax" name="number_of_pax" min="1" required><br><br>
+    <h2>Book a Hotel</h2>
+    <form id="hotel-booking-form" method="POST" action="">
+        <label for="number_of_pax">Number of Guests:</label>
+        <input type="number" id="number_of_pax" name="number_of_pax" min="1" required><br><br>
 
-    <label for="check_in_date">Check-In Date:</label>
-    <input type="date" id="check_in_date" name="check_in_date" required><br><br>
+        <label for="check_in_date">Check-In Date:</label>
+        <input type="date" id="check_in_date" name="check_in_date" required><br><br>
 
-    <label for="check_out_date">Check-Out Date:</label>
-    <input type="date" id="check_out_date" name="check_out_date" required><br><br>
+        <label for="check_out_date">Check-Out Date:</label>
+        <input type="date" id="check_out_date" name="check_out_date" required><br><br>
 
-    <button type="submit">Book Hotel</button>
-</form>
-<p id="booking-message"></p>
+        <button type="submit">Book Hotel</button>
+    </form>
+    <p id="booking-message"></p>
 </body>
 </html>
