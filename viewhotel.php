@@ -14,6 +14,15 @@ $result = mysqli_query($con, "SELECT * FROM hotel_information");
 if (!$result) {
     die('Query Error: ' . mysqli_error($con));
 }
+
+// Initialize a variable to store the selected hotel ID
+$selectedHotelID = null;
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['book_hotel'])) {
+    // If a hotel is selected for booking, store its ID in the session
+    $selectedHotelID = $_POST['book_hotel'];
+    $_SESSION['selected_hotel_id'] = $selectedHotelID;
+}
 ?>
 
 <!DOCTYPE html>
