@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['departure_date'])) {
                                 VALUES ('$user_id', '$selected_transport_id', '$departure_date', '$departure_location')";
         
         if (mysqli_query($con, $transportation_booking_query)) {
-            header('Location: viewtransport.php');
+            header('Location: index.php');
         } else {
             echo "Error: " . mysqli_error($con);
         }
