@@ -13,7 +13,9 @@ if (isset($_SESSION['user_id'])) {
         // Destroy the session
         session_destroy();
 
-        echo "<script>alert('Logged out successfully!');</script>";
+        // Redirect to the login page
+        header('Location: login.php'); 
+        exit();
     }
 } else {
     // User is not logged in, redirect to the login page
@@ -21,4 +23,3 @@ if (isset($_SESSION['user_id'])) {
     exit();
 }
 ?>
-
