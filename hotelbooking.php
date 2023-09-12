@@ -1,10 +1,21 @@
 <?php
+include('conn.php'); // Include your database connection script
+
+// Check if a user is logged in and retrieve the user ID
+if (isset($_SESSION['user_id'])) {
+    $user_id = $_SESSION['user_id'];
+} else {
+    // Redirect the user to the login page 
+    header("Location: login.php");
+    exit();
+}
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['number_of_pax']) && isset($_POST['check_in_date']) && isset($_POST['check_out_date'])) {
     $number_of_pax = $_POST['number_of_pax'];
     $check_in_date = $_POST['check_in_date'];
     $check_out_date = $_POST['check_out_date'];
 
-    // Validate user inputs 
+    // Validate user inputs
     if ($number_of_pax < 1) {
         echo "Number of guests must be at least 1.";
     } elseif (strtotime($check_in_date) >= strtotime($check_out_date)) {
