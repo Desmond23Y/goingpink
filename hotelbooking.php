@@ -26,8 +26,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['number_of_pax']) && i
 ?>
 
 <!DOCTYPE html>
-<body>
+<head>
 <h2>Book a Hotel</h2>
+</head>
+<body>
 <form id="hotel-booking-form" method="POST" action="">
     <label for="number_of_pax">Number of Guests:</label>
     <input type="number" id="number_of_pax" name="number_of_pax" min="1" required><br><br>
