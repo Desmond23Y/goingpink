@@ -1,5 +1,4 @@
 <?php
-include('navi_bar.php');
 include('conn.php');
 
 // Check if a hotel has been selected for booking
@@ -9,6 +8,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['book_hotel'])) {
     header("Location: hotelbooking.php?hotel_id=$hotel_id_to_book");
     exit();
 }
+
+
+include('navi_bar.php');
 
 $result = mysqli_query($con, "SELECT * FROM hotel_information");
 if (!$result) {
