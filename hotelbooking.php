@@ -1,8 +1,10 @@
 <?php
 session_start();
 include('conn.php'); 
+
 $user_id = $_SESSION['user_id'];
-$selected_hotel_id = $_SESSION['selected_hotel_id'];
+$selectedHotelID = $_SESSION['selected_hotel_id'];
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['number_of_pax']) && isset($_POST['check_in_date']) && isset($_POST['check_out_date'])) {
     $number_of_pax = $_POST['number_of_pax'];
     $check_in_date = $_POST['check_in_date'];
@@ -15,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['number_of_pax']) && i
         echo "Invalid check-in or check-out dates.";
     } else {
         $hotel_booking_query = "INSERT INTO hotel_booking (user_id, hotel_id, number_of_pax, check_in_date, check_out_date) 
-                                VALUES ('$user_id', '$selected_hotel_id', '$number_of_pax', '$check_in_date', '$check_out_date')";
+                                VALUES ('$user_id', '$selectedHotelID', '$number_of_pax', '$check_in_date', '$check_out_date')";
         if (mysqli_query($con, $hotel_booking_query)) {
             echo "<script>alert('Hotel booking successful!');</script>";
         } else {
