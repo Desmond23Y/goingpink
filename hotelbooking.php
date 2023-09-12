@@ -4,14 +4,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['number_of_pax']) && i
     $check_in_date = $_POST['check_in_date'];
     $check_out_date = $_POST['check_out_date'];
 
-    // Validate user inputs (You can add more validation as needed)
+    // Validate user inputs 
     if ($number_of_pax < 1) {
         echo "Number of guests must be at least 1.";
     } elseif (strtotime($check_in_date) >= strtotime($check_out_date)) {
         echo "Invalid check-in or check-out dates.";
     } else {
-        // You can now proceed to insert this booking into your database
-        // Prepare and execute the SQL query
         $hotel_booking_query = "INSERT INTO hotel_bookings (user_id, number_of_pax, check_in_date, check_out_date) 
                                 VALUES ('$user_id', '$number_of_pax', '$check_in_date', '$check_out_date')";
         if (mysqli_query($con, $hotel_booking_query)) {
