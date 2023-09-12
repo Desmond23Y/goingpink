@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Hotel Management Homepage</title>
     <link rel="stylesheet" href="homepage_hotel_styles.css">
+<style>
 body {
     margin: 0;
     padding: 0;
@@ -38,7 +39,6 @@ body {
     background-color: #C7949C;
     color: white;
 }
-
 </style>
     <nav>
         <ul class="navibar">
