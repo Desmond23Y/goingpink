@@ -2,8 +2,8 @@
 session_start();
 include('conn.php'); 
 
-$_SESSION['user_id'] = $user_id;
-$_SESSION['selected_hotel_id'] = $selectedhotelid;
+$user_id = $_SESSION['user_id'];
+$selectedhotelid = $_SESSION['selected_hotel_id'];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['number_of_pax']) && isset($_POST['check_in_date']) && isset($_POST['check_out_date'])) {
     $number_of_pax = $_POST['number_of_pax'];
