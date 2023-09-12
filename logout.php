@@ -14,6 +14,7 @@ if (isset($_SESSION['user_id'])) {
         session_destroy();
 
         echo "<script>alert('Logged out successfully!');</script>";
+        header('Location: login.php'); 
     }
 } else {
     // User is not logged in, redirect to the login page
