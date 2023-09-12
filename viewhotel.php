@@ -7,7 +7,6 @@ if (!isset($_SESSION['user_id'])) {
     header('Location: login.php');
     exit();
 }
-
 // Include the navigation bar
 include('navi_bar.php');
 
