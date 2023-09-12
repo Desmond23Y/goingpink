@@ -42,7 +42,7 @@ body {
 </style>
     <nav>
         <ul class="navibar">
-            <li><a href="index.php">HOME</a></li>
+            <li><a href="homepage_hotel.php">HOME</a></li>
             <li><a href="viewhotel.php">BOOKING</a></li>
             <li><a href="api_exRates.php">EXCHANGE RATES</a></li>
             <li><a href="request_form.php">SUPPORT</a></li>
