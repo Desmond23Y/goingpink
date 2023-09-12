@@ -6,7 +6,7 @@ include('conn.php');
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['book_hotel'])) {
     $hotel_id_to_book = $_POST['book_hotel'];
     // Redirect to a booking page with the selected hotel ID
-    header("Location: book_hotel.php?hotel_id=$hotel_id_to_book");
+    header("Location: hotelbooking.php?hotel_id=$hotel_id_to_book");
     exit();
 }
 
