@@ -4,8 +4,7 @@ session_start();
 
 if (isset($_SESSION['user_id'])) {
     // User is logged in, log them out
-    include('conn.php'); // Include your database connection
-
+    include('conn.php'); 
     if (isset($_POST['logout'])) {
         // Unset session variables
         unset($_SESSION['user_type']);
