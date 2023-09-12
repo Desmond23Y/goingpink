@@ -53,9 +53,9 @@ if (!$result) {
                 echo '</form>';
                 }
             }
-        } else {
+          else {
             echo "Transport is not available.";
-        }
+            }
         ?>
     </div>
 </body>
