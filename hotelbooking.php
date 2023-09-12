@@ -28,7 +28,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['number_of_pax']) && i
                                     VALUES ('$user_id', '$selectedhotelid', '$number_of_pax', '$check_in_date', '$check_out_date')";
             
             if (mysqli_query($con, $hotel_booking_query)) {
-                echo "<script>alert('Hotel booking successful!');</script>";
                 header('Location: transportbooking.php');
             } else {
                 echo "Error: " . mysqli_error($con);
