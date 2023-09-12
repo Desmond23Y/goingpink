@@ -44,7 +44,7 @@ if (!$result) {
                     echo '<a href="edithotel.php?hotel_id=' . $row["hotel_id"] . '">Edit This Hotel</a>';
                 } elseif ($_SESSION['user_type'] == 'user') {
                     // Regular users can book hotels
-                    echo '<form method="POST" action="">';
+                    echo '<form method="POST" action="hotelbooking.php">';
                     echo '<input type="hidden" name="book_hotel" value="' . $row["hotel_id"] . '">';
                     echo '<button type="submit">Book This Hotel</button>';
                     echo '</form>';
