@@ -22,6 +22,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['book_hotel'])) {
     // If a hotel is selected for booking, store its ID in the session
     $selectedHotelID = $_POST['book_hotel'];
     $_SESSION['selected_hotel_id'] = $selectedHotelID;
+
+    // Redirect to the hotel booking page
+    header('Location: hotelbooking.php');
+    exit();
 }
 ?>
 
@@ -40,7 +44,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['book_hotel'])) {
         <?php
         if (mysqli_num_rows($result) > 0) {
             while ($row = mysqli_fetch_assoc($result)) {
-                echo '<h3> Hotel ID: ' . $row["hotel_id"] . '</h3>';
                 echo '<h3> Hotel Name: ' . $row["hotel_name"] . '</h3>';
                 echo '<h3> Room Type: ' . $row["room_type"] . '</h3>';
                 echo '<h3> Room Availability: ' . $row["room_availability"] . '</h3>';
@@ -53,9 +56,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['book_hotel'])) {
                     echo '<a href="edithotel.php?hotel_id=' . $row["hotel_id"] . '">Edit This Hotel</a>';
                 } elseif ($_SESSION['user_type'] == 'user') {
                     // Regular users can book hotels
-                    echo '<form method="POST" action="hotelbooking.php">';
-                    echo '<input type="hidden" name="book_hotel" value="' . $row["hotel_id"] . '">';
-                    echo '<button type="submit">Book This Hotel</button>';
+                    echo '<form method="POST" action="">';
+                    echo '<button type="submit" name="book_hotel" value="' . $row["hotel_id"] . '">Book This Hotel</button>';
                     echo '</form>';
                 }
             }
