@@ -1,5 +1,5 @@
 <?php
-session();
+session_start();
 include('conn.php'); // Include your database connection script
 
 
