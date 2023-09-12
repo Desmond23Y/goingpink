@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['book_transport'])) {
     $_SESSION['selected_transport_id'] = $selectedtransportID;
 
     // Redirect to the invoice page
-    header('Location: invoice.php');
+    header('Location: transportbooking.php');
     exit();
 }
 
