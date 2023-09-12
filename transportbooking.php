@@ -29,10 +29,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['departure_date'])) {
         }
 
         // Insert the transport booking with departure
-        $transport_booking_query = "INSERT INTO transport_booking (user_id, transport_id, departure_date, departure_location) 
+        $transportation_booking_query = "INSERT INTO transportation_booking (user_id, transport_id, departure_date, departure_location) 
                                 VALUES ('$user_id', '$selected_transport_id', '$departure_date', '$departure_location')";
         
-        if (mysqli_query($con, $transport_booking_query)) {
+        if (mysqli_query($con, $transportation_booking_query)) {
             header('Location: viewtransport.php');
         } else {
             echo "Error: " . mysqli_error($con);
