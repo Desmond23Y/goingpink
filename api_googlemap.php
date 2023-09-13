@@ -99,7 +99,6 @@
                 document.getElementById('arrivalButton').disabled = true;
             }
         }
-
         function setMarkerAndInputBox(clickedLocation) {
             // Set the marker position to the clicked location
             marker.setPosition(clickedLocation);
