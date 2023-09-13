@@ -2,17 +2,12 @@
 <html>
 
 <head>
-    <title>Going Pink Transport Bookingr</title>
+    <title>Distance Calculator</title>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBS7LY-BaBKUS0xIRTNJKXtfsLEZv_5OG8&libraries=places&callback=initAutocomplete" async defer></script>
 </head>
 
 <body>
     <?php 
-
-        if (!isset($_SESSION['user_id'])) {
-        header('Location: login.php');
-        exit();
-            
         include('navi_bar.php');
     ?>
     <div>
@@ -210,4 +205,3 @@
 </body>
 
 </html>
-
