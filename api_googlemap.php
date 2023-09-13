@@ -2,17 +2,16 @@
 <html>
 
 <head>
-    <title>Going Pink Transport Bookingr</title>
+    <title>Going Pink Transport Booking</title>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBS7LY-BaBKUS0xIRTNJKXtfsLEZv_5OG8&libraries=places&callback=initAutocomplete" async defer></script>
 </head>
 
 <body>
     <?php 
-
         if (!isset($_SESSION['user_id'])) {
             header('Location: login.php');
             exit();
-        }    
+        }
         include('navi_bar.php');
     ?>
     <div>
@@ -21,7 +20,7 @@
         </h2>
     </div>
     <div id="locationField">
-        <input id="originautocomplete" placeholder="Enter your address" onFocus="geolocate()" type="text"></input>
+        <input id="originautocomplete" placeholder="Enter your address" onFocus="geolocate()" type="text" />
         <!-- Button to set departure location on the map -->
         <button onclick="setLocation('departure')">Set Departure</button>
     </div>
@@ -31,8 +30,8 @@
             Arrival Location
         </h2>
     </div>
-    <div id="locationField">
-        <input id="destinationautocomplete" placeholder="Enter your address" onFocus="geolocate()" type="text"></input>
+    <div id="destinationLocationField">
+        <input id="destinationautocomplete" placeholder="Enter your address" onFocus="geolocate()" type="text" />
         <!-- Button to set arrival location on the map -->
         <button id="arrivalButton" onclick="setLocation('arrival')" disabled>Set Arrival</button>
     </div>
@@ -48,21 +47,21 @@
     </div>
     <br>
     <div>
-        <input type='button' value="Calculate Price and Time" onclick="BookRide()"></input>
+        <input type="button" value="Calculate Price and Time" onclick="BookRide()" />
     </div>
     <br>
     <div>
         <strong>Estimated Arrival Time (UTC +8)</strong>
     </div>
-    <input type="text" id="arrivalTime" readonly>
+    <input type="text" id="arrivalTime" readonly />
     <div>
         <strong>Total Distance</strong>
     </div>
-    <input type="text" id="output" readonly>
+    <input type="text" id="output" readonly />
     <div>
         <strong>Total Price (RM)</strong>
     </div>
-    <input type="text" id="price" readonly>
+    <input type="text" id="price" readonly />
 
     <!-- Add a map container -->
     <div id="map" style="height: 400px;"></div>
