@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Distance Calculator</title>
+    <title>Transport Bookingr</title>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBS7LY-BaBKUS0xIRTNJKXtfsLEZv_5OG8&libraries=places&callback=initAutocomplete" async defer></script>
 </head>
 
