@@ -14,6 +14,8 @@
     </div>
     <div id="locationField">
         <input id="originautocomplete" placeholder="Enter your address" onFocus="geolocate()" type="text"></input>
+        <!-- Button to set departure location on the map -->
+        <button onclick="setDepartureOnMap()">Set Departure</button>
     </div>
 
     <div>
@@ -23,6 +25,8 @@
     </div>
     <div id="locationField">
         <input id="destinationautocomplete" placeholder="Enter your address" onFocus="geolocate()" type="text"></input>
+        <!-- Button to set arrival location on the map -->
+        <button onclick="setArrivalOnMap()">Set Arrival</button>
     </div>
     <br>
     <div>
@@ -42,7 +46,7 @@
     <div id="map" style="height: 400px;"></div>
 
     <script>
-        var placeSearch, originautocomplete, destinationautocomplete, map;
+        var placeSearch, originautocomplete, destinationautocomplete, map, marker;
 
         function initAutocomplete() {
             originautocomplete = new google.maps.places.Autocomplete(
@@ -68,6 +72,57 @@
                 center: { lat: 3.1390, lng: 101.6869 }, // Default center (Kuala Lumpur, Malaysia)
                 zoom: 10 // Default zoom level
             });
+
+            // Initialize marker
+            marker = new google.maps.Marker({
+                map: map,
+                draggable: true, // Allow the marker to be draggable
+                animation: google.maps.Animation.DROP // Add a drop animation to the marker
+            });
+        }
+
+        function setDepartureOnMap() {
+            // Listen for a click event on the map
+            google.maps.event.addListener(map, 'click', function (event) {
+                // Get the clicked coordinates
+                var clickedLocation = event.latLng;
+
+                // Set the marker position to the clicked location
+                marker.setPosition(clickedLocation);
+
+                // Use reverse geocoding to get the address for the clicked location
+                var geocoder = new google.maps.Geocoder();
+                geocoder.geocode({ 'latLng': clickedLocation }, function (results, status) {
+                    if (status == google.maps.GeocoderStatus.OK) {
+                        if (results[0]) {
+                            // Insert the address into the departure input box
+                            document.getElementById('originautocomplete').value = results[0].formatted_address;
+                        }
+                    }
+                });
+            });
+        }
+
+        function setArrivalOnMap() {
+            // Listen for a click event on the map
+            google.maps.event.addListener(map, 'click', function (event) {
+                // Get the clicked coordinates
+                var clickedLocation = event.latLng;
+
+                // Set the marker position to the clicked location
+                marker.setPosition(clickedLocation);
+
+                // Use reverse geocoding to get the address for the clicked location
+                var geocoder = new google.maps.Geocoder();
+                geocoder.geocode({ 'latLng': clickedLocation }, function (results, status) {
+                    if (status == google.maps.GeocoderStatus.OK) {
+                        if (results[0]) {
+                            // Insert the address into the arrival input box
+                            document.getElementById('destinationautocomplete').value = results[0].formatted_address;
+                        }
+                    }
+                });
+            });
         }
 
         function CalculatedRecommededDistance() {
@@ -88,7 +143,7 @@
                 avoidTolls: false,
                 avoidFerries: false
 
-            }, function(response, status) {
+            }, function (response, status) {
                 var originList = response.originAddresses;
                 var destinationList = response.destinationAddresses;
                 var outputDiv = document.getElementById('outputRecommended');
@@ -119,7 +174,7 @@
                 optimizeWaypoints: true
             };
 
-            directionsService.route(request, function(response, status) {
+            directionsService.route(request, function (response, status) {
                 var routes = response.routes;
                 var distances = [];
                 for (var i = 0; i < routes.length; i++) {
@@ -131,7 +186,7 @@
                     distances.push(distance / 1000);
                 }
                 // Get all the alternative distances
-                var maxDistance = distances.sort(function(a, b) {
+                var maxDistance = distances.sort(function (a, b) {
                     return a - b;
                 });
                 // Display distance having the highest value
