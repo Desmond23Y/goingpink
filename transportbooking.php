@@ -8,13 +8,20 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Retrieve POST data
-    $userId = $_POST['user_id'];
-    $transportId = $_POST['transport_id'];
-    $arrivalLocation = $_POST['arrival_location'];
-    $departureLocation = $_POST['departure_location'];
-    $arrivalTime = $_POST['arrival_time'];
-    $departureTime = $_POST['departure_time'];
+    // Retrieve POST data and perform basic validation
+    $userId = isset($_POST['user_id']) ? intval($_POST['user_id']) : null;
+    $transportId = isset($_POST['transport_id']) ? intval($_POST['transport_id']) : null;
+    $arrivalLocation = isset($_POST['arrival_location']) ? trim($_POST['arrival_location']) : '';
+    $departureLocation = isset($_POST['departure_location']) ? trim($_POST['departure_location']) : '';
+    $arrivalTime = isset($_POST['arrival_time']) ? trim($_POST['arrival_time']) : '';
+    $departureTime = isset($_POST['departure_time']) ? trim($_POST['departure_time']) : '';
+
+
+    // Check if any required fields are empty
+    if (empty($userId) || empty($transportId) || empty($arrivalLocation) || empty($departureLocation) || empty($arrivalTime) || empty($departureTime)) {
+        echo json_encode(['success' => false, 'error' => 'Missing or invalid data']);
+        exit();
+    }
 
     // Insert the booking into the transport_booking table
     $query = "INSERT INTO transport_booking (user_id, transport_id, arrival_location, departure_location, arrival_time, departure_time) VALUES (?, ?, ?, ?, ?, ?)";
@@ -28,9 +35,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($result) {
             echo json_encode(['success' => true]);
             exit();
+        } else {
+            echo json_encode(['success' => false, 'error' => 'Database error: ' . mysqli_error($con)]);
+            exit();
         }
+    } else {
+        echo json_encode(['success' => false, 'error' => 'Database error: ' . mysqli_error($con)]);
+        exit();
     }
 }
 
-echo json_encode(['success' => false]);
+echo json_encode(['success' => false, 'error' => 'Invalid request']);
 ?>
