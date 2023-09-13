@@ -16,7 +16,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $arrivalTime = isset($_POST['arrival_time']) ? trim($_POST['arrival_time']) : '';
     $departureTime = isset($_POST['departure_time']) ? trim($_POST['departure_time']) : '';
 
-
     // Check if any required fields are empty
     if (empty($userId) || empty($transportId) || empty($arrivalLocation) || empty($departureLocation) || empty($arrivalTime) || empty($departureTime)) {
         echo json_encode(['success' => false, 'error' => 'Missing or invalid data']);
@@ -43,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo json_encode(['success' => false, 'error' => 'Database error: ' . mysqli_error($con)]);
         exit();
     }
+} else {
+    echo json_encode(['success' => false, 'error' => 'Invalid request']);
+    exit();
 }
-
-echo json_encode(['success' => false, 'error' => 'Invalid request']);
-?>
