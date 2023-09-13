@@ -1,3 +1,12 @@
+<?php
+session_start(); // Start the session at the beginning of the file
+
+if (!isset($_SESSION['user_id'])) {
+    header('Location: login.php');
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -7,12 +16,8 @@
 </head>
 
 <body>
-    <?php 
-        if (!isset($_SESSION['user_id'])) {
-            header('Location: login.php');
-            exit();
-        }
-        include('navi_bar.php');
+    <?php
+    include('navi_bar.php');
     ?>
     <div>
         <h2>
