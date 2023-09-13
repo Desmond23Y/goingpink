@@ -1,9 +1,22 @@
 <?php
 session_start(); // Start the session at the beginning of the file
+include('conn.php'); // Include your database connection file
 
 if (!isset($_SESSION['user_id'])) {
     header('Location: login.php');
     exit();
+}
+
+// Fetch pricing information for transport types from the database
+$result = mysqli_query($con, "SELECT * FROM transport_information");
+if (!$result) {
+    die('Query Error: ' . mysqli_error($con));
+}
+$transportTypes = [];
+
+// Extract transport types and their prices
+while ($row = mysqli_fetch_assoc($result)) {
+    $transportTypes[$row['transport_type']] = $row['transport_price_perKM'];
 }
 ?>
 
@@ -43,11 +56,12 @@ if (!isset($_SESSION['user_id'])) {
     <br>
     <div>
         <select id="transportType">
-            <option value="Van">Van</option>
-            <option value="6-seater car">6-seater car</option>
-            <option value="4-seater car">4-seater car</option>
-            <option value="Luxury 4-seater car">Luxury 4-seater car</option>
-            <option value="Luxury 6-seater car">Luxury 6-seater car</option>
+            <?php
+            // Populate the dropdown menu with transport types and prices
+            foreach ($transportTypes as $type => $price) {
+                echo '<option value="' . $type . '">' . $type . ' (RM ' . $price . ' per KM)</option>';
+            }
+            ?>
         </select>
     </div>
     <br>
@@ -175,21 +189,7 @@ if (!isset($_SESSION['user_id'])) {
             }, function (response, status) {
                 if (status === 'OK') {
                     var distance = response.rows[0].elements[0].distance.value / 1000; // Convert to kilometers
-                    var pricePerKm = 1.5; // Default price per km
-
-                    // Adjust the price per km based on the selected transport type
-                    if (transportType === 'Van') {
-                        pricePerKm = 2.0;
-                    } else if (transportType === '6-seater car') {
-                        pricePerKm = 1.8;
-                    } else if (transportType === '4-seater car') {
-                        pricePerKm = 1.6;
-                    } else if (transportType === 'Luxury 4-seater car') {
-                        pricePerKm = 2.2;
-                    } else if (transportType === 'Luxury 6-seater car') {
-                        pricePerKm = 2.5;
-                    }
-                    
+                    var pricePerKm = <?php echo json_encode($transportTypes); ?>[transportType]; // Get price from PHP variable
 
                     var price = (distance * pricePerKm).toFixed(2); // Calculate price
 
@@ -214,4 +214,3 @@ if (!isset($_SESSION['user_id'])) {
 </body>
 
 </html>
-
