@@ -25,8 +25,8 @@
     </div>
     <div id="locationField">
         <input id="destinationautocomplete" placeholder="Enter your address" onFocus="geolocate()" type="text"></input>
-        <!-- Button to set arrival location on the map -->
-        <button onclick="setLocation('arrival')">Set Arrival</button>
+        <!-- Button to set arrival location on the map (disabled initially) -->
+        <button id="arrivalButton" onclick="setLocation('arrival')" disabled>Set Arrival</button>
     </div>
     <br>
     <div>
@@ -86,6 +86,13 @@
 
         function setLocation(locationType) {
             selectedLocation = locationType;
+
+            // Enable or disable the arrival button based on the selected location
+            if (selectedLocation === 'departure') {
+                document.getElementById('arrivalButton').disabled = false;
+            } else {
+                document.getElementById('arrivalButton').disabled = true;
+            }
         }
 
         function setMarkerAndInputBox(location) {
