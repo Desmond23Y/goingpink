@@ -38,8 +38,11 @@
     </div>
     <div id="output"></div>
 
+    <!-- Add a map container -->
+    <div id="map" style="height: 400px;"></div>
+
     <script>
-        var placeSearch, originautocomplete, destinationautocomplete;
+        var placeSearch, originautocomplete, destinationautocomplete, map;
 
         function initAutocomplete() {
             originautocomplete = new google.maps.places.Autocomplete(
@@ -58,6 +61,12 @@
 
             destinationautocomplete.setComponentRestrictions({
                 'country': ['MY'] // Change the country code to MY (Malaysia)
+            });
+
+            // Initialize the map
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: { lat: 3.1390, lng: 101.6869 }, // Default center (Kuala Lumpur, Malaysia)
+                zoom: 10 // Default zoom level
             });
         }
 
