@@ -99,6 +99,7 @@
                 document.getElementById('arrivalButton').disabled = true;
             }
         }
+
         function setMarkerAndInputBox(clickedLocation) {
             // Set the marker position to the clicked location
             marker.setPosition(clickedLocation);
@@ -108,11 +109,21 @@
             geocoder.geocode({ 'latLng': clickedLocation }, function (results, status) {
                 if (status == google.maps.GeocoderStatus.OK) {
                     if (results[0]) {
-                        // Insert the address into the selected input box
-                        if (selectedLocation === 'departure') {
-                            document.getElementById('originautocomplete').value = results[0].formatted_address;
-                        } else if (selectedLocation === 'arrival') {
-                            document.getElementById('destinationautocomplete').value = results[0].formatted_address;
+                        // Check if the location is within Malaysia
+                        var addressComponents = results[0].address_components;
+                        var isWithinMalaysia = addressComponents.some(function (component) {
+                            return component.short_name === 'MY'; // 'MY' is the country code for Malaysia
+                        });
+
+                        if (isWithinMalaysia) {
+                            // Insert the address into the selected input box
+                            if (selectedLocation === 'departure') {
+                                document.getElementById('originautocomplete').value = results[0].formatted_address;
+                            } else if (selectedLocation === 'arrival') {
+                                document.getElementById('destinationautocomplete').value = results[0].formatted_address;
+                            }
+                        } else {
+                            alert('Please select a location within Malaysia.');
                         }
                     }
                 }
