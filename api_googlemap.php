@@ -193,9 +193,9 @@
                     var options = { timeZone: 'Asia/Kuala_Lumpur', hour12: false };
                     var estimatedArrivalTimeString = estimatedArrivalTime.toLocaleTimeString('en-US', options);
 
-                    document.getElementById('arrivalTime').value = 'Estimated Arrival Time (UTC +8): ' + estimatedArrivalTimeString;
-                    document.getElementById('output').value = 'Total Distance: ' + distance.toFixed(2) + ' KM';
-                    document.getElementById('price').value = 'Total Price (RM): ' + price;
+                    document.getElementById('arrivalTime').value = '' + estimatedArrivalTimeString;
+                    document.getElementById('output').value = '' + distance.toFixed(2) + ' KM';
+                    document.getElementById('price').value = 'RM' + price;
                 } else {
                     alert('Error calculating distance: ' + status);
                 }
