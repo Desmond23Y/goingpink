@@ -68,6 +68,9 @@ while ($row = mysqli_fetch_assoc($result)) {
     <div>
         <input type="button" value="Calculate Price and Time" onclick="BookRide()" />
     </div>
+    <div>
+    <input type="button" value="Book Ride Now" onclick="bookRideNow()" />
+    </div>
     <br>
     <div>
         <strong>Estimated Arrival Time (UTC +8)</strong>
@@ -210,6 +213,66 @@ while ($row = mysqli_fetch_assoc($result)) {
                 }
             });
         }
+
+        function bookRideNow() {
+    var origin = document.getElementById('originautocomplete').value;
+    var destination = document.getElementById('destinationautocomplete').value;
+    var transportType = document.getElementById('transportType').value;
+    var estimatedArrivalTime = document.getElementById('arrivalTime').value;
+
+    // Make an AJAX request to retrieve the transport_id
+    var xhr = new XMLHttpRequest();
+    var url = 'get_transport_id.php';
+    var params = 'transport_type=' + encodeURIComponent(transportType);
+
+    xhr.open('POST', url, true);
+    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+                var response = JSON.parse(xhr.responseText);
+                if (response.transport_id) {
+                    // Transport_id retrieved successfully, now proceed to book the ride
+                    var transportId = response.transport_id;
+
+                    // Make an AJAX request to book the ride with the retrieved transport_id
+                    var bookXhr = new XMLHttpRequest();
+                    var bookUrl = 'transportbooking.php'; 
+                    var bookParams = 'user_id=' + encodeURIComponent(<?php echo $_SESSION['user_id']; ?>) +
+                        '&transport_id=' + encodeURIComponent(transportId) +
+                        '&arrival_location=' + encodeURIComponent(destination) +
+                        '&departure_location=' + encodeURIComponent(origin) +
+                        '&arrival_time=' + encodeURIComponent(estimatedArrivalTime) +
+                        '&departure_time=' + encodeURIComponent(new Date().toISOString());
+
+                    bookXhr.open('POST', bookUrl, true);
+                    bookXhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+                    bookXhr.onreadystatechange = function () {
+                        if (bookXhr.readyState === 4 && bookXhr.status === 200) {
+                            var bookResponse = JSON.parse(bookXhr.responseText);
+                            if (bookResponse.success) {
+                                alert('Booking successful');
+                            } else {
+                                alert('Booking failed');
+                            }
+                        }
+                    };
+
+                    bookXhr.send(bookParams);
+                } else {
+                    alert('Error retrieving transport ID');
+                }
+            } else {
+                alert('Error retrieving transport ID');
+            }
+        }
+    };
+
+    xhr.send(params);
+}
+
     </script>
 </body>
 
