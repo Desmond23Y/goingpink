@@ -25,7 +25,7 @@
     </div>
     <div id="locationField">
         <input id="destinationautocomplete" placeholder="Enter your address" onFocus="geolocate()" type="text"></input>
-        <!-- Button to set arrival location on the map (disabled initially) -->
+        <!-- Button to set arrival location on the map -->
         <button id="arrivalButton" onclick="setLocation('arrival')" disabled>Set Arrival</button>
     </div>
     <br>
@@ -82,6 +82,11 @@
 
             // Initialize selected location to 'departure' by default
             selectedLocation = 'departure';
+
+            // Add a click event listener to the map to set locations
+            google.maps.event.addListener(map, 'click', function (event) {
+                setMarkerAndInputBox(event.latLng);
+            });
         }
 
         function setLocation(locationType) {
@@ -95,29 +100,23 @@
             }
         }
 
-        function setMarkerAndInputBox(location) {
-            // Listen for a click event on the map
-            google.maps.event.addListener(map, 'click', function (event) {
-                // Get the clicked coordinates
-                var clickedLocation = event.latLng;
+        function setMarkerAndInputBox(clickedLocation) {
+            // Set the marker position to the clicked location
+            marker.setPosition(clickedLocation);
 
-                // Set the marker position to the clicked location
-                marker.setPosition(clickedLocation);
-
-                // Use reverse geocoding to get the address for the clicked location
-                var geocoder = new google.maps.Geocoder();
-                geocoder.geocode({ 'latLng': clickedLocation }, function (results, status) {
-                    if (status == google.maps.GeocoderStatus.OK) {
-                        if (results[0]) {
-                            // Insert the address into the selected input box
-                            if (selectedLocation === 'departure') {
-                                document.getElementById('originautocomplete').value = results[0].formatted_address;
-                            } else if (selectedLocation === 'arrival') {
-                                document.getElementById('destinationautocomplete').value = results[0].formatted_address;
-                            }
+            // Use reverse geocoding to get the address for the clicked location
+            var geocoder = new google.maps.Geocoder();
+            geocoder.geocode({ 'latLng': clickedLocation }, function (results, status) {
+                if (status == google.maps.GeocoderStatus.OK) {
+                    if (results[0]) {
+                        // Insert the address into the selected input box
+                        if (selectedLocation === 'departure') {
+                            document.getElementById('originautocomplete').value = results[0].formatted_address;
+                        } else if (selectedLocation === 'arrival') {
+                            document.getElementById('destinationautocomplete').value = results[0].formatted_address;
                         }
                     }
-                });
+                }
             });
         }
 
