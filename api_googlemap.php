@@ -1,6 +1,6 @@
 <?php
 session_start(); // Start the session at the beginning of the file
-include('conn.php'); // Include your database connection file
+include('conn.php'); 
 
 if (!isset($_SESSION['user_id'])) {
     header('Location: login.php');
