@@ -22,8 +22,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit();
     }
 
-    // Insert the booking into the transport_booking table
-    $query = "INSERT INTO transport_booking (user_id, transport_id, arrival_location, departure_location, arrival_time, departure_time) VALUES (?, ?, ?, ?, ?, ?)";
+    // Insert the booking into the transportation_booking table
+    $query = "INSERT INTO transportation_booking (user_id, transport_id, arrival_location, departure_location, arrival_time, departure_time) VALUES (?, ?, ?, ?, ?, ?)";
     $stmt = mysqli_prepare($con, $query);
 
     if ($stmt) {
