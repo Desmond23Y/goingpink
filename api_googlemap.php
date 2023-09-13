@@ -36,11 +36,11 @@
     <div>
         <strong>Total Distance</strong>
     </div>
-    <div id="output"></div>
+    <input type="text" id="output" readonly>
     <div>
         <strong>Total Price (RM)</strong>
     </div>
-    <div id="price"></div>
+    <input type="text" id="price" readonly>
 
     <!-- Add a map container -->
     <div id="map" style="height: 400px;"></div>
