@@ -30,17 +30,17 @@
     </div>
     <br>
     <div>
-        <input type='button' value="Find traveled distance" onclick="CalculatedRecommededDistance()"></input>
+        <input type='button' value="Book a ride now" onclick="BookRide()"></input>
     </div>
     <br>
     <div>
-        <strong>Recommended Route Total Distance</strong>
-    </div>
-    <div id="outputRecommended"></div>
-    <div>
-        <strong>Longest Route Total Distance</strong>
+        <strong>Total Distance</strong>
     </div>
     <div id="output"></div>
+    <div>
+        <strong>Total Price (RM)</strong>
+    </div>
+    <div id="price"></div>
 
     <!-- Add a map container -->
     <div id="map" style="height: 400px;"></div>
@@ -130,8 +130,8 @@
             });
         }
 
-        function CalculatedRecommededDistance() {
-            CalculateDistanceforAllAlternativeRoutes();
+        function BookRide() {
+            CalculateDistance();
 
             var origin = document.getElementById('originautocomplete').value;
             var destination = document.getElementById('destinationautocomplete').value;
@@ -147,56 +147,15 @@
                 avoidHighways: false,
                 avoidTolls: false,
                 avoidFerries: false
-
             }, function (response, status) {
-                var originList = response.originAddresses;
-                var destinationList = response.destinationAddresses;
-                var outputDiv = document.getElementById('outputRecommended');
-                outputDiv.innerHTML = '';
-                // Display distance recommended value
-                for (var i = 0; i < originList.length; i++) {
-                    var results = response.rows[i].elements;
-                    for (var j = 0; j < results.length; j++) {
-                        outputDiv.innerHTML += originList[i] + ' to ' + destinationList[j] +
-                            ': ' + results[j].distance.text + ' in ' +
-                            results[j].duration.text + '<br>';
-                    }
+                if (status === 'OK') {
+                    var distance = response.rows[0].elements[0].distance.value / 1000; // Convert to kilometers
+                    var price = (distance * 0.25).toFixed(2); // Calculate price (RM0.25 per km)
+                    document.getElementById('output').innerHTML = 'Total Distance: ' + distance.toFixed(2) + ' KM';
+                    document.getElementById('price').innerHTML = 'Total Price (RM): ' + price;
+                } else {
+                    alert('Error calculating distance: ' + status);
                 }
-            });
-        }
-
-        function CalculateDistanceforAllAlternativeRoutes() {
-            var directionsService = new google.maps.DirectionsService();
-            var start = document.getElementById('originautocomplete').value;
-            var end = document.getElementById('destinationautocomplete').value;
-            var method = 'DRIVING';
-            var request = {
-                origin: start,
-                destination: end,
-                travelMode: google.maps.TravelMode.DRIVING,
-                provideRouteAlternatives: true,
-                unitSystem: google.maps.UnitSystem.METRIC,
-                optimizeWaypoints: true
-            };
-
-            directionsService.route(request, function (response, status) {
-                var routes = response.routes;
-                var distances = [];
-                for (var i = 0; i < routes.length; i++) {
-                    var distance = 0;
-                    for (var j = 0; j < routes[i].legs.length; j++) {
-                        distance += routes[i].legs[j].distance.value;
-                    }
-                    // Convert into kilometer
-                    distances.push(distance / 1000);
-                }
-                // Get all the alternative distances
-                var maxDistance = distances.sort(function (a, b) {
-                    return a - b;
-                });
-                // Display distance having the highest value
-                var outputDiv = document.getElementById('output');
-                outputDiv.innerHTML = Math.round(maxDistance[routes.length - 1]) + " KM";
             });
         }
     </script>
