@@ -34,6 +34,8 @@
             <option value="Van">Van</option>
             <option value="6-seater car">6-seater car</option>
             <option value="4-seater car">4-seater car</option>
+            <option value="Luxury 4-seater car">Luxury 4-seater car</option>
+            <option value="Luxury 6-seater car">Luxury 6-seater car</option>
         </select>
     </div>
     <br>
@@ -170,7 +172,12 @@
                         pricePerKm = 1.8;
                     } else if (transportType === '4-seater car') {
                         pricePerKm = 1.6;
+                    } else if (transportType === 'Luxury 4-seater car') {
+                        pricePerKm = 2.2;
+                    } else if (transportType === 'Luxury 6-seater car') {
+                        pricePerKm = 2.5;
                     }
+                    
 
                     var price = (distance * pricePerKm).toFixed(2); // Calculate price
 
