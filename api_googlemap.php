@@ -236,7 +236,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                     // Transport_id retrieved successfully, now proceed to book the ride
                     var transportId = response.transport_id;
 
-                    // Make an AJAX request to book the ride with the retrieved transport_id
+                   
                     var bookXhr = new XMLHttpRequest();
                     var bookUrl = 'transportbooking.php'; 
                     var bookParams = 'user_id=' + encodeURIComponent(<?php echo $_SESSION['user_id']; ?>) +
