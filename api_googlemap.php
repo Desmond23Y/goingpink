@@ -131,8 +131,6 @@
         }
 
         function BookRide() {
-            CalculateDistance();
-
             var origin = document.getElementById('originautocomplete').value;
             var destination = document.getElementById('destinationautocomplete').value;
 
@@ -151,8 +149,8 @@
                 if (status === 'OK') {
                     var distance = response.rows[0].elements[0].distance.value / 1000; // Convert to kilometers
                     var price = (distance * 0.25).toFixed(2); // Calculate price (RM0.25 per km)
-                    document.getElementById('output').innerHTML = 'Total Distance: ' + distance.toFixed(2) + ' KM';
-                    document.getElementById('price').innerHTML = 'Total Price (RM): ' + price;
+                    document.getElementById('output').value = 'Total Distance: ' + distance.toFixed(2) + ' KM';
+                    document.getElementById('price').value = 'Total Price (RM): ' + price;
                 } else {
                     alert('Error calculating distance: ' + status);
                 }
