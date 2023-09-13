@@ -85,6 +85,10 @@ while ($row = mysqli_fetch_assoc($result)) {
     <!-- Add a map container -->
     <div id="map" style="height: 400px;"></div>
 
+    <div>
+        <input type="button" value="Book Ride" onclick="bookTransport()" />
+    </div>
+
     <script>
         var placeSearch, originautocomplete, destinationautocomplete, map, marker, selectedLocation;
 
@@ -210,7 +214,39 @@ while ($row = mysqli_fetch_assoc($result)) {
                 }
             });
         }
+
+        function bookTransport() {
+            var origin = document.getElementById('originautocomplete').value;
+            var destination = document.getElementById('destinationautocomplete').value;
+            var transportType = document.getElementById('transportType').value;
+            var estimatedArrivalTime = document.getElementById('arrivalTime').value;
+
+            // Make an AJAX request to the PHP script
+            var xhr = new XMLHttpRequest();
+            var url = 'book_transport.php';
+            var params = 'departure_location=' + encodeURIComponent(origin) +
+                '&arrival_location=' + encodeURIComponent(destination) +
+                '&transport_type=' + encodeURIComponent(transportType) +
+                '&departure_time=' + encodeURIComponent(new Date().toISOString()) +
+                '&estimated_arrival_time=' + encodeURIComponent(estimatedArrivalTime) +
+                '&transport_id=' + encodeURIComponent(0); // Replace with the actual transport ID
+
+            xhr.open('POST', url, true);
+            xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    var response = JSON.parse(xhr.responseText);
+                    if (response.success) {
+                        alert('Booking successful');
+                    } else {
+                        alert('Booking failed');
+                    }
+                }
+            };
+
+            xhr.send(params);
+        }
     </script>
 </body>
-
 </html>
