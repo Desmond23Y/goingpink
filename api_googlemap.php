@@ -145,6 +145,16 @@
         }
 
         function BookRide() {
+            // Check if the user is logged in
+            <?php
+            session_start();
+            if (!isset($_SESSION['user_id'])) {
+                echo 'alert("You must be logged in to book a ride.");';
+                echo 'window.location.href = "login.php";';
+                echo 'return;';
+            }
+            ?>
+                
             var origin = document.getElementById('originautocomplete').value;
             var destination = document.getElementById('destinationautocomplete').value;
             var transportType = document.getElementById('transportType').value;
