@@ -30,7 +30,15 @@
     </div>
     <br>
     <div>
-        <input type='button' value="Book a ride now" onclick="BookRide()"></input>
+        <select id="transportType">
+            <option value="Van">Van</option>
+            <option value="6-seater car">6-seater car</option>
+            <option value="4-seater car">4-seater car</option>
+        </select>
+    </div>
+    <br>
+    <div>
+        <input type='button' value="Calculate Price and Time" onclick="BookRide()"></input>
     </div>
     <br>
     <div>
@@ -137,6 +145,7 @@
         function BookRide() {
             var origin = document.getElementById('originautocomplete').value;
             var destination = document.getElementById('destinationautocomplete').value;
+            var transportType = document.getElementById('transportType').value;
 
             var geocoder = new google.maps.Geocoder();
             var service = new google.maps.DistanceMatrixService();
@@ -152,7 +161,18 @@
             }, function (response, status) {
                 if (status === 'OK') {
                     var distance = response.rows[0].elements[0].distance.value / 1000; // Convert to kilometers
-                    var price = (distance * 1.5).toFixed(2); // Calculate price (RM1.5 per km)
+                    var pricePerKm = 1.5; // Default price per km
+
+                    // Adjust the price per km based on the selected transport type
+                    if (transportType === 'Van') {
+                        pricePerKm = 2.0;
+                    } else if (transportType === '6-seater car') {
+                        pricePerKm = 1.8;
+                    } else if (transportType === '4-seater car') {
+                        pricePerKm = 1.6;
+                    }
+
+                    var price = (distance * pricePerKm).toFixed(2); // Calculate price
 
                     // Calculate estimated arrival time (current time + fixed travel time)
                     var currentTime = new Date();
@@ -163,9 +183,9 @@
                     var options = { timeZone: 'Asia/Kuala_Lumpur', hour12: false };
                     var estimatedArrivalTimeString = estimatedArrivalTime.toLocaleTimeString('en-US', options);
 
-                    document.getElementById('arrivalTime').value = '' + estimatedArrivalTimeString;
-                    document.getElementById('output').value = '' + distance.toFixed(2) + ' KM';
-                    document.getElementById('price').value = 'RM: ' + price;
+                    document.getElementById('arrivalTime').value = 'Estimated Arrival Time (UTC +8): ' + estimatedArrivalTimeString;
+                    document.getElementById('output').value = 'Total Distance: ' + distance.toFixed(2) + ' KM';
+                    document.getElementById('price').value = 'Total Price (RM): ' + price;
                 } else {
                     alert('Error calculating distance: ' + status);
                 }
