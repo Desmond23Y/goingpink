@@ -9,7 +9,7 @@
 <body>
     <div>
         <h2>
-            Orign Location
+            Departure Location
         </h2>
     </div>
     <div id="locationField">
@@ -20,7 +20,7 @@
 
     <div>
         <h2>
-            Destination Location
+            Arrival Location
         </h2>
     </div>
     <div id="locationField">
