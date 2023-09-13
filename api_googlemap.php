@@ -9,7 +9,7 @@
 <body>
     <?php 
         include('navi_bar.php');
-    <?
+    ?>
     <div>
         <h2>
             Departure Location
