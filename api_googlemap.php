@@ -34,6 +34,10 @@
     </div>
     <br>
     <div>
+        <strong>Estimated Arrival Time (UTC +8)</strong>
+    </div>
+    <input type="text" id="arrivalTime" readonly>
+    <div>
         <strong>Total Distance</strong>
     </div>
     <input type="text" id="output" readonly>
@@ -149,6 +153,17 @@
                 if (status === 'OK') {
                     var distance = response.rows[0].elements[0].distance.value / 1000; // Convert to kilometers
                     var price = (distance * 1.5).toFixed(2); // Calculate price (RM1.5 per km)
+
+                    // Calculate estimated arrival time (current time + fixed travel time)
+                    var currentTime = new Date();
+                    var travelTimeMinutes = Math.round(distance / 40 * 60); // Assuming an average speed of 40 km/h
+                    var estimatedArrivalTime = new Date(currentTime.getTime() + (travelTimeMinutes * 60 * 1000));
+
+                    // Format the estimated arrival time as a string (UTC +8)
+                    var options = { timeZone: 'Asia/Kuala_Lumpur', hour12: false };
+                    var estimatedArrivalTimeString = estimatedArrivalTime.toLocaleTimeString('en-US', options);
+
+                    document.getElementById('arrivalTime').value = 'Estimated Arrival Time (UTC +8): ' + estimatedArrivalTimeString;
                     document.getElementById('output').value = 'Total Distance: ' + distance.toFixed(2) + ' KM';
                     document.getElementById('price').value = 'Total Price (RM): ' + price;
                 } else {
