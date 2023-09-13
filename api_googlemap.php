@@ -148,7 +148,7 @@
             }, function (response, status) {
                 if (status === 'OK') {
                     var distance = response.rows[0].elements[0].distance.value / 1000; // Convert to kilometers
-                    var price = (distance * 0.25).toFixed(2); // Calculate price (RM0.25 per km)
+                    var price = (distance * 1.5).toFixed(2); // Calculate price (RM1.5 per km)
                     document.getElementById('output').value = 'Total Distance: ' + distance.toFixed(2) + ' KM';
                     document.getElementById('price').value = 'Total Price (RM): ' + price;
                 } else {
