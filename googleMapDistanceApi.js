@@ -4,8 +4,6 @@
 // This example requires the Places library. Include the libraries=places
 // parameter when you first load the API. For example:
 // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
-var _originautocomplete = document.getElementById("originautocomplete");
-var _destinationautocomplete = document.getElementById("destinationautocomplete");
 
 var placeSearch, originautocomplete;
 var componentForm = {
@@ -17,49 +15,7 @@ var componentForm = {
   postal_code: 'short_name'
 };
 
-function initAutocomplete() {
-  // Create the autocomplete object, restricting the search to geographical
-  // location types.
-  originautocomplete = new google.maps.places.Autocomplete(
-    /** @type {!HTMLInputElement} */
-    (document.getElementById('originautocomplete')), {
-      types: ['geocode']
-    });
-  // Set initial restrict to the greater list of countries.
-  originautocomplete.setComponentRestrictions({
-    'country': ['MY']
-  });
 
-  destinationautocomplete = new google.maps.places.Autocomplete(
-    (document.getElementById('destinationautocomplete')), {
-      types: ['geocode']
-    });
-
-  destinationautocomplete.setComponentRestrictions({
-    'country': ['MY']
-  });
-}
-
-
-// Bias the autocomplete object to the user's geographical location,
-// as supplied by the browser's 'navigator.geolocation' object.
-function geolocate() {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function(position) {
-      var geolocation = {
-        lat: position.coords.latitude,
-        lng: position.coords.longitude
-      };
-      var circle = new google.maps.Circle({
-        center: geolocation,
-        radius: position.coords.accuracy
-      });
-      [originautocomplete, destinationautocomplete].forEach(function(){
-        this.setBounds(circle.getBounds());
-      });
-    });
-  }
-}
 
 function CalculatedRecommededDistance() {
   CalculateDistanceforAllAlternativeRoutes();

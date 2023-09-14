@@ -26,7 +26,7 @@ while ($row = mysqli_fetch_assoc($result)) {
 <head>
     <title>Going Pink Transport Booking</title>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBS7LY-BaBKUS0xIRTNJKXtfsLEZv_5OG8&libraries=places&callback=initAutocomplete" async defer></script>
-    <script src="./googleMapDistanceApi.js" async defer></script>
+    <!-- <script src="./googleMapDistanceApi.js" async defer></script> -->
 </head>
 
 <body>
@@ -90,6 +90,9 @@ while ($row = mysqli_fetch_assoc($result)) {
     <div id="map" style="height: 400px;"></div>
 
     <script>
+        var _originautocomplete = document.getElementById("originautocomplete");
+        var _destinationautocomplete = document.getElementById("destinationautocomplete");
+
         var placeSearch, originautocomplete, destinationautocomplete, map, marker, selectedLocation;
 
         function initAutocomplete() {
@@ -141,6 +144,29 @@ while ($row = mysqli_fetch_assoc($result)) {
                 document.getElementById('arrivalButton').disabled = false;
             } else {
                 document.getElementById('arrivalButton').disabled = true;
+            }
+        }
+
+        // Bias the autocomplete object to the user's geographical location,
+        // as supplied by the browser's 'navigator.geolocation' object.
+        function geolocate() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function(position) {
+                var geolocation = {
+                    lat: position.coords.latitude,
+                    lng: position.coords.longitude
+                };
+                var circle = new google.maps.Circle({
+                    center: geolocation,
+                    radius: position.coords.accuracy
+                });
+                [_originautocomplete, _destinationautocomplete].forEach(function(){
+                    this.setBounds(circle.getBounds());
+                });
+                [originautocomplete, destinationautocomplete].forEach(function(){
+                    this.setBounds(circle.getBounds());
+                });
+                });
             }
         }
 
