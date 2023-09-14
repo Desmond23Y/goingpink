@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt = mysqli_prepare($con, $query);
 
     if ($stmt) {
-        mysqli_stmt_bind_param($stmt, "iissss", $userId, $transportId, $arrivalLocation, $departureLocation, $arrivalTime, $departureTime);
+        mysqli_stmt_bind_param($stmt, "ssssss", $userId, $transportId, $arrivalLocation, $departureLocation, $arrivalTime, $departureTime);
         $result = mysqli_stmt_execute($stmt);
         mysqli_stmt_close($stmt);
 
@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             exit();
         }
     } else {
-        echo json_encode(['success' => false, 'error' => 'Database error: ' . mysqli_error($con)]);
+        echo json_encode(['success' => false, 'error' => 'Backend error: ' . mysqli_error($con)]);
         exit();
     }
 } else {
