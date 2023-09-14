@@ -69,7 +69,7 @@ while ($row = mysqli_fetch_assoc($result)) {
         <input type="button" value="Calculate Price and Time" onclick="BookRide()" />
     </div>
     <div>
-        <input type="button" value="Book Ride Now" onclick="bookRideNow()" />
+        <input type="button" id="bookRideNow" value="Book Ride Now" onclick="bookRideNow()" disabled />
     </div>
     <br>
     <div>
@@ -212,6 +212,8 @@ while ($row = mysqli_fetch_assoc($result)) {
                     alert('Error calculating distance: ' + status);
                 }
             });
+
+            document.getElementById('bookRideNow').disabled = false;
         }
 
         function bookRideNow() {
@@ -235,6 +237,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                         if (response.transport_id) {
                             // Transport_id retrieved successfully, now proceed to book the ride
                             var transportId = response.transport_id;
+                            var full_arrival_time = new Date().toISOString().slice(0, 11) + estimatedArrivalTime;
 
                             var bookXhr = new XMLHttpRequest();
                             var bookUrl = 'transportbooking.php'; 
@@ -242,7 +245,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                                 '&transport_id=' + encodeURIComponent(transportId) +
                                 '&arrival_location=' + encodeURIComponent(destination) +
                                 '&departure_location=' + encodeURIComponent(origin) +
-                                '&arrival_time=' + encodeURIComponent(estimatedArrivalTime) +
+                                '&arrival_time=' + encodeURIComponent(full_arrival_time) +
                                 '&departure_time=' + encodeURIComponent(new Date().toISOString());
 
                             bookXhr.open('POST', bookUrl, true);
