@@ -26,7 +26,7 @@ while ($row = mysqli_fetch_assoc($result)) {
 <head>
     <title>Going Pink Transport Booking</title>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBS7LY-BaBKUS0xIRTNJKXtfsLEZv_5OG8&libraries=places&callback=initAutocomplete" async defer></script>
-    <script src="https://gist.githubusercontent.com/poojarsn/a5dc7d3b02b8fa3aafe153bfbfd41e54/raw/f91d6cbb9e90391dbb713273d3f39a12b6d739d5/googleMapDistanceApi.js" async defer></script>
+    <script src="./googleMapDistanceApi.js" async defer></script>
 </head>
 
 <body>
