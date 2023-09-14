@@ -27,6 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt = mysqli_prepare($con, $query);
 
     if ($stmt) {
+        echo $stmt;
         mysqli_stmt_bind_param($stmt, "ssssss", $userId, $transportId, $arrivalLocation, $departureLocation, $arrivalTime, $departureTime);
         $result = mysqli_stmt_execute($stmt);
         mysqli_stmt_close($stmt);
