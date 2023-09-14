@@ -27,15 +27,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt = mysqli_prepare($con, $query);
 
     if ($stmt) {
-        echo $stmt;
         mysqli_stmt_bind_param($stmt, "ssssss", $userId, $transportId, $arrivalLocation, $departureLocation, $arrivalTime, $departureTime);
-        $result = mysqli_stmt_execute($stmt);
-        mysqli_stmt_close($stmt);
 
-        if ($result) {
+        if (mysqli_stmt_execute($stmt)) {
+            mysqli_stmt_close($stmt);
             echo json_encode(['success' => true]);
             exit();
         } else {
+            mysqli_stmt_close($stmt);
             echo json_encode(['success' => false, 'error' => 'Database error: ' . mysqli_error($con)]);
             exit();
         }
