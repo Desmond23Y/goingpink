@@ -9,8 +9,8 @@ if (!isset($_SESSION['user_id'])) {
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Retrieve POST data and perform basic validation
-    $userId = isset($_POST['user_id']) ? intval($_POST['user_id']) : null;
-    $transportId = isset($_POST['transport_id']) ? intval($_POST['transport_id']) : null;
+    $userId = isset($_POST['user_id']) ? trim($_POST['user_id']) : null;
+    $transportId = isset($_POST['transport_id']) ? trim($_POST['transport_id']) : null;
     $arrivalLocation = isset($_POST['arrival_location']) ? trim($_POST['arrival_location']) : '';
     $departureLocation = isset($_POST['departure_location']) ? trim($_POST['departure_location']) : '';
     $arrivalTime = isset($_POST['arrival_time']) ? trim($_POST['arrival_time']) : '';
