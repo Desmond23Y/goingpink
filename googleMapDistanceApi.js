@@ -4,6 +4,8 @@
 // This example requires the Places library. Include the libraries=places
 // parameter when you first load the API. For example:
 // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+var _originautocomplete = document.getElementById("originautocomplete");
+var _destinationautocomplete = document.getElementById("destinationautocomplete");
 
 var placeSearch, originautocomplete;
 var componentForm = {
@@ -25,7 +27,7 @@ function initAutocomplete() {
     });
   // Set initial restrict to the greater list of countries.
   originautocomplete.setComponentRestrictions({
-    'country': ['aus']
+    'country': ['MY']
   });
 
   destinationautocomplete = new google.maps.places.Autocomplete(
@@ -34,7 +36,7 @@ function initAutocomplete() {
     });
 
   destinationautocomplete.setComponentRestrictions({
-    'country': ['aus']
+    'country': ['MY']
   });
 }
 
@@ -52,7 +54,9 @@ function geolocate() {
         center: geolocation,
         radius: position.coords.accuracy
       });
-      autocomplete.setBounds(circle.getBounds());
+      [originautocomplete, destinationautocomplete].forEach(function(){
+        this.setBounds(circle.getBounds());
+      });
     });
   }
 }
