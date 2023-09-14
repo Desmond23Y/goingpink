@@ -238,7 +238,7 @@ while ($row = mysqli_fetch_assoc($result)) {
 
                             var bookXhr = new XMLHttpRequest();
                             var bookUrl = 'transportbooking.php'; 
-                            var bookParams = 'user_id=' + encodeURIComponent(<?php echo $_SESSION['user_id']; ?>) +
+                            var bookParams = 'user_id=' + encodeURIComponent(<?php echo "'". $_SESSION['user_id']."'"; ?>) +
                                 '&transport_id=' + encodeURIComponent(transportId) +
                                 '&arrival_location=' + encodeURIComponent(destination) +
                                 '&departure_location=' + encodeURIComponent(origin) +
