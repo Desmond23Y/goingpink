@@ -99,7 +99,7 @@ while ($row = mysqli_fetch_assoc($result)) {
             originautocomplete = new google.maps.places.Autocomplete(
                 document.getElementById('originautocomplete'), {
                     fields: ["address_components", "geometry"],
-                    types: ['point_of_interest']
+                    types: ['street_address', 'point_of_interest']
                 });
 
             originautocomplete.setComponentRestrictions({
@@ -109,7 +109,7 @@ while ($row = mysqli_fetch_assoc($result)) {
             destinationautocomplete = new google.maps.places.Autocomplete(
                 document.getElementById('destinationautocomplete'), {
                     fields: ["address_components", "geometry"],
-                    types: ['point_of_interest']
+                    types: ['street_address', 'point_of_interest']
                 });
 
             destinationautocomplete.setComponentRestrictions({
@@ -137,31 +137,6 @@ while ($row = mysqli_fetch_assoc($result)) {
                 setMarkerAndInputBox(event.latLng);
             });
 
-             // dynamic autocomplete for multiple fields
-            //========start of autocomplete=====
-            var inputs = document.getElementsByClassName('query');
-    
-            var options = {
-              types: ['point_of_interest'],
-              componentRestrictions: {country: 'my'}
-            };
-            
-            var autocompletes = [];
-            
-            for (var i = 0; i < inputs.length; i++) {
-              var autocomplete = new google.maps.places.Autocomplete(inputs[i], options);
-              autocomplete.inputId = inputs[i].id;
-              autocomplete.addListener('place_changed', fillIn);
-              autocompletes.push(autocomplete);
-            }
-            
-            function fillIn() {
-              console.log(this.inputId);
-              var place = this.getPlace();
-              console.log(place. address_components[0].long_name);
-            }
-    
-            //=======end of autocomplete======
         }
 
         function setLocation(locationType) {
