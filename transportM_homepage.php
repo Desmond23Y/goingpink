@@ -9,17 +9,11 @@
     <title> Transport Management Homepage</title>
     <link rel="stylesheet" href="M_navibar.css">
     <nav>
-        <ul class="navibar">
-            <li><a href="index.php">HOME</a></li>
-            <li><a href="viewhotel.php">BOOKING</a></li>
-            <li><a href="api_exRates.php">EXCHANGE RATES</a></li>
-            <li><a href="request_form.php">SUPPORT</a></li>
-            <li><a href="view_rating.php">VIEW RATING</a></li>
-            <li><a href="rating.php">LEAVE A RATING</a></li>
+            <ul class="navibar">
+            <li><a href="homepage_hotel.php">HOME</a></li>
+            <li><a href="view_hotel_info.php">HOTELS</a></li>
+            <li><a href="viewbooking.php">BOOKING</a></li>
             <li><a href="logout.php" class="right">LOGOUT</a></li>
-            <li><a href="register.php" class="right">REGISTER</a></li>
-            <li><a href="login.php" class="right">LOGIN</a></li>
-            <li><a href="view_profile.php" class="right">PROFILE</a></li>
         </ul>
     </nav>
 </head>
