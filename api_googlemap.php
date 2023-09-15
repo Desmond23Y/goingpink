@@ -39,7 +39,7 @@ while ($row = mysqli_fetch_assoc($result)) {
         </h2>
     </div>
     <div id="locationField">
-        <input id="originautocomplete" placeholder="Enter your address" onFocus="geolocate()" type="text" />
+        <input id="originautocomplete" class="query" placeholder="Enter your address" type="text" autocomplete="off" />
         <!-- Button to set departure location on the map -->
         <button onclick="setLocation('departure')">Set Departure</button>
     </div>
@@ -50,7 +50,7 @@ while ($row = mysqli_fetch_assoc($result)) {
         </h2>
     </div>
     <div id="destinationLocationField">
-        <input id="destinationautocomplete" placeholder="Enter your address" onFocus="geolocate()" type="text" />
+        <input id="destinationautocomplete" class="query" placeholder="Enter your destination" type="text" autocomplete="off" />
         <!-- Button to set arrival location on the map -->
         <button id="arrivalButton" onclick="setLocation('arrival')" disabled>Set Arrival</button>
     </div>
@@ -98,7 +98,8 @@ while ($row = mysqli_fetch_assoc($result)) {
         function initAutocomplete() {
             originautocomplete = new google.maps.places.Autocomplete(
                 document.getElementById('originautocomplete'), {
-                    types: ['geocode']
+                    fields: ["address_components", "geometry"],
+                    types: ['address']
                 });
 
             originautocomplete.setComponentRestrictions({
@@ -107,7 +108,8 @@ while ($row = mysqli_fetch_assoc($result)) {
 
             destinationautocomplete = new google.maps.places.Autocomplete(
                 document.getElementById('destinationautocomplete'), {
-                    types: ['geocode']
+                    fields: ["address_components", "geometry"],
+                    types: ['address']
                 });
 
             destinationautocomplete.setComponentRestrictions({
@@ -149,7 +151,8 @@ while ($row = mysqli_fetch_assoc($result)) {
 
         // Bias the autocomplete object to the user's geographical location,
         // as supplied by the browser's 'navigator.geolocation' object.
-        function geolocate() {
+        // not working, deprecated
+       /* function geolocate() {
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(function(position) {
                 var geolocation = {
@@ -160,15 +163,36 @@ while ($row = mysqli_fetch_assoc($result)) {
                     center: geolocation,
                     radius: position.coords.accuracy
                 });
-                [_originautocomplete, _destinationautocomplete].forEach(function(){
-                    this.setBounds(circle.getBounds());
-                });
-                [originautocomplete, destinationautocomplete].forEach(function(){
-                    this.setBounds(circle.getBounds());
-                });
+                autocomplete.setBounds(circle.getBounds());
                 });
             }
+        } */
+
+        // dynamic autocomplete for multiple fields
+        //========start of autocomplete=====
+        var inputs = document.getElementsByClassName('query');
+
+        var options = {
+          types: ['(address)'],
+          componentRestrictions: {country: 'my'}
+        };
+        
+        var autocompletes = [];
+        
+        for (var i = 0; i < inputs.length; i++) {
+          var autocomplete = new google.maps.places.Autocomplete(inputs[i], options);
+          autocomplete.inputId = inputs[i].id;
+          autocomplete.addListener('place_changed', fillIn);
+          autocompletes.push(autocomplete);
         }
+        
+        function fillIn() {
+          console.log(this.inputId);
+          var place = this.getPlace();
+          console.log(place. address_components[0].long_name);
+        }
+
+        //=======end of autocomplete======
 
         function setMarkerAndInputBox(clickedLocation) {
             // Set the marker position to the clicked location
