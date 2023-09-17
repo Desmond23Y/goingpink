@@ -34,13 +34,17 @@ if (!$result) {
             while ($row = mysqli_fetch_assoc($result)) {
                 echo '<h3>Transport Type: ' . $row["transport_type"] . '</h3>';
                 echo '<h3>Price per KM: $' . $row["transport_price_perKM"] . '</h3>';
+
+                // Check for type of car and display the image accordingly
+                if ($row["transport_type"] == "Luxury-4 seater car") {
+                    echo '<img src="luxury_car_image.jpg" alt="Luxury Car">';
+                }
             }
         } else {
             echo "No transportation information available.";
         }
         ?>
     </div>
-
 
     <div class="bottom-button">
         <form method="POST" action="api_googlemap.php">
