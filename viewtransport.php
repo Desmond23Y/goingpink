@@ -40,5 +40,12 @@ if (!$result) {
         }
         ?>
     </div>
+
+
+    <div class="bottom-button">
+        <form method="POST" action="api_googlemap.php">
+            <button type="submit">Proceed</button>
+        </form>
+    </div>
 </body>
 </html>
