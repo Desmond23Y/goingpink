@@ -1,6 +1,14 @@
 <?php
+session_start();
+include('conn.php');
 
-?>
+if (!isset($_SESSION['transport_manager_id'])) {
+    header('Location: login.php');
+    exit();
+}
+
+$sql = "SELECT * FROM hotel_information";
+$result = $conn->query($sql);
 
 <html>
 <head>
@@ -21,5 +29,25 @@
 
 <body>
 <h1>Hotel Information</h1>
+    <div class="box">
+        <?php
+            if ($result->num_rows > 0) {
+                echo "<table>";
+                while ($row = $result->fetch_assoc()) {
+                    echo "<tr>";
+                    echo "<tr>" . $row['column1'] . "</tr>";
+                    echo "<tr>" . $row['column2'] . "</tr>";
+                    echo "<tr>" . $row['column3'] . "</tr>";
+                    echo "<tr>" . $row['column4'] . "</tr>";
+                    echo "<tr>" . $row['column5'] . "</tr>";
+                    echo "</tr>";
+                }
+            echo "</tabl>";
+} else {
+    echo "No data found";
+
+$conn->close();
+?>
+    </div>
 </body>
 </html>
