@@ -2,11 +2,6 @@
 session_start();
 include('conn.php');
 
-if (!isset($_SESSION['transport_manager_id'])) {
-    header('Location: login.php');
-    exit();
-}
-
 $selectedHotelID = null;
 
 $sql = "SELECT * FROM hotel_information";
