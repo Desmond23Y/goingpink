@@ -9,6 +9,7 @@ if (!isset($_SESSION['transport_manager_id'])) {
 
 $sql = "SELECT * FROM hotel_information";
 $result = $conn->query($sql);
+?>
 
 <html>
 <head>
