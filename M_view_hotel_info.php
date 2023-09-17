@@ -16,6 +16,15 @@ if (!$result) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hotel Information</title>
     <link rel="stylesheet" href="M_navibar.css">
+     <nav>
+        <ul class="navibar">
+            <li><a href="M_hotel_homepage.php">HOME</a></li>
+            <li><a href="M_view_hotel_info.php">HOTELS</a></li>
+            <li><a href="M_viewbooking.php">BOOKING</a></li>
+            <li><a href="M_room_availability.php">ROOM AVAILABILITY</a></li>
+            <li><a href="logout.php" class="right">LOGOUT</a></li>
+        </ul>
+    </nav>
 </head>
 
 <body>
@@ -31,7 +40,7 @@ if (!$result) {
                 echo '<h3> Hotel Price: US$ ' . $row["hotel_price"] . '</h3>';
                 
                 if ($_SESSION['user_type'] == 'admin' || $_SESSION['user_type'] == 'hotel_management') {
-                    echo '<a href="edithotel.php?hotel_id=' . $row["hotel_id"] . '">Edit This Hotel</a>';
+                    echo '<a href="M_edit_hotel_info.php">Edit This Hotel</a>';
                 }
             }
         } else {
