@@ -34,11 +34,6 @@ if (!$result) {
             while ($row = mysqli_fetch_assoc($result)) {
                 echo '<h3>Transport Type: ' . $row["transport_type"] . '</h3>';
                 echo '<h3>Price per KM: $' . $row["transport_price_perKM"] . '</h3>';
-
-                // Add a button to proceed to the Google Maps API page
-                echo '<form method="POST" action="api_googlemap.php">';
-                echo '<button type="submit">Proceed</button>';
-                echo '</form>';
             }
         } else {
             echo "No transportation information available.";
