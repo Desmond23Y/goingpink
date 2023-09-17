@@ -40,7 +40,14 @@ if (!$result) {
                     echo '<img src="luxury_4_seater.png" alt="4-Luxury Car">';
                 } elseif ($row["transport_type"] == "Luxury 6-seater car") {
                     echo '<img src="luxury_6_seater.png" alt="6-Luxury Car">';
-                }
+                } elseif ($row["transport_type"] == "Van") {
+                    echo '<img src="van.png" alt="van">';
+                } elseif ($row["transport_type"] == "6-seater Car") {
+                    echo '<img src="6_seater_car.png" alt="6-seater Car">';
+                } elseif ($row["transport_type"] == "4-seater Car") {
+                    echo '<img src="4_seater_car.png" alt="4-seater Car">';
+                } 
+                
             }
         } else {
             echo "No transportation information available.";
