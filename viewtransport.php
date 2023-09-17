@@ -37,7 +37,7 @@ if (!$result) {
 
                 // Check for type of car and display the image accordingly
                 if ($row["transport_type"] == "Luxury-4 seater car") {
-                    echo '<img src="luxury_car_image.webp" alt="Luxury Car">';
+                    echo '<img src="luxury-4 seater car.webp" alt="Luxury Car">';
                 }
             }
         } else {
