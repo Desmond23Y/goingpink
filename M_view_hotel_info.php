@@ -45,10 +45,13 @@ $result = $conn->query($sql);
                     
                     if ($_SESSION['user_type'] == 'admin' || $_SESSION['user_type'] == 'hotel_management') {
                     echo '<a href="edithotel.php?hotel_id=' . $row["hotel_id"] . '">Edit This Hotel</a>';
-        } else {
-        echo "No hotels available";
-    }
-    $conn->close();
+                    }
+                    echo '</div>';
+                }
+            } else {
+                echo "No hotels available";
+            }
+            $conn->close();
     ?>
     </div>
 </body>
