@@ -4,8 +4,10 @@ include('conn.php');
 
 $selectedHotelID = null;
 
-$sql = "SELECT * FROM hotel_information";
-$result = $conn->query($sql);
+$result = mysqli_query($con, "SELECT * FROM hotel_information");
+if (!$result) {
+    die('Query Error: ' . mysqli_error($con));
+}
 ?>
 
 <html>
