@@ -44,11 +44,11 @@ $result = $conn->query($sql);
                     echo "</tr>";
                 }
             echo "</tabl>";
-} else {
-    echo "No data found";
-
-$conn->close();
-?>
+    } else {
+        echo "No data found";
+    }
+    $conn->close();
+    ?>
     </div>
 </body>
 </html>
