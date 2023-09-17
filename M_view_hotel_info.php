@@ -7,6 +7,8 @@ if (!isset($_SESSION['transport_manager_id'])) {
     exit();
 }
 
+$selectedHotelID = null;
+
 $sql = "SELECT * FROM hotel_information";
 $result = $conn->query($sql);
 ?>
@@ -35,17 +37,16 @@ $result = $conn->query($sql);
             if ($result->num_rows > 0) {
                 echo "<table>";
                 while ($row = $result->fetch_assoc()) {
-                    echo "<tr>";
-                    echo "<tr>" . $row['column1'] . "</tr>";
-                    echo "<tr>" . $row['column2'] . "</tr>";
-                    echo "<tr>" . $row['column3'] . "</tr>";
-                    echo "<tr>" . $row['column4'] . "</tr>";
-                    echo "<tr>" . $row['column5'] . "</tr>";
-                    echo "</tr>";
-                }
-            echo "</tabl>";
-    } else {
-        echo "No data found";
+                    echo '<h3> Hotel Name: ' . $row["hotel_name"] . '</h3>';
+                    echo '<h3> Room Type: ' . $row["room_type"] . '</h3>';
+                    echo '<h3> Room Availability: ' . $row["room_availability"] . '</h3>';
+                    echo '<h3> Hotel Availability: ' . $row["hotel_availability"] . '</h3>';
+                    echo '<h3> Hotel Price: US$ ' . $row["hotel_price"] . '</h3>';
+                    
+                    if ($_SESSION['user_type'] == 'admin' || $_SESSION['user_type'] == 'hotel_management') {
+                    echo '<a href="edithotel.php?hotel_id=' . $row["hotel_id"] . '">Edit This Hotel</a>';
+        } else {
+        echo "No hotels available";
     }
     $conn->close();
     ?>
