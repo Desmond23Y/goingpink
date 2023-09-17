@@ -23,7 +23,7 @@ if (!$result) {
     <title>Transportation Information</title>
     <link rel="stylesheet" href="style_transport.css">
     <style>
-        /* Add CSS styles to adjust image size to 800x600 pixels */
+        /* CSS styles to adjust image size to 800x600 pixels */
         img {
             max-width: 800px;
             max-height: 600px;
