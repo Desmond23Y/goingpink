@@ -33,13 +33,16 @@ if (!$result) {
 <form action="M_edit_hotel_info.php" method="post">
         <label for="name">Hotel Name: </label>
         <input type="text" id="hotelName" name="hotelName" required>
+    <br>
         <label for="name">Room Type: </label>
         <input type="text" id="roomType" name="roomType" required>
+    <br>
         <label for="name">Hotel Availability: </label>
         <input type="number" id="hotelAvailability" name="hotelAvailability" required>
+    <br>
         <label for="name">Hotel Price: </label>
         <input type="text" id="hotelPrice" name="hotelPrice" required>
         <br><br>
-        <input type="submit" value= Save Changes">
+        <input type="submit" value="Save Changes">
 </form>
 </div>
