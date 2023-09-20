@@ -29,7 +29,17 @@ if (!$result) {
   
 <body>
 <h1>Edit Hotel Information</h1>
-  
+<div class="box">
 <form action="M_edit_hotel_info.php" method="post">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
+        <label for="name">Hotel Name: </label>
+        <input type="text" id="hotelName" name="hotelName" required>
+        <label for="name">Room Type: </label>
+        <input type="text" id="roomType" name="roomType" required>
+        <label for="name">Hotel Availability: </label>
+        <input type="number" id="hotelAvailability" name="hotelAvailability" required>
+        <label for="name">Hotel Price: </label>
+        <input type="text" id="hotelPrice" name="hotelPrice" required>
+        <br><br>
+        <input type="submit" value= Save Changes">
+</form>
+</div>
