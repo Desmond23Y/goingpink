@@ -1,5 +1,8 @@
 <?php include("conn.php");
 $result=mysqli_query($con,"SELECT* FROM transport_managememnt");
+if (!$result) {
+    die("Query failed: " . mysqli_error($con));
+}
 ?>
 <table width="90%">
     <tr bgcolor="#FFB6C1">
