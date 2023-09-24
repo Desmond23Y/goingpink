@@ -8,8 +8,8 @@ $result=mysqli_query($con,"SELECT* FROM transportation_booking");
         <td>User ID</td>
         <td>Admin ID</td>
         <td>Transport ID</td>
-        <td>Arrival Date</td>
-        <td>Departure Date</td>
+        <td>Arrival Time</td>
+        <td>Departure Time</td>
         <td>Arrival Location</td>
         <td>Departure Location</td>
     </tr>
@@ -23,8 +23,8 @@ $result=mysqli_query($con,"SELECT* FROM transportation_booking");
         echo'<td>'.$row["user_id"].'</td>';
         echo'<td>'.$row["admin_id"].'</td>';
         echo'<td>'.$row["transport_id"].'</td>';
-        echo'<td>'.$row["arrival_date"].'</td>';
-        echo'<td>'.$row["departure_date"].'</td>';
+        echo'<td>'.$row["arrival_time"].'</td>';
+        echo'<td>'.$row["departure_time"].'</td>';
         echo'<td>'.$row["arrival_location"].'</td>';
         echo'<td>'.$row["departure_location"].'</td>';
         echo'</tr>';
