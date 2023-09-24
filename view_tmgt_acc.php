@@ -1,5 +1,5 @@
 <?php include("conn.php");
-$result=mysqli_query($con,"SELECT* FROM transport_managememnt");
+$result=mysqli_query($con,"SELECT* FROM transport_management");
 if (!$result) {
     die("Query failed: " . mysqli_error($con));
 }
