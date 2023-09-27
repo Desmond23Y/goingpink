@@ -15,6 +15,11 @@ if (isset($_GET['hotel_id']) && is_numeric($_GET['hotel_id'])) {
         $roomType = $row['room_type'];
         $hotelAvailability = $row['hotel_availability'];
         $hotelPrice = $row['hotel_price'];
+        
+    echo "Debugging information:<br>";
+    echo "hotelID: $hotelID<br>";
+    echo "Query: $query<br>";
+    
     } else {
         echo "Hotel not found.";
         exit();
@@ -22,10 +27,6 @@ if (isset($_GET['hotel_id']) && is_numeric($_GET['hotel_id'])) {
 } else {
     echo "Hotel ID not provided.";
     exit();
-
-    echo "Debugging information:<br>";
-    echo "hotelID: $hotelID<br>";
-    echo "Query: $query<br>";
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
