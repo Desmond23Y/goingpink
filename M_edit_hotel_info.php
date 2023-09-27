@@ -5,7 +5,7 @@ include('conn.php');
 if (isset($_GET['hotel_id'])) {
     $hotelID = $_GET['hotel_id'];
 
-    $query = "SELECT * FROM hotel_information WHERE hotel_id = $hotel_ID";
+    $query = "SELECT * FROM hotel_information WHERE hotel_id = $hotelID";
     $result = mysqli_query($con, $query);
 
     if ($result && mysqli_num_rows($result) > 0) {
