@@ -49,7 +49,7 @@ if (isset($_GET['hotel_id'])) {
 <body>
     <h1>Edit Hotel Information</h1>
     <div class="box">
-        <form action="M_edit_hotel_info.php?hotel_id=' . $row['hotel_id'] . '" method="POST">
+        <form action="M_edit_hotel_info.php?hotel_id=<?php echo $hotel_id; ?>" method="POST">
             <label for="hotelName">Hotel Name: </label>
             <input type="text" id="hotelName" name="hotelName" required value="<?php echo $hotelName; ?>">
             <br><br>
