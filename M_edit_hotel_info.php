@@ -2,15 +2,14 @@
 session_start();
 include('conn.php');
 
-if (isset($_GET['hotel_id']) && is_numeric($_GET['hotel_id'])) {
-    $hotelID = mysqli_real_escape_string($con, $_GET['hotel_id']);
+if (isset($_GET['hotel_id'])) {
+    $hotel_id = $_GET['hotel_id']; // Corrected variable name
 
-    $query = "SELECT * FROM hotel_information WHERE hotel_id = $hotelID";
-    $result = mysqli_query($con, $query);
-
-    echo "Debugging information:<br>";
-    echo "hotelID: $hotelID<br>";
-    echo "Query: $query<br>";
+    $query = "SELECT * FROM hotel_information WHERE hotel_id = ?";
+    $stmt = mysqli_prepare($con, $query);
+    mysqli_stmt_bind_param($stmt, "i", $hotel_id);
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
 
     if ($result && mysqli_num_rows($result) > 0) {
         $row = mysqli_fetch_assoc($result);
@@ -19,7 +18,6 @@ if (isset($_GET['hotel_id']) && is_numeric($_GET['hotel_id'])) {
         $roomType = $row['room_type'];
         $hotelAvailability = $row['hotel_availability'];
         $hotelPrice = $row['hotel_price'];
-    
     } else {
         echo "Hotel not found.";
         exit();
@@ -36,9 +34,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $newHotelAvailability = $_POST['hotelAvailability'];
     $newHotelPrice = $_POST['hotelPrice'];
 
-    // Update the hotel information in the database
-    $updateQuery = "UPDATE hotel_information SET hotel_name = '$newHotelName', room_type = '$newRoomType', hotel_availability = $newHotelAvailability, hotel_price = '$newHotelPrice' WHERE hotel_id = $hotelID";
-    $updateResult = mysqli_query($con, $updateQuery);
+    // Update the hotel information in the database using prepared statement
+    $updateQuery = "UPDATE hotel_information SET hotel_name = ?, room_type = ?, hotel_availability = ?, hotel_price = ? WHERE hotel_id = ?";
+    $stmt = mysqli_prepare($con, $updateQuery);
+    mysqli_stmt_bind_param($stmt, "ssidi", $newHotelName, $newRoomType, $newHotelAvailability, $newHotelPrice, $hotel_id);
+    $updateResult = mysqli_stmt_execute($stmt);
 
     if ($updateResult) {
         // Redirect back to the hotel view page or show a success message
@@ -70,7 +70,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
 <h1>Edit Hotel Information</h1>
 <div class="box">
-<form action="M_edit_hotel_info.php" method="post">
+<form action="M_edit_hotel_info.php" method="POST">
         <label for="hotelName">Hotel Name: </label>
         <input type="text" id="hotelName" name="hotelName" required value="<?php echo $hotelName; ?>">
     <br><br>
