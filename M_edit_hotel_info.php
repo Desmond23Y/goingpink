@@ -27,6 +27,7 @@ if (isset($_GET['hotel_id'])) {
     exit();
 }
 
+
 ?>
 
 <html>
@@ -67,30 +68,3 @@ if (isset($_GET['hotel_id'])) {
     </div>
 </body>
 </html>
-
-<?php
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $newHotelName = $_POST['hotelName'];
-    $newRoomType = $_POST['roomType'];
-    $newHotelAvailability = $_POST['hotelAvailability'];
-    $newHotelPrice = $_POST['hotelPrice'];
-    if (!is_numeric($newHotelPrice)) {
-        echo 'Invalid hotel price. Please enter a valid decimal number.';
-        exit();
-    }
-
-    $updateQuery = "UPDATE hotel_information SET hotel_name = ?, room_type = ?, hotel_availability = ?, hotel_price = ? WHERE hotel_id = ?";
-    $stmt = mysqli_prepare($con, $updateQuery);
-    mysqli_stmt_bind_param($stmt, "ssidi", $newHotelName, $newRoomType, $newHotelAvailability, $newHotelPrice, $hotel_id);
-    $updateResult = mysqli_stmt_execute($stmt);
-
-    if ($updateResult) {
-        header('Location: M_view_hotel_info.php');
-        exit();
-    } else {
-        echo 'Error updating hotel information: ' . mysqli_error($con);
-    }
-}
-
-?>
