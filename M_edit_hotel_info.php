@@ -5,7 +5,7 @@ include('conn.php');
 if (isset($_GET['hotel_id'])) {
     $hotel_id = $_GET['hotel_id'];
 
-    $fetch_hotel_query = "SELECT * FROM hotel_information WHERE hotel_id = ?";
+    $fetch_hotel_query = "SELECT * FROM hotel_information WHERE hotel_id = '$hotel_id'";
     $stmt = mysqli_prepare($con, $fetch_hotel_query);
     mysqli_stmt_bind_param($stmt, "i", $hotel_id);
     mysqli_stmt_execute($stmt);
