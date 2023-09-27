@@ -65,21 +65,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
   
 <body>
-<h1>Edit Hotel Information</h1>
-<div class="box">
-<form action="M_edit_hotel_info.php" method="POST">
-        <label for="hotelName">Hotel Name: </label>
-        <input type="text" id="hotelName" name="hotelName" required value="<?php echo $hotelName; ?>">
-    <br><br>
-        <label for="roomType">Room Type: </label>
-        <input type="text" id="roomType" name="roomType" required value="<?php echo $roomType; ?>">
-    <br><br>
-        <label for="hotelAvailability">Hotel Availability: </label>
-        <input type="text" id="hotelAvailability" name="hotelAvailability" required value="<?php echo $hotelAvailability; ?>">
-    <br><br>
-        <label for="hotelPrice">Hotel Price: </label>
-        <input type="text" id="hotelPrice" name="hotelPrice" required value="<?php echo $hotelPrice; ?>">
-        <br><br>
-        <input type="submit" value="Save Changes">
-</form>
-</div>
+    <h1>Edit Hotel Information</h1>
+    <div class="box">
+        <form action="M_edit_hotel_info.php" method="POST">
+            <label for="hotelName">Hotel Name: </label>
+            <input type="text" id="hotelName" name="hotelName" required value="<?php echo $hotelName; ?>">
+            <br><br>
+            <label for="roomType">Room Type: </label>
+            <input type="text" id="roomType" name="roomType" required value="<?php echo $roomType; ?>">
+            <br><br>
+            <label for="hotelAvailability">Hotel Availability: </label>
+            <input type="text" id="hotelAvailability" name="hotelAvailability" required value="<?php echo $hotelAvailability; ?>">
+            <br><br>
+            <label for="hotelPrice">Hotel Price: </label>
+            <input type="text" id="hotelPrice" name="hotelPrice" required value="<?php echo $hotelPrice; ?>">
+            <br><br>
+            <input type="submit" value="Save Changes">
+        </form>
+    </div>
+</body>
+</html>
