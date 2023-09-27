@@ -3,13 +3,10 @@ session_start();
 include('conn.php');
 
 if (isset($_GET['hotel_id'])) {
-    $hotel_id = $_GET['hotel_id']; // Corrected variable name
+    $hotel_id = $_GET['hotel_id'];
 
-    $query = "SELECT * FROM hotel_information WHERE hotel_id = ?";
-    $stmt = mysqli_prepare($con, $query);
-    mysqli_stmt_bind_param($stmt, "i", $hotel_id);
-    mysqli_stmt_execute($stmt);
-    $result = mysqli_stmt_get_result($stmt);
+    $fetch_hotel_query = "SELECT * FROM hotel_information WHERE hotel_id = ?";
+    $result = mysqli_query($con, $fetch_hotel_query);
 
     if ($result && mysqli_num_rows($result) > 0) {
         $row = mysqli_fetch_assoc($result);
@@ -18,6 +15,7 @@ if (isset($_GET['hotel_id'])) {
         $roomType = $row['room_type'];
         $hotelAvailability = $row['hotel_availability'];
         $hotelPrice = $row['hotel_price'];
+
     } else {
         echo "Hotel not found.";
         exit();
@@ -75,6 +73,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $newRoomType = $_POST['roomType'];
     $newHotelAvailability = $_POST['hotelAvailability'];
     $newHotelPrice = $_POST['hotelPrice'];
+    if (!is_numeric($newHotelPrice)) {
+        echo 'Invalid hotel price. Please enter a valid decimal number.';
+        exit();
+    }
 
     $updateQuery = "UPDATE hotel_information SET hotel_name = ?, room_type = ?, hotel_availability = ?, hotel_price = ? WHERE hotel_id = ?";
     $stmt = mysqli_prepare($con, $updateQuery);
