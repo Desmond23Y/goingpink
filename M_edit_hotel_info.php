@@ -3,10 +3,14 @@ session_start();
 include('conn.php');
 
 if (isset($_GET['hotel_id']) && is_numeric($_GET['hotel_id'])) {
-    $hotelID = (int)$_GET['hotel_id'];
+    $hotelID = mysqli_real_escape_string($con, $_GET['hotel_id']);
 
     $query = "SELECT * FROM hotel_information WHERE hotel_id = $hotelID";
     $result = mysqli_query($con, $query);
+
+    echo "Debugging information:<br>";
+    echo "hotelID: $hotelID<br>";
+    echo "Query: $query<br>";
 
     if ($result && mysqli_num_rows($result) > 0) {
         $row = mysqli_fetch_assoc($result);
@@ -15,10 +19,6 @@ if (isset($_GET['hotel_id']) && is_numeric($_GET['hotel_id'])) {
         $roomType = $row['room_type'];
         $hotelAvailability = $row['hotel_availability'];
         $hotelPrice = $row['hotel_price'];
-        
-    echo "Debugging information:<br>";
-    echo "hotelID: $hotelID<br>";
-    echo "Query: $query<br>";
     
     } else {
         echo "Hotel not found.";
