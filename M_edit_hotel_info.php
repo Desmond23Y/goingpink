@@ -56,14 +56,11 @@ if (isset($_GET['hotel_id'])) {
             <label for="roomType">Room Type: </label>
             <input type="text" id="roomType" name="roomType" required value="<?php echo $roomType; ?>">
             <br><br>
-            <label>Hotel Availability:</label><br>
-            <input type="radio" id="available" name="hotelAvailability" value="available" <?php if ($hotelAvailability === "Available") echo "checked"; ?>>
-            <label for="available">Available</label><br>
-            <input type="radio" id="unavailable" name="hotelAvailability" value="unavailable" <?php if ($hotelAvailability === "Unavailable") echo "checked"; ?>>
-            <label for="unavailable">Unavailable</label><br>
+            <label for="hotelAvailability">Hotel Availability: </label>
+            <input type="text" id="hotelAvailability" name="hotelAvailability" required value="<?php echo $hotelAvailability; ?>">
             <br><br>
             <label for="hotelPrice">Hotel Price: </label>
-            <input type="text" id="hotelPrice" name="hotelPrice" required value="<?php echo $hotelPrice; ?>">
+            <input type="number" id="hotelPrice" name="hotelPrice" required value="<?php echo $hotelPrice; ?>">
             <br><br>
             <input type="submit" value="Save Changes">
         </form>
