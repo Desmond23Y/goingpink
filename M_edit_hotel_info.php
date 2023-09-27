@@ -6,7 +6,10 @@ if (isset($_GET['hotel_id'])) {
     $hotel_id = $_GET['hotel_id'];
 
     $fetch_hotel_query = "SELECT * FROM hotel_information WHERE hotel_id = ?";
-    $result = mysqli_query($con, $fetch_hotel_query);
+    $stmt = mysqli_prepare($con, $fetch_hotel_query);
+    mysqli_stmt_bind_param($stmt, "i", $hotel_id);
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
 
     if ($result && mysqli_num_rows($result) > 0) {
         $row = mysqli_fetch_assoc($result);
@@ -15,7 +18,6 @@ if (isset($_GET['hotel_id'])) {
         $roomType = $row['room_type'];
         $hotelAvailability = $row['hotel_availability'];
         $hotelPrice = $row['hotel_price'];
-
     } else {
         echo "Hotel not found.";
         exit();
