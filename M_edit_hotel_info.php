@@ -2,11 +2,26 @@
 session_start();
 include('conn.php');
 
-$selectedHotelID = null;
+if (isset($_GET['hotel_id'])) {
+    $hotelID = $_GET['hotel_id'];
 
-$result = mysqli_query($con, "SELECT * FROM hotel_information");
-if (!$result) {
-    die('Query Error: ' . mysqli_error($con));
+    $query = "SELECT * FROM hotel_information WHERE hotel_id = $hotel_ID";
+    $result = mysqli_query($con, $query);
+
+    if ($result && mysqli_num_rows($result) > 0) {
+        $row = mysqli_fetch_assoc($result);
+
+        $hotelName = $row['hotel_name'];
+        $roomType = $row['room_type'];
+        $hotelAvailability = $row['hotel_availability'];
+        $hotelPrice = $row['hotel_price'];
+    } else {
+        echo "Hotel not found.";
+        exit();
+    }
+} else {
+    echo "Hotel ID not provided.";
+    exit();
 }
 ?>
 
@@ -46,3 +61,26 @@ if (!$result) {
         <input type="submit" value="Save Changes">
 </form>
 </div>
+
+<?php
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Retrieve form data
+    $newHotelName = $_POST['hotelName'];
+    $newRoomType = $_POST['roomType'];
+    $newHotelAvailability = $_POST['hotelAvailability'];
+    $newHotelPrice = $_POST['hotelPrice'];
+
+    // Update the hotel information in the database
+    $updateQuery = "UPDATE hotel_information SET hotel_name = '$newHotelName', room_type = '$newRoomType', hotel_availability = $newHotelAvailability, hotel_price = '$newHotelPrice' WHERE hotel_id = $hotelID";
+    $updateResult = mysqli_query($con, $updateQuery);
+
+    if ($updateResult) {
+        // Redirect back to the hotel view page or show a success message
+        header('Location: M_view_hotel_info.php');
+        exit();
+    } else {
+        echo 'Error updating hotel information: ' . mysqli_error($con);
+    }
+}
+?>
