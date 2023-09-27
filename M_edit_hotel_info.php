@@ -27,24 +27,6 @@ if (isset($_GET['hotel_id'])) {
     exit();
 }
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $newHotelName = $_POST['hotelName'];
-    $newRoomType = $_POST['roomType'];
-    $newHotelAvailability = $_POST['hotelAvailability'];
-    $newHotelPrice = $_POST['hotelPrice'];
-
-    $updateQuery = "UPDATE hotel_information SET hotel_name = ?, room_type = ?, hotel_availability = ?, hotel_price = ? WHERE hotel_id = ?";
-    $stmt = mysqli_prepare($con, $updateQuery);
-    mysqli_stmt_bind_param($stmt, "ssidi", $newHotelName, $newRoomType, $newHotelAvailability, $newHotelPrice, $hotel_id);
-    $updateResult = mysqli_stmt_execute($stmt);
-
-    if ($updateResult) {
-        header('Location: M_view_hotel_info.php');
-        exit();
-    } else {
-        echo 'Error updating hotel information: ' . mysqli_error($con);
-    }
-}
 ?>
 
 <html>
@@ -67,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
     <h1>Edit Hotel Information</h1>
     <div class="box">
-        <form action="M_view_hotel_info.php" method="POST">
+        <form action="M_edit_hotel_info.php?hotel_id=' . $row['hotel_id'] . '" method="POST">
             <label for="hotelName">Hotel Name: </label>
             <input type="text" id="hotelName" name="hotelName" required value="<?php echo $hotelName; ?>">
             <br><br>
@@ -85,3 +67,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </div>
 </body>
 </html>
+
+<?php
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $newHotelName = $_POST['hotelName'];
+    $newRoomType = $_POST['roomType'];
+    $newHotelAvailability = $_POST['hotelAvailability'];
+    $newHotelPrice = $_POST['hotelPrice'];
+
+    $updateQuery = "UPDATE hotel_information SET hotel_name = ?, room_type = ?, hotel_availability = ?, hotel_price = ? WHERE hotel_id = ?";
+    $stmt = mysqli_prepare($con, $updateQuery);
+    mysqli_stmt_bind_param($stmt, "ssidi", $newHotelName, $newRoomType, $newHotelAvailability, $newHotelPrice, $hotel_id);
+    $updateResult = mysqli_stmt_execute($stmt);
+
+    if ($updateResult) {
+        header('Location: M_view_hotel_info.php');
+        exit();
+    } else {
+        echo 'Error updating hotel information: ' . mysqli_error($con);
+    }
+}
+
+?>
