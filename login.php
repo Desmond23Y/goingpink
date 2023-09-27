@@ -5,8 +5,8 @@ session_start();
 include('conn.php');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+    $username = mysqli_real_escape_string($con, $_POST['username']); // Prevent SQL injection
+    $password = mysqli_real_escape_string($con, $_POST['password']); // Prevent SQL injection
 
     // Validate user inputs
     if (empty($username) || empty($password)) {
@@ -27,33 +27,37 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $result = mysqli_query($con, $union_query);
 
-        if (mysqli_num_rows($result) > 0) {
-            // Login successful
-            $row = mysqli_fetch_assoc($result);
-            $user_type = $row['user_type'];
-            $user_id = $row['user_id'];
+        if ($result) {
+            if (mysqli_num_rows($result) > 0) {
+                // Login successful
+                $row = mysqli_fetch_assoc($result);
+                $user_type = $row['user_type'];
+                $user_id = $row['user_id'];
 
-            // Store user data in the session
-            $_SESSION['user_type'] = $user_type;
-            $_SESSION['user_id'] = $user_id;
-     
+                // Store user data in the session
+                $_SESSION['user_type'] = $user_type;
+                $_SESSION['user_id'] = $user_id;
 
-            // Check if the "Remember Me" checkbox is checked
-            if ($user_type['user_type'] == $union_query['user']) {
-                header('Location: index.php')
-            } else if ($user_type['user_type'] == $union_query['admin']) {
-                header('Location: homepage_admin.php')
-            } else if ($user_type['user_type'] == $union_query['support']) {
-                header('Location: homepage_support.php')
-            } else if ($user_type['user_type'] == $union_query['hotel_management']) {
-                header('Location: M_view_hotel_info.php')
-            } else if ($user_type['user_type'] == $union_query['transport_management']) {
-                header('Location: M_transport_homepage.php')
+                // Redirect based on user type
+                if ($user_type === 'admin') {
+                    header('Location: homepage_admin.php');
+                } elseif ($user_type === 'support') {
+                    header('Location: homepage_support.php');
+                } elseif ($user_type === 'hotel_management') {
+                    header('Location: M_view_hotel_info.php');
+                } elseif ($user_type === 'transport_management') {
+                    header('Location: M_transport_homepage.php');
+                } elseif ($user_type === 'user') {
+                    header('Location: index.php');
+                }
+                exit();
+            } else {
+                // Login failed
+                echo "Invalid username or password. Please try again.";
             }
-            exit();
         } else {
-            // Login failed
-            echo "Invalid username or password. Please try again.";
+            // Query execution failed
+            echo "Query execution error.";
         }
     }
 }
