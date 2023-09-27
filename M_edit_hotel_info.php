@@ -28,20 +28,17 @@ if (isset($_GET['hotel_id'])) {
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Retrieve form data
     $newHotelName = $_POST['hotelName'];
     $newRoomType = $_POST['roomType'];
     $newHotelAvailability = $_POST['hotelAvailability'];
     $newHotelPrice = $_POST['hotelPrice'];
 
-    // Update the hotel information in the database using prepared statement
     $updateQuery = "UPDATE hotel_information SET hotel_name = ?, room_type = ?, hotel_availability = ?, hotel_price = ? WHERE hotel_id = ?";
     $stmt = mysqli_prepare($con, $updateQuery);
     mysqli_stmt_bind_param($stmt, "ssidi", $newHotelName, $newRoomType, $newHotelAvailability, $newHotelPrice, $hotel_id);
     $updateResult = mysqli_stmt_execute($stmt);
 
     if ($updateResult) {
-        // Redirect back to the hotel view page or show a success message
         header('Location: M_view_hotel_info.php');
         exit();
     } else {
@@ -61,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <li><a href="M_hotel_homepage.php">HOME</a></li>
             <li><a href="M_view_hotel_info.php">HOTELS</a></li>
             <li><a href="M_viewbooking.php">BOOKING</a></li>
-            <li><a href="M_room_availability.php">ROOM AVAILABILITY</a></li>
+            <li><a href="M_hotel_availability.php">HOTEL AVAILABILITY</a></li>
             <li><a href="logout.php" class="right">LOGOUT</a></li>
         </ul>
     </nav>
@@ -78,7 +75,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <input type="text" id="roomType" name="roomType" required value="<?php echo $roomType; ?>">
     <br><br>
         <label for="hotelAvailability">Hotel Availability: </label>
-        <input type="number" id="hotelAvailability" name="hotelAvailability" required value="<?php echo $hotelAvailability; ?>">
+        <input type="text" id="hotelAvailability" name="hotelAvailability" required value="<?php echo $hotelAvailability; ?>">
     <br><br>
         <label for="hotelPrice">Hotel Price: </label>
         <input type="text" id="hotelPrice" name="hotelPrice" required value="<?php echo $hotelPrice; ?>">
