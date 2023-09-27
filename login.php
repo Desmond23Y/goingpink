@@ -39,13 +39,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
      
 
             // Check if the "Remember Me" checkbox is checked
-            if (isset($_POST['remember_me'])) {
-                // Create a JSON string with the username and password and set it as a cookie
-                $cookie_data = json_encode(['username' => $username, 'password' => $password]);
-                setcookie('remember_me', $cookie_data, time() + (60 * 60 * 24 * 30)); // Cookie will expire in 30 days
+            if ($user_type['user_type'] == $union_query['user']) {
+                header('Location: index.php')
+            } else if ($user_type['user_type'] == $union_query['admin']) {
+                header('Location: homepage_admin.php')
+            } else if ($user_type['user_type'] == $union_query['support']) {
+                header('Location: homepage_support.php')
+            } else if ($user_type['user_type'] == $union_query['hotel_management']) {
+                header('Location: M_view_hotel_info.php')
+            } else if ($user_type['user_type'] == $union_query['transport_management']) {
+                header('Location: M_transport_homepage.php')
             }
-            // Redirect to index.php
-            header('Location: index.php');
             exit();
         } else {
             // Login failed
