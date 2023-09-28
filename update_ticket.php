@@ -9,7 +9,7 @@
         include("conn.php");
 	if (isset($_GET['ticket_id'])) {
 		$ticket_id=intval($_GET['ticket_id']); 
-		$result=mysqli_query($con,"SELECT* FROM ticket WHERE id=$ticket_id");
+		$result=mysqli_query($con,"SELECT* FROM ticket WHERE ticket_id=$ticket_id");
 		while($row=mysqli_fetch_array($result))
 		{
 		$sql="UPDATE ticket SET
