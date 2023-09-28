@@ -1,3 +1,13 @@
+<?php
+session_start();
+include('conn.php');
+
+$result = mysqli_query($con, "SELECT * FROM hotel_information");
+if (!$result) {
+    die('Query Error: ' . mysqli_error($con));
+}
+?>
+
 <html>
 <head>
     <meta charset="UTF-8">
