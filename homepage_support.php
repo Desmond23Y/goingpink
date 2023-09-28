@@ -37,7 +37,9 @@ body {
 <body>
         <nav>
             <ul class="navibar">
-                <li><a href="support_report.php">report</a></li>
+                <li><a href="support_report.php">REPORT</a></li>
+                <li><a href="logout.php" class="right">LOGOUT</a></li>
+                <li><a href="login.php" class="right">LOGIN</a></li>
             </ul>
         </nav>
 </body>
