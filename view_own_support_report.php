@@ -4,6 +4,7 @@ include("conn.php");
 if (isset($_GET['support_id'])) {
     $support_id = intval($_GET['support_id']);
     $result = mysqli_query($con, "SELECT * FROM report WHERE support_id=$support_id");
+}
 
 ?>
 <table width="90%">
