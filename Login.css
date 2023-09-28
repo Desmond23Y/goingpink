@@ -49,3 +49,10 @@ label {
     font-size: 15px;
     color: #9e8b7c;
     }
+
+body {
+    background-image: url("picture/login photo.jpg");
+    position: relative;
+    width:50%;
+    height:100%;
+    }
