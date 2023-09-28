@@ -2,21 +2,24 @@
 session_start();
 include("conn.php");
 
+// Check if user is not logged in, then redirect to the login page
+if (!isset($_SESSION['user_id'])) {
+    header("Location: login.php"); // Replace "login.php" with your actual login page
+    exit(); // Make sure to exit to prevent further execution of this script
+}
+
 if (isset($_SESSION['user_id'])) {
     $support_id = $_SESSION['user_id'];
 
-$sql = "INSERT INTO report (support_id, report_title, priority, report_description, report_status) VALUES ('$support_id', '$_POST[title]', '$_POST[priority]', '$_POST[description]', 'Created')";
-
-} else {
-    header('Location: Login.php');
+    $sql = "INSERT INTO report (support_id, report_title, priority, report_description, report_status) VALUES ('$support_id', '$_POST[title]', '$_POST[priority]', '$_POST[description]', 'Created')";
         
-if(!mysqli_query($con, $sql)) {
-    die('Error:' . mysqli_error($con));
-} else {
-    echo "<script>alert('This form has been submitted!');</script>";
-}
+    if(!mysqli_query($con, $sql)) {
+        die('Error:' . mysqli_error($con));
+    } else {
+        echo "<script>alert('This form has been submitted!');</script>";
+    }
 
-mysqli_close($con);
+    mysqli_close($con);
 }
 ?>
         
