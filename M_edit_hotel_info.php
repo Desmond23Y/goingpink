@@ -12,7 +12,7 @@ if (isset($_GET['hotel_id'])) {
 
     $fetch_hotel_query = "SELECT * FROM hotel_information WHERE hotel_id = ?";
     $stmt = mysqli_prepare($con, $fetch_hotel_query);
-    mysqli_stmt_bind_param($stmt, "s", $hotel_id);
+    mysqli_stmt_bind_param($stmt, "ssisi", $hotel_id);
     mysqli_stmt_execute($stmt);
     $result = mysqli_stmt_get_result($stmt);
 
@@ -21,6 +21,7 @@ if (isset($_GET['hotel_id'])) {
 
         $hotel_name = $row['hotel_name'];
         $room_type = $row['room_type'];
+        $room_availability = $_POST['room_availability'];
         $hotel_availability = $row['hotel_availability'];
         $hotel_price = $row['hotel_price'];
     } else {
@@ -35,6 +36,7 @@ if (isset($_GET['hotel_id'])) {
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $hotel_name = $_POST['hotel_name'];
     $room_type = $_POST['room_type'];
+    $room_availability = $_POST['room_availability'];
     $hotel_availability = $_POST['hotel_availability'];
     $hotel_price = $_POST['hotel_price'];
 
@@ -46,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     WHERE hotel_id = '$hotel_id'";
 
     $update_stmt = mysqli_prepare($con, $update_hotel_query);
-    mysqli_stmt_bind_param($update_stmt, "ssssi", $hotelName, $roomType, $hotelAvailability, $hotelPrice, $hotel_id);
+    mysqli_stmt_bind_param($update_stmt, "ssisi", $hotelName, $roomType, $hotelAvailability, $hotelPrice, $hotel_id);
 
     if (mysqli_stmt_execute($update_stmt)) {
         echo "<script>alert('Hotel information has been updated!');</script>";
@@ -85,7 +87,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <label for="room_type">Room Type: </label>
             <input type="text" id="room_type" name="room_type" required value="<?php echo $room_type; ?>">
             <br><br>
-            <label for="room_availability">Room Type: </label>
+            <label for="room_availability">Room Availability: </label>
             <input type="text" id="room_availability" name="room_availability" required value="<?php echo $room_availability; ?>">
             <br><br>
             <label for="hotel_availability">Hotel Availability: </label>
