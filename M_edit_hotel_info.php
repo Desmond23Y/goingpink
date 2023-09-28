@@ -7,8 +7,8 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 
-if (isset($_GET['id'])) {
-    $hotel_id = intval($_GET['id']); 
+if (isset($_GET['hotel_id'])) {
+    $hotel_id = intval($_GET['hotel_id']); 
     $result = mysqli_query($con, "SELECT * FROM hotel_information WHERE hotel_id = $hotel_id");
 
     while ($row = mysqli_fetch_array($result)) {
