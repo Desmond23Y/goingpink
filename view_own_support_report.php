@@ -2,8 +2,8 @@
 include("conn.php");
 
 // Check if support_id is provided in the URL
-if (isset($_GET['support_id'])) {
-    $support_id = intval($_GET['support_id']);
+if (isset($_GET['user_id'])) {
+    $support_id = intval($_GET['user_id']);
     $result = mysqli_query($con, "SELECT * FROM report WHERE support_id=$support_id");
 
     if (!$result) {
