@@ -50,6 +50,10 @@ label {
     color: #f4bdb6;
     }
 
+form{
+  float: center;
+}
+
 body {
     background-image: url("picture/register photo.jpg");
     background-size: cover;
