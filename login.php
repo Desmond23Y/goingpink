@@ -40,22 +40,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 // Redirect based on user type
                 if ($user_type === 'admin') {
-                    $admin_id = $row['admin_id'];
                      $_SESSION['admin_id'] = $admin_id;
                     header('Location: homepage_admin.php');
                 } elseif ($user_type === 'support') {
-                    $support_id = $row['support_id'];
                     $_SESSION['support_id'] = $support_id;
                     header('Location: homepage_support.php');
                 } elseif ($user_type === 'hotel_management') {
-                    $hotel_manager_id =  $row['hotel_manager_id'];
                     $_SESSION['hotel_manager_id'] = $hotel_manager_id;
                     header('Location: M_view_hotel_info.php');
                 } elseif ($user_type === 'transport_management') {
-                    $transport_manager_id =  $row['transport_manager_id'];
+                    $_SESSION['transport_manager_id'] = $transport_manager_id;
                     header('Location: M_transport_homepage.php');
                 } elseif ($user_type === 'user') {
-                    $_SESSION['transport_manager_id'] = $transport_manager_id;
                     header('Location: index.php');
                 }
                 exit();
