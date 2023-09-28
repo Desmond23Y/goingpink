@@ -56,7 +56,4 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
-    background: linear-gradient(black);
-    z-index: 1;
-    mix-blend-mode: screen;
     }
