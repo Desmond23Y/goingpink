@@ -45,7 +45,8 @@ button:hover{
     }
 
 label {
-    background-color: #dec4ae;
-    color: #f17492;
+    font-family: 'Butler';
+    font-size: 15px;
+    color: #9e8b7c;
 }
 
