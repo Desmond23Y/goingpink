@@ -28,10 +28,7 @@ form {
     border-radius: 5px;
     text-align: center;
     flex-direction: column;
-    }
-
-.input {
-    position: relative;
+    display: inline-block;
     }
 
 button{
