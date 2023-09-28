@@ -70,24 +70,24 @@
 
                 <form method="post">
                     <label for="status">Choose the Ticket Status:</label>
-                    <select name="status" id="status" required="required" value="<?php echo $row['ticket_status']?>">
+                    <select name="status" id="status" required="required">
                         <option value="">Please select the ticket status</option>
-                        <option value="Created">Created</option>
-                        <option value="Pending">Pending</option>
-                        <option value="Resolved">Resolved</option>
-                        <option value="Closed">Closed</option>
+                        <option value="Created" <?php if ($row['ticket_status'] == 'Created') echo 'selected'; ?>>Created</option>
+                        <option value="Pending" <?php if ($row['ticket_status'] == 'Pending') echo 'selected'; ?>>Pending</option>
+                        <option value="Resolved" <?php if ($row['ticket_status'] == 'Resolved') echo 'selected'; ?>>Resolved</option>
+                        <option value="Closed" <?php if ($row['ticket_status'] == 'Closed') echo 'selected'; ?>>Closed</option>
                     </select><br>
 
                     <label for="priority">Choose the Ticket Priority:</label>
-                    <select name="priority" id="priority" required="required" value="<?php echo $row['ticket_priority']?>">
+                    <select name="priority" id="priority" required="required">
                         <option value="">Please select the level of the priority</option>
-                        <option value="High">High</option>
-                        <option value="Medium">Medium</option>
-                        <option value="Low">Low</option>
+                        <option value="High" <?php if ($row['ticket_priority'] == 'High') echo 'selected'; ?>>High</option>
+                        <option value="Medium" <?php if ($row['ticket_priority'] == 'Medium') echo 'selected'; ?>>Medium</option>
+                        <option value="Low" <?php if ($row['ticket_priority'] == 'Low') echo 'selected'; ?>>Low</option>
                     </select><br>
 
                     <label for="solution">Solution for this Problem:</label>
-                    <textarea id="text" name="solution" rows="5" cols="50" required="required" value="<?php echo $row['ticket_solution']?>"></textarea><br>
+                    <textarea id="text" name="solution" rows="5" cols="50" required="required"><?php echo $row['ticket_solution']?></textarea><br>
 
                     <button type="submit" value="Submit">Update Ticket</button>
                 </form><br>
