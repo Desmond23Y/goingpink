@@ -18,6 +18,23 @@ if (isset($_GET['hotel_id'])) {
         $roomType = $row['room_type'];
         $hotelAvailability = $row['hotel_availability'];
         $hotelPrice = $row['hotel_price'];
+
+        if (isset($_POST['submit'])) {
+            $hotelName = $_POST['hotelName'];
+            $roomType = $_POST['roomType'];
+            $hotelAvailability = $_POST['hotelAvailability'];
+            $hotelPrice = $_POST['hotelPrice'];
+
+            $update_query = "UPDATE hotel_information SET hotel_name = ?, room_type = ?, hotel_availability = ?, hotel_price = ? WHERE hotel_id = ?";
+            $update_stmt = mysqli_prepare($con, $update_query);
+            mysqli_stmt_bind_param($update_stmt, "sssss", $hotelName, $roomType, $hotelAvailability, $hotelPrice, $hotel_id);
+
+            if (mysqli_stmt_execute($update_stmt)) {
+                echo "Hotel information updated successfully.";
+            } else {
+                echo "Error updating hotel information: " . mysqli_error($con);
+            }
+        }
     } else {
         echo "Hotel not found.";
         exit();
@@ -26,8 +43,6 @@ if (isset($_GET['hotel_id'])) {
     echo "Hotel ID not provided.";
     exit();
 }
-
-
 ?>
 
 <html>
