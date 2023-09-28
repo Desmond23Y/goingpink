@@ -14,13 +14,14 @@ if (!isset($_SESSION['user_id'])) {
         
             $sql = "INSERT INTO report (support_id, report_title, priority, report_description, report_status) VALUES ('$support_id', '$_POST[title]', '$_POST[priority]', '$_POST[description]', 'Created')";
                 
-    if(!mysqli_query($con, $sql)) {
-        die('Error:' . mysqli_error($con));
-    } else {
-        echo "<script>alert('This form has been submitted!');</script>";
+        if(!mysqli_query($con, $sql)) {
+            die('Error:' . mysqli_error($con));
+        } else {
+            echo "<script>alert('This form has been submitted!');</script>";
+        }
+        
+        mysqli_close($con);
     }
-    
-    mysqli_close($con);
 }
 ?>
         
