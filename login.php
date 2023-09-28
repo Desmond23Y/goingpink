@@ -33,6 +33,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $row = mysqli_fetch_assoc($result);
                 $user_type = $row['user_type'];
                 $user_id = $row['user_id'];
+                $admin_id = $row['admin_id'];
+                $support_id = $row['support_id'];
+                $hotel_manager_id =  $row['hotel_manager_id'];
+                $transport_manager_id =  $row['transport_manager_id'];
 
                 // Store user data in the session
                 $_SESSION['user_type'] = $user_type;
