@@ -67,7 +67,7 @@ if (isset($_GET['hotel_id'])) {
             <input name="hotel_id" readonly="readonly" value="<?php echo $hotel_id; ?>">
             <br><br>
             <label for="hotel_name">Hotel Name: </label>
-            <input type="text" id="hotel_name" name="hotel_name" required value="<?php echo $row['hotel_name']; ?>">
+            <input type="text" id="hotel_name" name="hotel_name" required value="<?php echo $hotel_name; ?>">
             <br><br>
             <label for="room_type">Room Type: </label>
             <input type="text" id="room_type" name="room_type" required value="<?php echo $row['room_type']; ?>">
