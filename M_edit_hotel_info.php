@@ -66,9 +66,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
      <nav>
         <ul class="navibar">
             <li><a href="M_hotel_homepage.php">HOME</a></li>
-            <li><a href="M_view_hotel_info.php">HOTELS</a></li>
+            <li><a href="M_view_hotel_info.php">HOTELS INFO</a></li>
             <li><a href="M_viewbooking.php">BOOKING</a></li>
-            <li><a href="M_hotel_availability.php">HOTEL AVAILABILITY</a></li>
+
             <li><a href="logout.php" class="right">LOGOUT</a></li>
         </ul>
     </nav>
@@ -84,6 +84,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <br><br>
             <label for="room_type">Room Type: </label>
             <input type="text" id="room_type" name="room_type" required value="<?php echo $room_type; ?>">
+            <br><br>
+            <label for="room_availability">Room Type: </label>
+            <input type="text" id="room_availability" name="room_availability" required value="<?php echo $room_availability; ?>">
             <br><br>
             <label for="hotel_availability">Hotel Availability: </label>
             <input type="text" id="hotel_availability" name="hotel_availability" required value="<?php echo $hotel_availability; ?>">
