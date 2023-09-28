@@ -58,25 +58,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div id="login-container">
         <h2>Sign Up</h2>
         <form id="signup-form" method="POST" action="">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" maxlength="50" required><br><br>
+            <p>Username:</p>
+            <input type="text" id="username" name="username" maxlength="50" required placeholder="Username"><br><br>
 
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" maxlength="50" required><br><br>
+            <p>Password</p>
+            <input type="password" id="password" name="password" maxlength="50" required placeholder="Password"><br><br>
 
-            <label for="first_name">First Name:</label>
-            <input type="text" id="first_name" name="first_name" maxlength="50" required><br><br>
+            <p>First Name:</p>
+            <input type="text" id="first_name" name="first_name" maxlength="50" required placeholder="First Name"><br><br>
 
-            <label for="last_name">Last Name:</label>
-            <input type="text" id="last_name" name="last_name" maxlength="50" required><br><br>
+            <p>Last Name:</p>
+            <input type="text" id="last_name" name="last_name" maxlength="50" required placeholder="Last Name"><br><br>
 
-            <label for="email">Email:</label>
-            <input type="text" id="email" name="email" maxlength="50" required><br><br>
+            <p>Email:</p>
+            <input type="text" id="email" name="email" maxlength="50" required placeholder="Email"><br><br>
 
-            <label for="phone_number">Phone Number:</label>
-            <input type="text" id="phone_number" name="phone_number" maxlength="50" required><br><br>
+            <p>Phone Number:</p>
+            <input type="text" id="phone_number" name="phone_number" maxlength="50" required placeholder="Phone Number"><br><br>
 
-            <label for="date_of_birth">Date of Birth:</label>
+            <p>Date of Birth:</p>
             <input type="date" id="date_of_birth" name="date_of_birth" required><br><br>
 
             <label>Gender:</label>
