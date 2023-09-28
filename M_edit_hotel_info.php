@@ -25,12 +25,13 @@ if (isset($_GET['hotel_id'])) {
             $update_sql = "UPDATE hotel_information SET
                 hotel_name = ?,
                 room_type = ?,
+                room_availability = ?,
                 hotel_availability = ?,
                 hotel_price = ?
                 WHERE hotel_id = ?";
 
             $update_stmt = mysqli_prepare($con, $update_sql);
-            mysqli_stmt_bind_param($update_stmt, "ssiis", $hotel_name, $room_type, $hotel_availability, $hotel_price, $hotel_id);
+            mysqli_stmt_bind_param($update_stmt, "ssisis", $hotel_name, $room_type, $room_availability, $hotel_availability, $hotel_price, $hotel_id);
 
             if (mysqli_stmt_execute($update_stmt)) {
                 echo "<script>alert('Hotel information has been updated!');</script>";
