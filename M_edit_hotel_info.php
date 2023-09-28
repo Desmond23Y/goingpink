@@ -7,13 +7,6 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 
-$hotel_id = ''; // Initialize hotel_id
-$hotel_name = ''; // Initialize hotel_name
-$room_type = ''; // Initialize room_type
-$room_availability = ''; // Initialize room_availability
-$hotel_availability = ''; // Initialize hotel_availability
-$hotel_price = ''; // Initialize hotel_price
-
 if (isset($_GET['id'])) {
     $hotel_id = intval($_GET['id']); 
     $result = mysqli_query($con, "SELECT * FROM hotel_information WHERE hotel_id = $hotel_id");
