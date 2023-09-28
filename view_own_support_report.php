@@ -8,8 +8,9 @@ if (isset($_SESSION['user_id'])) {
         $support_id = $_SESSION['user_id'];
         $result = mysqli_query($con, "SELECT * FROM report WHERE support_id=$support_id");
 
-    if (!$result) {
-        die('Error: ' . mysqli_error($con));
+        if (!$result) {
+            die('Error: ' . mysqli_error($con));
+        }
     }
 }
 
