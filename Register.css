@@ -28,7 +28,7 @@ form {
     border-radius: 5px;
     text-align: center;
     flex-direction: column;
-    display: inline-block;
+    position: absolute
     }
 
 button{
