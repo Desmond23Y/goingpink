@@ -5,18 +5,6 @@ if (isset($_GET['support_id'])) {
     $support_id = intval($_GET['support_id']);
     $result = mysqli_query($con, "SELECT * FROM report WHERE support_id=$support_id");
 
-    if ($result) {
-        // Rest of your code to display the results
-        // ...
-    } else {
-        // Handle the case where the query fails
-        echo "Error in the database query: " . mysqli_error($con);
-    }
-} else {
-    // Handle the case where support_id is not provided in the URL
-    echo "Support ID is missing in the URL.";
-}
-
 ?>
 <table width="90%">
     <tr bgcolor="#FFB6C1">
