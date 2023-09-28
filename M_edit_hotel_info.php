@@ -85,7 +85,7 @@ if (isset($_GET['hotel_id'])) {
             }
             mysqli_close($con);
         } else {
-            echo "Ticket ID not provided.";
+            echo "Hotel ID not provided.";
         }
     ?>
 </body>
