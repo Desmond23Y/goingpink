@@ -34,22 +34,21 @@ mysqli_close($con);
     </header>
     
     <form method="post">
-        <label for="title">Title:</label>
-        <input type="text" id="title" name="title" required="required"><br>
+    <label for="title">Title:</label>
+    <input type="text" id="title" name="title" required="required"><br>
 
-        <label for="priority">Report Priority:</label>
-        <select name="priority" id="priority" required="required">
-            <option value="">Please select the level of the priority</option>
-            <option value="High">High</option>
-            <option value="Medium">Medium</option>
-            <option value="Low">Low</option>
-        </select><br>
+    <label for="priority">Report Priority:</label>
+    <select name="priority" id="priority" required="required">
+        <option value="">Please select the level of the priority</option>
+        <option value="High">High</option>
+        <option value="Medium">Medium</option>
+        <option value="Low">Low</option>
+    </select><br>
 
-        <label for="description">Report Description:</label>
-        <textarea id="text" name="description" rows="5" cols="50" required="required"></textarea><br>
+    <label for="description">Report Description:</label>
+    <textarea id="description" name="description" rows="5" cols="50" required="required"></textarea><br>
 
-        <button type="submit" value="Submit">Submit Form</button>
-        
-    </form><br>
+    <button type="submit" value="Submit">Submit Form</button>
+</form><br>
 </body>
 </html>
