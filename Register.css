@@ -1,0 +1,59 @@
+h1 {
+    font-family: 'Butler';
+    font-size: 30px;
+    color: #f6a2b6;
+    text-align: center;
+    }
+
+h3 {
+    font-family: 'Butler';
+    font-size: 20px;
+    color: #f9bfcd;
+    text-align: center;
+    }
+
+h2 {
+    font-family: 'Butler';
+    font-size: 50px;
+    color: #f490a8;
+    text-align: center;
+    }
+
+form {
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(255,255,255,0.1);
+    border: 2px solid silver;
+    border-radius: 5px;
+    text-align: center;
+    flex-direction: column;
+    }
+
+button{
+    margin-right: 10px;
+    padding: 12px;
+    font-size: 16px;
+    background-color: #db9d95;
+    color: #fee7eb;
+    border-radius: 4px;
+    }
+
+button:hover{
+    background-color: #ab5288;
+    color: #f1aca4;
+    }
+
+label {
+    font-family: 'Butler';
+    font-size: 15px;
+    color: #9e8b7c;
+    }
+
+body {
+    background-image: url("picture/register photo.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    }
