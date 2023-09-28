@@ -6,60 +6,41 @@ if (!isset($_SESSION['user_id'])) {
     header('Location: login.php');
     exit();
 }
+if (isset($_GET['id'])) {
+$hotel_id = intval($_GET['id']); 
+$result = mysqli_query($con, "SELECT * FROM hotel_information WHERE hotel_id = $hotel_id");
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $hotel_id = $_POST['hotel_id'];
-    $hotel_name = $_POST['hotel_name'];
-    $room_type = $_POST['room_type'];
-    $hotel_availability = $_POST['hotel_availability'];
-    $hotel_price = $_POST['hotel_price'];
-
-    // Use prepared statements to prevent SQL injection
-    $update_hotel_query = "UPDATE `hotel_information` SET
-        hotel_name = ?,
-        room_type = ?,
-        hotel_availability = ?,
-        hotel_price = ?
-        WHERE hotel_id = ?";
-
-    $update_stmt = mysqli_prepare($con, $update_hotel_query);
-    mysqli_stmt_bind_param($update_stmt, "ssssi", $hotel_name, $room_type, $hotel_availability, $hotel_price, $hotel_id);
-
-    if (mysqli_stmt_execute($update_stmt)) {
-        echo "<script>alert('Hotel information has been updated!');</script>";
-    } else {
-        echo "Error updating hotel information: " . mysqli_error($con);
+while ($row = mysqli_fetch_array($result)) {
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        // Handle form submission and update database here
+        $hotel_id = $row['hotel_id']; // Get the ticket_id from the row
+        $hotel_name = $_POST['hotel_name'];
+        $room_type = $_POST['room_type'];
+        $room_availability = $_POST['room_availability'];
+        $hotel_availability = $_POST['hotel_availability'];
+        $hotel_price = $_POST['hotel_price'];
+        
+        // Use prepared statements to prevent SQL injection
+        $update_sql = "UPDATE hotel_information SET
+            hotel_name = ?,
+            room_type = ?,
+            hotel_availability = ?,
+            hotel_price = ?
+            WHERE hotel_id = ?";
+        
+        $update_stmt = mysqli_prepare($con, $update_sql);
+        mysqli_stmt_bind_param($update_stmt, "ssssi", $hotel_name, $room_type, $hotel_availability, $hotel_price, $hotel_id);
+        
+        if (mysqli_stmt_execute($update_stmt)) {
+            echo "<script>alert('Hotel information has been updated!');</script>";
+        } else {
+            echo "Error updating hotel information: " . mysqli_error($con);
+        }
     }
-}
-
-if (isset($_GET['hotel_id'])) {
-    $hotel_id = $_GET['hotel_id'];
-
-    $fetch_hotel_query = "SELECT * FROM hotel_information WHERE hotel_id = ?";
-    $stmt = mysqli_prepare($con, $fetch_hotel_query);
-    mysqli_stmt_bind_param($stmt, "s", $hotel_id);
-    mysqli_stmt_execute($stmt);
-    $result = mysqli_stmt_get_result($stmt);
-
-    if ($result && mysqli_num_rows($result) > 0) {
-        $row = mysqli_fetch_assoc($result);
-
-        $hotel_name = $row['hotel_name'];
-        $room_type = $row['room_type'];
-        $room_availability = $row['room_availability'];
-        $hotel_availability = $row['hotel_availability'];
-        $hotel_price = $row['hotel_price'];
-    } else {
-        echo "Hotel not found.";
-        exit();
-    }
-} else {
-    echo "Hotel ID not provided.";
-    exit();
-}
-?>
-
-
+    
+    // Display ticket information and form
+    ?>
+        
 <html>
 <head>
     <meta charset="UTF-8">
