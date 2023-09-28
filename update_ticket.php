@@ -7,16 +7,18 @@
     <h2>Ticket Update</h2>
     <?php
         include("conn.php");
-        $ticket_id=intval($_GET['ticket_id']); 
-        $result=mysqli_query($con,"SELECT* FROM ticket WHERE id=$ticket_id");
-        while($row=mysqli_fetch_array($result))
-        {
-        $sql="UPDATE ticket SET
-        ticket_status = '$_POST[status]',
-        ticket_priority = '$_POST[priority]',
-        ticket_solution = '$_POST[solution]'
-
-        WHERE ticket_id = $_POST[ticket_id];";
+	if (isset($_GET['ticket_id'])) {
+	        $ticket_id=intval($_GET['ticket_id']); 
+	        $result=mysqli_query($con,"SELECT* FROM ticket WHERE id=$ticket_id");
+	        while($row=mysqli_fetch_array($result))
+	        {
+	        $sql="UPDATE ticket SET
+	        ticket_status = '$_POST[status]',
+	        ticket_priority = '$_POST[priority]',
+	        ticket_solution = '$_POST[solution]'
+	
+	        WHERE ticket_id = $_POST[ticket_id];";
+	}
 
         if (mysqli_query($con,$sql)) {
             mysqli_close($con);
