@@ -48,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Travel Service Management</title>
-    <link rel="stylesheet" href="Register.css">
+    <link rel="stylesheet" href="Regi.css">
 </head>
 <body>
     <header>
