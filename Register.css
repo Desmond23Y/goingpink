@@ -28,7 +28,7 @@ form {
     border-radius: 5px;
     text-align: center;
     flex-direction: column;
-    float: left;
+    display: list-item;
     }
 
 button{
