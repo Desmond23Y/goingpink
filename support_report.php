@@ -1,19 +1,18 @@
 <?php
 session_start();
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Check if support_id is set before using it
-    if (!isset($_SESSION['support_id'])) {
-        header('Location: login.php'); // Redirect to the login page if not logged in
-        exit();
-    }
+if (!isset($_SESSION['support_id'])) {
+    header('Location: login.php');
+    exit();
+}
 
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $support_id = $_SESSION['support_id'];
     include("conn.php");
 
     $sql = "INSERT INTO report (support_id, report_title, priority, report_description, report_status) VALUES ('$support_id', '$_POST[title]', '$_POST[priority]', '$_POST[description]', 'Created')";
 
-    if (!mysqli_query($con, $sql)) {
+    if(!mysqli_query($con, $sql)) {
         die('Error:' . mysqli_error($con));
     } else {
         echo "<script>alert('This form has been submitted!');</script>";
