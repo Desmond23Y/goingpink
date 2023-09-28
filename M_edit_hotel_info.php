@@ -79,7 +79,7 @@ if (isset($_GET['hotel_id'])) {
             <label for="hotelPrice">Hotel Price: </label>
             <input type="number" id="hotelPrice" name="hotelPrice" required value="<?php echo $hotelPrice; ?>">
             <br><br>
-            <input type="submit" value="Save Changes">
+            <input type="submit" name="submit" value="Save Changes">
         </form>
     </div>
 </body>
