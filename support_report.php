@@ -2,6 +2,7 @@
 session_start();
 
 if (!isset($_SESSION['support_id'])) {
+    echo "Session support_id is not set. Redirecting to login.php...";
     header('Location: login.php'); // Redirect to the login page if not logged in
     exit();
 }
