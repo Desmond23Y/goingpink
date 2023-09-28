@@ -52,7 +52,7 @@ label {
 
 body {
     background-image: url("picture/login photo.jpg");
-    background-size: auto;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     background-size: fixed;
