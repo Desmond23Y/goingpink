@@ -26,9 +26,8 @@ form {
     background-color: rgba(255,255,255,0.1);
     border: 2px solid silver;
     border-radius: 5px;
-    text-align: center;
+    text-align: left;
     flex-direction: column;
-    display: list-item;
     }
 
 button{
