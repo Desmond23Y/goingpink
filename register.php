@@ -61,7 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <p>Username:</p>
             <input type="text" id="username" name="username" maxlength="50" required placeholder="Username"><br><br>
 
-            <p>Password</p>
+            <p>Password:</p>
             <input type="password" id="password" name="password" maxlength="50" required placeholder="Password"><br><br>
 
             <p>First Name:</p>
@@ -79,7 +79,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <p>Date of Birth:</p>
             <input type="date" id="date_of_birth" name="date_of_birth" required><br><br>
 
-            <label>Gender:</label>
+            <p>Gender:</p>
             <input type="radio" id="html" name="gender" value="male"><label for="male">Male</label><br>
             <input type="radio" id="css" name="gender" value="female"><label for="female">Female</label><br>
             <br>
