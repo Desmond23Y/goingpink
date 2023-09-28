@@ -8,11 +8,12 @@ if (!isset($_SESSION['user_id'])) {
 }
 
     if (isset($_SESSION['user_id'])) {
-        $support_id = $_SESSION['user_id'];
-        include("conn.php");
-    
-        $sql = "INSERT INTO report (support_id, report_title, priority, report_description, report_status) VALUES ('$support_id', '$_POST[title]', '$_POST[priority]', '$_POST[description]', 'Created')";
-            
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            $support_id = $_SESSION['user_id'];
+            include("conn.php");
+        
+            $sql = "INSERT INTO report (support_id, report_title, priority, report_description, report_status) VALUES ('$support_id', '$_POST[title]', '$_POST[priority]', '$_POST[description]', 'Created')";
+                
     if(!mysqli_query($con, $sql)) {
         die('Error:' . mysqli_error($con));
     } else {
