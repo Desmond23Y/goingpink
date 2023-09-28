@@ -4,7 +4,6 @@ include("conn.php");
 
 if (isset($_SESSION['support_id'])) {
     $support_id = $_SESSION['support_id'];
-}
 
     $sql = "INSERT INTO report (support_id, report_title, priority, report_description, report_status) VALUES ('$support_id', '$_POST[title]', '$_POST[priority]', '$_POST[description]', 'Created')";
 
