@@ -11,13 +11,44 @@ if (isset($_GET['hotel_id'])) {
     $hotel_id = $_GET['hotel_id'];
 
     $fetch_hotel_query = "SELECT * FROM hotel_information WHERE hotel_id = ?";
+    $stmt = mysqli_prepare($con, $fetch_hotel_query);
+    mysqli_stmt_bind_param($stmt, "s", $hotel_id);
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
 
-    $sql = "UPDATE `hotel_information` SET
-    hotel_name = '$_POST[hotel_name]',
-    room_type = '$_POST[room_type]',
-    hotel_availability = '$_POST[hotel_availability]',
-    hotel_price = '$_POST[hotel_price]'
-    WHERE hotel_id = $hotel_id;";
+    if ($result && mysqli_num_rows($result) > 0) {
+        $row = mysqli_fetch_assoc($result);
+
+        $hotel_name = $row['hotel_name'];
+        $room_type = $row['room_type'];
+        $room_availability = $row['room_availability'];
+        $hotel_availability = $row['hotel_availability'];
+        $hotel_price = $row['hotel_price'];
+    } else {
+        echo "Hotel not found.";
+        exit();
+    }
+} else {
+    echo "Hotel ID not provided.";
+    exit();
+}
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $hotel_name = $_POST['hotel_name'];
+    $room_type = $_POST['room_type'];
+    $room_availability = $_POST['room_availability'];
+    $hotel_availability = $_POST['hotel_availability'];
+    $hotel_price = $_POST['hotel_price'];
+
+    $update_hotel_query = "UPDATE `hotel_information` SET
+    hotel_name = '$hotel_name',
+    room_type = '$room_type',
+    hotel_availability = '$hotel_availability',
+    hotel_price = '$hotel_price'
+    WHERE hotel_id = '$hotel_id'";
+
+    $update_stmt = mysqli_prepare($con, $update_hotel_query);
+    mysqli_stmt_bind_param($update_stmt, "s", $hotelName, $roomType, $hotelAvailability, $hotelPrice, $hotel_id);
 
     if (mysqli_stmt_execute($update_stmt)) {
         echo "<script>alert('Hotel information has been updated!');</script>";
