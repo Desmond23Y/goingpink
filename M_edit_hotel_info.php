@@ -12,7 +12,7 @@ if (isset($_GET['hotel_id'])) {
 
     $fetch_hotel_query = "SELECT * FROM hotel_information WHERE hotel_id = ?";
     $stmt = mysqli_prepare($con, $fetch_hotel_query);
-    mysqli_stmt_bind_param($stmt, "ssisi", $hotel_id);
+    mysqli_stmt_bind_param($stmt, "s", $hotel_id);
     mysqli_stmt_execute($stmt);
     $result = mysqli_stmt_get_result($stmt);
 
@@ -48,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     WHERE hotel_id = '$hotel_id'";
 
     $update_stmt = mysqli_prepare($con, $update_hotel_query);
-    mysqli_stmt_bind_param($update_stmt, "ssisi", $hotelName, $roomType, $hotelAvailability, $hotelPrice, $hotel_id);
+    mysqli_stmt_bind_param($update_stmt, "s", $hotelName, $roomType, $hotelAvailability, $hotelPrice, $hotel_id);
 
     if (mysqli_stmt_execute($update_stmt)) {
         echo "<script>alert('Hotel information has been updated!');</script>";
