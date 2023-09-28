@@ -60,7 +60,7 @@
 
                 <p>
                     <label> Support Type: </label>
-                    <input name='typt' readonly='readonly' value="<?php echo $row['support_type']?>">
+                    <input name='type' readonly='readonly' value="<?php echo $row['support_type']?>">
                 </p>
 
                 <p>
@@ -70,7 +70,7 @@
 
                 <form method="post">
                     <label for="status">Choose the Ticket Status:</label>
-                    <select name="status" id="status" required="required">
+                    <select name="status" id="status" required="required" value="<?php echo $row['ticket_status']?>">
                         <option value="">Please select the ticket status</option>
                         <option value="Created">Created</option>
                         <option value="Pending">Pending</option>
@@ -79,7 +79,7 @@
                     </select><br>
 
                     <label for="priority">Choose the Ticket Priority:</label>
-                    <select name="priority" id="priority" required="required">
+                    <select name="priority" id="priority" required="required" value="<?php echo $row['ticket_priority']?>">
                         <option value="">Please select the level of the priority</option>
                         <option value="High">High</option>
                         <option value="Medium">Medium</option>
@@ -87,7 +87,7 @@
                     </select><br>
 
                     <label for="solution">Solution for this Problem:</label>
-                    <textarea id="text" name="solution" rows="5" cols="50" required="required"></textarea><br>
+                    <textarea id="text" name="solution" rows="5" cols="50" required="required" value="<?php echo $row['ticket_solution']?>"></textarea><br>
 
                     <button type="submit" value="Submit">Update Ticket</button>
                 </form><br>
