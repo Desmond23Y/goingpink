@@ -85,7 +85,7 @@ include_once('navi_bar.php');
     <div id="login-container">
         <h2>Login</h2>
         <form id="login-form" method="POST" action="">
-            <label for="username">Username:</label>
+            
             <input type="text" id="username" name="username" maxlength="50" required><br><br>
 
             <label for="password">Password:</label>
