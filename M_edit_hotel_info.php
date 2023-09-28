@@ -39,22 +39,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $hotelPrice = $_POST['hotelPrice'];
 
     $update_hotel_query = "UPDATE `hotel_information` SET
-    hotel_name = ?,
-    room_type = ?,
-    hotel_availability = ?,
-    hotel_price = ?
-    WHERE hotel_id = ?";
+    hotel_name = '$hotelName',
+    room_type = '$roomType',
+    hotel_availability = '$hotelAvailability',
+    hotel_price = '$hotelPrice'
+    WHERE hotel_id = '$hotel_id";
 
     $update_stmt = mysqli_prepare($con, $update_hotel_query);
-    mysqli_stmt_bind_param($update_stmt, "ssssi", $hotelName, $roomType, $hotelAvailability, $hotelPrice, $hotel_id);
+    mysqli_stmt_bind_param($update_stmt, "s", $hotelName, $roomType, $hotelAvailability, $hotelPrice, $hotel_id);
 
     if (mysqli_stmt_execute($update_stmt)) {
-        echo "<script>alert('Hotel's information have been updated!');</script>";
+        echo "<script>alert('Hotel information has been updated!');</script>";
     } else {
-        echo "Error updating Hotel's information: " . mysqli_error($con);
+        echo "Error updating hotel information: " . mysqli_error($con);
     }
 }
 ?>
+
 
 <html>
 <head>
