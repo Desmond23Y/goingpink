@@ -50,10 +50,4 @@ label {
     color: rgb(93,82,73);
     }
 
-body {
-    background-image: url("picture/register photo.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    }
+
