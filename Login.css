@@ -52,6 +52,6 @@ label {
 
 body {
     background-image: url("login photo.jpg");
-    background-size: auto;
+    background-size: cover;
     }
 
