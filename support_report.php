@@ -1,14 +1,10 @@
 <?php
 session_start();
+include("conn.php");
 
-if (!isset($_SESSION['support_id'])) {
-    header('Location: login.php');
-    exit();
-}
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if (isset($_SESSION['support_id'])) {
     $support_id = $_SESSION['support_id'];
-    include("conn.php");
+}
 
     $sql = "INSERT INTO report (support_id, report_title, priority, report_description, report_status) VALUES ('$support_id', '$_POST[title]', '$_POST[priority]', '$_POST[description]', 'Created')";
 
