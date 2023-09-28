@@ -1,6 +1,5 @@
 <?php
 session_start();
-include("conn.php");
 
 // Check if user is not logged in, then redirect to the login page
 if (!isset($_SESSION['user_id'])) {
@@ -10,6 +9,7 @@ if (!isset($_SESSION['user_id'])) {
 
     if (isset($_SESSION['user_id'])) {
         $support_id = $_SESSION['user_id'];
+        include("conn.php");
     
     $sql = "INSERT INTO report (support_id, report_title, priority, report_description, report_status) VALUES ('$support_id', '$_POST[title]', '$_POST[priority]', '$_POST[description]', 'Created')";
             
