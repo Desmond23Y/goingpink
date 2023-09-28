@@ -16,8 +16,6 @@ if (isset($_GET['support_id'])) {
     echo "Support ID is missing in the URL.";
 }
 
-// Close the database connection
-mysqli_close($con);
 ?>
 <table width="90%">
     <tr bgcolor="#FFB6C1">
