@@ -32,7 +32,7 @@ if (isset($_GET['hotel_id'])) {
     exit();
 }
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $hotelName = $_POST['hotelName'];
     $roomType = $_POST['roomType'];
     $hotelAvailability = $_POST['hotelAvailability'];
