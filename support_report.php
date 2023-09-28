@@ -11,7 +11,7 @@ if (!isset($_SESSION['user_id'])) {
         $support_id = $_SESSION['user_id'];
         include("conn.php");
     
-    $sql = "INSERT INTO report (support_id, report_title, priority, report_description, report_status) VALUES ('$support_id', '$_POST[title]', '$_POST[priority]', '$_POST[description]', 'Created')";
+        $sql = "INSERT INTO report (support_id, report_title, priority, report_description, report_status) VALUES ('$support_id', '$_POST[title]', '$_POST[priority]', '$_POST[description]', 'Created')";
             
     if(!mysqli_query($con, $sql)) {
         die('Error:' . mysqli_error($con));
@@ -49,6 +49,6 @@ if (!isset($_SESSION['user_id'])) {
     <textarea id="description" name="description" rows="5" cols="50" required="required"></textarea><br>
 
     <button type="submit" value="Submit">Submit Form</button>
-</form><br>
+    </form><br>
 </body>
 </html>
