@@ -1,4 +1,5 @@
 <?php
+include("conn.php");
 // Check if support_id is provided in the URL
 if (isset($_GET['support_id'])) {
     $support_id = intval($_GET['support_id']);
