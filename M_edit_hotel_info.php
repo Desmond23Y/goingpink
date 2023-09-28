@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit'])) {
     $roomType = $_POST['roomType'];
     $hotelAvailability = $_POST['hotelAvailability'];
     $hotelPrice = $_POST['hotelPrice']
-}
+
 $update_hotel_query = "UPDATE 'hotel_information' SET
     hotelName = '$hotelName',
     roomType = '$roomType',
@@ -50,6 +50,7 @@ $update_hotel_query = "UPDATE 'hotel_information' SET
     } else {
         echo "Error updating Hotel's information: " . mysqli_error($con);
     }
+}
 ?>
 
 <html>
