@@ -7,7 +7,7 @@
     <h2>Ticket Update</h2>
     <?php
         include("conn.php");
-        if (isset($_GET['ticket_id'])) {
+        if (isset($_GET['id'])) {
             $ticket_id = intval($_GET['ticket_id']); 
             $result = mysqli_query($con, "SELECT * FROM ticket WHERE ticket_id = $ticket_id");
             
