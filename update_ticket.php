@@ -8,16 +8,16 @@
     <?php
         include("conn.php");
 	if (isset($_GET['ticket_id'])) {
-	        $ticket_id=intval($_GET['ticket_id']); 
-	        $result=mysqli_query($con,"SELECT* FROM ticket WHERE id=$ticket_id");
-	        while($row=mysqli_fetch_array($result))
-	        {
-	        $sql="UPDATE ticket SET
-	        ticket_status = '$_POST[status]',
-	        ticket_priority = '$_POST[priority]',
-	        ticket_solution = '$_POST[solution]'
+		$ticket_id=intval($_GET['ticket_id']); 
+		$result=mysqli_query($con,"SELECT* FROM ticket WHERE id=$ticket_id");
+		while($row=mysqli_fetch_array($result))
+		{
+		$sql="UPDATE ticket SET
+		ticket_status = '$_POST[status]',
+		ticket_priority = '$_POST[priority]',
+		ticket_solution = '$_POST[solution]'
 	
-	        WHERE ticket_id = $_POST[ticket_id];";
+		WHERE ticket_id = $_POST[ticket_id];";
 	}
 
         if (mysqli_query($con,$sql)) {
@@ -61,8 +61,8 @@
             <select name="status" id="status" required="required">
                 <option value="">Please select the ticket status</option>
                 <option value="Created">Created</option>
-                <option value="Payment and Billing Support">Pending</option>
-                <option value="Feedback and Complaint Resolution">Resolved</option>
+                <option value="Pending">Pending</option>
+                <option value="Resolved">Resolved</option>
                 <option value="Closed">Closed</option>
             </select><br>
 
