@@ -51,7 +51,7 @@ label {
     }
 
 form{
-  float: center;
+  display: table;
 }
 
 body {
