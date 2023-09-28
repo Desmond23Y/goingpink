@@ -37,6 +37,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 // Store user data in the session
                 $_SESSION['user_type'] = $user_type;
                 $_SESSION['user_id'] = $user_id;
+                $_SESSION['admin_id'] = $admin_id;
+                $_SESSION['support_id'] = $support_id;
+                $_SESSION['hotel_manager_id'] = $hotel_manager_id;
+                $_SESSION['transport_manager_id'] = $transport_manager_id;
 
                 // Redirect based on user type
                 if ($user_type === 'admin') {
