@@ -19,10 +19,10 @@ if (isset($_GET['hotel_id'])) {
     if ($result && mysqli_num_rows($result) > 0) {
         $row = mysqli_fetch_assoc($result);
 
-        $hotelName = $row['hotel_name'];
-        $roomType = $row['room_type'];
-        $hotelAvailability = $row['hotel_availability'];
-        $hotelPrice = $row['hotel_price'];
+        $hotel_name = $row['hotel_name'];
+        $room_type = $row['room_type'];
+        $hotel_availability = $row['hotel_availability'];
+        $hotel_price = $row['hotel_price'];
     } else {
         echo "Hotel not found.";
         exit();
@@ -33,17 +33,17 @@ if (isset($_GET['hotel_id'])) {
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $hotelName = $_POST['hotel_name'];
-    $roomType = $_POST['room_type'];
-    $hotelAvailability = $_POST['hotel_availability'];
-    $hotelPrice = $_POST['hotel_price'];
+    $hotel_name = $_POST['hotel_name'];
+    $room_type = $_POST['room_type'];
+    $hotel_availability = $_POST['hotel_availability'];
+    $hotel_price = $_POST['hotel_price'];
 
     $update_hotel_query = "UPDATE `hotel_information` SET
-    hotel_name = ?,
-    room_type = ?,
-    hotel_availability = ?,
-    hotel_price = ?
-    WHERE hotel_id = ?";
+    hotel_name = '$hotel_name',
+    room_type = '$room_type',
+    hotel_availability = '$hotel_availability',
+    hotel_price = '$hotel_price'
+    WHERE hotel_id = '$hotel_id'";
 
     $update_stmt = mysqli_prepare($con, $update_hotel_query);
     mysqli_stmt_bind_param($update_stmt, "ssssi", $hotelName, $roomType, $hotelAvailability, $hotelPrice, $hotel_id);
@@ -79,17 +79,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class="box">
         <form action=M_view_hotel_info.php method="POST">
         <input type="hidden" name="hotel_id" value="<?php echo $hotel_id; ?>">
-            <label for="hotelName">Hotel Name: </label>
-            <input type="text" id="hotelName" name="hotelName" required value="<?php echo $hotelName; ?>">
+            <label for="hotel_name">Hotel Name: </label>
+            <input type="text" id="hotel_name" name="hotel_name" required value="<?php echo $hotelName; ?>">
             <br><br>
-            <label for="roomType">Room Type: </label>
-            <input type="text" id="roomType" name="roomType" required value="<?php echo $roomType; ?>">
+            <label for="room_type">Room Type: </label>
+            <input type="text" id="room_type" name="room_type" required value="<?php echo $roomType; ?>">
             <br><br>
-            <label for="hotelAvailability">Hotel Availability: </label>
-            <input type="text" id="hotelAvailability" name="hotelAvailability" required value="<?php echo $hotelAvailability; ?>">
+            <label for="hotel_availability">Hotel Availability: </label>
+            <input type="text" id="hotel_availability" name="hotel_availability" required value="<?php echo $hotelAvailability; ?>">
             <br><br>
-            <label for="hotelPrice">Hotel Price: </label>
-            <input type="number" id="hotelPrice" name="hotelPrice" required value="<?php echo $hotelPrice; ?>">
+            <label for="hotel_price">Hotel Price: </label>
+            <input type="number" id="hotel_price" name="hotel_price" required value="<?php echo $hotelPrice; ?>">
             <br><br>
             <input type="submit" name="submit" value="Save Changes">
         </form>
