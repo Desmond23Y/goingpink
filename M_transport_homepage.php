@@ -10,9 +10,9 @@
     <link rel="stylesheet" href="M_navibar.css">
     <nav>
             <ul class="navibar">
-            <li><a href="transportM_homepage.php">HOME</a></li>
-            <li><a href="view_transport_info.php">HOTELS</a></li>
-            <li><a href="viewbooking.php">BOOKING</a></li>
+            <li><a href="M_transport_homepage.php">HOME</a></li>
+            <li><a href="view_transport_info.php">TRASPORT INFO</a></li>
+            <li><a href="M_view_trasport_booking.php">TRASPORT BOOKING</a></li>
             <li><a href="logout.php" class="right">LOGOUT</a></li>
         </ul>
     </nav>
