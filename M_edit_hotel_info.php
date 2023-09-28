@@ -37,9 +37,8 @@ while ($row = mysqli_fetch_array($result)) {
             echo "Error updating hotel information: " . mysqli_error($con);
         }
     }
-    
-    // Display ticket information and form
-    ?>
+}    
+?>
         
 <html>
 <head>
