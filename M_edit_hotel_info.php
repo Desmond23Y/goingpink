@@ -49,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     mysqli_stmt_bind_param($update_stmt, "ssssi", $hotelName, $roomType, $hotelAvailability, $hotelPrice, $hotel_id);
 
     if (mysqli_stmt_execute($update_stmt)) {
-        echo "<script>alert('Hotel\'s information have been updated!');</script>";
+        echo "<script>alert('Hotel's information have been updated!');</script>";
     } else {
         echo "Error updating Hotel's information: " . mysqli_error($con);
     }
