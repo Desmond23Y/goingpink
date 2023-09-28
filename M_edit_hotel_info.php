@@ -81,9 +81,12 @@ if (isset($_GET['hotel_id'])) {
                         <input type="submit" name="submit" value="Save Changes">
                     </form>
                 </div>
-            </body>
-            </html>
-
-    }
-}
-?>
+            <?php
+            }
+            mysqli_close($con);
+        } else {
+            echo "Ticket ID not provided.";
+        }
+    ?>
+</body>
+</html>
