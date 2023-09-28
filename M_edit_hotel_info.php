@@ -59,7 +59,7 @@ if (isset($_GET['hotel_id'])) {
             <body>
                 <h1>Edit Hotel Information</h1>
                 <div class="box">
-                    <form action="M_edit_hotel_info.php?hotel_id=<?php echo $hotel_id; ?>" method="POST">
+                    <form method="POST">
                         <label for="hotel_id">Hotel ID: </label>
                         <input name="hotel_id" readonly="readonly" value="<?php echo $hotel_id; ?>">
                         <br><br>
