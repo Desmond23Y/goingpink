@@ -28,6 +28,7 @@ form {
     border-radius: 5px;
     text-align: center;
     flex-direction: column;
+    float: left;
     }
 
 button{
@@ -49,10 +50,6 @@ label {
     font-size: 15px;
     color: #f4bdb6;
     }
-
-form{
-  display: table;
-}
 
 body {
     background-image: url("picture/register photo.jpg");
