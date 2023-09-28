@@ -30,6 +30,18 @@ form {
     flex-direction: column;
     }
 
+.input {
+    border: none;
+    outline:none;
+    color: #fff;
+    padding: 0 0 0 45px;
+    background: rgba(255,255,255,0.1);
+}
+
+::-webkit-input-placeholder{
+    color: #fff;
+}
+
 button{
     margin-right: 10px;
     padding: 12px;
@@ -53,5 +65,7 @@ label {
 body {
     background-image: url("login photo.jpg");
     background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
     }
-
