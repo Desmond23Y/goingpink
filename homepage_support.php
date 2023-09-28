@@ -39,6 +39,7 @@ body {
             <ul class="navibar">
                 <li><a href="support_report.php">REPORT</a></li>
                 <li><a href="view_own_support_report.php">VIEW OWN REPORT</a></li>
+                <li><a href="update_ticket.php">UPDATE TICKET</a></li>
                 <li><a href="logout.php" class="right">LOGOUT</a></li>
                 <li><a href="login.php" class="right">LOGIN</a></li>
             </ul>
