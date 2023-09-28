@@ -7,37 +7,38 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 if (isset($_GET['id'])) {
-$hotel_id = intval($_GET['id']); 
-$result = mysqli_query($con, "SELECT * FROM hotel_information WHERE hotel_id = $hotel_id");
-
-while ($row = mysqli_fetch_array($result)) {
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        // Handle form submission and update database here
-        $hotel_id = $row['hotel_id']; // Get the ticket_id from the row
-        $hotel_name = $_POST['hotel_name'];
-        $room_type = $_POST['room_type'];
-        $room_availability = $_POST['room_availability'];
-        $hotel_availability = $_POST['hotel_availability'];
-        $hotel_price = $_POST['hotel_price'];
-        
-        // Use prepared statements to prevent SQL injection
-        $update_sql = "UPDATE hotel_information SET
-            hotel_name = ?,
-            room_type = ?,
-            hotel_availability = ?,
-            hotel_price = ?
-            WHERE hotel_id = ?";
-        
-        $update_stmt = mysqli_prepare($con, $update_sql);
-        mysqli_stmt_bind_param($update_stmt, "ssssi", $hotel_name, $room_type, $hotel_availability, $hotel_price, $hotel_id);
-        
-        if (mysqli_stmt_execute($update_stmt)) {
-            echo "<script>alert('Hotel information has been updated!');</script>";
-        } else {
-            echo "Error updating hotel information: " . mysqli_error($con);
+    $hotel_id = intval($_GET['id']); 
+    $result = mysqli_query($con, "SELECT * FROM hotel_information WHERE hotel_id = $hotel_id");
+    
+    while ($row = mysqli_fetch_array($result)) {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            // Handle form submission and update database here
+            $hotel_id = $row['hotel_id']; // Get the ticket_id from the row
+            $hotel_name = $_POST['hotel_name'];
+            $room_type = $_POST['room_type'];
+            $room_availability = $_POST['room_availability'];
+            $hotel_availability = $_POST['hotel_availability'];
+            $hotel_price = $_POST['hotel_price'];
+            
+            // Use prepared statements to prevent SQL injection
+            $update_sql = "UPDATE hotel_information SET
+                hotel_name = ?,
+                room_type = ?,
+                hotel_availability = ?,
+                hotel_price = ?
+                WHERE hotel_id = ?";
+            
+            $update_stmt = mysqli_prepare($con, $update_sql);
+            mysqli_stmt_bind_param($update_stmt, "ssssi", $hotel_name, $room_type, $hotel_availability, $hotel_price, $hotel_id);
+            
+            if (mysqli_stmt_execute($update_stmt)) {
+                echo "<script>alert('Hotel information has been updated!');</script>";
+            } else {
+                echo "Error updating hotel information: " . mysqli_error($con);
+            }
         }
     }
-}    
+}
 ?>
         
 <html>
