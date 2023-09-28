@@ -9,7 +9,7 @@ if (!isset($_SESSION['user_id'])) {
 
 if (isset($_GET['hotel_id'])) {
     $hotel_id = $_GET['hotel_id']; 
-    $result = mysqli_query($con, "SELECT * FROM hotel_information WHERE hotel_id = ?");
+    $result = mysqli_query($con, "SELECT * FROM hotel_information WHERE hotel_id = '$hotel_id'");
 
     while ($row = mysqli_fetch_array($result)) {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
