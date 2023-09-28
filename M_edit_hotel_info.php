@@ -34,11 +34,11 @@ if (isset($_GET['hotel_id'])) {
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $hotel_name = $_POST['hotel_name'];
-    $room_type = $_POST['room_type'];
-    $room_availability = $_POST['room_availability'];
-    $hotel_availability = $_POST['hotel_availability'];
-    $hotel_price = $_POST['hotel_price'];
+    $hotel_name = '$_POST[hotel_name]';
+    $room_type = '$_POST[room_type]';
+    $room_availability = '$_POST[room_availability]';
+    $hotel_availability = '$_POST[hotel_availability]';
+    $hotel_price = '$_POST[hotel_price]';
 
     $update_hotel_query = "UPDATE `hotel_information` SET
     hotel_name = '$hotel_name',
