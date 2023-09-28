@@ -30,7 +30,7 @@ if (isset($_GET['hotel_id'])) {
                 WHERE hotel_id = ?";
 
             $update_stmt = mysqli_prepare($con, $update_sql);
-            mysqli_stmt_bind_param($update_stmt, "ssssi", $hotel_name, $room_type, $hotel_availability, $hotel_price, $hotel_id);
+            mysqli_stmt_bind_param($update_stmt, "ssssi", $hotel_name, $room_type, $hotel_availability, $hotel_price);
 
             if (mysqli_stmt_execute($update_stmt)) {
                 echo "<script>alert('Hotel information has been updated!');</script>";
@@ -60,8 +60,6 @@ if (isset($_GET['hotel_id'])) {
                 <h1>Edit Hotel Information</h1>
                 <div class="box">
                     <form method="POST">
-                        <label for="hotel_id">Hotel ID: </label>
-                        <input name="hotel_id" readonly="readonly" value="<?php echo $hotel_id; ?>">
                         <br><br>
                         <label for="hotel_name">Hotel Name: </label>
                         <input type="text" id="hotel_name" name="hotel_name" required value="<?php echo $row['hotel_name']; ?>">
