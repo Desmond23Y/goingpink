@@ -2,6 +2,9 @@
 session_start();
 include("conn.php");
 
+// Initialize $result as null
+$result = null;
+
 // Check if support_id is provided in the URL
 if (isset($_SESSION['user_id'])) {
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -13,7 +16,6 @@ if (isset($_SESSION['user_id'])) {
         }
     }
 }
-
 ?>
 
 <table width="90%">
