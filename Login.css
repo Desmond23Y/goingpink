@@ -2,12 +2,14 @@ h1 {
     font-family: 'Butler';
     font-size: 30px;
     color: #F490A8;
+    text-align: center;
     }
 
 h3 {
     font-family: 'Butler';
     font-size: 20px;
     color: #f6a2b6;
+    text-align: center;
     }
 
 h2 {
@@ -41,3 +43,9 @@ button:hover{
     background-color: #ab5288;
     color: #f1aca4;
     }
+
+label {
+    background-color: #dec4ae;
+    color: #f17492;
+}
+
