@@ -33,29 +33,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $row = mysqli_fetch_assoc($result);
                 $user_type = $row['user_type'];
                 $user_id = $row['user_id'];
-                $admin_id = $row['admin_id'];
-                $support_id = $row['support_id'];
-                $hotel_manager_id =  $row['hotel_manager_id'];
-                $transport_manager_id =  $row['transport_manager_id'];
 
                 // Store user data in the session
                 $_SESSION['user_type'] = $user_type;
                 $_SESSION['user_id'] = $user_id;
-                $_SESSION['admin_id'] = $admin_id;
-                $_SESSION['support_id'] = $support_id;
-                $_SESSION['hotel_manager_id'] = $hotel_manager_id;
-                $_SESSION['transport_manager_id'] = $transport_manager_id;
 
                 // Redirect based on user type
                 if ($user_type === 'admin') {
+                    $admin_id = $row['admin_id'];
+                     $_SESSION['admin_id'] = $admin_id;
                     header('Location: homepage_admin.php');
                 } elseif ($user_type === 'support') {
+                    $support_id = $row['support_id'];
+                    $_SESSION['support_id'] = $support_id;
                     header('Location: homepage_support.php');
                 } elseif ($user_type === 'hotel_management') {
+                    $hotel_manager_id =  $row['hotel_manager_id'];
+                    $_SESSION['hotel_manager_id'] = $hotel_manager_id;
                     header('Location: M_view_hotel_info.php');
                 } elseif ($user_type === 'transport_management') {
+                    $transport_manager_id =  $row['transport_manager_id'];
                     header('Location: M_transport_homepage.php');
                 } elseif ($user_type === 'user') {
+                    $_SESSION['transport_manager_id'] = $transport_manager_id;
                     header('Location: index.php');
                 }
                 exit();
