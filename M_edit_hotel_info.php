@@ -21,7 +21,7 @@ if (isset($_GET['hotel_id'])) {
 
         $hotel_name = $row['hotel_name'];
         $room_type = $row['room_type'];
-        $room_availability = $_POST['room_availability'];
+        $room_availability = $row['room_availability'];
         $hotel_availability = $row['hotel_availability'];
         $hotel_price = $row['hotel_price'];
     } else {
