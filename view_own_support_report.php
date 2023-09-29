@@ -7,7 +7,7 @@ if (!isset($_SESSION['user_id'])) {
 }
 if (isset($_GET['support_id'])) {
     $support_id = $_GET['support_id'];
-    $result=mysqli_query($con,"SELECT* FROM report WHERE support_id=$support_id");
+    $result = mysqli_query($con, "SELECT * FROM report WHERE support_id='$support_id'");
 }
 ?>
 
