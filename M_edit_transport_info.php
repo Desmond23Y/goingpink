@@ -8,30 +8,31 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 if (isset($_GET['transport_id'])) {
-    $transport_id = $_GET['transport_id']; 
+    $transport_id = $_GET['transport_id'];
     $result = mysqli_query($con, "SELECT * FROM transport_information WHERE transport_id = '$transport_id'");
 
-    while ($row = mysqli_fetch_array($result)) {
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $transport_id = $row['transport_id'];
-            $transport_type = $_POST['transport_type'];
-            $transport_price_perKM = $_POST['transport_price_perKM'];
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $transport_id = $row['transport_id'];
+        $transport_type = $_POST['transport_type'];
+        $transport_price_perKM = $_POST['transport_price_perKM'];
 
-            $update_sql = "UPDATE transport_information SET
-                transport_type = ?,
-                transport_price_perKM = ?,
-                WHERE transport_id = ?";
+        $update_sql = "UPDATE transport_information SET
+            transport_type = ?,
+            transport_price_perKM = ?
+            WHERE transport_id = ?";
 
-            $update_stmt = mysqli_prepare($con, $update_sql);
-            mysqli_stmt_bind_param($update_stmt, "ssi", $transport_id, $transport_type, $transport_price_perKM);
+        $update_stmt = mysqli_prepare($con, $update_sql);
+        mysqli_stmt_bind_param($update_stmt, "ssi", $transport_type, $transport_price_perKM, $transport_id);
 
-            if (mysqli_stmt_execute($update_stmt)) {
-                echo "<script>alert('Transport information has been updated!');</script>";
-            } else {
-                echo "Error updating transport information: " . mysqli_error($con);
-            }
+        if (mysqli_stmt_execute($update_stmt)) {
+            echo "<script>alert('Transport information has been updated!');</script>";
+        } else {
+            echo "Error updating transport information: " . mysqli_error($con);
         }
-?>
+    }
+
+    while ($row = mysqli_fetch_array($result)) {
+        ?>
             <html>
             <head>
                 <meta charset="UTF-8">
