@@ -18,9 +18,7 @@ $result=mysqli_query($con,"SELECT* FROM admin");
         echo'<td>'.$row["admin_id"].'</td>';
         echo'<td>'.$row["username"].'</td>';
         echo'<td><a href="modify_admin_acc.php?admin_id='.$row["admin_id"].'">Edit</a></td>';
-        echo'<td><a onclick="return confirm(\'Delete '.$row
-        ["username"].' details?\')" href="delete_admin_acc.php?admin_id='.$row
-        ["admin_id"].'">Delete</a></td>';
+        <a onclick="return confirm('Delete <?php echo $row["username"]; ?> details?')" href="delete_admin_acc.php?admin_id=<?php echo $row["admin_id"]; ?>">Delete</a>;
         echo'</tr>';
     }
     mysqli_close($con);
