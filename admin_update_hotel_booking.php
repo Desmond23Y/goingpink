@@ -20,15 +20,15 @@
 	                    $check_in_date = $_POST['indate'];
 	                    $check_out_date = $_POST['outdate'];
                     
-                    // Use prepared statements to prevent SQL injection
-	                    $update_sql = "UPDATE hotel_booking SET
-	                        number_of_pax = ?,
-	                        check_in_date = ?,
-	                        check_out_date = ?
-	                        WHERE hotel_booking_id = ?";
-	                    
-	                    $update_stmt = mysqli_prepare($con, $update_sql);
-	                    mysqli_stmt_bind_param($update_stmt, "ssss", $numpax, $indate, $outdate, $hotel_booking_id);
+			    $update_sql = "UPDATE hotel_booking SET
+			        number_of_pax = ?,
+			        check_in_date = ?,
+			        check_out_date = ?
+			        WHERE hotel_booking_id = ?";
+			
+			    $update_stmt = mysqli_prepare($con, $update_sql);
+			    mysqli_stmt_bind_param($update_stmt, "ssss", $number_of_pax, $check_in_date, $check_out_date, $hotel_booking_id);
+
 		    } else {
         		echo "Number of Pax is required and cannot be empty.";
     		    }
@@ -69,17 +69,18 @@
 
                 <p>
                 <form method="post">
-                <label for="numpax">Number of Pax:</label>
-                    <input type="number" id="numpax" name="numpax" required="required" value="<?php echo $row['number_of_pax']?>"><br>
+                    <label for="numpax">Number of Pax:</label>
+		    <input type="number" id="numpax" name="numpax" required="required" value="<?php echo $row['number_of_pax']?>"><br>
+		
+		    <label for="indate">Check in date:</label>
+		    <input type="date" id="indate" name="indate" required="required" value="<?php echo $row['check_in_date']?>"><br>
+		
+		    <label for="outdate">Check out date:</label>
+		    <input type="date" id="outdate" name="outdate" required="required" value="<?php echo $row['check_out_date']?>"><br>
 
-                    <label for="indate">Check in date:</label>
-                    <input type="date" id="indate" name="indate" required="required" value="<?php echo $row['check_in_date']?>"><br>
-
-                    <label for="outdate">Check out date:</label>
-                    <input type="date" id="outdate" name="outdate" required="required" value="<?php echo $row['check_out_date']?>"><br>
-                    
                     <button type="submit" value="submit">Edit Booking</button>
                 </form><br>
+		</p>
     <?php
             }
             mysqli_close($con);
