@@ -41,17 +41,14 @@ body {
         <?php
         // Include the database connection
         include("conn.php");
-
         // Query to fetch support_id values from your_table_name
         $result = mysqli_query($con, "SELECT support_id FROM report");
-
         // Check if the query was successful
         if ($result) {
             while ($row = mysqli_fetch_assoc($result)) {
                 // Generate dynamic links for each support_id
                 echo '<li><a href="view_own_support_report.php?support_id=' . $row['support_id'] . '">VIEW OWN REPORT</a></li>';
             }
-
             // Close the database connection
             mysqli_close($con);
         } else {
@@ -60,6 +57,7 @@ body {
         ?>
 
         <li><a href="view_request_form.php">VIEW REQUEST FORM</a></li>
+        <li><a href="view_ticket.php">VIEW TICKET</a></li>
         <li><a href="view_invoice.php">VIEW INVOICE</a></li>
         <li><a href="view_admin_acc.php">VIEW ADMIN ACC</a></li>
         <li><a href="view_user_acc.php">VIEW USER ACC</a></li>
