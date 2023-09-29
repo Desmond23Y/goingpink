@@ -13,21 +13,25 @@
             
             while ($row = mysqli_fetch_array($result)) {
                 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+		    if (isset($_POST['numpax']) && !empty($_POST['numpax'])) {
                     // Handle form submission and update database here
-                    $hotel_booking_id = $row['hotel_booking_id']; // Get the hotel_booking_id from the row
-                    $number_of_pax = $_POST['numpax'];
-                    $check_in_date = $_POST['indate'];
-                    $check_out_date = $_POST['outdate'];
+	                    $hotel_booking_id = $row['hotel_booking_id']; // Get the hotel_booking_id from the row
+	                    $number_of_pax = $_POST['numpax'];
+	                    $check_in_date = $_POST['indate'];
+	                    $check_out_date = $_POST['outdate'];
                     
                     // Use prepared statements to prevent SQL injection
-                    $update_sql = "UPDATE hotel_booking SET
-                        number_of_pax = ?,
-                        check_in_date = ?,
-                        check_out_date = ?
-                        WHERE hotel_booking_id = ?";
-                    
-                    $update_stmt = mysqli_prepare($con, $update_sql);
-                    mysqli_stmt_bind_param($update_stmt, "ssss", $numpax, $indate, $outdate, $hotel_booking_id);
+	                    $update_sql = "UPDATE hotel_booking SET
+	                        number_of_pax = ?,
+	                        check_in_date = ?,
+	                        check_out_date = ?
+	                        WHERE hotel_booking_id = ?";
+	                    
+	                    $update_stmt = mysqli_prepare($con, $update_sql);
+	                    mysqli_stmt_bind_param($update_stmt, "ssss", $numpax, $indate, $outdate, $hotel_booking_id);
+		    } else {
+        		echo "Number of Pax is required and cannot be empty.";
+    		    }
                     
                     if (mysqli_stmt_execute($update_stmt)) {
                         echo "<script>alert('Hotel booking information has been updated!');</script>";
