@@ -1,13 +1,13 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     include("conn.php");
-    if (strlen($_POST['name']) > 5 || strlen($_POST['name']) < 50) {
+    if (strlen($_POST['name']) < 5 || strlen($_POST['name']) > 50) {
         echo "Length of username must be between 5 and 50 characters.";
-    } elseif (strlen($_POST['password']) > 5 || strlen($_POST['password']) < 50) {
+    } elseif (strlen($_POST['password']) < 5 || strlen($_POST['password']) > 50) {
         echo "Password length must be between 5 and 50 characters. Please try again.";
     } else
         $admin_id=intval($_GET['admin_id']); 
-        $result=mysqli_query($con,"SELECT* FROM admin WHERE id=$admin_id");
+        $result=mysqli_query($con,"SELECT* FROM admin WHERE admin_id=$admin_id");
         while($row=mysqli_fetch_array($result))
         {
         $sql="UPDATE admin SET
