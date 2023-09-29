@@ -1,10 +1,13 @@
 <?php
 // Include the database connection
 include("conn.php");
-
-if (isset($_GET['admin_id'])) {
-    $admin_id = $_GET['admin_id']; 
-    $result = mysqli_query($con, "SELECT * FROM admin WHERE admin_id = '$admin_id'");
+if (strlen($_POST['name']) < 5 || strlen($_POST['name']) > 50) {
+        echo "Length of username must be between 5 and 50 characters.";
+    } elseif (strlen($_POST['password']) < 5 || strlen($_POST['password']) > 50) {
+        echo "Password length must be between 5 and 50 characters. Please try again.";
+    } elseif (isset($_GET['admin_id'])) {
+        $admin_id = $_GET['admin_id']; 
+        $result = mysqli_query($con, "SELECT * FROM admin WHERE admin_id = '$admin_id'");
 
     while ($row = mysqli_fetch_array($result)) {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
