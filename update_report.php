@@ -72,10 +72,10 @@
                         <option value="Closed" <?php if ($row['report_status'] == 'Closed') echo 'selected'; ?>>Closed</option>
 	            </select><br>
 
-		<label for="comment">Report Comment:</label>
-        	<textarea id="text" name="comment" rows="5" cols="50" required="required" value="<?php echo $row['report_comment']?>"></textarea><br>
+		    <label for="comment">Report Comment:</label>
+        	    <textarea id="text" name="comment" rows="5" cols="50" required="required" value="<?php echo $row['report_comment']?>"></textarea><br>
 	
-	        <button type="submit" value="Submit">Update Report</button>
+	            <button type="submit" value="Submit">Update Report</button>
                 </form><br>
     <?php
             }
