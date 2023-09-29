@@ -8,6 +8,7 @@ if (!isset($_SESSION['user_id'])) {
 if (isset($_GET['id'])) {
     $support_id = $_GET['id'];
     $result=mysqli_query($con,"SELECT* FROM report WHERE id=$support_id");
+}
 ?>
 
 <table width="90%">
