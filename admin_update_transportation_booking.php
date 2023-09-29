@@ -9,7 +9,7 @@
         include("conn.php");
         if (isset($_GET['transport_booking_id'])) {
             $transport_booking_id = $_GET['transport_booking_id']; 
-            $result = mysqli_query($con, "SELECT * FROM transport_booking WHERE transport_booking_id = '$transport_booking_id'");
+            $result = mysqli_query($con, "SELECT * FROM transportation_booking WHERE transport_booking_id = '$transport_booking_id'");
             
             while ($row = mysqli_fetch_array($result)) {
                 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -21,7 +21,7 @@
                     $departure_location = $_POST['dlocation'];
                             
                 // Use prepared statements to prevent SQL injection
-                    $update_sql = "UPDATE transport_booking SET
+                    $update_sql = "UPDATE transportation_booking SET
                         arrival_time = ?,
                         departure_time = ?,
                         arrival_location = ?,
