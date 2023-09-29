@@ -73,7 +73,7 @@
 	            </select><br>
 
 		    <label for="comment">Report Comment:</label>
-        	    <textarea id="text" name="comment" rows="5" cols="50" required="required" value="<?php echo $row['report_comment']?>"></textarea><br>
+        	    <textarea id="text" name="comment" rows="5" cols="50" required="required"><?php echo $row['report_comment']?></textarea><br>
 	
 	            <button type="submit" value="Submit">Update Report</button>
                 </form><br>
