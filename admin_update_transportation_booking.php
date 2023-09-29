@@ -76,12 +76,12 @@
                     <input type="time" name="dtime" id="dtime" required="required" value="<?php echo $row['departure_time']?>">
                 <br>
 
-                    <label> Arrival Location: </label>
-                    <input type='text' name="alocation" required="required" value="<?php echo $row['arrival_location']?>">
+                    <label for="alocation"> Arrival Location: </label>
+                    <input type='text' name="alocation" id="alocation" required="required" value="<?php echo $row['arrival_location']?>">
                 <br>
 
-                    <label> Departure Location: </label>
-                    <input type='text' name="dlocation" required="required" value="<?php echo $row['departure_location']?>">
+                    <label for="dlocation"> Departure Location: </label>
+                    <input type='text' name="dlocation" id="dlocation" required="required" value="<?php echo $row['departure_location']?>">
                 <br>
 
                 <button type="submit" value="Submit">Update Booking</button>
