@@ -66,10 +66,10 @@
 	            <label for="status">Choose the Report Status:</label>
 	            <select name="status" id="status" required="required">
 	                <option value="">Please select the report status</option>
-			<option value="Created" <?php if ($row['ticket_status'] == 'Created') echo 'selected'; ?>>Created</option>
-                        <option value="Pending" <?php if ($row['ticket_status'] == 'Pending') echo 'selected'; ?>>Pending</option>
-                        <option value="Resolved" <?php if ($row['ticket_status'] == 'Resolved') echo 'selected'; ?>>Resolved</option>
-                        <option value="Closed" <?php if ($row['ticket_status'] == 'Closed') echo 'selected'; ?>>Closed</option>
+			<option value="Created" <?php if ($row['report_status'] == 'Created') echo 'selected'; ?>>Created</option>
+                        <option value="Pending" <?php if ($row['report_status'] == 'Pending') echo 'selected'; ?>>Pending</option>
+                        <option value="Resolved" <?php if ($row['report_status'] == 'Resolved') echo 'selected'; ?>>Resolved</option>
+                        <option value="Closed" <?php if ($row['report_status'] == 'Closed') echo 'selected'; ?>>Closed</option>
 	            </select><br>
 
 		<label for="comment">Report Comment:</label>
