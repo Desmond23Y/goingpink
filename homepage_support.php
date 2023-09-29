@@ -38,7 +38,7 @@ body {
         <nav>
             <ul class="navibar">
                 <li><a href="support_report.php">REPORT</a></li>
-                <li><a href="view_own_support_report.php">VIEW OWN REPORT</a></li>
+                <li><a href="view_own_support_report.php?support_id=?">VIEW OWN REPORT</a></li>
                 <li><a href="view_request_form.php">VIEW REQUEST FORM</a></li>
                 <li><a href="logout.php" class="right">LOGOUT</a></li>
                 <li><a href="login.php" class="right">LOGIN</a></li>
