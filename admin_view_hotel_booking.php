@@ -11,6 +11,7 @@ $result=mysqli_query($con,"SELECT* FROM hotel_booking");
         <td>Number of Pax</td>
         <td>Check In Date</td>
         <td>Check Out Date</td>
+        <td>Update</td>
     </tr>
 
 <?php
@@ -25,6 +26,7 @@ $result=mysqli_query($con,"SELECT* FROM hotel_booking");
         echo'<td>'.$row["number_of_pax"].'</td>';
         echo'<td>'.$row["check_in_date"].'</td>';
         echo'<td>'.$row["check_out_date"].'</td>';
+        echo'<td><a href="admin_update_hotel_booking.php?hotel_booking_id='.$row["hotel_booking_id"].'">Update</a></td>';
         echo'</tr>';
     }
     mysqli_close($con);
