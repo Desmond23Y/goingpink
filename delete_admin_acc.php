@@ -2,9 +2,9 @@
 
 include("conn.php");
 
-$id=$_GET['admin_id'];
+$admin_id=$_GET['admin_id'];
 
-$result=mysqli_query($con,"DELETE FROM admin WHERE admin_id=$id");
+$result=mysqli_query($con,"DELETE * FROM admin WHERE admin_id=$admin_id");
 
 mysqli_close($con);
 header('Location: view_admin_acc.php');
