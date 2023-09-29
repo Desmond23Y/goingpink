@@ -2,7 +2,7 @@
 session_start();
 include('conn.php');
 
-$result = mysqli_query($con, "SELECT * FROM transport_booking");
+$result = mysqli_query($con, "SELECT * FROM transportation_booking");
 if (!$result) {
     die('Query Error: ' . mysqli_error($con));
 }
