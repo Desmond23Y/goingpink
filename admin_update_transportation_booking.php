@@ -67,13 +67,17 @@
                 </p>
 
                 <p>
-                <form method="post">
                     <label for="atime"> Select an Arrival Time: </label>
-                    <input type="time" name="atime" id="atime" required="required" value="<?php echo $row['arrival_time']?>"><br>
+                    <input type="time" name="atime" id="atime" required="required" value="<?php echo $row['arrival_time']?>">
+                </p>
 
+                <p>
                     <label for="dtime"> Select a Departure Time: </label>
-                    <input type="time" name="dtime" id="dtime" required="required" value="<?php echo $row['departure_time']?>"><br>
+                    <input type="time" name="dtime" id="dtime" required="required" value="<?php echo $row['departure_time']?>">
+                </p>
 
+                <p>
+                <form method="post">
                     <label for="alocation"> Arrival Location: </label>
                     <input type='text' name="alocation" id="alocation" required="required" value="<?php echo $row['arrival_location']?>"><br>
 
