@@ -55,7 +55,7 @@ body {
             echo '<li>Error fetching data from the database.</li>';
         }
         ?>
-
+        <li><a href="view_support_report.php">VIEW SUPPORT REPORT</a></li>
         <li><a href="view_request_form.php">VIEW REQUEST FORM</a></li>
         <li><a href="view_ticket.php">VIEW TICKET</a></li>
         <li><a href="view_invoice.php">VIEW INVOICE</a></li>
