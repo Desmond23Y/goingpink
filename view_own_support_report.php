@@ -1,6 +1,6 @@
 <?php
 include("conn.php");
-$support_id=intval($_GET['support_id']); 
+$support_id=intval($_GET['id']); 
 $result=mysqli_query($con,"SELECT* FROM report WHERE id=$support_id");
 ?>
 
