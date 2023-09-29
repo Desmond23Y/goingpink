@@ -19,6 +19,7 @@ if (isset($_GET['support_id'])) {
         <td>Priority</td>
         <td>Report Description</td>
         <td>Report Status</td>
+        <td>Report Comment</td>
 
     </tr>
 
@@ -33,6 +34,7 @@ if ($result !== null) {
         echo'<td>'.$row["priority"].'</td>';
         echo'<td>'.$row["report_description"].'</td>';
         echo'<td>'.$row["report_status"].'</td>';
+        echo'<td>'.$row["report_comment"].'</td>';
         echo'</tr>';
     }
     mysqli_close($con);
