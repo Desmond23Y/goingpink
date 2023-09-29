@@ -67,13 +67,13 @@
                 </p>
 
                 <p>
-                    <label for="atime"> Select an Arrival Time: </label>
-                    <input type="time" name="atime" id="atime" required="required" value="<?php echo $row['arrival_time']?>">
+                    <label> Select an Arrival Time: </label>
+                    <input name='atime' readonly='readonly' value="<?php echo $row['arrival_time']?>">
                 </p>
 
                 <p>
-                    <label for="dtime"> Select a Departure Time: </label>
-                    <input type="time" name="dtime" id="dtime" required="required" value="<?php echo $row['departure_time']?>">
+                    <label> Select a Departure Time: </label>
+                    <input name='dtime' readonly='readonly' value="<?php echo $row['departure_time']?>">
                 </p>
 
                 <p>
