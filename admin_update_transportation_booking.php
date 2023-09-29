@@ -69,23 +69,20 @@
                 <p>
                 <form method="post">
                     <label for="atime"> Select an Arrival Time: </label>
-                    <input type="time" name="atime" id="atime" required="required" value="<?php echo $row['arrival_time']?>">
-                <br>
+                    <input type="time" name="atime" id="atime" required="required" value="<?php echo $row['arrival_time']?>"><br>
 
                     <label for="dtime"> Select a Departure Time: </label>
-                    <input type="time" name="dtime" id="dtime" required="required" value="<?php echo $row['departure_time']?>">
-                <br>
+                    <input type="time" name="dtime" id="dtime" required="required" value="<?php echo $row['departure_time']?>"><br>
 
                     <label for="alocation"> Arrival Location: </label>
-                    <input type='text' name="alocation" id="alocation" required="required" value="<?php echo $row['arrival_location']?>">
-                <br>
+                    <input type='text' name="alocation" id="alocation" required="required" value="<?php echo $row['arrival_location']?>"><br>
 
                     <label for="dlocation"> Departure Location: </label>
-                    <input type='text' name="dlocation" id="dlocation" required="required" value="<?php echo $row['departure_location']?>">
-                <br>
+                    <input type='text' name="dlocation" id="dlocation" required="required" value="<?php echo $row['departure_location']?>"><br>
 
-                <button type="submit" value="Submit">Update Booking</button>
+                    <button type="submit" value="Submit">Update Booking</button>
                 </form><br>
+                </p>
     <?php
             }
             mysqli_close($con);
