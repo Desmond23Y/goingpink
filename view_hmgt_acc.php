@@ -1,3 +1,5 @@
+<a href="create_hmgt_acc.php">Add New Hotel Manager Account</a><br>
+
 <?php include("conn.php");
 $result=mysqli_query($con,"SELECT* FROM hotel_management");
 if (!$result) {
