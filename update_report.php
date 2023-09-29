@@ -16,14 +16,15 @@
                     // Handle form submission and update database here
                     $report_id = $row['report_id']; // Get the report_id from the row
                     $status = $_POST['status'];
-                    
+                    $comment = $_POST['comment'];
                     // Use prepared statements to prevent SQL injection
-                    $update_sql = "UPDATE ticket SET
-                        report_status = ?
+                    $update_sql = "UPDATE report SET
+                        report_status = ?,
+			report_comment = ?
                         WHERE report_id = ?";
                     
                     $update_stmt = mysqli_prepare($con, $update_sql);
-                    mysqli_stmt_bind_param($update_stmt, "si", $status, $report_id);
+                    mysqli_stmt_bind_param($update_stmt, "ssi", $status, $comment, $report_id);
                     
                     if (mysqli_stmt_execute($update_stmt)) {
                         echo "<script>alert('Report information has been updated!');</script>";
@@ -70,6 +71,9 @@
 	                <option value="Feedback and Complaint Resolution">Resolved</option>
 	                <option value="Closed">Closed</option>
 	            </select><br>
+
+		<label for="comment">Report Comment:</label>
+        	<textarea id="text" name="comment" rows="5" cols="50" required="required"></textarea><br>
 	
 	        <button type="submit" value="Submit">Update Report</button>
                 </form><br>
