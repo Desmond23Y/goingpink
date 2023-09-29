@@ -53,9 +53,6 @@ if (isset($_GET['transport_id'])) {
                 <h1>Edit Transport Information</h1>
                 <div class="box">
                     <form action="M_edit_transport_info.php?transport_id=<?php echo $transport_id; ?>" method="POST">
-                        <label for="transport_id">Transport ID: </label>
-                        <input name="transport_id" readonly="readonly" value="<?php echo $transport_id; ?>">
-                        <br><br>
                         <label for="transport_type">Transport Type: </label>
                         <input type="text" id="transport_type" name="transport_type" required value="<?php echo $row['transport_type']; ?>">
                         <br><br>
