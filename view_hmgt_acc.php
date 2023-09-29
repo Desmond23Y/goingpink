@@ -1,6 +1,14 @@
 <a href="create_hmgt_acc.php">Add New Hotel Manager Account</a><br>
 
-<?php include("conn.php");
+<?php 
+session_start();
+include("conn.php");
+
+if (!isset($_SESSION['user_id'])) {
+    header('Location: login.php');
+    exit();
+}
+
 $result=mysqli_query($con,"SELECT* FROM hotel_management");
 if (!$result) {
     die("Query failed: " . mysqli_error($con));
