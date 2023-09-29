@@ -32,28 +32,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['name']) && isset($_POS
                 echo "Error updating admin account: " . mysqli_error($con);
             }
         }
+        ?>
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>Modify Admin Account</title>
+        </head>
+        <body>
+            <h2>Admin Account Modification</h2>
+            <form method="post" action="modify_admin_acc.php?admin_id=<?php echo $admin_id; ?>">
+                <label for="name">Username:</label>
+                <input type="text" id="name" name="name" required="required" value="<?php echo $row['username']; ?>"><br>
+        
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" maxlength="50" required value="<?php echo $row['password']; ?>"><br><br>
+        
+                <button type="submit">Edit Admin Account</button>
+            </form>
+        <?php
+        }
         mysqli_close($con);
     } else {
         echo "Admin ID not provided.";
     }
-}
 ?>
-
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Modify Admin Account</title>
-</head>
-<body>
-    <h2>Admin Account Modification</h2>
-    <form method="post" action="modify_admin_acc.php?admin_id=<?php echo $admin_id; ?>">
-        <label for="name">Username:</label>
-        <input type="text" id="name" name="name" required="required" value="<?php echo $row['username']; ?>"><br>
-
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" maxlength="50" required value="<?php echo $row['password']; ?>"><br><br>
-
-        <button type="submit">Edit Admin Account</button>
-    </form>
 </body>
 </html>
