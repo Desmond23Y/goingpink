@@ -16,6 +16,12 @@ if (isset($_GET['support_id'])) {
                 echo "Length of username must be between 5 and 50 characters.";
             } elseif (strlen($password) < 5 || strlen($password) > 50) {
                 echo "Password length must be between 5 and 50 characters. Please try again.";
+            } elseif (!preg_match('/[A-Z]/', $password)) {
+                echo "Password must contain at least one UPPERCASE letter. Please try again.";
+            } elseif (!preg_match('/[a-z]/', $password)) {
+                echo "Password must contain at least one lowercase letter. Please try again.";
+            } elseif (!preg_match('/[^a-zA-Z0-9]/', $password)) {
+                echo "Password must contain at least one special character. Please try again.";
             } else {
                 // Handle form submission and update database here
                 $support_id = $row['support_id']; // Get the support_id from the row
