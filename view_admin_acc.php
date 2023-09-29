@@ -1,6 +1,14 @@
 <a href="create_admin_acc.php">Add New Admin Account</a><br>
 
-<?php include("conn.php");
+<?php 
+session_start();
+include("conn.php");
+
+if (!isset($_SESSION['user_id'])) {
+    header('Location: login.php');
+    exit();
+}
+
 $result=mysqli_query($con,"SELECT* FROM admin");
 ?>
 <table width="90%">
