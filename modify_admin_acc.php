@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Use prepared statements to prevent SQL injection
     $update_sql = "UPDATE admin SET username = ?, password = ? WHERE admin_id = ?";
     $update_stmt = mysqli_prepare($con, $update_sql);
-    mysqli_stmt_bind_param($update_stmt, "ssi", $username, $password, $admin_id);
+    mysqli_stmt_bind_param($update_stmt, "sss", $username, $password, $admin_id);
 
     if (mysqli_stmt_execute($update_stmt)) {
         echo "<script>alert('This admin account has been modified!');</script>";
