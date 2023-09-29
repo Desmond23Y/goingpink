@@ -1,3 +1,5 @@
+<a href="register.php">Add New User Account</a><br>
+
 <?php include("conn.php");
 $result=mysqli_query($con,"SELECT* FROM user");
 ?>
