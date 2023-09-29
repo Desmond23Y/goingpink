@@ -1,4 +1,12 @@
-<?php include("conn.php");
+<?php 
+session_start();
+include("conn.php");
+
+if (!isset($_SESSION['user_id'])) {
+    header('Location: login.php');
+    exit();
+}
+
 $result=mysqli_query($con,"SELECT* FROM ticket");
 ?>
 <table width="90%">
