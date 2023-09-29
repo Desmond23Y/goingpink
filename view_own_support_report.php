@@ -1,7 +1,13 @@
 <?php
+session_start();
 include("conn.php");
-$support_id=intval($_GET['id']); 
-$result=mysqli_query($con,"SELECT* FROM report WHERE id=$support_id");
+if (!isset($_SESSION['user_id'])) {
+    header('Location: login.php');
+    exit();
+}
+if (isset($_GET['id'])) {
+    $support_id = $_GET['id'];
+    $result=mysqli_query($con,"SELECT* FROM report WHERE id=$support_id");
 ?>
 
 <table width="90%">
