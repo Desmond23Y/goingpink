@@ -9,7 +9,7 @@ if (isset($_GET['hotel_manager_id'])) {
     while ($row = mysqli_fetch_array($result)) {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // Handle form submission and update database here
-            $hotem_manager_id = $row['hotel_manager_id']; // Get the hotel_manager_id from the row
+            $hotel_manager_id = $row['hotel_manager_id']; // Get the hotel_manager_id from the row
             $username = $_POST['name'];
             $password = $_POST['password'];
 
