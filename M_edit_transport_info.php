@@ -20,58 +20,58 @@ if (isset($_GET['transport_id'])) {
             if (!is_numeric($transport_price_perKM)) {
                 echo "Error: Transport price must be a valid decimal number.";
             } else {
+                $update_sql = "UPDATE transport_information SET
+                    transport_type = ?,
+                    transport_price_perKM = ?
+                    WHERE transport_id = ?";
 
-            $update_sql = "UPDATE transport_information SET
-                transport_type = ?,
-                transport_price_perKM = ?
-                WHERE transport_id = ?";
+                $update_stmt = mysqli_prepare($con, $update_sql);
+                mysqli_stmt_bind_param($update_stmt, "ssi", $transport_type, $transport_price_perKM, $transport_id);
 
-            $update_stmt = mysqli_prepare($con, $update_sql);
-            mysqli_stmt_bind_param($update_stmt, "ssi", $transport_type, $transport_price_perKM, $transport_id);
-
-            if (mysqli_stmt_execute($update_stmt)) {
-                echo "<script>alert('Transport information has been updated!');</script>";
-            } else {
-                echo "Error updating transport information: " . mysqli_error($con);
+                if (mysqli_stmt_execute($update_stmt)) {
+                    echo "<script>alert('Transport information has been updated!');</script>";
+                } else {
+                    echo "Error updating transport information: " . mysqli_error($con);
+                }
             }
         }
         ?>
-            <html>
-            <head>
-                <meta charset="UTF-8">
-                <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>Edit Transport Information</title>
-                <link rel="stylesheet" href="M_navibar.css">
-                 <nav>
-                    <ul class="navibar">
-                        <li><a href="M_transport_homepage.php">HOME</a></li>
-                        <li><a href="M_view_transport_info.php">TRANSPORTS INFO</a></li>
-                        <li><a href="M_view_transport_booking.php">TRANSPORT BOOKING</a></li>
-            
-                        <li><a href="logout.php" class="right">LOGOUT</a></li>
-                    </ul>
-                </nav>
-            </head>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Edit Transport Information</title>
+            <link rel="stylesheet" href="M_navibar.css">
+             <nav>
+                <ul class="navibar">
+                    <li><a href="M_transport_homepage.php">HOME</a></li>
+                    <li><a href="M_view_transport_info.php">TRANSPORTS INFO</a></li>
+                    <li><a href="M_view_transport_booking.php">TRANSPORT BOOKING</a></li>
+        
+                    <li><a href="logout.php" class="right">LOGOUT</a></li>
+                </ul>
+            </nav>
+        </head>
 
-            <body>
-                <h1>Edit Transport Information</h1>
-                <div class="box">
-                    <form action="M_edit_transport_info.php?transport_id=<?php echo $transport_id; ?>" method="POST">
-                        <label for="transport_type">Transport Type: </label>
-                        <input type="text" id="transport_type" name="transport_type" required value="<?php echo $row['transport_type']; ?>">
-                        <br><br>
-                        <label for="transport_price_perKM">Transport  Price Per KM </label>
-                        <input type="text" id="transport_price_perKM" name="transport_price_perKM" required value="<?php echo $row['transport_price_perKM']; ?>">
-                        <br><br>
-                        <input type="submit" name="submit" value="Save Changes">
-                    </form>
-                </div>
-            <?php
-            }
-            mysqli_close($con);
-        } else {
-            echo "Transport ID not provided.";
+        <body>
+            <h1>Edit Transport Information</h1>
+            <div class="box">
+                <form action="M_edit_transport_info.php?transport_id=<?php echo $transport_id; ?>" method="POST">
+                    <label for="transport_type">Transport Type: </label>
+                    <input type="text" id="transport_type" name="transport_type" required value="<?php echo $row['transport_type']; ?>">
+                    <br><br>
+                    <label for="transport_price_perKM">Transport  Price Per KM </label>
+                    <input type="text" id="transport_price_perKM" name="transport_price_perKM" required value="<?php echo $row['transport_price_perKM']; ?>">
+                    <br><br>
+                    <input type="submit" name="submit" value="Save Changes">
+                </form>
+            </div>
+        <?php
         }
-    ?>
+        mysqli_close($con);
+    } else {
+        echo "Transport ID not provided.";
+    }
+?>
 </body>
 </html>
