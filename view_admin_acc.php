@@ -1,3 +1,5 @@
+<a href="create_admin_acc.php">Add New Admin Account</a><br>
+
 <?php include("conn.php");
 $result=mysqli_query($con,"SELECT* FROM admin");
 ?>
@@ -5,6 +7,8 @@ $result=mysqli_query($con,"SELECT* FROM admin");
     <tr bgcolor="#FFB6C1">
         <td>Admin ID</td>
         <td>Username</td>
+        <td>Edit</td>
+        <td>Delete</td>
     </tr>
 
 <?php
@@ -13,6 +17,10 @@ $result=mysqli_query($con,"SELECT* FROM admin");
         echo'<tr>';
         echo'<td>'.$row["admin_id"].'</td>';
         echo'<td>'.$row["username"].'</td>';
+        echo'<td><a href="modify_admin_acc.php?admin_id='.$row["admin_id"].'">Edit</a></td>';
+        echo'<td><a onclick="return confirm(\'Delete '.$row
+        ["username"].' details?\')" href="delete_admin_acc.php?admin_id='.$row
+        ["admin_id"].'">Delete</a></td>';
         echo'</tr>';
     }
     mysqli_close($con);
