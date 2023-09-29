@@ -1,3 +1,5 @@
+<a href="create_support_acc.php">Add New Support Account</a><br>
+
 <?php include("conn.php");
 $result=mysqli_query($con,"SELECT* FROM support");
 ?>
