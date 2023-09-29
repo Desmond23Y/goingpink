@@ -11,27 +11,26 @@ if (isset($_GET['transport_id'])) {
     $transport_id = $_GET['transport_id'];
     $result = mysqli_query($con, "SELECT * FROM transport_information WHERE transport_id = '$transport_id'");
 
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        $transport_id = $row['transport_id'];
-        $transport_type = $_POST['transport_type'];
-        $transport_price_perKM = $_POST['transport_price_perKM'];
-
-        $update_sql = "UPDATE transport_information SET
-            transport_type = ?,
-            transport_price_perKM = ?
-            WHERE transport_id = ?";
-
-        $update_stmt = mysqli_prepare($con, $update_sql);
-        mysqli_stmt_bind_param($update_stmt, "ssi", $transport_type, $transport_price_perKM, $transport_id);
-
-        if (mysqli_stmt_execute($update_stmt)) {
-            echo "<script>alert('Transport information has been updated!');</script>";
-        } else {
-            echo "Error updating transport information: " . mysqli_error($con);
-        }
-    }
-
     while ($row = mysqli_fetch_array($result)) {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $transport_id = $row['transport_id'];
+            $transport_type = $_POST['transport_type'];
+            $transport_price_perKM = $_POST['transport_price_perKM'];
+
+            $update_sql = "UPDATE transport_information SET
+                transport_type = ?,
+                transport_price_perKM = ?
+                WHERE transport_id = ?";
+
+            $update_stmt = mysqli_prepare($con, $update_sql);
+            mysqli_stmt_bind_param($update_stmt, "ssi", $transport_type, $transport_price_perKM, $transport_id);
+
+            if (mysqli_stmt_execute($update_stmt)) {
+                echo "<script>alert('Transport information has been updated!');</script>";
+            } else {
+                echo "Error updating transport information: " . mysqli_error($con);
+            }
+        }
         ?>
             <html>
             <head>
@@ -60,8 +59,8 @@ if (isset($_GET['transport_id'])) {
                         <label for="transport_type">Transport Type: </label>
                         <input type="text" id="transport_type" name="transport_type" required value="<?php echo $row['transport_type']; ?>">
                         <br><br>
-                        <label for="room_type">Room Type: </label>
-                        <input type="text" id="room_type" name="room_type" required value="<?php echo $row['room_type']; ?>">
+                        <label for="transport_price_perKM">Transport  Price Per KM </label>
+                        <input type="text" id="transport_price_perKM" name="transport_price_perKM" required value="<?php echo $row['transport_price_perKM']; ?>">
                         <br><br>
                         <input type="submit" name="submit" value="Save Changes">
                     </form>
