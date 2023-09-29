@@ -1,0 +1,28 @@
+h1 {
+    font-family: 'Butler';
+    font-size: 20px;
+    text-align: center;
+    color: #f17492;
+    }
+   
+h3 {
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(255,255,255,0.1);
+    border: 2px solid silver;
+    border-radius: 5px;
+    text-align: center;
+    flex-direction: column;
+    position: fixed;
+    font-size: medium;
+    }
+
+.H0015 {
+    background-image: url('picture/Room 1 photo.jpg');
+    width: 3000px;
+    height:500px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    }
