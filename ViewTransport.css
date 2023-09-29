@@ -4,16 +4,14 @@ h1 {
     color: #f17392;
     text-align: center;
     }
-  
-.transport_type {
-    width: 300px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: rgba(255,255,255,0.1);
-    border: 2px solid silver;
-    border-radius: 5px;
-    text-align: center;
-    flex-direction: column;
-    position: relative;
-    font-size: medium;
+ 
+.box {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 30px;
     }
+
+.box img {
+    width: 100%;
+    border-radius: 10px;
+}
