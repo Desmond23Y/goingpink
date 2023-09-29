@@ -27,6 +27,8 @@ $result=mysqli_query($con,"SELECT* FROM user");
         echo'<td>'.$row["phone_number"].'</td>';
         echo'<td>'.$row["date_of_birth"].'</td>';
         echo'<td>'.$row["gender"].'</td>';
+        echo'<td><a href="modify_user_acc.php?user_id='.$row["user_id"].'">Edit</a></td>';
+        echo'<td><a onclick="return confirm(\'Delete '.$row["username"].' details?\')" href="delete_user_acc.php?user_id='.$row["user_id"].'">Delete</a></td>';
         echo'</tr>';
     }
     mysqli_close($con);
