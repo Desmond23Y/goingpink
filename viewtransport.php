@@ -43,8 +43,8 @@ if (!$result) {
                 echo '<h3>Price per KM: US$' . $row["transport_price_perKM"] . '</h3>';
 
                 // Check for type of car and display the image accordingly
-                if ($row["transport_type"] == "Luxury 4-seater car") {
-                    echo '<img src="luxury_4_seater.png" alt="4-Luxury Car">';
+                echo '<img src="luxury_4_seater.png" alt="4-Luxury Car">'
+                if ($row["transport_type"] == "Luxury 4-seater car"); {
                 } elseif ($row["transport_type"] == "Luxury 6-seater car") {
                     echo '<img src="luxury_6_seater.png" alt="6-Luxury Car">';
                 } elseif ($row["transport_type"] == "Van") {
