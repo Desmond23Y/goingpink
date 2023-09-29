@@ -38,12 +38,12 @@ if (!$result) {
                 echo '<h3> Transport Type: ' . $row["transport_type"] . '</h3>';
                 echo '<h3> Price per KM: US$' . $row["transport_price_perKM"] . '</h3>';
 
-                if ($_SESSION['user_type'] == 'admin' || $_SESSION['user_type'] == 'hotel_management') {
-                    echo '<a href="M_edit_transport_info.php?hotel_id=' . $row["hotel_id"] . '">Edit This Hotel</a>';
+                if ($_SESSION['user_type'] == 'admin' || $_SESSION['user_type'] == 'transport_management') {
+                    echo '<a href="M_edit_transport_info.php?hotel_id=' . $row["transport_id"] . '">Edit This Transport</a>';
                 }
             }
         } else {
-            echo "No hotels available";
+            echo "No transport available";
         }
         ?>
     </div>

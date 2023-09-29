@@ -11,7 +11,7 @@
     <nav>
             <ul class="navibar">
             <li><a href="M_transport_homepage.php">HOME</a></li>
-            <li><a href="M_view_transport_info.php">TRASPORT INFO</a></li>
+            <li><a href="M_view_transport_info.php">TRASPORTS INFO</a></li>
             <li><a href="M_view_trasport_booking.php">TRASPORT BOOKING</a></li>
             <li><a href="logout.php" class="right">LOGOUT</a></li>
         </ul>
