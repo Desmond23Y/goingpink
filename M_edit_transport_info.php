@@ -13,28 +13,22 @@ if (isset($_GET['transport_id'])) {
 
     while ($row = mysqli_fetch_array($result)) {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $hotel_id = $row['hotel_id'];
-            $hotel_name = $_POST['hotel_name'];
-            $room_type = $_POST['room_type'];
-            $room_availability = $_POST['room_availability'];
-            $hotel_availability = $_POST['hotel_availability'];
-            $hotel_price = $_POST['hotel_price'];
+            $transport_id = $row['transport_id'];
+            $transport_type = $_POST['transport_type'];
+            $transport_price_perKM = $_POST['transport_price_perKM'];
 
-            $update_sql = "UPDATE hotel_information SET
-                hotel_name = ?,
-                room_type = ?,
-                room_availability = ?,
-                hotel_availability = ?,
-                hotel_price = ?
-                WHERE hotel_id = ?";
+            $update_sql = "UPDATE transport_information SET
+                transport_type = ?,
+                transport_price_perKM = ?,
+                WHERE transport_id = ?";
 
             $update_stmt = mysqli_prepare($con, $update_sql);
-            mysqli_stmt_bind_param($update_stmt, "ssisis", $hotel_name, $room_type, $room_availability, $hotel_availability, $hotel_price, $hotel_id);
+            mysqli_stmt_bind_param($update_stmt, "ssi", $transport_id, $transport_type, $transport_price_perKM);
 
             if (mysqli_stmt_execute($update_stmt)) {
-                echo "<script>alert('Hotel information has been updated!');</script>";
+                echo "<script>alert('Transport information has been updated!');</script>";
             } else {
-                echo "Error updating hotel information: " . mysqli_error($con);
+                echo "Error updating transport information: " . mysqli_error($con);
             }
 ?>
             <html>
@@ -53,7 +47,7 @@ if (isset($_GET['transport_id'])) {
                     </ul>
                 </nav>
             </head>
-              
+
             <body>
                 <h1>Edit Transport Information</h1>
                 <div class="box">
@@ -74,7 +68,7 @@ if (isset($_GET['transport_id'])) {
             }
             mysqli_close($con);
         } else {
-            echo "Hotel ID not provided.";
+            echo "Transport ID not provided.";
         }
     ?>
 </body>
