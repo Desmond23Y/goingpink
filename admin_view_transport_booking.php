@@ -12,6 +12,7 @@ $result=mysqli_query($con,"SELECT* FROM transportation_booking");
         <td>Departure Time</td>
         <td>Arrival Location</td>
         <td>Departure Location</td>
+        <td>Update</td>
     </tr>
 
 <?php
@@ -27,6 +28,7 @@ $result=mysqli_query($con,"SELECT* FROM transportation_booking");
         echo'<td>'.$row["departure_time"].'</td>';
         echo'<td>'.$row["arrival_location"].'</td>';
         echo'<td>'.$row["departure_location"].'</td>';
+        echo'<td><a href="admin_update_transportation_booking.php?transport_booking_id='.$row["transport_booking_id"].'">Update</a></td>';
         echo'</tr>';
     }
     mysqli_close($con);
