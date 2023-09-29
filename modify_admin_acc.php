@@ -45,6 +45,13 @@ if (isset($_GET['admin_id'])) {
         
                 <button type="submit">Edit Admin Account</button>
             </form>
-        </body>
-        </html>
+        <?php
+        }
+        mysqli_close($con);
+    } else {
+        echo "Admin ID not provided.";
+    }
+?>
+</body>
+</html>
 
