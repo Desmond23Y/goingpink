@@ -13,15 +13,13 @@ if (isset($_GET['hotel_id'])) {
 
     while ($row = mysqli_fetch_array($result)) {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            // Handle form submission and update database here
-            $hotel_id = $row['hotel_id']; // Get the hotel_id from the row
+            $hotel_id = $row['hotel_id'];
             $hotel_name = $_POST['hotel_name'];
             $room_type = $_POST['room_type'];
             $room_availability = $_POST['room_availability'];
             $hotel_availability = $_POST['hotel_availability'];
             $hotel_price = $_POST['hotel_price'];
 
-            // Use prepared statements to prevent SQL injection
             $update_sql = "UPDATE hotel_information SET
                 hotel_name = ?,
                 room_type = ?,
