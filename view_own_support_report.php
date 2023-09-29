@@ -5,8 +5,8 @@ if (!isset($_SESSION['user_id'])) {
     header('Location: login.php');
     exit();
 }
-if (isset($_SESSION['id'])) {
-    $support_id = $_SESSION['id'];
+if (isset($_GET['id'])) {
+    $support_id = $_GET['id'];
     $result=mysqli_query($con,"SELECT* FROM report WHERE id=$support_id");
 }
 ?>
