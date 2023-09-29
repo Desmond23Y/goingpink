@@ -1,16 +1,17 @@
 <?php
 // Include the database connection
 include("conn.php");
-if (strlen($_POST['name']) < 5 || strlen($_POST['name']) > 50) {
-    echo "Length of username must be between 5 and 50 characters.";
-} elseif (strlen($_POST['password']) < 5 || strlen($_POST['password']) > 50) {
-    echo "Password length must be between 5 and 50 characters. Please try again.";
-} elseif (isset($_GET['admin_id'])) {
-    $admin_id = $_GET['admin_id']; 
-    $result = mysqli_query($con, "SELECT * FROM admin WHERE admin_id = '$admin_id'");
 
-    while ($row = mysqli_fetch_array($result)) {
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['name']) && isset($_POST['password'])) {
+    if (strlen($_POST['name']) < 5 || strlen($_POST['name']) > 50) {
+        echo "Length of username must be between 5 and 50 characters.";
+    } elseif (strlen($_POST['password']) < 5 || strlen($_POST['password']) > 50) {
+        echo "Password length must be between 5 and 50 characters. Please try again.";
+    } elseif (isset($_GET['admin_id'])) {
+        $admin_id = $_GET['admin_id']; 
+        $result = mysqli_query($con, "SELECT * FROM admin WHERE admin_id = '$admin_id'");
+
+        while ($row = mysqli_fetch_array($result)) {
             // Handle form submission and update database here
             $admin_id = $row['admin_id']; // Get the admin_id from the row
             $username = $_POST['name'];
@@ -31,30 +32,28 @@ if (strlen($_POST['name']) < 5 || strlen($_POST['name']) > 50) {
                 echo "Error updating admin account: " . mysqli_error($con);
             }
         }
-        ?>
-        <!DOCTYPE html>
-        <html>
-        <head>
-            <title>Modify Admin Account</title>
-        </head>
-        <body>
-            <h2>Admin Account Modification</h2>
-            <form method="post" action="modify_admin_acc.php?admin_id=<?php echo $admin_id; ?>">
-                <label for="name">Username:</label>
-                <input type="text" id="name" name="name" required="required" value="<?php echo $row['username']; ?>"><br>
-        
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" maxlength="50" required value="<?php echo $row['password']; ?>"><br><br>
-        
-                <button type="submit">Edit Admin Account</button>
-            </form>
-        <?php
-        }
         mysqli_close($con);
     } else {
         echo "Admin ID not provided.";
     }
+}
 ?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Modify Admin Account</title>
+</head>
+<body>
+    <h2>Admin Account Modification</h2>
+    <form method="post" action="modify_admin_acc.php?admin_id=<?php echo $admin_id; ?>">
+        <label for="name">Username:</label>
+        <input type="text" id="name" name="name" required="required" value="<?php echo $row['username']; ?>"><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" maxlength="50" required value="<?php echo $row['password']; ?>"><br><br>
+
+        <button type="submit">Edit Admin Account</button>
+    </form>
 </body>
 </html>
-
