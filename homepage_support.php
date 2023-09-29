@@ -37,23 +37,7 @@
     <nav>
         <ul class="navibar">
             <li><a href="support_report.php">REPORT</a></li>
-
-            <?php
-            // Include the database connection
-            include("conn.php");
-
-            // Check if there are support reports available
-            $result = mysqli_query($con, "SELECT support_id FROM report");
-            
-            if ($result && mysqli_num_rows($result) > 0) {
-                // Generate "VIEW OWN REPORT" link only if there are reports
-                echo '<li><a href="view_own_support_report.php">VIEW OWN REPORT</a></li>';
-            }
-
-            // Close the database connection
-            mysqli_close($con);
-            ?>
-
+            <li><a href="view_own_support_report.php">VIEW OWN REPORT</a></li>
             <li><a href="view_support_report.php">VIEW SUPPORT REPORT</a></li>
             <li><a href="view_request_form.php">VIEW REQUEST FORM</a></li>
             <li><a href="view_ticket.php">VIEW TICKET</a></li>
