@@ -17,6 +17,10 @@ if (isset($_GET['transport_id'])) {
             $transport_type = $_POST['transport_type'];
             $transport_price_perKM = $_POST['transport_price_perKM'];
 
+            if (!is_numeric($transport_price_perKM)) {
+                echo "Error: Transport price must be a valid decimal number.";
+            } else {
+
             $update_sql = "UPDATE transport_information SET
                 transport_type = ?,
                 transport_price_perKM = ?
