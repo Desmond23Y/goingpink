@@ -9,6 +9,7 @@ $result=mysqli_query($con,"SELECT* FROM report");
         <td>Priority</td>
         <td>Report Description</td>
         <td>Report Status</td>
+        <td>Edit</td>
 
     </tr>
 
@@ -22,6 +23,7 @@ $result=mysqli_query($con,"SELECT* FROM report");
         echo'<td>'.$row["priority"].'</td>';
         echo'<td>'.$row["report_description"].'</td>';
         echo'<td>'.$row["report_status"].'</td>';
+        echo'<td><a href="update_report.php?report_id='.$row["report_id"].'">Edit</a></td>';
         echo'</tr>';
     }
     mysqli_close($con);
