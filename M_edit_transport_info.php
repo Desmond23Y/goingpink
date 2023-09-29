@@ -26,7 +26,7 @@ if (isset($_GET['transport_id'])) {
                     WHERE transport_id = ?";
 
                 $update_stmt = mysqli_prepare($con, $update_sql);
-                mysqli_stmt_bind_param($update_stmt, "ssi", $transport_type, $transport_price_perKM, $transport_id);
+                mysqli_stmt_bind_param($update_stmt, "sis", $transport_type, $transport_price_perKM, $transport_id);
 
                 if (mysqli_stmt_execute($update_stmt)) {
                     echo "<script>alert('Transport information has been updated!');</script>";
