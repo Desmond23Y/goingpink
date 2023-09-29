@@ -23,6 +23,7 @@ if (isset($_GET['support_id'])) {
     </tr>
 
 <?php
+if ($result !== null) {
     while($row=mysqli_fetch_array($result))
     {
         echo'<tr>';
@@ -35,5 +36,8 @@ if (isset($_GET['support_id'])) {
         echo'</tr>';
     }
     mysqli_close($con);
+} else {
+    echo "No records found.";
+}
 ?>
 </table>
