@@ -7,6 +7,12 @@ echo "Admin ID: " . $admin_id;
 
 $result=mysqli_query($con,"DELETE FROM admin WHERE admin_id=$admin_id");
 
+if ($result) {
+    echo "Admin account deleted successfully."; // Add this line for debugging
+} else {
+    echo "Error deleting admin account: " . mysqli_error($con);
+}
+
 mysqli_close($con);
 header('Location: view_admin_acc.php');
 
