@@ -8,24 +8,32 @@ if (isset($_GET['transport_manager_id'])) {
 
     while ($row = mysqli_fetch_array($result)) {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            // Handle form submission and update database here
-            $transport_manager_id = $row['transport_manager_id']; // Get the transport_manager_id from the row
             $username = $_POST['name'];
             $password = $_POST['password'];
 
-            // Use prepared statements to prevent SQL injection
-            $update_sql = "UPDATE transport_management SET
-                username = ?,
-                password = ?
-                WHERE transport_manager_id = ?";
-
-            $update_stmt = mysqli_prepare($con, $update_sql);
-            mysqli_stmt_bind_param($update_stmt, "sss", $username, $password, $transport_manager_id);
-
-            if (mysqli_stmt_execute($update_stmt)) {
-                echo "<script>alert('This transport manager account has been modified!');</script>";
+            // Data validation
+            if (strlen($username) < 5 || strlen($username) > 50) {
+                echo "Length of username must be between 5 and 50 characters.";
+            } elseif (strlen($password) < 5 || strlen($password) > 50) {
+                echo "Password length must be between 5 and 50 characters. Please try again.";
             } else {
-                echo "Error updating transport manager account: " . mysqli_error($con);
+                // Handle form submission and update database here
+                $transport_manager_id = $row['transport_manager_id']; // Get the transport_manager_id from the row
+
+                // Use prepared statements to prevent SQL injection
+                $update_sql = "UPDATE transport_management SET
+                    username = ?,
+                    password = ?
+                    WHERE transport_manager_id = ?";
+
+                $update_stmt = mysqli_prepare($con, $update_sql);
+                mysqli_stmt_bind_param($update_stmt, "sss", $username, $password, $transport_manager_id);
+
+                if (mysqli_stmt_execute($update_stmt)) {
+                    echo "<script>alert('This transport manager account has been modified!');</script>";
+                } else {
+                    echo "Error updating transport manager account: " . mysqli_error($con);
+                }
             }
         }
         ?>
