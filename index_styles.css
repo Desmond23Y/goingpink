@@ -1,42 +1,209 @@
+
 body {
-  font-family: Arial, sans-serif;
-  background-color: #181818;
+    font-family: "Butler", sans-serif;
+    font-weight: medium;
+    background-color: #fff4f6;
+  }
+
+.carousel-inner{
+    width: 1440px;
+    height: 597px;
+    flex-shrink: 0;
+    position: relative;
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
+.carousel-title-caption {
+    text-align: left !important;
+    position: absolute;
+    width: 1111px;
+    height: 226px;
+    
+
+    top: 100px;
+    bottom: 271px;
+    left: 150px;
+    right: 10px;
+    flex-shrink: 0;
+
+    color: #FFF;
+    font-family: 'Butler', "Times New Roman";
+    font-size: 100px;
+    font-style: normal;
+    line-height: normal;
+
+    
+  }
+
+.carousel-caption{
+    color: #FEE7EB;
+    font-family: 'Futura PT',sans-serif;
+    font-size: 28px;
+    font-style: normal;
+    align-items: left !important;
+    line-height: normal;
+
+    left: 150px;
 }
 
-.services {
-  background-color: #181818;
-  color: white;
-  padding: 40px 0;
-  text-align: center;
+.main-features{
+    background-color: #F1ACA4;
 }
 
-.services h2 {
-  font-size: 32px;
-  margin-bottom: 20px;
+/*Reasons*/
+
+.reason-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #F17492;
+  }
+
+.reason-container-text{
+    font-family: Butler;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    color: #FEF1F4;
+  }
+  .reason-content {
+    flex-grow: 1;
+    padding-right: 20px; /* Adjust as needed to create space between text and image */
+  }
+  
+  .reason-text {
+    margin-bottom: 20px;
+  }
+
+  
+  .reason-container-text-p{
+    color: #FEF1F4;
+    font-family: Futura;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+
+    width: 594px;
+  }
+  
+  .reason-list {
+    list-style-type: disc;
+    padding-left: 20px;
+    color: #FEF1F4;
+  }
+  
+  .right-image img {
+    max-width: 100%; 
+    height: auto;
+  }
+
+  
+  .reason-container {
+    max-width: 1500px;
+    height: 597px;
+    background-color: #F17492 ;
+    margin: 0 auto;
+    padding: 20px;
+
+    display: flex;
+    justify-content: space-between; /* This separates the text and image to the sides */
+    align-items: center; 
+    box-sizing: border-box;
+  } 
+  
+
+  .right-image {
+   width: 750px;
+   height: 597px;
+   margin-left: auto;}
+
+   
+
+  .features-container{
+    width: 1440px;
+    height: 640px;
+    flex-shrink: 0;
+    background-color: #F1ACA4;
+  }
+
+
+  
+ 
+  #features-container-text-title{
+    font-family: Butler;
+    text-align: center;
+    padding-top: 40px;
+    color: #000;
+  }
+   
+  .card-container {
+    display: flex; 
+    flex-direction: row; 
+    justify-content: space-between; 
+  }
+  
+
+  .card-body-title {
+    font-family: "Butler", 'Times New Roman', Times, serif;
+
+    font-weight: bolder;
+  }
+  
+    
+  
+  
+  .services {
+    background-color: #181818;
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+  }
+  
+  .services h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+  
+  .service {
+    margin-bottom: 40px;
+  }
+  
+  .service img {
+    width: 100%;
+  }
+  
+  .about {
+    background-color: #333;
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+  }
+  
+  .about h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+
+  h5{
+    font-family: Butler;
+  }
+
+
+  .background-image {    
+    background-image: url('/picture/travel-feedback.png'); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
+.custom-button {
+  background-color: #f17492 !important; 
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+  color: #000 !important; 
+  font-family: "Futura Thin";
 }
 
-.service {
-  margin-bottom: 40px;
-}
 
-.service img {
-  width: 100%;
-}
 
-.about {
-  background-color: #333;
-  color: white;
-  padding: 40px 0;
-  text-align: center;
-}
-
-.about h2 {
-  font-size: 32px;
-  margin-bottom: 20px;
-}
