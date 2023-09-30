@@ -6,37 +6,193 @@ include('navi_bar.php');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GoingPink | Better Travel Site</title>
+    <title>GoingPink</title>
     <link rel="stylesheet" href="index_styles.css">
-</head>
-<body>
-    <section class="services">
-        <div class="container">
-            <h2>Our Services</h2>
-            <div class="service">
-                <img src="picture/Hotel.png" alt="Hotel">
-                <h3>Hotel Bookings</h3>
-                <p>Book your hotel now</p>
-            </div>
-            <div class="service">
-                <img src="picture/Transport.png" alt="Transportation">
-                <h3>Transport Bookings</h3>
-                <p>Book transport now.</p>
-            </div>
-            <div class="service">
-                <img src="picture/Rates.png" alt="Exchangerate">
-                <h3>Currency Exchange Rates</h3>
-                <p>View exchange rates</p>
-            </div>
-        </div>
-    </section>
+    <!-- Include Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
-    <section class="about">
-        <div class="container">
-            <h2>About Us</h2>
-            <p>We are dedicated to providing exceptional travel services since 2023.</p>
+    <!--Import Butler & Futura Font-->
+    <style>
+     @import url('https://fonts.cdnfonts.com/css/butler');
+     @import url('https://fonts.cdnfonts.com/css/futura-pt');
+    </style>
+
+    <!--Javascript-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+        const myCarouselElement = document.querySelector('#myCarousel')
+
+        const carousel = new bootstrap.Carousel(myCarouselElement, {
+        interval: 2000,
+        touch: false
+        })
+    </script>
+
+</head>
+
+<body>
+    <!--Carousel-->
+    <div id="carouselExampleIndicators" class="carousel slide">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
-    </section>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="/picture/city.png" width =1440px height= "597px" class="d-block w-100" alt="purple city">
+
+            <div class="carousel-title-caption">
+                <p >Creating Memories,<br> One <span style="color:#F1ACA4">Pink</span> Trip at a Time.</p>
+            </div>
+            <div class="carousel-caption">
+                <p>“The only Travel System Service Management <br> you ever need.”</p>
+            </div>
+
+
+
+          </div>
+          <div class="carousel-item">
+            <img src="/picture/download (1).png" width =1440px height= "597px" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="/picture/download.png" width =1440px height= "597px" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+    <!--Reasons to Use-->
+
+    <section class="reason">
+        <div class="reason-container">
+          <div class="reason-content">
+            <div class="reason-text">
+              <h3 class="reason-container-text">Planning Trips Made Easy</h3>
+              <p class="reason-container-text-p">Discover the benefits of goingPink:</p>
+            </div>
+            <ul class="reason-list">
+              <li>Easy-to-use interface</li>
+              <li>Dedicated customer support</li>
+              <li>All-in-one platform</li>
+              <li>User data protection</li>
+            </ul>
+          </div>
+          <div class="right-image">
+            <img src="/picture/barbie.png" alt="Image Description">
+          </div>
+        </div>
+      </section>
+      
+
+    <!--Main Features-->
+ 
+      
+<section class="main-features" >
+    <div class="features-container" >
+      <div class="album py-5 " >
+        <div class="container" >
+            
+             <h2 id="features-container-text-title">Our Main Features</h2>
+            
+    
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" >
+            
+    
+            <div class="hotel-feature">
+              <div class="card shadow-sm">
+                <img src ="/picture/hotel.png" alt="hotel" class="hotel-placeholder-img card-img-top" width="100%" height="225" role="img" >
+                <div class="card-body" style="background-color: #FBE5E3;">
+                  <h5 class="card-body-title">View and Book Hotel</h5>
+                   <p class="card-text">Explore our exquisite selection of hotels and start your journey to exceptional hospitality today.</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm custom-button">Click Me!</button>
+                      
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="exchange-rate-feature">
+              <div class="card shadow-sm">
+                <img src ="picture/Rates.png" alt="exchange-rates" class="exchange-rate-placeholder-img card-img-top" width="100%" height="225" role="img" >
+                <div class="card-body" style="background-color: #FBE5E3;">
+                  <h5 class="card-body-title">Currency Exchange Rates</h5>
+                   <p class="card-text">Click here to check how much it costs based on your currency no matter where you're from!</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group" >
+                      <button type="button" class="btn btn-sm custom-button">Click Me!</button>                      
+                    </div>                 
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="transport-feature">
+                <div class="card shadow-sm">
+                  <img src ="picture/Transport.png" alt="transport" class="transport-feature card-img-top" width="100%" height="225" role="img" >
+                  <div class="card-body"  style="background-color: #FBE5E3;">
+                    <h5 class="card-body-title">View and Book Transport</h5>
+                     <p class="card-text">Discover our wide range of transportation options and take the first step towards seamless travel.</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-sm custom-button">Click Me!</button>                      
+                      </div>                 
+                    </div>
+                  </div>
+                </div>
+            </div>       
+          </div>
+        </div>
+      </div>
+
+    </div>
+    
+</section>
+
+<!-- Write Review-->
+<div class="background-image">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+        <header class="mb-auto">
+        <div>
+            <!--just to allocate some space here-->        
+        </div>
+        </header>
+    
+        <main class="px-3">
+        <h1 style="font-weight:900 ;color:#E9204F; font-family: Butler;">Write a review, make someone's trip!</h1>
+        <p class="lead" style="color: #E9204F; font-family: Futura;">Stories like yours are what helps travellers have better trips. <br>Share your experience and help out a fellow traveller!</p>
+        <p class="lead">
+            <a href="#" class="btn btn-lg btn-light fw-bold bg-white">Write Review</a>
+        </p>
+        </main>
+    
+        <footer class="mt-auto text-white-50">
+       
+        </footer>
+    </div>
+</div>
+
+<!--Footer-->
+      <div class="container">
+        <footer class="py-3 my-4">
+          <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Home</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Features</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Pricing</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">FAQs</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">About</a></li>
+          </ul>
+          <p class="text-center text-body-secondary">© 2023 GoingPink ©</p>
+        </footer>
+      </div>
 
 </body>
 </html>
