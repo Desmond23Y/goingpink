@@ -13,7 +13,7 @@
             <li><a href="M_hotel_homepage.php">HOME</a></li>
             <li><a href="M_view_hotel_info.php">HOTELS INFO</a></li>
             <li><a href="M_view_hotel_booking.php">HOTEL BOOKING</a></li>
-            <li><a href="logout.php" class="right">LOGOUT</a></li>
+            <li><a href="../logout.php" class="right">LOGOUT</a></li>
         </ul>
     </nav>
 </head>
