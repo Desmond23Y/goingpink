@@ -44,9 +44,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 } elseif ($user_type === 'support') {
                     header('Location: homepage_support.php');
                 } elseif ($user_type === 'hotel_management') {
-                    header('Location: M_view_hotel_info.php');
+                    header('Location: HotelManagers/M_view_hotel_info.php');
                 } elseif ($user_type === 'transport_management') {
-                    header('Location: M_transport_homepage.php');
+                    header('Location: TransportManagers/M_transport_homepage.php');
                 } elseif ($user_type === 'user') {
                     header('Location: index.php');
                 }
