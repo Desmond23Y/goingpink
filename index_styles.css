@@ -192,7 +192,7 @@ body {
 
 
   .background-image {    
-    background-image: url('/picture/travel-feedback.png'); 
+    background-image: url("/picture/travel-feedback.png"); 
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
