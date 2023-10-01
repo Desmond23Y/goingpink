@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <?php
+        include_once('navi_bar.php');
+    ?>
     <title>Tourism FAQ - Malaysia</title>
     <style>
         /* Style for FAQ dropdowns */
