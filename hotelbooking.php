@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['number_of_pax']) && i
             echo "Selected hotel not found.";
         } else {
             // Randomly select a hotel manager and an admin
-            $random_manager_query = "SELECT hotel_manager_id FROM hotel ORDER BY RAND() LIMIT 1";
+            $random_manager_query = "SELECT hotel_manager_id FROM hotel_management ORDER BY RAND() LIMIT 1";
             $random_admin_query = "SELECT admin_id FROM admin ORDER BY RAND() LIMIT 1";
 
             $manager_result = mysqli_query($con, $random_manager_query);
