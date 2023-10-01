@@ -23,14 +23,31 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['number_of_pax']) && i
         if (mysqli_num_rows($result) == 0) {
             echo "Selected hotel not found.";
         } else {
-            // Insert the hotel booking
-            $hotel_booking_query = "INSERT INTO hotel_booking (user_id, hotel_id, number_of_pax, check_in_date, check_out_date) 
-                                    VALUES ('$user_id', '$selectedhotelid', '$number_of_pax', '$check_in_date', '$check_out_date')";
+            // Randomly select a hotel manager and an admin
+            $random_manager_query = "SELECT hotel_manager_id FROM hotel ORDER BY RAND() LIMIT 1";
+            $random_admin_query = "SELECT admin_id FROM admin ORDER BY RAND() LIMIT 1";
+
+            $manager_result = mysqli_query($con, $random_manager_query);
+            $admin_result = mysqli_query($con, $random_admin_query);
+
+            if ($manager_result && $admin_result) {
+                $manager_row = mysqli_fetch_assoc($manager_result);
+                $admin_row = mysqli_fetch_assoc($admin_result);
+
+                $hotel_manager_id = $manager_row['hotel_manager_id'];
+                $admin_id = $admin_row['admin_id'];
+
+                // Insert the hotel booking
+                $hotel_booking_query = "INSERT INTO hotel_booking (user_id, hotel_id, number_of_pax, check_in_date, check_out_date, hotel_manager_id, admin_id) 
+                                        VALUES ('$user_id', '$selectedhotelid', '$number_of_pax', '$check_in_date', '$check_out_date', '$hotel_manager_id', '$admin_id')";
             
-            if (mysqli_query($con, $hotel_booking_query)) {
-                header('Location: viewpayment.php?hotel_id=$selectedhotelid"');
+                if (mysqli_query($con, $hotel_booking_query)) {
+                    header("Location: viewpayment.php?hotel_id=$selectedhotelid");
+                } else {
+                    echo "Error: " . mysqli_error($con);
+                }
             } else {
-                echo "Error: " . mysqli_error($con);
+                echo "Error selecting hotel manager and admin.";
             }
         }
 
@@ -38,6 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['number_of_pax']) && i
     }
 }
 ?>
+
 
 <!DOCTYPE html>
 <html>
