@@ -30,7 +30,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['number_of_pax']) && i
             $manager_result = mysqli_query($con, $random_manager_query);
             $admin_result = mysqli_query($con, $random_admin_query);
 
-            if ($manager_result && $admin_result) {
+            // Check if the queries returned any rows
+            if ($manager_result && $admin_result && mysqli_num_rows($manager_result) > 0 && mysqli_num_rows($admin_result) > 0) {
                 $manager_row = mysqli_fetch_assoc($manager_result);
                 $admin_row = mysqli_fetch_assoc($admin_result);
 
@@ -55,7 +56,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['number_of_pax']) && i
     }
 }
 ?>
-
 
 <!DOCTYPE html>
 <html>
