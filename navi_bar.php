@@ -48,6 +48,7 @@ body {
                 <li><a href="register.php" class="right">REGISTER</a></li>
                 <li><a href="login.php" class="right">LOGIN</a></li>
                 <li><a href="view_profile.php" class="right">PROFILE</a></li>
+                <li><a href="user_view_ticket.php" class="right">VIEW TICKETS</a></li>
             </ul>
         </nav>
 </body>
