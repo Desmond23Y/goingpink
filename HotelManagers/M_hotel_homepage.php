@@ -31,7 +31,6 @@
             <div class="backgroun-image">
             <header>
                 <h1>Welcome Back to the Hotel Management Page!</h1>
-        
                 <p>What do you want to do today?</p>
             </header>
             <section class="section hotel-database">
@@ -40,7 +39,7 @@
                     <div class="function-text">
                         <h2 class="hotel-database">Hotel Database</h2>
                         <p class="hotel-database">View all the existing hotel in the database.<br> You can edit and update hotel details here too.  </p>
-                            <button class="button">View Hotel Database</button>       
+                        <button class="button">View Hotel Database</button>       
                     </div>
                 </div>
             </section>
