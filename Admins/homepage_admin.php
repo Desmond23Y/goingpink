@@ -3,25 +3,34 @@ session_start()
 ?>
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GoingPink | Better Travel Site</title>
-    <link rel="stylesheet" href="homepage_admin.css">
-    <!-- Include Bootstrap-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-
-
-   <!--Javascript-->
-   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
-
-    <style>
-       <!--Import Butler & Futura Font-->
-        @import url('https://fonts.cdnfonts.com/css/butler');
-        @import url('https://fonts.cdnfonts.com/css/futura-pt');
-    </style>
-</head>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    .navibar {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #F9B9C3;
+    }
+    .navibar a {
+        float: left;
+        display: block;
+        color: #333;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+    .navibar a.right {
+        float: right;
+    }
+    .navibar a:hover {
+        background-color: #C7949C;
+        color: white;
+    }
+</style>
 <body>
     <nav>
         <ul class="navibar">
@@ -39,55 +48,5 @@ session_start()
             <li><a href="login.php" class="right">LOGIN</a></li>
         </ul>
     </nav>
-     <div class="background-image">
-            <header>
-                <h1>Admin Dashboard</h1>
-        
-                <p>What do you want to do today?</p>
-            </header>
-            <section class="section manage-account">
-                <div class="function" id="manage-account">
-                    <img src="/picture/manage-account.png" class="manage-account">
-                    <div class="function-text">
-                    
-                        <h2>Manage Account</h2>
-                        <p class="manage-account">Manage all of your stakeholder's account in one place.</p>
-                     
-                        
-                        <div class="button-container">
-                            <button class="button">User</button>
-                            <button class="button">Hotel </button>
-                            <button class="button">Transport</button>
-                            <button class="button">Support</button>
-                            <button class="button">Admin</button>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section class="section generate-report">
-                <div class="function" id="generate-report">
-                    <img src="/picture/generate-report.png" style="float: right;" class="generate-report">
-                    <div class="function-text">
-                        <h2>Generate Report</h2>
-                        <p class="generate-report">Generate Sales, Inventory, Profit Reports here in one place.</p>
-                    </div>
-                    <button class="button" id="generate-report-button">Click Me</button>
-                </div>
-            </section>
-            <section class="section manage-booking">
-                <div class="function" id="manage-booking">
-                    <img src="/picture/manage-booking.png" class="manage-booking">
-                    <div class="function-text">
-                        <h2>Manage Booking</h2>
-                        <p class="manage-booking">Manage all of the users' transport and hotel booking here.</p>     
-                    </div>             
-                    <button class="button">Hotel </button>
-                    <button class="button">Transport</button>
-                </div>
-            </section>
-            
-            
-            
-        </div>
 </body>
 </html>
