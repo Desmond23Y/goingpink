@@ -41,7 +41,7 @@ if (isset($_GET['hotel_id']) && isset($_GET['user_id'])) {
                 $row1 = mysqli_fetch_assoc($result);
                 $row2 = mysqli_fetch_assoc($result2);
                 $row3 = mysqli_fetch_assoc($result3);
-                echo '<h3>' . $row["username"] . '</h3>';
+                echo '<h3> Username: '. $row["username"] . '</h3>';
                 echo '<h3> Phone number: ' . $row["phone_number"] . '</h3>';
                 echo '<h3> Email: ' . $row["email"] . '</h3>';
                 echo '<h3> Booking ID: ' . $row["hotel_booking_id"] . '</h3>';
