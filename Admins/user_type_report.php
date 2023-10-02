@@ -9,7 +9,7 @@
     // Database connection
     include('conn.php');
 
-     if(!mysqli_query($con,$sql)) {
+    if(!mysqli_query($con,$sql)) {
         die('Error:' . mysqli_error($con));
      }
     // Query data from Table 1
