@@ -2,7 +2,7 @@
 <html>
 <head>
     <?php
-        include_once('navi_bar.php');
+        include_once('../navi_bar.php');
     ?>
     <title>Tourism FAQ - Malaysia</title>
     <style>

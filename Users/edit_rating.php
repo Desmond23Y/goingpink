@@ -2,7 +2,7 @@
 // Start or resume the session
 session_start();
 
-include('navi_bar.php');
+include('../navi_bar.php');
 include('conn.php');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {

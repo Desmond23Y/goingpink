@@ -4,7 +4,7 @@ include('conn.php');
 
 // Check if the user is logged in
 if (!isset($_SESSION['user_id'])) {
-    header('Location: login.php');
+    header('Location: ../login.php');
     exit();
 }
 
@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['book_hotel'])) {
 }
 
 // Include the navigation bar (moved here to avoid output before header)
-include('navi_bar.php');
+include('../navi_bar.php');
 
 $result = mysqli_query($con, "SELECT * FROM hotel_information");
 if (!$result) {
@@ -54,7 +54,7 @@ if (!$result) {
                 // Check the user type to determine what to display
                 if ($_SESSION['user_type'] == 'admin' || $_SESSION['user_type'] == 'hotel_management') {
                     // Admins and hotel managers can edit hotel information
-                    echo '<a href="edithotel.php?hotel_id=' . $row["hotel_id"] . '">Edit This Hotel</a>';
+                    echo '<a href="../edithotel.php?hotel_id=' . $row["hotel_id"] . '">Edit This Hotel</a>';
                 } elseif ($_SESSION['user_type'] == 'user') {
                     // Regular users can book hotels
                     echo '<form method="POST" action="">';

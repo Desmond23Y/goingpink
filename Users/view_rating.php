@@ -2,7 +2,7 @@
 // Start or resume the session
 session_start();
 
-include('navi_bar.php');
+include('../navi_bar.php');
 include('conn.php');
 
 // Check if the database connection is successful

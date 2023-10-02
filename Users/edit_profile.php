@@ -31,7 +31,7 @@ if (mysqli_num_rows($result) > 0) {
     $gender = $user_data['gender'];
 }
 
-include('navi_bar.php');
+include('../navi_bar.php');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['username'];

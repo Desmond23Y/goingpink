@@ -3,7 +3,7 @@ session_start(); // Start the session at the beginning of the file
 include('conn.php'); 
 
 if (!isset($_SESSION['user_id'])) {
-    header('Location: login.php');
+    header('Location: ../login.php');
     exit();
 }
 
@@ -31,7 +31,7 @@ while ($row = mysqli_fetch_assoc($result)) {
 
 <body>
     <?php
-    include('navi_bar.php');
+    include('../navi_bar.php');
     ?>
     <div>
         <h2>
@@ -268,7 +268,7 @@ while ($row = mysqli_fetch_assoc($result)) {
 
                                             // Redirect to index.php after a delay (e.g., 2 seconds)
                                             setTimeout(function () {
-                                                window.location.href = 'index.php';
+                                                window.location.href = '../index.php';
                                             }, 2000);
                                         } else {
                                             alert('Booking failed');

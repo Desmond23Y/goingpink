@@ -3,7 +3,7 @@ session_start();
 include('conn.php');
 
 if (!isset($_SESSION['user_id'])) {
-    header('Location: login.php');
+    header('Location: ../login.php');
     exit();
 }
 
@@ -30,7 +30,7 @@ if (mysqli_num_rows($result) > 0) {
     $gender = $user_data['gender'];    
 }
 
-include('navi_bar.php');
+include('../navi_bar.php');
 ?>
 
 <!DOCTYPE html>
