@@ -12,8 +12,11 @@ $hotel_id = $_SESSION['selected_hotel_id'];
 
 if (isset($_GET['hotel_id']) && isset($_GET['user_id'])) {
     $hotel_id = $_GET['hotel_id'];
+
     $result = mysqli_query($con, "SELECT * FROM hotel_booking WHERE hotel_id = '$hotel_id'");
+
     $result2 = mysqli_query($con, "SELECT * FROM user WHERE user_id = '$user_id'");
+
     $result3 = mysqli_query($con, "SELECT * FROM hotel_information WHERE hotel_id = '$hotel_id'");
     if (!$result || !$result2 || !$result3) {
         die('Query Error: ' . mysqli_error($con));
@@ -33,8 +36,11 @@ if (isset($_GET['hotel_id']) && isset($_GET['user_id'])) {
 <h1>Fare Summary</h1>
     <div class="box">
         <?php
-        if (isset($result) && isset($result2) && isset($result3) && mysqli_num_rows($result) > 0) {
-            while ($row = mysqli_fetch_assoc($result && $result2 && $result3)) {
+        if (isset($result) && isset($result2) && isset($result3)) {
+            if (mysqli_num_rows($result) > 0 && mysqli_num_rows($result2) > 0 && mysqli_num_rows($result3) > 0) {
+                $row1 = mysqli_fetch_assoc($result);
+                $row2 = mysqli_fetch_assoc($result2);
+                $row3 = mysqli_fetch_assoc($result3);
                 echo '<h3>' . $row["username"] . '</h3>';
                 echo '<h3> Phone number: ' . $row["phone_number"] . '</h3>';
                 echo '<h3> Email: ' . $row["email"] . '</h3>';
