@@ -31,10 +31,10 @@
     ?>
 
     <h2>Star Rating Statistics</h2>
-    <canvas id="horizontalBarChart" width="400" height="200"></canvas>
+    <canvas id="barChart" width="400" height="200"></canvas>
 
     <script>
-        var ctx = document.getElementById('horizontalBarChart').getContext('2d');
+        var ctx = document.getElementById('barChart').getContext('2d');
         var chartData = {
             labels: <?php echo json_encode($starRatings); ?>,
             datasets: [{
@@ -46,12 +46,12 @@
             }]
         };
 
-        var horizontalBarChart = new Chart(ctx, {
-            type: 'horizontalBar',
+        var barChart = new Chart(ctx, {
+            type: 'bar', // Change type to 'bar'
             data: chartData,
             options: {
                 scales: {
-                    x: {
+                    y: {
                         beginAtZero: true
                     }
                 }
