@@ -14,7 +14,7 @@
     }
 
     // Query data from the database table
-    $query = "SELECT price FROM hotel_information";
+    $query = "SELECT hotel_price FROM hotel_information";
     $result = mysqli_query($con, $query);
 
     // Initialize an array to store price categories
