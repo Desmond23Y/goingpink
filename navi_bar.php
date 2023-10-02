@@ -43,10 +43,10 @@ body {
                 <li><a href="api_exRates.php">EXCHANGE RATES</a></li>
                 <li><a href="request_form.php">SUPPORT</a></li>
                 <li><a href="view_rating.php">VIEW RATING</a></li>
-                <li><a href="rating.php">LEAVE A RATING</a></li>
-                <li><a href="./Users/logout.php" class="right">LOGOUT</a></li>
+                <li><a href="./Users/rating.php">LEAVE A RATING</a></li>
+                <li><a href="logout.php" class="right">LOGOUT</a></li>
                 <li><a href="register.php" class="right">REGISTER</a></li>
-                <li><a href="./Users/login.php" class="right">LOGIN</a></li>
+                <li><a href="login.php" class="right">LOGIN</a></li>
                 <li><a href="view_profile.php" class="right">PROFILE</a></li>
                 <li><a href="user_view_ticket.php" class="right">VIEW TICKETS</a></li>
                 <li><a href="faq.php" class="right">FAQ</a></li>
