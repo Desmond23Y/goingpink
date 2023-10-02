@@ -28,30 +28,30 @@
 
 <body>
  <div class="backgroun-image">
+            <div class="backgroun-image">
             <header>
-                <h1>Welcome Back to the Transport Management Page!</h1>
+                <h1>Welcome Back to the Hotel Management Page!</h1>
         
                 <p>What do you want to do today?</p>
             </header>
-            <section class="section transport-database">
-                <div class="function" >
-                    <img src="/picture/transport-database.png" alt="transport" class="transport">
-                    <div class="function-text" id="transport-database">
-                        <h2 class="transport-database">Transport Database</h2>
-                        <p class="transport-database">View all the existing transport in the database.<br> You can edit and update transport details here too.  </p>
-                            <button class="button">View Transport Database</button>       
+            <section class="section hotel-database">
+                <div class="function"id="hotel-database" >
+                    <img src="/picture/manage-account.png" class="hotel-database">
+                    <div class="function-text">
+                        <h2 class="hotel-database">Hotel Database</h2>
+                        <p class="hotel-database">View all the existing hotel in the database.<br> You can edit and update hotel details here too.  </p>
+                            <button class="button">View Hotel Database</button>       
                     </div>
                 </div>
             </section>
-            <section class="section manage-transport-booking">
-                <div class="function" id="manage-transport-booking">
-                    <img src="/picture/transport-booking.png" style="float: right;" class="generate-report">
-                    <h2>Manage Transport Bookings</h2>
-                    <p class="manage-booking">View, manage, confirm all of the transport related bookings here.</p>
-                    <button class="button">Manage Transport</button>
+            <section class="section manage-hotel-booking">
+                <div class="function" id="manage-booking">
+                    <img src="/picture/generate-report.png" style="float: right;" class="generate-report">
+                    <h2>Manage Hotel Bookings</h2>
+                    <p class="manage-booking">View, manage, confirm all of the hotel related bookings here.</p>
+                    <button class="button" id="manage-hotel-booking">Manage Bookings</button>
                 </div>
             </section>
-         
             
 
             
