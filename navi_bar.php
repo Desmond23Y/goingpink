@@ -37,7 +37,7 @@ body {
 <body>
         <nav>
             <ul class="navibar">
-                <li><a href="index.php">HOME</a></li>
+                <li><a href="../index.php">HOME</a></li>
                 <li><a href="../Users/viewhotel.php">HOTEL</a></li>
                 <li><a href="../Users/viewtransport.php">TRANSPORT</a></li>
                 <li><a href="api_exRates.php">EXCHANGE RATES</a></li>
