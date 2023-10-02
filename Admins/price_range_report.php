@@ -46,7 +46,7 @@
     mysqli_close($con);
     ?>
 
-    <h2>Hotel Price Distribution</h2>
+    <h2>Hotel Price Statistics</h2>
     <canvas id="pieChart" width="400" height="200"></canvas>
 
     <script>
