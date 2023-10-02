@@ -36,7 +36,7 @@
             labels: ['Hotel', 'Transport'],
             datasets: [{
                 label: 'Booking Count',
-                data: [<?php echo $countTable1; ?>, <?php echo $countTable2; ?>],
+                data: [<?php echo $countHotel; ?>, <?php echo $countTransport; ?>],
                 fill: true,
                 backgroundColor: 'rgba(75, 192, 192, 0.2)',
                 borderColor: 'rgba(75, 192, 192, 1)',
