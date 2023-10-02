@@ -19,7 +19,7 @@
     $countHotel = mysqli_fetch_assoc($resultHotel)['count'];
 
     // Query data from Table 2
-    $queryTransport = "SELECT COUNT(*) as count FROM transport_booking";
+    $queryTransport = "SELECT COUNT(*) as count FROM transportation_booking";
     $resultTransport = mysqli_query($con, $queryTransport);
     $countTransport = mysqli_fetch_assoc($resultTransport)['count'];
 
