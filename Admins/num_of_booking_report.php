@@ -27,7 +27,7 @@
     mysqli_close($con);
     ?>
 
-    <h2>Booking Count</h2>
+    <h2>Booking Statistics</h2>
     <canvas id="areaChart" width="400" height="200"></canvas>
 
     <script>
