@@ -9,7 +9,7 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 
-include('navi_bar.php');
+include('../navi_bar.php');
 ?>
 
 
