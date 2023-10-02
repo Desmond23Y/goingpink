@@ -44,15 +44,15 @@ if (!$result) {
 
                 // Check for type of car and display the image accordingly
                 if ($row["transport_type"] == "Luxury 4-seater car") {
-                    echo '<img src="luxury_4_seater.png" alt="4-Luxury Car">';
+                    echo '<img src="../picture/luxury_4_seater.png" alt="4-Luxury Car">';
                 } elseif ($row["transport_type"] == "Luxury 6-seater car") {
-                    echo '<img src="luxury_6_seater.png" alt="6-Luxury Car">';
+                    echo '<img src="../picture/luxury_6_seater.png" alt="6-Luxury Car">';
                 } elseif ($row["transport_type"] == "Van") {
-                    echo '<img src="van.png" alt="van">';
+                    echo '<img src="../picture/van.png" alt="van">';
                 } elseif ($row["transport_type"] == "6-seater Car") {
-                    echo '<img src="6_seater_car.png" alt="6-seater Car">';
+                    echo '<img src="../picture/6_seater_car.png" alt="6-seater Car">';
                 } elseif ($row["transport_type"] == "4-seater Car") {
-                    echo '<img src="4_seater_car.png" alt="4-seater Car">';
+                    echo '<img src="../picture/4_seater_car.png" alt="4-seater Car">';
                 } 
                 
             }
