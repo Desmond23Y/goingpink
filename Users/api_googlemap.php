@@ -150,25 +150,6 @@ while ($row = mysqli_fetch_assoc($result)) {
             }
         }
 
-        // Bias the autocomplete object to the user's geographical location,
-        // as supplied by the browser's 'navigator.geolocation' object.
-        // not working, deprecated
-       /* function geolocate() {
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(function(position) {
-                var geolocation = {
-                    lat: position.coords.latitude,
-                    lng: position.coords.longitude
-                };
-                var circle = new google.maps.Circle({
-                    center: geolocation,
-                    radius: position.coords.accuracy
-                });
-                autocomplete.setBounds(circle.getBounds());
-                });
-            }
-        } */
-
         function setMarkerAndInputBox(clickedLocation) {
             // Set the marker position to the clicked location
             marker.setPosition(clickedLocation);
