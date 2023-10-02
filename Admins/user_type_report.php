@@ -48,9 +48,9 @@
     );
     ?>
 
-    <h2>Data Counts by Table</h2>
+    <h2>User Type Count</h2>
     <!-- Adjust width and height here -->
-    <canvas id="pieChart" width="300" height="300"></canvas>
+    <canvas id="pieChart" width="200px" height="100px"></canvas>
 
     <script>
         var ctx = document.getElementById('pieChart').getContext('2d');
