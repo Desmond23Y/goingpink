@@ -39,14 +39,6 @@ body {
     font-family: Butler, sans-serif !important;
 }
 
-.background-image {
-    background-image: url('/picture/barbie.png'); 
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    height: 100vh;
-}
-
 header {
     background-color: #f17492;
     color: #fef1f4;
@@ -105,11 +97,12 @@ img{
 
 
 
-
-#transport-database{
+#hotel-database{
     background-color: #fee7eb;
+    
 }
-#manage-transport-booking{
+
+#manage-booking{
     background-color: #f0e4da;
 }
 
