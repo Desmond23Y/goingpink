@@ -30,7 +30,7 @@
     mysqli_close($con);
     ?>
 
-    <h2>Support Type Counts</h2>
+    <h2>Support Type Statistics</h2>
     <canvas id="lineChart" width="400" height="200"></canvas>
 
     <script>
