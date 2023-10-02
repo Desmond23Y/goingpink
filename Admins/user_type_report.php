@@ -9,6 +9,9 @@
     // Database connection
     include('conn.php');
 
+    if (!$conn) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
 
     // Query data from Table 1
     $queryUser = "SELECT COUNT(*) as count FROM user";
