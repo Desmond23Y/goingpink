@@ -2,7 +2,6 @@
 // Start or resume the session
 session_start();
 
-include('../navi_bar.php');
 include('conn.php');
 
 if (!isset($_SESSION['user_id'])) {
@@ -35,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 }
-
+include_once('../navi_bar.php');
 mysqli_close($con);
 ?>
 
