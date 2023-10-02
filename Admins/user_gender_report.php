@@ -26,7 +26,7 @@
     mysqli_close($con);
     ?>
 
-    <h2>User Gender Statistic</h2>
+    <h2>User Gender Statistics</h2>
     <canvas id="genderChart" width="400" height="200"></canvas>
 
     <script>
