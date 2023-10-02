@@ -4,6 +4,13 @@ session_start();
 
 include('conn.php');
 
+// Check if "Remember Me" is checked and the cookie exists
+if (isset($_COOKIE['remembered_username'])) {
+    $remembered_username = htmlspecialchars($_COOKIE['remembered_username']);
+} else {
+    $remembered_username = '';
+}
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = mysqli_real_escape_string($con, $_POST['username']); // Prevent SQL injection
     $password = mysqli_real_escape_string($con, $_POST['password']); // Prevent SQL injection
@@ -37,6 +44,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 // Store user data in the session
                 $_SESSION['user_type'] = $user_type;
                 $_SESSION['user_id'] = $user_id;
+
+                // Check if "Remember Me" is checked
+                if (!empty($_POST['remember_me'])) {
+                    // Set a cookie to remember the username for 30 days
+                    setcookie('remembered_username', $username, time() + 30 * 24 * 3600);
+                } else {
+                    // If "Remember Me" is unchecked, delete the cookie
+                    setcookie('remembered_username', '', time() - 3600);
+                }
 
                 // Redirect based on user type
                 if ($user_type === 'admin') {
@@ -86,7 +102,7 @@ include_once('navi_bar.php');
         <h2>Login</h2>
         <form id="login-form" method="POST" action="">
             <label for="username">Username:</label>
-            <input type="text" id="username" name="username" maxlength="50" required><br><br>
+            <input type="text" id="username" name="username" maxlength="50" required value="<?php echo $remembered_username; ?>"><br><br>
 
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" maxlength="50" required><br><br>
@@ -94,10 +110,27 @@ include_once('navi_bar.php');
             <input type="checkbox" id="remember_me" name="remember_me">
             <label for="remember_me">Remember Me</label><br><br>
 
+            <input type="hidden" name="remembered_username" id="remembered_username">
+            
             <button type="submit">Login</button>
         </form>
         <p id="login-message"></p>
         <button id="logout-btn" style="display: none;">Logout</button>
     </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var rememberMeCheckbox = document.getElementById("remember_me");
+            var usernameInput = document.getElementById("username");
+            var rememberedUsernameInput = document.getElementById("remembered_username");
+
+            rememberMeCheckbox.addEventListener("change", function () {
+                if (rememberMeCheckbox.checked) {
+                    rememberedUsernameInput.value = usernameInput.value;
+                } else {
+                    rememberedUsernameInput.value = "";
+                }
+            });
+        });
+    </script>
 </body>
 </html>
