@@ -22,12 +22,12 @@
     $ratingCounts = [];
 
     while ($row = mysqli_fetch_assoc($result)) {
-        $starRatings[] = $row['star_rating'];
+        $starRatings[] = $row['total_stars_rating'];
         $ratingCounts[] = $row['count'];
     }
 
     // Close the database connection
-    mysqli_close($conn);
+    mysqli_close($con);
     ?>
 
     <h2>Star Rating Statistics</h2>
