@@ -21,7 +21,7 @@ if (!$result) {
 <html>
 <head>
     <title>Transportation Information</title>
-    <link rel="stylesheet" href="ViewTransport.css">
+    <link rel="stylesheet" href="Style.css">
     <style>
         /* CSS styles to adjust image size to 800x600 pixels */
         img {
