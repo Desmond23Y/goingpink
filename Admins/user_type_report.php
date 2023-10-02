@@ -7,7 +7,7 @@
 <body>
     <?php
     // Database connection
-    include("conn.php");
+    include('conn.php');
 
     if (!$conn) {
         die("Connection failed: " . mysqli_connect_error());
