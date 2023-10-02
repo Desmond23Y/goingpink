@@ -29,7 +29,7 @@
     $priceCounts = array(0, 0, 0, 0);
 
     while ($row = mysqli_fetch_assoc($result)) {
-        $price = $row['price'];
+        $price = $row['hotel_price'];
 
         if ($price < 50) {
             $priceCounts[0]++;
