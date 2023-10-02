@@ -43,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['number_of_pax']) && i
                                         VALUES ('$user_id', '$selectedhotelid', '$number_of_pax', '$check_in_date', '$check_out_date', '$hotel_manager_id', '$admin_id')";
             
                 if (mysqli_query($con, $hotel_booking_query)) {
-                    header("Location: view_hotel_payment.php");
+                    header("Location: view_hotel_payment.php?hotel_id=$selectedhotelid&user_id=$user_id");
                 } else {
                     echo "Error: " . mysqli_error($con);
                 }
@@ -79,5 +79,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['number_of_pax']) && i
     <p id="booking-message"></p>
 </body>
 </html>
-
-
