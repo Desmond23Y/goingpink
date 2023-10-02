@@ -22,12 +22,12 @@
     }
 
     // Query data from Table 2
-    $queryTable2 = "SELECT user_id, COUNT(*) as count FROM admin";
+    $queryTable2 = "SELECT admin_id, COUNT(*) as count FROM admin";
     $resultTable2 = mysqli_query($conn, $queryTable2);
 
     $dataTable2 = array();
     while ($row = mysqli_fetch_assoc($resultTable2)) {
-        $dataTable2[$row['user_id']] = $row['count'];
+        $dataTable2[$row['admin_id']] = $row['count'];
     }
     ?>
 
