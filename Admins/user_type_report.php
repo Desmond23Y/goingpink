@@ -48,9 +48,9 @@
     );
     ?>
 
-    <h2>User Type Counts</h2>
+    <h2>Data Counts by Table</h2>
     <!-- Adjust width and height here -->
-    <canvas id="pieChart" width="100" height="50"></canvas>
+    <canvas id="pieChart" width="300" height="300"></canvas>
 
     <script>
         var ctx = document.getElementById('pieChart').getContext('2d');
@@ -75,6 +75,8 @@
             type: 'pie',
             data: chartData,
             options: {
+                responsive: true,
+                maintainAspectRatio: false,
                 tooltips: {
                     callbacks: {
                         label: function(tooltipItem, data) {
