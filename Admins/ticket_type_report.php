@@ -31,24 +31,24 @@
     ?>
 
     <h2>Support Type Counts</h2>
-    <canvas id="areaChart" width="400" height="200"></canvas>
+    <canvas id="lineChart" width="400" height="200"></canvas>
 
     <script>
-        var ctx = document.getElementById('areaChart').getContext('2d');
+        var ctx = document.getElementById('lineChart').getContext('2d');
         var chartData = {
             labels: <?php echo json_encode($supportTypeLabels); ?>,
             datasets: [{
                 label: 'Support Type Counts',
                 data: <?php echo json_encode($supportTypeCounts); ?>,
                 fill: true,
-                backgroundColor: 'rgba(75, 192, 192, 0.2)', // Area chart background color
-                borderColor: 'rgba(75, 192, 192, 1)', // Border color
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                borderColor: 'rgba(75, 192, 192, 1)',
                 borderWidth: 1
             }]
         };
 
-        var areaChart = new Chart(ctx, {
-            type: 'line', // Use 'line' type to create an area chart
+        var lineChart = new Chart(ctx, {
+            type: 'line',
             data: chartData,
             options: {
                 scales: {
