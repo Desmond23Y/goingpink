@@ -1,4 +1,4 @@
-/* Reset some default styles */
+<style>
 body, ul {
     margin: 0;
     padding: 0;
@@ -126,3 +126,4 @@ img{
         color: white;
     }
 
+</style>
