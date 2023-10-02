@@ -49,7 +49,8 @@
     ?>
 
     <h2>Data Counts by Table</h2>
-    <canvas id="pieChart" width="400" height="200"></canvas>
+    <!-- Adjust width and height here -->
+    <canvas id="pieChart" width="200" height="100"></canvas>
 
     <script>
         var ctx = document.getElementById('pieChart').getContext('2d');
@@ -72,7 +73,22 @@
         
         var pieChart = new Chart(ctx, {
             type: 'pie',
-            data: chartData
+            data: chartData,
+            options: {
+                tooltips: {
+                    callbacks: {
+                        label: function(tooltipItem, data) {
+                            var dataset = data.datasets[tooltipItem.datasetIndex];
+                            var total = dataset.data.reduce(function(previousValue, currentValue, currentIndex, array) {
+                                return previousValue + currentValue;
+                            });
+                            var currentValue = dataset.data[tooltipItem.index];
+                            var percentage = ((currentValue / total) * 100).toFixed(2);
+                            return percentage + '%';
+                        }
+                    }
+                }
+            }
         });
     </script>
 
