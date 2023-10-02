@@ -51,7 +51,7 @@ if (isset($_GET['hotel_id']) && isset($_GET['user_id'])) {
                 echo '<h3> Check in Date: ' . $row1["check_in_date"] . '</h3>';
                 echo '<h3> Check out Date: ' . $row1["check_out_date"] . '</h3>';
                 echo '<h3> Number of Guests: ' . $row1["number_of_pax"] . '</h3>';
-                echo '<h3> Hotel Price: ' . $row1["hotel_price"] . '</h3>';
+                echo '<h3> Hotel Price: ' . $row3["hotel_price"] . '</h3>';
             }
         }
         ?>
