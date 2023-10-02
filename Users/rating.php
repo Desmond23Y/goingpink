@@ -5,6 +5,11 @@ session_start();
 include('../navi_bar.php');
 include('conn.php');
 
+if (!isset($_SESSION['user_id'])) {
+    header('Location: ../login.php');
+    exit();
+}
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $rating = $_POST['rating'];
     $feedback = $_POST['feedback'];
