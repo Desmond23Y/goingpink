@@ -34,7 +34,7 @@ if (isset($_GET['hotel_id']) && isset($_GET['user_id'])) {
     <div class="box">
         <?php
         if (isset($result) && isset($result2) && isset($result3) && mysqli_num_rows($result) > 0) {
-            while ($row = mysqli_fetch_assoc($result)) {
+            while ($row = mysqli_fetch_assoc($result && $result2 && $result3)) {
                 echo '<h3>' . $row["username"] . '</h3>';
                 echo '<h3> Phone number: ' . $row["phone_number"] . '</h3>';
                 echo '<h3> Email: ' . $row["email"] . '</h3>';
