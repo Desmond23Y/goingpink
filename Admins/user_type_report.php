@@ -8,36 +8,29 @@
     <?php
     // Database connection
     include('conn.php');
-
     if (!$con) {
         die("Connection failed: " . mysqli_connect_error());
     }
-
     // Query data from Table 1
     $queryUser = "SELECT COUNT(*) as count FROM user";
     $resultUser = mysqli_query($con, $queryUser);
     $countUser = mysqli_fetch_assoc($resultUser)['count'];
-
     // Query data from Table 2
     $queryAdmin = "SELECT COUNT(*) as count FROM admin";
     $resultAdmin = mysqli_query($con, $queryAdmin);
     $countAdmin = mysqli_fetch_assoc($resultAdmin)['count'];
-
     // Query data from Table 3
     $querySupport = "SELECT COUNT(*) as count FROM support";
     $resultSupport = mysqli_query($con, $querySupport);
     $countSupport = mysqli_fetch_assoc($resultSupport)['count'];
-
     // Query data from Table 4
     $queryHmgt = "SELECT COUNT(*) as count FROM hotel_management";
     $resultHmgt = mysqli_query($con, $queryHmgt);
     $countHmgt = mysqli_fetch_assoc($resultHmgt)['count'];
-
     // Query data from Table 5
     $queryTmgt = "SELECT COUNT(*) as count FROM transport_management";
     $resultTmgt = mysqli_query($con, $queryTmgt);
     $countTmgt = mysqli_fetch_assoc($resultTmgt)['count'];
-
     // Collect data in an associative array
     $tableCounts = array(
         'Admin' => $countAdmin,
@@ -48,9 +41,9 @@
     );
     ?>
 
-    <h2>User Type Count</h2>
+    <h2>User Type Counts</h2>
     <!-- Adjust width and height here -->
-    <canvas id="pieChart" width="200px" height="100px"></canvas>
+    <canvas id="pieChart" width="100px" height="50px"></canvas>
 
     <script>
         var ctx = document.getElementById('pieChart').getContext('2d');
@@ -75,8 +68,6 @@
             type: 'pie',
             data: chartData,
             options: {
-                responsive: true,
-                maintainAspectRatio: false,
                 tooltips: {
                     callbacks: {
                         label: function(tooltipItem, data) {
@@ -93,10 +84,5 @@
             }
         });
     </script>
-
     <?php
     // Close the database connection
-    mysqli_close($con);
-    ?>
-</body>
-</html>
