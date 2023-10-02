@@ -49,7 +49,7 @@ body {
                 <li><a href="login.php" class="right">LOGIN</a></li>
                 <li><a href="Users/view_profile.php" class="right">PROFILE</a></li>
                 <li><a href="Users/user_view_ticket.php" class="right">VIEW TICKETS</a></li>
-                <li><a href="Users/faq.php" class="right">FAQ</a></li>
+                <li><a href="./Users/faq.php" class="right">FAQ</a></li>
             </ul>
         </nav>
 </body>
