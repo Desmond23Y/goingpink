@@ -14,7 +14,7 @@
     }
 
     // Query data from the "rating" table
-    $query = "SELECT rating_id, COUNT(*) as count FROM rating GROUP BY total_stars_rating";
+    $query = "SELECT total_stars_rating, COUNT(*) as count FROM rating GROUP BY total_stars_rating";
     $result = mysqli_query($con, $query);
 
     // Initialize arrays to store data
