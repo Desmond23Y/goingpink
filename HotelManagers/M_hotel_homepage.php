@@ -19,6 +19,34 @@
 </head>
 
 <body>
-<h1>Hotel Management's Homepage</h1>
+ <div class="backgroun-image">
+            <header>
+                <h1>Welcome Back to the Transport Management Page!</h1>
+        
+                <p>What do you want to do today?</p>
+            </header>
+            <section class="section transport-database">
+                <div class="function" >
+                    <img src="/picture/transport-database.png" alt="transport" class="transport">
+                    <div class="function-text" id="transport-database">
+                        <h2 class="transport-database">Transport Database</h2>
+                        <p class="transport-database">View all the existing transport in the database.<br> You can edit and update transport details here too.  </p>
+                            <button class="button">View Transport Database</button>       
+                    </div>
+                </div>
+            </section>
+            <section class="section manage-transport-booking">
+                <div class="function" id="manage-transport-booking">
+                    <img src="/picture/transport-booking.png" style="float: right;" class="generate-report">
+                    <h2>Manage Transport Bookings</h2>
+                    <p class="manage-booking">View, manage, confirm all of the transport related bookings here.</p>
+                    <button class="button">Manage Transport</button>
+                </div>
+            </section>
+         
+            
+
+            
+        </div>
 </body>
 </html>
