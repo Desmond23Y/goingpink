@@ -41,7 +41,7 @@
     );
     ?>
 
-    <h2>User Type Statistic</h2>
+    <h2>User Type Statistics</h2>
     <!-- Adjust width and height here -->
     <canvas id="pieChart" width="100px" height="50px"></canvas>
 
