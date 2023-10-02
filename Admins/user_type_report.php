@@ -9,33 +9,33 @@
     // Database connection
     include('conn.php');
 
-    if (!$conn) {
+    if (!$con) {
         die("Connection failed: " . mysqli_connect_error());
     }
 
     // Query data from Table 1
     $queryUser = "SELECT COUNT(*) as count FROM user";
-    $resultUser = mysqli_query($conn, $queryUser);
+    $resultUser = mysqli_query($con, $queryUser);
     $countUser = mysqli_fetch_assoc($resultUser)['count'];
 
     // Query data from Table 2
     $queryAdmin = "SELECT COUNT(*) as count FROM admin";
-    $resultAdmin = mysqli_query($conn, $queryAdmin);
+    $resultAdmin = mysqli_query($con, $queryAdmin);
     $countAdmin = mysqli_fetch_assoc($resultAdmin)['count'];
 
     // Query data from Table 3
     $querySupport = "SELECT COUNT(*) as count FROM support";
-    $resultSupport = mysqli_query($conn, $querySupport);
+    $resultSupport = mysqli_query($con, $querySupport);
     $countSupport = mysqli_fetch_assoc($resultSupport)['count'];
 
     // Query data from Table 4
     $queryHmgt = "SELECT COUNT(*) as count FROM hotel_management";
-    $resultHmgt = mysqli_query($conn, $queryHmgt);
+    $resultHmgt = mysqli_query($con, $queryHmgt);
     $countHmgt = mysqli_fetch_assoc($resultHmgt)['count'];
 
     // Query data from Table 5
     $queryTmgt = "SELECT COUNT(*) as count FROM transport_management";
-    $resultTmgt = mysqli_query($conn, $queryTmgt);
+    $resultTmgt = mysqli_query($con, $queryTmgt);
     $countTmgt = mysqli_fetch_assoc($resultTmgt)['count'];
 
     // Collect data in an associative array
@@ -78,7 +78,7 @@
 
     <?php
     // Close the database connection
-    mysqli_close($conn);
+    mysqli_close($con);
     ?>
 </body>
 </html>
