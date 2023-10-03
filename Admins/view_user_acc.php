@@ -10,7 +10,7 @@ if (!isset($_SESSION['user_id'])) {
 $result = mysqli_query($con, "SELECT * FROM user");
 ?>
 <html>
-    <head>
+<head>
 </head>
 <body>
     
@@ -29,24 +29,23 @@ $result = mysqli_query($con, "SELECT * FROM user");
     </tr>
     <tr>
         <td><a href="register.php">Add New User Account</a></td>
-</tr>
+    </tr>
 <?php
-    while($row=mysqli_fetch_array($result))
-    {
-        echo'<tr>';
-        echo'<td>'.$row["user_id"].'</td>';
-        echo'<td>'.$row["username"].'</td>';
-        echo'<td>'.$row["first_name"].'</td>';
-        echo'<td>'.$row["last_name"].'</td>';
-        echo'<td>'.$row["email"].'</td>';
-        echo'<td>'.$row["phone_number"].'</td>';
-        echo'<td>'.$row["date_of_birth"].'</td>';
-        echo'<td>'.$row["gender"].'</td>';
-        echo'<td><a href="modify_user_acc.php?user_id='.$row["user_id"].'">Edit</a></td>';
-        echo'<td><a onclick="return confirm(\'Delete '.$row["username"].' details?\')" href="delete_user_acc.php?user_id='.$row["user_id"].'">Delete</a></td>';
-        echo'</tr>';
-    }
-    mysqli_close($con);
+while ($row = mysqli_fetch_array($result)) {
+    echo '<tr>';
+    echo '<td>' . $row["user_id"] . '</td>';
+    echo '<td>' . $row["username"] . '</td>';
+    echo '<td>' . $row["first_name"] . '</td>';
+    echo '<td>' . $row["last_name"] . '</td>';
+    echo '<td>' . $row["email"] . '</td>';
+    echo '<td>' . $row["phone_number"] . '</td>';
+    echo '<td>' . $row["date_of_birth"] . '</td>';
+    echo '<td>' . $row["gender"] . '</td>';
+    echo '<td><a href="modify_user_acc.php?user_id=' . $row["user_id"] . '">Edit</a></td>';
+    echo '<td><a onclick="return confirm(\'Delete ' . $row["username"] . ' details?\')" href="delete_user_acc.php?user_id=' . $row["user_id"] . '">Delete</a></td>';
+    echo '</tr>';
+}
+mysqli_close($con);
 ?>
 </table>
 </body>
