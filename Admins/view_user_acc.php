@@ -1,5 +1,3 @@
-<a href="register.php">Add New User Account</a><br>
-
 <?php 
 session_start();
 include("conn.php");
@@ -24,7 +22,7 @@ $result=mysqli_query($con,"SELECT* FROM user");
         <td>Modify</td>
         <td>Delete</td>
     </tr>
-
+    <a href="register.php">Add New User Account</a><br>
 <?php
     while($row=mysqli_fetch_array($result))
     {
