@@ -247,7 +247,7 @@ $_SESSION['transportpricing'] = $transportTypes;
                             var full_arrival_time = new Date().toISOString().slice(0, 11) + estimatedArrivalTime;
 
                             var bookXhr = new XMLHttpRequest();
-                            var bookUrl = './Users/transportbooking.php'; 
+                            var bookUrl = './transportbooking.php'; 
                             var bookParams = 'user_id=' + encodeURIComponent(<?php echo "'". $_SESSION['user_id']."'"; ?>) +
                                 '&transport_id=' + encodeURIComponent(transportId) +
                                 '&arrival_location=' + encodeURIComponent(destination) +
