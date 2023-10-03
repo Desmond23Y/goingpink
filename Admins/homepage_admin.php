@@ -27,7 +27,7 @@
     <nav>
         <ul class="navibar">
             <li><a href="view_support_report.php">VIEW SUPPORT REPORT</a></li>
-            <li><a href="view_ticket.php">VIEW TICKET</a></li>
+            <li><a href="./Supports/view_ticket.php">VIEW TICKET</a></li>
             <li><a href="view_invoice.php">VIEW INVOICE</a></li>
             <li><a href="view_admin_acc.php">VIEW ADMIN ACC</a></li>
             <li><a href="view_user_acc.php">VIEW USER ACC</a></li>
