@@ -1,6 +1,7 @@
 <?php
 session_start();
 include('conn.php'); 
+include('../navi_bar.php');
 
 $user_id = $_SESSION['user_id'];
 $selectedhotelid = $_SESSION['selected_hotel_id'];

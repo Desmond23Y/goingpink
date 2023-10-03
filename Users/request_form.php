@@ -1,6 +1,7 @@
 <?php
 session_start();
-include('navi_bar.php')
+include('conn.php');
+include('../navi_bar.php');
 ?>
 
 <!DOCTYPE html>
