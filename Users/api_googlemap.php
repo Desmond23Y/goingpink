@@ -182,40 +182,41 @@ $_SESSION['transportpricing'] = $transportTypes;
         }
 
         function calculatePrice() {
-        var origin = document.getElementById('originautocomplete').value;
-        var destination = document.getElementById('destinationautocomplete').value;
-        var transportType = document.getElementById('transportType').value;
+    var origin = document.getElementById('originautocomplete').value;
+    var destination = document.getElementById('destinationautocomplete').value;
+    var transportType = document.getElementById('transportType').value;
 
-        // Make an AJAX request to calculate the price
-        var xhr = new XMLHttpRequest();
-        var url = 'calculate_price.php';
-        var params = 'origin=' + encodeURIComponent(origin) +
-                     '&destination=' + encodeURIComponent(destination) +
-                     '&transportType=' + encodeURIComponent(transportType);
+    // Make an AJAX request to calculate the price
+    var xhr = new XMLHttpRequest();
+    var url = 'calculate_price.php';
+    var distance = parseFloat(document.getElementById('output').value.replace(' KM', '')); // Parse distance from the displayed value
+    var params = 'origin=' + encodeURIComponent(origin) +
+                 '&destination=' + encodeURIComponent(destination) +
+                 '&transportType=' + encodeURIComponent(transportType) +
+                 '&distance=' + distance; // Pass distance as a parameter
 
-        xhr.open('POST', url, true);
-        xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    xhr.open('POST', url, true);
+    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState === 4) {
-                if (xhr.status === 200) {
-                    var response = JSON.parse(xhr.responseText);
-                    if (response.success) {
-                        // Update the price field
-                        document.getElementById('hiddenPrice').value = response.price;
-                        document.getElementById('price').value = '$' + response.price.toFixed(2);
-                    } else {
-                        alert('Error calculating price: ' + response.message);
-                    }
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+                var response = JSON.parse(xhr.responseText);
+                if (response.success) {
+                    // Update the price field
+                    document.getElementById('hiddenPrice').value = response.price;
+                    document.getElementById('price').value = '$' + response.price.toFixed(2);
                 } else {
-                    alert('Error calculating price');
+                    alert('Error calculating price: ' + response.message);
                 }
+            } else {
+                alert('Error calculating price');
             }
-        };
+        }
+    };
 
-        xhr.send(params);
-    }
-
+    xhr.send(params);
+}
     // Add an event listener to the "Calculate Price and Time" button
     document.getElementById('calculatePriceButton').addEventListener('click', calculatePrice);
 
