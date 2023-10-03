@@ -26,10 +26,10 @@
     );
 
     // Initialize an array to store the count of expenses in each category
-    $priceCounts = array(0, 0, 0, 0);
+    $expensesCounts = array(0, 0, 0, 0);
 
     while ($row = mysqli_fetch_assoc($result)) {
-        $price = $row['total_amount'];
+        $expenses = $row['total_amount'];
 
         if ($expenses < 500) {
             $expensesCounts[0]++;
