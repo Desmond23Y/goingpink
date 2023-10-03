@@ -61,39 +61,41 @@ include('../navi_bar.php');
 <body>
     <h1>View Profile</h1>
     <div class="container">
-<label for="username">Username:</label>
-<input type="text" id="username" name="username" value="<?php echo $username; ?>">
-<br><br>
+        <form action="edit_profile.php" method="POST">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" value="<?php echo $username; ?>">
+        <br><br>
 
-<label for="first_name">First Name:</label>
-<input type="text" id="first_name" name="first_name" value="<?php echo $first_name; ?>">
-<br><br>
+        <label for="first_name">First Name:</label>
+        <input type="text" id="first_name" name="first_name" value="<?php echo $first_name; ?>">
+        <br><br>
 
-<label for="last_name">Last Name:</label>
-<input type="text" id="last_name" name="last_name" value="<?php echo $last_name; ?>">
-<br><br>
+        <label for="last_name">Last Name:</label>
+        <input type="text" id="last_name" name="last_name" value="<?php echo $last_name; ?>">
+        <br><br>
 
-<label for="email">Email:</label>
-<input type="email" id="email" name="email" value="<?php echo $email; ?>">
-<br><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" value="<?php echo $email; ?>">
+        <br><br>
 
-<label for="phone_number">Phone Number:</label>
-<input type="tel" id="phone_number" name="phone_number" value="<?php echo $phone_number; ?>">
-<br><br>
+        <label for="phone_number">Phone Number:</label>
+        <input type="tel" id="phone_number" name="phone_number" value="<?php echo $phone_number; ?>">
+        <br><br>
 
-<label for="date_of_birth">Date of Birth:</label>
-<input type="date" id="date_of_birth" name="date_of_birth" value="<?php echo $date_of_birth; ?>">
-<br><br>
+        <label for="date_of_birth">Date of Birth:</label>
+        <input type="date" id="date_of_birth" name="date_of_birth" value="<?php echo $date_of_birth; ?>">
+        <br><br>
 
-<label>Gender:</label><br>
-<input type="radio" id="male" name="gender" value="male" <?php if ($gender === "male") echo "checked"; ?>>
-<label for="male">Male</label><br>
+        <label>Gender:</label><br>
+        <input type="radio" id="male" name="gender" value="male" <?php if ($gender === "male") echo "checked"; ?>>
+        <label for="male">Male</label><br>
 
-<input type="radio" id="female" name="gender" value="female" <?php if ($gender === "female") echo "checked"; ?>>
-<label for="female">Female</label><br>
+        <input type="radio" id="female" name="gender" value="female" <?php if ($gender === "female") echo "checked"; ?>>
+        <label for="female">Female</label><br>
 
-<br><br> 
- <a href="edit_profile.php" class="button">Edit Profile</a>
-</div>
+        <br><br> 
+        <a href="edit_profile.php" class="button">Edit Profile</a>
+        </form>
+    </div>
 </body>
 </html>
