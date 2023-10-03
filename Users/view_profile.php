@@ -9,6 +9,13 @@ if (!isset($_SESSION['user_id'])) {
 
 $user_id = $_SESSION['user_id'];
 $gender = '';
+$username ='';
+$username ='';
+$first_name ='';
+$last_name ='';
+$email ='';
+$phone_number ='';
+$date_of_birth ='';
 
 $fetch_user_query = "SELECT * FROM user WHERE user_id = '$user_id'";
 $result = mysqli_query($con, $fetch_user_query);
