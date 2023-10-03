@@ -27,7 +27,6 @@ $_SESSION['transportpricing'] = $transportTypes;
 <head>
     <title>Going Pink Transport Booking</title>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBS7LY-BaBKUS0xIRTNJKXtfsLEZv_5OG8&libraries=places&callback=initAutocomplete" async defer></script>
-    <!-- <script src="./googleMapDistanceApi.js" async defer></script> -->
 </head>
 
 <body>
