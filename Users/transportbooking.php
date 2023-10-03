@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $departureLocation = isset($_POST['departure_location']) ? trim($_POST['departure_location']) : '';
     $arrivalTime = isset($_POST['arrival_time']) ? trim($_POST['arrival_time']) : '';
     $departureTime = isset($_POST['departure_time']) ? trim($_POST['departure_time']) : '';
-    $price = isset($_POST['price']) ? trim($_POST['price']) : '';
+    $price = isset($_POST['price']) ? trim($_POST['price']) : 0.0; // Default to 0.0 if price is not set or empty
 
     // Check if any required fields are empty
     if (empty($userId) || empty($transportId) || empty($arrivalLocation) || empty($departureLocation) || empty($arrivalTime) || empty($departureTime)) {
