@@ -157,7 +157,25 @@ include('navi_bar.php');
     </div>
     
 </section>
-
+    
+<!--Support-->
+<section class="support">
+  <div class="support-container">
+    <div class="support">
+      <div class="support-text">
+        <h3 class="support-container-text">Facing a Problem? Need Help?</h3>
+        <p class="support-container-text-p" style="font-size: 24px;;">Contact Our Support By Clicking the Buttons Below!</p>
+        <a href="#" class="btn btn-lg btn-light fw-bold bg-white">Go To Support</a>
+        <a href="#" class="btn btn-lg btn-light fw-bold bg-white">View Tickets</a>
+      </div>
+     
+    </div>
+    <div class="right-image">
+      <img src="/picture/problem.png" alt="pink screen" style="width: 1000px;"; height="300px">
+    </div>
+  </div>
+</section>
+    
 <!-- Write Review-->
 <div class="background-image">
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
