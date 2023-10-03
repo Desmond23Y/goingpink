@@ -44,7 +44,7 @@
                     <div class="function-text">
                         <h2 class="transport-database">Transport Database</h2>
                         <p class="transport-database">View all the existing transport in the database.<br> You can edit and update transport details here too.  </p>
-                           <a href="M_transport_homepage.php" target="_blank"><button class="button">View Transport Database</button></a>
+                           <a href="M_view_transport_info.php" target="_blank"><button class="button">View Transport Database</button></a>
     
                     </div>
                 </div>
@@ -55,7 +55,7 @@
                     <div class="function-text" >
                         <h2>Manage Transport Bookings</h2>
                         <p class="manage-booking">View, manage, confirm all of the transport related bookings here.</p>
-                        <a href="M_view_transport_booking.php"><button class="button">Manage Transport</button></a>
+                        <a href="M_view_transport_booking.php" target="_blank"><button class="button">Manage Transport</button></a>
                     </div>
                 </div>
             </section>
