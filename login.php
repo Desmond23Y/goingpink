@@ -58,9 +58,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 // Redirect based on user type
                 if ($user_type === 'admin') {
-                    header('Location: homepage_admin.php');
+                    header('Location: Admins/homepage_admin.php');
                 } elseif ($user_type === 'support') {
-                    header('Location: homepage_support.php');
+                    header('Location: Supports/homepage_support.php');
                 } elseif ($user_type === 'hotel_management') {
                     header('Location: HotelManagers/M_hotel_homepage.php');
                 } elseif ($user_type === 'transport_management') {
