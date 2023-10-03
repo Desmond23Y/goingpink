@@ -269,7 +269,7 @@ $_SESSION['transportpricing'] = $transportTypes;
 
                                             // Redirect to index.php after a delay (e.g., 2 seconds)
                                             setTimeout(function () {
-                                                window.location.href = '../index.php';
+                                                window.location.href = './index.php';
                                             }, 2000);
                                         } else {
                                             alert('Booking failed');
