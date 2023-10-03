@@ -2,6 +2,30 @@
 session_start();
 include('conn.php');
 include('../navi_bar.php');
+
+// Check if the user is logged in
+if (!isset($_SESSION['user_id'])) {
+    header('Location: ../login.php'); // Redirect to the login page if not logged in
+    exit();
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $user_id = $_SESSION['user_id'];
+    include("conn.php");
+
+    $result = mysqli_query($con, "SELECT support_id FROM support");
+    $row = mysqli_fetch_assoc($result);
+    $spt_id = $row['support_id'];
+    $sql = "INSERT INTO ticket (support_id, user_id, contact_name, support_type, ticket_description, ticket_status) VALUES ('$spt_id', '$user_id', '$_POST[name]', '$_POST[support]', '$_POST[description]', 'Created')";
+
+    if (!mysqli_query($con, $sql)) {
+        die('Error:' . mysqli_error($con));
+    } else {
+        echo "<script>alert('This form has been submitted!');</script>";
+    }
+
+    mysqli_close($con);
+}
 ?>
 
 <!DOCTYPE html>
@@ -17,31 +41,7 @@ include('../navi_bar.php');
 
     <section class="request-form">
         <h2>Help Request Form</h2>
-        <?php
-        // Check if the user is logged in
-        if (!isset($_SESSION['user_id'])) {
-            header('Location: ../login.php'); // Redirect to the login page if not logged in
-            exit();
-        }
-            if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            $user_id = $_SESSION['user_id'];
-            include("conn.php");
 
-            $result = mysqli_query($con, "SELECT support_id FROM support");
-            $row = mysqli_fetch_assoc($result);
-            $spt_id = $row['support_id'];
-            $sql = "INSERT INTO ticket (support_id, user_id, contact_name, support_type, ticket_description, ticket_status) VALUES ('$spt_id', '$user_id', '$_POST[name]', '$_POST[support]', '$_POST[description]', 'Created')";
-
-            if(!mysqli_query($con,$sql)) {
-                die('Error:' . mysqli_error($con));
-            }
-            else {
-                echo "<script>alert('This form has been submitted!');</script>";
-            }
-
-            mysqli_close($con);
-        }
-        ?>
         <form id="request-form" method="post">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required="required"><br>
@@ -59,9 +59,7 @@ include('../navi_bar.php');
             <textarea id="text" name="description" rows="5" cols="50" required="required"></textarea><br>
 
             <button type="submit" value="Submit">Submit Form</button>
-            
         </form><br>
-
     </section>
 </body>
 </html>
