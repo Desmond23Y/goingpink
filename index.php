@@ -171,7 +171,8 @@ include('navi_bar.php');
         <h1 style="font-weight:900 ;color:#E9204F; font-family: Butler;">Write a review, make someone's trip!</h1>
         <p class="lead" style="color: #E9204F; font-family: Futura;">Stories like yours are what helps travellers have better trips. <br>Share your experience and help out a fellow traveller!</p>
         <p class="lead">
-            <a href="#" class="btn btn-lg btn-light fw-bold bg-white">Write Review</a>
+            <a href="#" class="btn btn-lg btn-light fw-bold bg-white" target="_blank">Write Review</a>
+            <a href="#" class="btn btn-lg btn-light fw-bold bg-white" target="_blank">See Reviews</a>
         </p>
         </main>
     
