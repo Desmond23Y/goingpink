@@ -180,74 +180,49 @@ $_SESSION['transportpricing'] = $transportTypes;
             });
         }
 
-function BookRide() {
-    var origin = document.getElementById('originautocomplete').value;
-    var destination = document.getElementById('destinationautocomplete').value;
-    var transportType = document.getElementById('transportType').value;
 
-    var geocoder = new google.maps.Geocoder();
-    var service = new google.maps.DistanceMatrixService();
+        function BookRide() {
+            var origin = document.getElementById('originautocomplete').value;
+            var destination = document.getElementById('destinationautocomplete').value;
+            var transportType = document.getElementById('transportType').value;
 
-    service.getDistanceMatrix({
-        origins: [origin],
-        destinations: [destination],
-        travelMode: google.maps.TravelMode.DRIVING,
-        unitSystem: google.maps.UnitSystem.METRIC,
-        avoidHighways: false,
-        avoidTolls: false,
-        avoidFerries: false
-    }, function (response, status) {
-        if (status === 'OK') {
-            var distance = response.rows[0].elements[0].distance.value / 1000; // Convert to kilometers
+            var geocoder = new google.maps.Geocoder();
+            var service = new google.maps.DistanceMatrixService();
 
-            // Make an AJAX request to calculate the total price
-            var xhr = new XMLHttpRequest();
-            var url = 'calculate_price.php'; // Replace with the actual URL of the PHP script
-            var params = 'distance=' + encodeURIComponent(distance) +
-                '&transportType=' + encodeURIComponent(transportType);
+            service.getDistanceMatrix({
+                origins: [origin],
+                destinations: [destination],
+                travelMode: google.maps.TravelMode.DRIVING,
+                unitSystem: google.maps.UnitSystem.METRIC,
+                avoidHighways: false,
+                avoidTolls: false,
+                avoidFerries: false
+            }, function (response, status) {
+                if (status === 'OK') {
+                    var distance = response.rows[0].elements[0].distance.value / 1000; // Convert to kilometers
+                    var pricePerKm = <?php echo json_encode($transportTypes); ?>[transportType]; // Get price from PHP variable
 
-            xhr.open('POST', url, true);
-            xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+                    var price = (distance * pricePerKm).toFixed(2); // Calculate price
 
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState === 4) {
-                    if (xhr.status === 200) {
-                        var response = JSON.parse(xhr.responseText);
-                        if (response.success) {
-                            // Calculate price based on the response
-                            var price = response.price.toFixed(2);
+                    // Calculate estimated arrival time (current time + fixed travel time)
+                    var currentTime = new Date();
+                    var travelTimeMinutes = Math.round(distance / 40 * 60); // Assuming an average speed of 40 km/h
+                    var estimatedArrivalTime = new Date(currentTime.getTime() + (travelTimeMinutes * 60 * 1000));
 
-                            // Calculate estimated arrival time (current time + fixed travel time)
-                            var currentTime = new Date();
-                            var travelTimeMinutes = Math.round(distance / 40 * 60); // Assuming an average speed of 40 km/h
-                            var estimatedArrivalTime = new Date(currentTime.getTime() + (travelTimeMinutes * 60 * 1000));
+                    // Format the estimated arrival time as a string (UTC +8)
+                    var options = { timeZone: 'Asia/Kuala_Lumpur', hour12: false };
+                    var estimatedArrivalTimeString = estimatedArrivalTime.toLocaleTimeString('en-US', options);
 
-                            // Format the estimated arrival time as a string (UTC +8)
-                            var options = { timeZone: 'Asia/Kuala_Lumpur', hour12: false };
-                            var estimatedArrivalTimeString = estimatedArrivalTime.toLocaleTimeString('en-US', options);
-
-                            document.getElementById('arrivalTime').value = '' + estimatedArrivalTimeString;
-                            document.getElementById('output').value = '' + distance.toFixed(2) + ' KM';
-                            document.getElementById('price').value = 'RM' + price;
-                        } else {
-                            alert('Error calculating price: ' + response.message);
-                        }
-                    } else {
-                        alert('Error calculating price');
-                    }
+                    document.getElementById('arrivalTime').value = '' + estimatedArrivalTimeString;
+                    document.getElementById('output').value = '' + distance.toFixed(2) + ' KM';
+                    document.getElementById('price').value = 'RM' + price;
+                } else {
+                    alert('Error calculating distance: ' + status);
                 }
-            };
+            });
 
-            xhr.send(params);
-
-        } else {
-            alert('Error calculating distance: ' + status);
+            document.getElementById('bookRideNow').disabled = false;
         }
-    });
-
-    document.getElementById('bookRideNow').disabled = false;
-}
-
 
         function bookRideNow() {
             var origin = document.getElementById('originautocomplete').value;
