@@ -50,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($stmt) {
         mysqli_stmt_bind_param($stmt, "ssssssssd", $transportManagerId, $userId, $adminId, $transportId, $arrivalLocation, $departureLocation, $arrivalTime, $departureTime, $price);
-        echo $stmt->sqlstate; 
+        echo $stmt->error; 
         if (mysqli_stmt_execute($stmt)) {
             mysqli_stmt_close($stmt);
             echo json_encode(['success' => true]);
