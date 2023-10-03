@@ -165,8 +165,8 @@ include('navi_bar.php');
       <div class="support-text">
         <h3 class="support-container-text">Facing a Problem? Need Help?</h3>
         <p class="support-container-text-p" style="font-size: 24px;;">Contact Our Support By Clicking the Buttons Below!</p>
-        <a href="#" class="btn btn-lg btn-light fw-bold bg-white">Go To Support</a>
-        <a href="#" class="btn btn-lg btn-light fw-bold bg-white">View Tickets</a>
+        <a href="../request_form.php" class="btn btn-lg btn-light fw-bold bg-white"target="_blank">Go To Support</a>
+        <a href="../Users/user_view_ticket.php" class="btn btn-lg btn-light fw-bold bg-white" target="_blank">View Tickets</a>
       </div>
      
     </div>
