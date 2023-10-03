@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 include('conn.php'); 
 
@@ -26,12 +25,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit();
     }
 
+    // Randomly select a transport manager from the transport_management table
+    $randomManagerQuery = "SELECT transport_manager_id FROM transport_management ORDER BY RAND() LIMIT 1";
+    $randomManagerResult = mysqli_query($con, $randomManagerQuery);
+
+    if (!$randomManagerResult) {
+        echo json_encode(['success' => false, 'error' => 'Error selecting transport manager']);
+        exit();
+    }
+
+    $managerRow = mysqli_fetch_assoc($randomManagerResult);
+    $transportManagerId = $managerRow['transport_manager_id'];
+
     // Insert the booking into the transportation_booking table
-    $query = "INSERT INTO transportation_booking (user_id, transport_id, arrival_location, departure_location, arrival_time, departure_time, transport_total_price) VALUES (?, ?, ?, ?, ?, ?, ?)";
+    $query = "INSERT INTO transportation_booking (user_id, transport_id, arrival_location, departure_location, arrival_time, departure_time, transport_total_price, transport_manager_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
     $stmt = mysqli_prepare($con, $query);
 
     if ($stmt) {
-        mysqli_stmt_bind_param($stmt, "ssssssd", $userId, $transportId, $arrivalLocation, $departureLocation, $arrivalTime, $departureTime, $price);
+        mysqli_stmt_bind_param($stmt, "ssssssdd", $userId, $transportId, $arrivalLocation, $departureLocation, $arrivalTime, $departureTime, $price, $transportManagerId);
 
         if (mysqli_stmt_execute($stmt)) {
             mysqli_stmt_close($stmt);
