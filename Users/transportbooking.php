@@ -38,11 +38,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $transportManagerId = $managerRow['transport_manager_id'];
 
     // Insert the booking into the transportation_booking table
-    $query = "INSERT INTO transportation_booking (user_id, transport_id, arrival_location, departure_location, arrival_time, departure_time, transport_total_price, transport_manager_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+    $query = "INSERT INTO transportation_booking (user_id, transport_manager_id, transport_id, arrival_location, departure_location, arrival_time, departure_time, transport_total_price) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
     $stmt = mysqli_prepare($con, $query);
 
     if ($stmt) {
-        mysqli_stmt_bind_param($stmt, "ssssssdd", $userId, $transportId, $arrivalLocation, $departureLocation, $arrivalTime, $departureTime, $price, $transportManagerId);
+        mysqli_stmt_bind_param($stmt, "ssssssdd", $userId, $transportManagerId, $transportId, $arrivalLocation, $departureLocation, $arrivalTime, $departureTime, $price);
 
         if (mysqli_stmt_execute($stmt)) {
             mysqli_stmt_close($stmt);
