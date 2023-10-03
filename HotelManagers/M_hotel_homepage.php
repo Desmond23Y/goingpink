@@ -39,7 +39,7 @@
                     <div class="function-text">
                         <h2 class="hotel-database">Hotel Database</h2>
                         <p class="hotel-database">View all the existing hotel in the database.<br> You can edit and update hotel details here too.  </p>
-                        <button class="button">View Hotel Database</button>       
+                        <a href="M_view_hotel_info.php" target="_blank"><button class="button">View Hotel Database</button> </a>      
                     </div>
                 </div>
             </section>
@@ -48,7 +48,7 @@
                     <img src="/picture/generate-report.png" style="float: right;" class="generate-report">
                     <h2>Manage Hotel Bookings</h2>
                     <p class="manage-booking">View, manage, confirm all of the hotel related bookings here.</p>
-                    <button class="button" id="manage-hotel-booking">Manage Bookings</button>
+                      <a href="M_view_hotel_booking.php" target="_blank"><button class="button" id="manage-hotel-booking">Manage Bookings</button></a>
                 </div>
             </section>
             
