@@ -87,7 +87,7 @@
                     </select><br>
 
                     <label for="solution">Solution for this Problem:</label>
-                    <textarea id="text" name="solution" rows="5" cols="50" required="required"><?php echo $row['ticket_solution']?></textarea><br>
+                    <textarea id="text" name="solution" rows="5" cols="50"><?php echo $row['ticket_solution']?></textarea><br>
 
                     <button type="submit" value="Submit">Update Ticket</button>
                 </form><br>
