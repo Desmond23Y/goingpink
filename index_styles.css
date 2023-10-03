@@ -204,5 +204,48 @@ body {
   font-family: "Futura Thin";
 }
 
+/* Support*/
 
+  .support-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #f17492;
+  }
+
+.support-container-text{
+    font-family: Butler;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    color: #FEF1F4;
+  }
+  .support-content {
+    flex-grow: 1;
+    padding-right: 20px; /* Adjust as needed to create space between text and image */
+  }
+  
+  .support-text {
+    margin-bottom: 20px;
+  }
+
+  
+  .support-container-text-p{
+    color: #FEF1F4;
+    font-family: Futura;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+
+    width: 594px;
+  }
+  
+  .support-list {
+    list-style-type: disc;
+    padding-left: 20px;
+    color: #FEF1F4;
+  }
 
