@@ -38,10 +38,10 @@
         
                 <p>What do you want to do today?</p>
             </header>
-            <section class="section transport-database">
-                <div class="function" >
-                    <img src="/picture/transport-database.png" alt="transport" class="transport">
-                    <div class="function-text" id="transport-database">
+              <section class="section transport-database">
+                <div class="function" id="transport-database">
+                    <img src="/picture/transport-database.png" alt="transport" class="transport-database">
+                    <div class="function-text">
                         <h2 class="transport-database">Transport Database</h2>
                         <p class="transport-database">View all the existing transport in the database.<br> You can edit and update transport details here too.  </p>
                             <button class="button">View Transport Database</button>       
