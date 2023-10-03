@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Transport Management Homepage</title>
-    <link rel="stylesheet" href="M_navibar.css">
+    <link rel="stylesheet" href="M_transport_homepage.css">
     <nav>
         <ul class="navibar">
             <li><a href="M_transport_homepage.php">HOME</a></li>
