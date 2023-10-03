@@ -17,6 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $departureLocation = isset($_POST['departure_location']) ? trim($_POST['departure_location']) : '';
     $arrivalTime = isset($_POST['arrival_time']) ? trim($_POST['arrival_time']) : '';
     $departureTime = isset($_POST['departure_time']) ? trim($_POST['departure_time']) : '';
+    $price = isset($_POST['price']) ? trim($_POST['price']) : '';
 
     // Check if any required fields are empty
     if (empty($userId) || empty($transportId) || empty($arrivalLocation) || empty($departureLocation) || empty($arrivalTime) || empty($departureTime)) {
@@ -25,11 +26,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     // Insert the booking into the transportation_booking table
-    $query = "INSERT INTO transportation_booking (user_id, transport_id, arrival_location, departure_location, arrival_time, departure_time) VALUES (?, ?, ?, ?, ?, ?)";
+    $query = "INSERT INTO transportation_booking (user_id, transport_id, arrival_location, departure_location, arrival_time, departure_time, transport_total_price) VALUES (?, ?, ?, ?, ?, ?, ?)";
     $stmt = mysqli_prepare($con, $query);
 
     if ($stmt) {
-        mysqli_stmt_bind_param($stmt, "ssssss", $userId, $transportId, $arrivalLocation, $departureLocation, $arrivalTime, $departureTime);
+        mysqli_stmt_bind_param($stmt, "ssssss", $userId, $transportId, $arrivalLocation, $departureLocation, $arrivalTime, $departureTime, $price);
 
         if (mysqli_stmt_execute($stmt)) {
             mysqli_stmt_close($stmt);

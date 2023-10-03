@@ -82,9 +82,10 @@ $_SESSION['transportpricing'] = $transportTypes;
     </div>
     <input type="text" id="output" readonly />
     <div>
-        <strong>Total Price (RM)</strong>
+        <strong>Total Price</strong>
     </div>
     <input type="text" id="price" readonly />
+    <input type="hidden" id="hiddenPrice" name="price" value="" />
 
     <!-- Add a map container -->
     <div id="map" style="height: 400px;"></div>
@@ -204,6 +205,9 @@ $_SESSION['transportpricing'] = $transportTypes;
 
                     var price = (distance * pricePerKm).toFixed(2); // Calculate price
 
+                    // Set the price value in the hidden input field
+                    document.getElementById('hiddenPrice').value = price;
+                    
                     // Calculate estimated arrival time (current time + fixed travel time)
                     var currentTime = new Date();
                     var travelTimeMinutes = Math.round(distance / 40 * 60); // Assuming an average speed of 40 km/h
