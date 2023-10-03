@@ -22,7 +22,9 @@ $result=mysqli_query($con,"SELECT* FROM user");
         <td>Modify</td>
         <td>Delete</td>
     </tr>
-    <a href="register.php">Add New User Account</a><br>
+    <tr>
+        <td><a href="register.php">Add New User Account</a></td>
+</tr>
 <?php
     while($row=mysqli_fetch_array($result))
     {
