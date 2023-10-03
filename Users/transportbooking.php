@@ -26,33 +26,37 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit();
     }
 
-     // Randomly select a hotel manager and an admin
-     $random_manager_query = "SELECT transport_manager_id FROM transport_management ORDER BY RAND() LIMIT 1";
-     $manager_result = mysqli_query($con, $random_manager_query);
+    // Randomly select a hotel manager and an admin
+    $random_manager_query = "SELECT transport_manager_id FROM transport_management ORDER BY RAND() LIMIT 1";
+    $manager_result = mysqli_query($con, $random_manager_query);
 
-     // Check if the queries returned any rows
-     if ($manager_result && mysqli_num_rows($manager_result) > 0 ) {
+    // Check if the queries returned any rows
+    if ($manager_result && mysqli_num_rows($manager_result) > 0) {
         $manager_row = mysqli_fetch_assoc($manager_result);
         $transport_manager_id = $manager_row['transport_manager_id'];
 
-    // Insert the booking into the transportation_booking table
-    $query = "INSERT INTO transportation_booking (transport_manager_id, user_id, transport_id, arrival_location, departure_location, arrival_time, departure_time, transport_total_price) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
-    $stmt = mysqli_prepare($con, $query);
+        // Insert the booking into the transportation_booking table
+        $query = "INSERT INTO transportation_booking (transport_manager_id, user_id, transport_id, arrival_location, departure_location, arrival_time, departure_time, transport_total_price) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        $stmt = mysqli_prepare($con, $query);
 
-    if ($stmt) {
-        mysqli_stmt_bind_param($stmt, "sssssssd", $transport_manager_id, $userId, $transportId, $arrivalLocation, $departureLocation, $arrivalTime, $departureTime, $price);
+        if ($stmt) {
+            mysqli_stmt_bind_param($stmt, "sssssssd", $transport_manager_id, $userId, $transportId, $arrivalLocation, $departureLocation, $arrivalTime, $departureTime, $price);
 
-        if (mysqli_stmt_execute($stmt)) {
-            mysqli_stmt_close($stmt);
-            echo json_encode(['success' => true]);
-            exit();
+            if (mysqli_stmt_execute($stmt)) {
+                mysqli_stmt_close($stmt);
+                echo json_encode(['success' => true]);
+                exit();
+            } else {
+                mysqli_stmt_close($stmt);
+                echo json_encode(['success' => false, 'error' => 'Database error: ' . mysqli_error($con)]);
+                exit();
+            }
         } else {
-            mysqli_stmt_close($stmt);
-            echo json_encode(['success' => false, 'error' => 'Database error: ' . mysqli_error($con)]);
+            echo json_encode(['success' => false, 'error' => 'Backend error: ' . mysqli_error($con)]);
             exit();
         }
     } else {
-        echo json_encode(['success' => false, 'error' => 'Backend error: ' . mysqli_error($con)]);
+        echo json_encode(['success' => false, 'error' => 'Error selecting transport manager']);
         exit();
     }
 } else {
