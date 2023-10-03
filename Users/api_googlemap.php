@@ -17,6 +17,7 @@ $transportTypes = [];
 // Extract transport types and their prices
 while ($row = mysqli_fetch_assoc($result)) {
     $transportTypes[$row['transport_type']] = $row['transport_price_perKM'];
+$_SESSION['transportpricing'] = $transportTypes;
 }
 ?>
 
