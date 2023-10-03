@@ -1,15 +1,19 @@
-<?php 
+<?php
 session_start();
+include("conn.php");
 
 if (!isset($_SESSION['user_id'])) {
     header('Location: login.php');
     exit();
 }
 
-include("conn.php");
-
-$result=mysqli_query($con,"SELECT* FROM user");
+$result = mysqli_query($con, "SELECT * FROM user");
 ?>
+<html>
+    <head>
+</head>
+<body>
+    
 <table width="90%">
     <tr bgcolor="#FFB6C1">
         <td>User ID</td>
@@ -45,3 +49,5 @@ $result=mysqli_query($con,"SELECT* FROM user");
     mysqli_close($con);
 ?>
 </table>
+</body>
+</html>
