@@ -33,5 +33,53 @@ session_start()
             <li><a href="login.php" class="right">LOGIN</a></li>
         </ul>
     </nav>
+      <div class="backgroun-image">
+            <header>
+                <h1>Support Dashboard</h1>
+        
+                <p>What do you want to do today?</p>
+            </header>
+            <section class="section manage-ticket">
+                <div class="function" id="manage-ticket">
+                    <img src="/picture/manage-account.png" class="manage-ticket">
+                    <div class="function-text">
+                        <h2 class="manage-account">Manage Tickets</h2>
+                        <p class="manage-account">Manage all of the tickets in one place.</p>
+                        <div class="button-container">
+                            <button class="button">Manage </button>     
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section manage-report">
+                <div class="function" id="manage-report">
+                    <img src="/picture/generate-report.png" style="float: right;" class="manage">
+                    <div class="function-text">
+                        <h2>View Sent Report</h2>
+                        <p class="generate-report">View all of your sent reports here in one place.</p>
+                        <button class="button" id="generate-report-button">Click Me</button>
+                    </div>
+                </div>
+            </section>
+            <section class="section contact-admin">
+                <div class="function" id="contact-admin">
+                  
+                    <img src="/picture/contact-admin.jpeg" alt="call people" class="contact-admin">
+                        <div class="function-text">
+                            <h2>Contact Admin</h2>
+                        
+                            <p class="manage-booking">Are there any enquiries you want to make to the admin? Here are the details!</p>                  
+                    <h6>Company Number: +6012345678</h6>
+                    <h6>Email Address</h6>
+                    </div>
+
+                    </h6>
+                   
+                </div>
+            </section>
+            
+        
+        </div>
+
 </body>
 </html>
