@@ -7,7 +7,7 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 
-include('../navi_bar.php');
+//include('../navi_bar.php');   #include this only when ur user is accessing it as a GUI(ok)
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Retrieve POST data including the price
@@ -49,8 +49,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt = mysqli_prepare($con, $query);
 
     if ($stmt) {
-        mysqli_stmt_bind_param($stmt, "ssssssddd", $transportManagerId, $userId, $adminId, $transportId, $arrivalLocation, $departureLocation, $arrivalTime, $departureTime, $price);
-
+        mysqli_stmt_bind_param($stmt, "ssssssssd", $transportManagerId, $userId, $adminId, $transportId, $arrivalLocation, $departureLocation, $arrivalTime, $departureTime, $price);
+        echo $stmt;
         if (mysqli_stmt_execute($stmt)) {
             mysqli_stmt_close($stmt);
             echo json_encode(['success' => true]);
