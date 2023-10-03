@@ -39,7 +39,7 @@ body {
             <ul class="navibar">
                 <li><a href="../index.php">HOME</a></li>
                 <li><a href="../Users/viewhotel.php">HOTEL</a></li>
-                <li><a href="viewtransport.php">TRANSPORT</a></li>
+                <li><a href="../Users/viewtransport.php">TRANSPORT</a></li>
                 <li><a href="../Users/api_exRates.php">EXCHANGE RATES</a></li>
                 <li><a href="../Users/request_form.php">SUPPORT</a></li>
                 <li><a href="../Users/view_rating.php">VIEW RATING</a></li>
