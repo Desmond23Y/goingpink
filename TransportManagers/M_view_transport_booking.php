@@ -17,8 +17,8 @@ if (!$result) {
      <nav>
         <ul class="navibar">
             <li><a href="M_transport_homepage.php">HOME</a></li>
-            <li><a href="M_view_transport_info.php">HOTELS INFO</a></li>
-            <li><a href="M_view_transport_booking.php">HOTEL BOOKING</a></li>
+            <li><a href="M_view_transport_info.php">TRANSPORT INFOROMATION</a></li>
+            <li><a href="M_view_transport_booking.php">TRANSPORT BOOKING</a></li>
             <li><a href="../logout.php" class="right">LOGOUT</a></li>
         </ul>
     </nav>
