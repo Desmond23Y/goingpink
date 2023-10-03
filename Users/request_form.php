@@ -1,6 +1,7 @@
 <?php
 session_start();
 include('conn.php');
+include('../navi_bar.php');
 
 // Check if the user is logged in
 if (!isset($_SESSION['user_id'])) {
