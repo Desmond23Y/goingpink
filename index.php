@@ -114,7 +114,7 @@ include('navi_bar.php');
                    <p class="card-text">Explore our exquisite selection of hotels and start your journey to exceptional hospitality today.</p>
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
-                      <button type="button" class="btn btn-sm custom-button">Click Me!</button>
+                       <a href="../Users/rating.php"target="_blank"><button type="button" class="btn btn-sm custom-button">Click Me!</button></a>
                       
                     </div>
                     
@@ -130,7 +130,7 @@ include('navi_bar.php');
                    <p class="card-text">Click here to check how much it costs based on your currency no matter where you're from!</p>
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group" >
-                      <button type="button" class="btn btn-sm custom-button">Click Me!</button>                      
+                      <a href="../Users/rating.php"target="_blank"><button type="button" class="btn btn-sm custom-button">Click Me!</button></a>                      
                     </div>                 
                   </div>
                 </div>
@@ -144,7 +144,7 @@ include('navi_bar.php');
                      <p class="card-text">Discover our wide range of transportation options and take the first step towards seamless travel.</p>
                     <div class="d-flex justify-content-between align-items-center">
                       <div class="btn-group">
-                        <button type="button" class="btn btn-sm custom-button">Click Me!</button>                      
+                         <a href="../Users/rating.php"target="_blank"><button type="button" class="btn btn-sm custom-button">Click Me!</button>  </a>                    
                       </div>                 
                     </div>
                   </div>
@@ -171,8 +171,8 @@ include('navi_bar.php');
         <h1 style="font-weight:900 ;color:#E9204F; font-family: Butler;">Write a review, make someone's trip!</h1>
         <p class="lead" style="color: #E9204F; font-family: Futura;">Stories like yours are what helps travellers have better trips. <br>Share your experience and help out a fellow traveller!</p>
         <p class="lead">
-            <a href="#" class="btn btn-lg btn-light fw-bold bg-white" target="_blank">Write Review</a>
-            <a href="#" class="btn btn-lg btn-light fw-bold bg-white" target="_blank">See Reviews</a>
+            <a href="../Users/rating.php" class="btn btn-lg btn-light fw-bold bg-white" target="_blank">Write Review</a>
+            <a href="../Users/view_rating.php" class="btn btn-lg btn-light fw-bold bg-white" target="_blank">See Reviews</a>
         </p>
         </main>
     
@@ -187,8 +187,7 @@ include('navi_bar.php');
         <footer class="py-3 my-4">
           <ul class="nav justify-content-center border-bottom pb-3 mb-3">
             <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Home</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Features</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Pricing</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Features</a></li>    
             <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">FAQs</a></li>
             <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">About</a></li>
           </ul>
