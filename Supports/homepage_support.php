@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -30,7 +30,6 @@ session_start();
             <li><a href="view_own_support_report.php?user_id=<?php echo $_SESSION['user_id']; ?>">VIEW OWN REPORT</a></li>
             <li><a href="view_ticket.php">VIEW TICKET</a></li>
             <li><a href="logout.php" class="right">LOGOUT</a></li>
-            <li><a href="login.php" class="right">LOGIN</a></li>
         </ul>
     </nav>
       <div class="backgroun-image">
