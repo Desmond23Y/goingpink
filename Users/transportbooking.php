@@ -29,20 +29,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $randomManagerQuery = "SELECT transport_manager_id FROM transport_management ORDER BY RAND() LIMIT 1";
     $randomManagerResult = mysqli_query($con, $randomManagerQuery);
 
-    if (!$randomManagerResult) {
-        echo json_encode(['success' => false, 'error' => 'Error selecting transport manager']);
+    // Randomly select an admin from the admin table
+    $randomAdminQuery = "SELECT admin_id FROM admin ORDER BY RAND() LIMIT 1";
+    $randomAdminResult = mysqli_query($con, $randomAdminQuery);
+
+    if (!$randomManagerResult || !$randomAdminResult) {
+        echo json_encode(['success' => false, 'error' => 'Error selecting transport manager or admin']);
         exit();
     }
 
     $managerRow = mysqli_fetch_assoc($randomManagerResult);
     $transportManagerId = $managerRow['transport_manager_id'];
 
+    $adminRow = mysqli_fetch_assoc($randomAdminResult);
+    $adminId = $adminRow['admin_id'];
+
     // Insert the booking into the transportation_booking table
-    $query = "INSERT INTO transportation_booking (transport_manager_id, user_id, transport_id, arrival_location, departure_location, arrival_time, departure_time, transport_total_price) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+    $query = "INSERT INTO transportation_booking (transport_manager_id, admin_id, user_id, transport_id, arrival_location, departure_location, arrival_time, departure_time, transport_total_price) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
     $stmt = mysqli_prepare($con, $query);
 
     if ($stmt) {
-        mysqli_stmt_bind_param($stmt, "ssssssdd", $transportManagerId, $userId, $transportId, $arrivalLocation, $departureLocation, $arrivalTime, $departureTime, $price);
+        mysqli_stmt_bind_param($stmt, "ssssssddd", $transportManagerId, $adminId, $userId, $transportId, $arrivalLocation, $departureLocation, $arrivalTime, $departureTime, $price);
 
         if (mysqli_stmt_execute($stmt)) {
             mysqli_stmt_close($stmt);
