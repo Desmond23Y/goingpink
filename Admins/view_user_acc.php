@@ -1,11 +1,12 @@
 <?php 
 session_start();
-include("conn.php");
 
 if (!isset($_SESSION['user_id'])) {
     header('Location: login.php');
     exit();
 }
+
+include("conn.php");
 
 $result=mysqli_query($con,"SELECT* FROM user");
 ?>
