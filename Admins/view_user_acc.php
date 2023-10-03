@@ -9,27 +9,27 @@ if (!isset($_SESSION['user_id'])) {
 
 $result = mysqli_query($con, "SELECT * FROM user");
 ?>
+<!DOCTYPE html>
 <html>
 <head>
+    <title>View Admin Accounts</title>
 </head>
 <body>
-    
-<table width="90%">
-    <tr bgcolor="#FFB6C1">
-        <td>User ID</td>
-        <td>Username</td>
-        <td>First Name</td>
-        <td>Last Name</td>
-        <td>Email</td>
-        <td>Phone Number</td>
-        <td>DOB</td>
-        <td>Gender</td>
-        <td>Modify</td>
-        <td>Delete</td>
-    </tr>
-    <tr>
-        <td><a href="register.php">Add New User Account</a></td>
-    </tr>
+    <a href="register.php">Add New User Account</a></td>
+
+    <table width="90%">
+        <tr bgcolor="#FFB6C1">
+            <td>User ID</td>
+            <td>Username</td>
+            <td>First Name</td>
+            <td>Last Name</td>
+            <td>Email</td>
+            <td>Phone Number</td>
+            <td>DOB</td>
+            <td>Gender</td>
+            <td>Modify</td>
+            <td>Delete</td>
+        </tr>
 <?php
 while ($row = mysqli_fetch_array($result)) {
     echo '<tr>';
