@@ -10,7 +10,6 @@ if (!isset($_SESSION['user_id'])) {
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $user_id = $_SESSION['user_id'];
-    include("conn.php");
 
     $result = mysqli_query($con, "SELECT support_id FROM support");
     $row = mysqli_fetch_assoc($result);
