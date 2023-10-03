@@ -60,7 +60,7 @@ $_SESSION['transportpricing'] = $transportTypes;
             <?php
             // Populate the dropdown menu with transport types and prices
             foreach ($transportTypes as $type => $price) {
-                echo '<option value="' . $type . '">' . $type . ' (RM ' . $price . ' per KM)</option>';
+                echo '<option value="' . $type . '">' . $type . ' ($ ' . $price . ' per KM)</option>';
             }
             ?>
         </select>
@@ -215,7 +215,7 @@ $_SESSION['transportpricing'] = $transportTypes;
 
                     document.getElementById('arrivalTime').value = '' + estimatedArrivalTimeString;
                     document.getElementById('output').value = '' + distance.toFixed(2) + ' KM';
-                    document.getElementById('price').value = 'RM' + price;
+                    document.getElementById('price').value = '$' + price;
                 } else {
                     alert('Error calculating distance: ' + status);
                 }
