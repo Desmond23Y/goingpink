@@ -7,7 +7,7 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 
-include('../navi_bar.php')
+include('../navi_bar.php');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Retrieve POST data and perform basic validation
