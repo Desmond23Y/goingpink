@@ -181,6 +181,44 @@ $_SESSION['transportpricing'] = $transportTypes;
             });
         }
 
+        function calculatePrice() {
+        var origin = document.getElementById('originautocomplete').value;
+        var destination = document.getElementById('destinationautocomplete').value;
+        var transportType = document.getElementById('transportType').value;
+
+        // Make an AJAX request to calculate the price
+        var xhr = new XMLHttpRequest();
+        var url = 'calculate_price.php';
+        var params = 'origin=' + encodeURIComponent(origin) +
+                     '&destination=' + encodeURIComponent(destination) +
+                     '&transportType=' + encodeURIComponent(transportType);
+
+        xhr.open('POST', url, true);
+        xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4) {
+                if (xhr.status === 200) {
+                    var response = JSON.parse(xhr.responseText);
+                    if (response.success) {
+                        // Update the price field
+                        document.getElementById('hiddenPrice').value = response.price;
+                        document.getElementById('price').value = '$' + response.price.toFixed(2);
+                    } else {
+                        alert('Error calculating price: ' + response.message);
+                    }
+                } else {
+                    alert('Error calculating price');
+                }
+            }
+        };
+
+        xhr.send(params);
+    }
+
+    // Add an event listener to the "Calculate Price and Time" button
+    document.getElementById('calculatePriceButton').addEventListener('click', calculatePrice);
+
 
         function BookRide() {
             var origin = document.getElementById('originautocomplete').value;
@@ -207,7 +245,7 @@ $_SESSION['transportpricing'] = $transportTypes;
 
                     // Set the price value in the hidden input field
                     document.getElementById('hiddenPrice').value = price;
-                    
+
                     // Calculate estimated arrival time (current time + fixed travel time)
                     var currentTime = new Date();
                     var travelTimeMinutes = Math.round(distance / 40 * 60); // Assuming an average speed of 40 km/h
