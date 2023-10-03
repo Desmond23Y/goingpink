@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 include('conn.php'); 
 
@@ -10,22 +11,22 @@ if (!isset($_SESSION['user_id'])) {
 include('../navi_bar.php');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Retrieve POST data, validate, and cast the price to a float
+    // Retrieve POST data including the price
     $userId = isset($_POST['user_id']) ? trim($_POST['user_id']) : null;
     $transportId = isset($_POST['transport_id']) ? trim($_POST['transport_id']) : null;
     $arrivalLocation = isset($_POST['arrival_location']) ? trim($_POST['arrival_location']) : '';
     $departureLocation = isset($_POST['departure_location']) ? trim($_POST['departure_location']) : '';
     $arrivalTime = isset($_POST['arrival_time']) ? trim($_POST['arrival_time']) : '';
     $departureTime = isset($_POST['departure_time']) ? trim($_POST['departure_time']) : '';
-    $price = isset($_POST['price']) ? floatval($_POST['price']) : 0.0;
+    $price = isset($_POST['price']) ? floatval($_POST['price']) : 0.0; // Cast the price to a float
 
-    // Validate inputs
-    if (empty($userId) || empty($transportId) || empty($arrivalLocation) || empty($departureLocation) || empty($arrivalTime) || empty($departureTime) || $price <= 0.0) {
+    // Check if any required fields are empty
+    if (empty($userId) || empty($transportId) || empty($arrivalLocation) || empty($departureLocation) || empty($arrivalTime) || empty($departureTime)) {
         echo json_encode(['success' => false, 'error' => 'Missing or invalid data']);
         exit();
     }
 
-    // Insert the booking into the transportation_booking table using prepared statements
+    // Insert the booking into the transportation_booking table
     $query = "INSERT INTO transportation_booking (user_id, transport_id, arrival_location, departure_location, arrival_time, departure_time, transport_total_price) VALUES (?, ?, ?, ?, ?, ?, ?)";
     $stmt = mysqli_prepare($con, $query);
 
