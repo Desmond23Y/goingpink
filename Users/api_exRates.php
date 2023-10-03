@@ -1,5 +1,5 @@
 <?php
-include('navi_bar.php');
+include('../navi_bar.php');
 ?>
 
 <!DOCTYPE html>
