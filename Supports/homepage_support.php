@@ -41,8 +41,9 @@ session_start();
             </header>
             <section class="section manage-ticket">
                 <div class="function" id="manage-ticket">
-                    <img src="/picture/manage-account.png" class="manage-ticket">
+                  
                     <div class="function-text">
+                        <img src="/picture/manage-account.png" class="manage-ticket">
                         <h2 class="manage-account">Manage Tickets</h2>
                         <p class="manage-account">Manage all of the tickets in one place.</p>
                         <div class="button-container">
