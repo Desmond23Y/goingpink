@@ -16,6 +16,8 @@ form {
     position: fixed;
     font-size: medium;
     align-items: center;
+    display: flex;
+    justify-content: center;
     }
 
 body {
