@@ -11,10 +11,11 @@ form {
     padding: 20px;
     border: 2px solid silver;
     border-radius: 5px;
-    text-align: center;
+    text-align: left;
     flex-direction: column;
     position: fixed;
     font-size: medium;
+    align-items: center;
     }
 
 body {
