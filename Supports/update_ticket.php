@@ -1,7 +1,32 @@
 <!DOCTYPE html>
 <head>
-    <title>Update Customer Support Request</title>
+     <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="homepage_support.css">
+        <!-- Include Bootstrap-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <title>Update Customer Support Request</title>
+        <!--Import Butler & Futura Font-->
+        <style>
+        @import url('https://fonts.cdnfonts.com/css/butler');
+        @import url('https://fonts.cdnfonts.com/css/futura-pt');
+        </style>
+    <title>Report to Admin</title>
 </head>
+
+<body>
+    
+     <nav>
+        <ul class="navibar">
+            <li><a href="homepage_support.php">HOME</a></li>
+            <li><a href="support_report.php">REPORT</a></li>
+            <li><a href="view_own_support_report.php">VIEW OWN REPORT</a></li>
+            <li><a href="view_ticket.php">VIEW TICKET</a></li>
+            <li><a href="../logout.php" class="right">LOGOUT</a></li>
+        </ul>
+    </nav>
+
 
 <body>
     <h2>Ticket Update</h2>
