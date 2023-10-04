@@ -7,8 +7,8 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 
-
-
+$user_id = $_SESSION['user_id'];
+$transport_id = $_SESSION['selected_hotel_id'];
 
 if (isset($_GET['transport_id']) && isset($_GET['user_id'])) {
     $transport_id = $_GET['transport_id'];
