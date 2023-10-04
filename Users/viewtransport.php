@@ -35,7 +35,7 @@ if (!$result) {
         <h1>Transportation Information</h1>
     </header>
 
-    <div class="box">
+    <div class="box transport-item">
         <?php
         if (mysqli_num_rows($result) > 0) {
             while ($row = mysqli_fetch_assoc($result)) {
