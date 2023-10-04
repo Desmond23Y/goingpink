@@ -34,7 +34,7 @@ if (!$result) {
 <html>
 <head>
     <title>Going Pink Hotel Viewing</title>
-    <link rel="stylesheet" href="viewrating.css">
+    <link rel="stylesheet" href="view_rating.css">
 </head>
 <body>
     <header>
