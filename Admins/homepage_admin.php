@@ -82,8 +82,8 @@
                         <h2>Manage Booking</h2>
                         <p class="manage-booking">Manage all of the users' transport and hotel booking here.</p>     
                     </div>             
-                    <a href="admin_view_hotel_booking.php" ><button class="button">Hotel </button></a>
-                    <a href="admin_view_transport_booking.php" ><button class="button">Transport</button></a>
+                    <a href="view_hotel_booking.php" ><button class="button">Hotel </button></a>
+                    <a href="view_transport_booking.php" ><button class="button">Transport</button></a>
                 </div>
             </section>
             
