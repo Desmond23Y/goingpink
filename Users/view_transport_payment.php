@@ -10,8 +10,8 @@ if (!isset($_SESSION['user_id'])) {
 
 
 
-if (isset($_GET['transport_id']) && isset($_GET['transport_id'])) {
-    $hotel_id = $_GET['transport_id'];
+if (isset($_GET['transport_id']) && isset($_GET['user_id'])) {
+    $transport_id = $_GET['transport_id'];
 
     $result = mysqli_query($con, "SELECT * FROM transportation_booking WHERE transport_id = '$transport_id' AND user_id = '$user_id'");
 
