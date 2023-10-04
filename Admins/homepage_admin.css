@@ -65,6 +65,7 @@ img{
 .button-container{
     display: flex;
     gap: 5px;
+    float: left;
     margin-left:10%;
    
     
