@@ -43,7 +43,7 @@ session_start();
                 <div class="function" id="manage-ticket">
                   
                     <div class="function-text">
-                        <img src="/picture/manage-account.png" class="manage-ticket">
+                      
                         <h2 class="manage-account">Manage Tickets</h2>
                         <p class="manage-account">Manage all of the tickets in one place.</p>
                         <div class="button-container">
@@ -54,7 +54,7 @@ session_start();
             </section>
             <section class="section manage-report">
                 <div class="function" id="manage-report">
-                    <img src="/picture/generate-report.png" style="float: right;" class="manage">
+                  
                     <div class="function-text">
                         <h2>View Sent Report</h2>
                         <p class="generate-report">View all of your sent reports here in one place.</p>
@@ -65,7 +65,7 @@ session_start();
             <section class="section contact-admin">
                 <div class="function" id="contact-admin">
                   
-                    <img src="/picture/contact-admin.jpeg" alt="call people" class="contact-admin">
+                
                         <div class="function-text">
                             <h2>View Ticket</h2>
                         
