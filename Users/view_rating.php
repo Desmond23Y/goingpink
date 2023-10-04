@@ -50,7 +50,7 @@ if (!$result) {
         <h2>Recent Ratings and Feedback</h2>
         <ul>
             <?php while ($row = mysqli_fetch_assoc($result)) { ?>
-                <li>
+                <li class="box">
                     <strong>Rating:</strong> <?php echo $row['total_stars_rating']; ?><br>
                     <strong>Feedback:</strong> <?php echo $row['feedback_description']; ?><br>
                     <strong>Date:</strong> <?php echo $row['rating_date']; ?>
