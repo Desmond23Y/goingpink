@@ -56,7 +56,7 @@
                      
                         
                         <div class="button-container">
-                              <a href="view_user_acc.php" target="_blank">button class="button">User</button></a>
+                              <a href="view_user_acc.php" target="_blank"><button class="button">User</button></a>
                               <a href="view_hmgt_acc.php" target="_blank"><button class="button">Hotel </button></a>
                               <a href="view_tmgt_acc.php" target="_blank"><button class="button">Transport</button></a>
                               <a href="view_support_acc.php" target="_blank"><button class="button">Support</button></a>
