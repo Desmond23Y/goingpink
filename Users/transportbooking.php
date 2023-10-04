@@ -7,7 +7,8 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 
-//include('../navi_bar.php');   #include this only when your user is accessing it as a GUI (if needed)
+$user_id = $_SESSION['user_id'];
+$transport_id = $_SESSION['transport_id'];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Retrieve POST data including the price
@@ -52,46 +53,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         mysqli_stmt_bind_param($stmt, "ssssssssd", $transportManagerId, $userId, $adminId, $transportId, $arrivalLocation, $departureLocation, $arrivalTime, $departureTime, $price);
         if (mysqli_stmt_execute($stmt)) {
             mysqli_stmt_close($stmt);
-
-            $_SESSION['user_id'] = $userId;
-            $_SESSION['transport_id'] = $transportId;
-            
-            // Define JavaScript variables
-            echo "<script>
-                    var userId = '" . $userId . "';
-                    var transportId = '" . $transportId . "';
-                    var arrivalLocation = '" . $arrivalLocation . "';
-                    var departureLocation = '" . $departureLocation . "';
-                    var arrivalTime = '" . $arrivalTime . "';
-                    var departureTime = '" . $departureTime . "';
-                    var price = '" . $price . "';
-                  </script>";
-
-            // Send an AJAX request to view_transport_payment.php
-            echo "<script>
-                    $.ajax({
-                        type: 'POST',
-                        url: 'view_transport_payment.php',
-                        data: {
-                            success: true,
-                            user_id: userId,
-                            transport_id: transportId,
-                            arrival_location: arrivalLocation,
-                            departure_location: departureLocation,
-                            arrival_time: arrivalTime,
-                            departure_time: departureTime,
-                            price: price
-                        },
-                        success: function (response) {
-                            // Display the response to the user
-                            $('#booking-message').html(response);
-                        },
-                        error: function () {
-                            // Handle the error if the AJAX request fails
-                            $('#booking-message').html('An error occurred during payment.');
-                        }
-                    });
-                </script>";
+            echo json_encode(['success' => true]);
+            exit();
         } else {
             mysqli_stmt_close($stmt);
             echo json_encode(['success' => false, 'error' => 'Database error: ' . mysqli_error($con)]);
