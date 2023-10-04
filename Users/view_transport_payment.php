@@ -7,11 +7,11 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 
-$user_Id = $_SESSION['user_id'];
-$transport_Id = $_SESSION['transport_id'];
+$user_id = $_SESSION['user_Id'];
+$transport_id = $_SESSION['transport_Id'];
 
 if (isset($_GET['transport_id']) && isset($_GET['user_id'])) {
-    $transport_Id = $_GET['transport_id'];
+    $transport_id = $_GET['transport_id'];
 
     $result = mysqli_query($con, "SELECT * FROM transportation_booking WHERE transport_id = '$transport_Id' AND user_id = '$user_Id'");
 
