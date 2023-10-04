@@ -1,6 +1,6 @@
 h1 {
     font-family: 'Butler';
-    font-size: 30px;
+    font-size: 35px;
     color: #f17492;
     text-align: center;
     }
@@ -24,6 +24,10 @@ form {
     font-size: medium;
     }
 
+label {
+    display: block;
+    margin-bottom: 10px; 
+    }
 
 textarea {
     resize: none;
