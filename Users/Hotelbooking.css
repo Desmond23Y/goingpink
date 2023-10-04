@@ -16,15 +16,19 @@ form {
     flex-direction: column;
     position: fixed;
     font-size: medium;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh
     }
 
 button{
     margin-right: 10px;
     padding: 12px;
-    font-size: 10px;
+    font-size: 17px;
     background-color: #db9d95;
     color: #fee7eb;
-    border-radius: 4px;
+    border-radius: 4px silver;
     }
     
 button:hover{
