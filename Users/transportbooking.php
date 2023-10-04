@@ -52,7 +52,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         mysqli_stmt_bind_param($stmt, "ssssssssd", $transportManagerId, $userId, $adminId, $transportId, $arrivalLocation, $departureLocation, $arrivalTime, $departureTime, $price);
         if (mysqli_stmt_execute($stmt)) {
             mysqli_stmt_close($stmt);
-            header('Location: view_transport_payment.php');
             echo json_encode(['success' => true]);
             exit();
         } else {
