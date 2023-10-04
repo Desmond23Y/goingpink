@@ -1,0 +1,37 @@
+h1 {
+    color: #db6a85;
+    text-align: center;
+    font-family: 'Butler';
+    font-size: medium;
+    }
+
+form {
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(255,255,255,0.1);
+    border: 2px solid silver;
+    border-radius: 5px;
+    text-align: center;
+    flex-direction: column;
+    position: fixed;
+    font-size: medium;
+    }
+
+button{
+    margin-right: 10px;
+    padding: 12px;
+    font-size: 16px;
+    background-color: #854050;
+    color: #fee7eb;
+    border-radius: 4px;
+    }
+    
+button:hover{
+    background-color: #65313d;
+    color: #cab29e;
+    }
+
+.background {
+    background-color: #fff8f9;
+    }
