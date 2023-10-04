@@ -21,8 +21,11 @@ form {
     border-radius: 5px;
     text-align: center;
     flex-direction: column;
-    resize: none;
     }
+
+textarea {
+    resize: none;
+}
 
 button{
     margin-right: 10px;
