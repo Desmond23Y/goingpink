@@ -1,6 +1,6 @@
 h1 {
     font-family: 'Butler';
-    font-size: 50px;
+    font-size: 30px;
     color: #f17492;
     text-align: center;
     }
@@ -14,7 +14,7 @@ h2 {
 
 form {
     width: 300px;
-    margin: 0 auto;
+    margin: 8px;
     padding: 20px;
     background-color: rgba(255,255,255,0.1);
     border: 2px solid silver;
