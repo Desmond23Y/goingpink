@@ -63,6 +63,8 @@ include('../navi_bar.php');
 .button:hover {
     background-color: #0056b3;
 }
+    @import url('https://fonts.cdnfonts.com/css/butler');
+    @import url('https://fonts.cdnfonts.com/css/futura-pt');
     
 </style>
 </head>
