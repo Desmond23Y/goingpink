@@ -57,7 +57,7 @@ session_start();
                     <div class="function-text">
                         <h2>View Sent Report</h2>
                         <p class="generate-report">View all of your sent reports here in one place.</p>
-                            <a href="view_own_support_report.php?user_id=<?php echo $_SESSION['user_id'];" target="_blank"><button class="button" id="generate-report-button">Click Me</button></a>
+                            <a href="view_own_support_report.php" target="_blank"><button class="button" id="generate-report-button">Click Me</button></a>
                     </div>
                 </div>
             </section>
