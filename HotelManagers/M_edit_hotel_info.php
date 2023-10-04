@@ -43,12 +43,11 @@ if (isset($_GET['hotel_id'])) {
                 <meta charset="UTF-8">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
                 <title>Edit Hotel Information</title>
-                <link rel="stylesheet" href="M_navibar.css">
+                <link rel="stylesheet" href="M_hotel_homepage.css">
                  <nav>
                     <ul class="navibar">
                         <li><a href="M_hotel_homepage.php">HOME</a></li>
-                        <li><a href="M_view_hotel_info.php">HOTEL INFOROMATION</a></li>
-                        <li><a href="M_view_hotel_booking.php">HOTEL BOOKING</a></li>
+                        <li><a href="M_view_hotel_info.php">BACK</a></li>
             
                         <li><a href="../logout.php" class="right">LOGOUT</a></li>
                     </ul>
