@@ -35,7 +35,7 @@ if (!$result) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>View Ratings</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="view_rating.css">
 </head>
 <body>
     <header>
