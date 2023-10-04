@@ -36,7 +36,7 @@
             <li><a href="view_tmgt_acc.php">VIEW TMGT ACC</a></li>
             <li><a href="admin_view_hotel_booking.php">VIEW HOTEL BOOKING</a></li>
             <li><a href="admin_view_transport_booking.php">VIEW TRANSPORT BOOKING</a></li>
-            <li><a href="logout.php" class="right">LOGOUT</a></li>
+            <li><a href="../logout.php" class="right">LOGOUT</a></li>
         </ul>
     </nav>
        <div class="background-image">
