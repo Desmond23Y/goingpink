@@ -6,7 +6,8 @@ body, ul {
 
 body {
     font-family: Futura, sans-serif;
-    background-color: #f5f5f5;
+    background-color: #fbe5e3;
+    color: #db6a85;
 }
 
 header {
@@ -61,8 +62,8 @@ ul {
 
 
 button[type="submit"] {
-    background-color: #E9204F;
-    color: #fff;
+    background-color: #db9d95;
+    color: #fee7eb;
     font-weight: bold;
     padding: 10px 20px;
     border: none;
