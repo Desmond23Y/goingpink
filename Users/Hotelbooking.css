@@ -6,6 +6,7 @@ h2 {
     }
 
 form {
+    font-family: 'Butler';
     width: 300px;
     margin: 0 auto;
     padding: 20px;
@@ -15,11 +16,22 @@ form {
     flex-direction: column;
     position: fixed;
     font-size: medium;
-    align-items: center;
-    display: flex;
-    justify-content: center;
+    }
+
+button{
+    margin-right: 10px;
+    padding: 12px;
+    font-size: 10px;
+    background-color: #db9d95;
+    color: #fee7eb;
+    border-radius: 4px;
+    }
+    
+button:hover{
+    background-color: #ab5288;
+    color: #f1aca4;
     }
 
 body {
-    background-color: #f6c7c2;
-}
+    background-color: #fef1f4;
+    }
