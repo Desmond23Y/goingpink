@@ -20,16 +20,16 @@
        <!--Javascript-->
        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
-
-    </head>
-
-<body>
     <nav>
         <ul class="navibar">
             <li><a href="homepage_admin.php">HOME</a></li>
             <li><a href="../logout.php" class="right">LOGOUT</a></li>
         </ul>
     </nav>
+    </head>
+
+<body>
+ 
        <div class="background-image">
             <header>
                 <h1>Admin Dashboard</h1>
