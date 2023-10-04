@@ -56,11 +56,11 @@
                      
                         
                         <div class="button-container">
-                              <a href="view_user_acc.php" target="_blank"><button class="button">User</button></a>
-                              <a href="view_hmgt_acc.php" target="_blank"><button class="button">Hotel </button></a>
-                              <a href="view_tmgt_acc.php" target="_blank"><button class="button">Transport</button></a>
-                              <a href="view_support_acc.php" target="_blank"><button class="button">Support</button></a>
-                              <a href="view_admin_acc.php" target="_blank"><button class="button">Admin</button></a>
+                              <a href="view_user_acc.php" ><button class="button">User</button></a>
+                              <a href="view_hmgt_acc.php"><button class="button">Hotel </button></a>
+                              <a href="view_tmgt_acc.php"><button class="button">Transport</button></a>
+                              <a href="view_support_acc.php" ><button class="button">Support</button></a>
+                              <a href="view_admin_acc.php"><button class="button">Admin</button></a>
                         </div>
                     </div>
                 </div>
@@ -82,8 +82,8 @@
                         <h2>Manage Booking</h2>
                         <p class="manage-booking">Manage all of the users' transport and hotel booking here.</p>     
                     </div>             
-                    <a href="admin_view_hotel_booking.php" target="_blank"><button class="button">Hotel </button></a>
-                    <a href="admin_view_transport_booking.php" target="_blank"><button class="button">Transport</button></a>
+                    <a href="admin_view_hotel_booking.php" ><button class="button">Hotel </button></a>
+                    <a href="admin_view_transport_booking.php" ><button class="button">Transport</button></a>
                 </div>
             </section>
             
