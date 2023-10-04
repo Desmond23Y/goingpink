@@ -18,8 +18,7 @@ form {
     font-size: medium;
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh
+    align-items: flex-start;
     }
 
 button{
