@@ -12,10 +12,10 @@ $result = mysqli_query($con, "SELECT * FROM user");
 <!DOCTYPE html>
 <html>
 <head>
-    <title>View Admin Accounts</title>
+    <title>View User Accounts</title>
 </head>
 <body>
-    <a href="register.php">Add New User Account</a></td>
+    <a href="create_user_acc.php">Add New User Account</a></td>
 
     <table width="90%">
         <tr bgcolor="#FFB6C1">
