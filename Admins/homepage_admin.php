@@ -26,16 +26,7 @@
 <body>
     <nav>
         <ul class="navibar">
-            <li><a href="view_support_report.php">VIEW SUPPORT REPORT</a></li>
-            <li><a href="../Supports/view_ticket.php">VIEW TICKET</a></li>
-            <li><a href="view_invoice.php">VIEW INVOICE</a></li>
-            <li><a href="view_admin_acc.php">VIEW ADMIN ACC</a></li>
-            <li><a href="view_user_acc.php">VIEW USER ACC</a></li>
-            <li><a href="view_support_acc.php">VIEW SUPPORT ACC</a></li>
-            <li><a href="view_hmgt_acc.php">VIEW HMGT ACC</a></li>
-            <li><a href="view_tmgt_acc.php">VIEW TMGT ACC</a></li>
-            <li><a href="admin_view_hotel_booking.php">VIEW HOTEL BOOKING</a></li>
-            <li><a href="admin_view_transport_booking.php">VIEW TRANSPORT BOOKING</a></li>
+            <li><a href="view_support_report.php">HOME</a></li>
             <li><a href="../logout.php" class="right">LOGOUT</a></li>
         </ul>
     </nav>
