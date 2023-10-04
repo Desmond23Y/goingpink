@@ -46,3 +46,14 @@ a:hover {
     text-decoration: underline;
 }
 
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+.box {
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+
