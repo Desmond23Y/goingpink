@@ -26,7 +26,7 @@
 <body>
     <nav>
         <ul class="navibar">
-            <li><a href="view_support_report.php">HOME</a></li>
+            <li><a href="homepage_admin.php">HOME</a></li>
             <li><a href="../logout.php" class="right">LOGOUT</a></li>
         </ul>
     </nav>
