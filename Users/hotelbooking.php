@@ -62,6 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['number_of_pax']) && i
 <html>
 <head>
     <title>Hotel Booking</title>
+    <link rel="stylesheet" href="Hotelbooking.css">
 </head>
 <body>
     <h2>Book a Hotel</h2>
