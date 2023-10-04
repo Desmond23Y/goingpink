@@ -6,16 +6,14 @@ h2 {
     }
 
 form {
-    font-family: 'Butler';
     width: 300px;
     margin: 0 auto;
     padding: 20px;
+    background-color: rgba(255,255,255,0.1);
     border: 2px solid silver;
     border-radius: 5px;
     text-align: center;
     flex-direction: column;
-    position: fixed;
-    font-size: medium;
     }
 
 button{
@@ -24,7 +22,7 @@ button{
     font-size: 17px;
     background-color: #db9d95;
     color: #fee7eb;
-    border-radius: 4px silver;
+    border-radius: 4px;
     }
     
 button:hover{
