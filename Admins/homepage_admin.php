@@ -47,7 +47,7 @@
             </header>
             <section class="section manage-account">
                 <div class="function" id="manage-account">
-                    <img src="/picture/manage-account.png" class="manage-account">
+                    
                     <div class="function-text">
                     
                         <h2>Manage Account</h2>
@@ -66,7 +66,7 @@
             </section>
             <section class="section generate-report">
                 <div class="function" id="generate-report">
-                    <img src="/picture/generate-report.png" style="float: right;" class="generate-report">
+                  
                     <div class="function-text">
                         <h2>Generate Report</h2>
                         <p class="generate-report">Generate Sales, Inventory, Profit Reports here in one place.</p>
@@ -76,7 +76,7 @@
             </section>
             <section class="section manage-booking">
                 <div class="function" id="manage-booking">
-                    <img src="/picture/manage-booking.png" class="manage-booking">
+                   
                     <div class="function-text">
                         <h2>Manage Booking</h2>
                         <p class="manage-booking">Manage all of the users' transport and hotel booking here.</p>     
