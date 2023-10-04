@@ -41,9 +41,9 @@ body {
                 <li><a href="../Users/view_profile.php">PROFILE</a></li>
                 <li><a href="../Users/faq.php">FAQ</a></li>
                 
-                <li><a href="../login.php" class="right">LOGIN</a></li>
-                <li><a href="../register.php" class="right">REGISTER</a></li>
                 <li><a href="../logout.php" class="right">LOGOUT</a></li>
+                <li><a href="../register.php" class="right">REGISTER</a></li>            
+                <li><a href="../login.php" class="right">LOGIN</a></li>
             </ul>
         </nav>
 </body>
