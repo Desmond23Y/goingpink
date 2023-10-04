@@ -12,6 +12,7 @@ body {
     padding: 0;
     overflow: hidden;
     background-color: #F9B9C3;
+    font-family: Butler, serif;
 }
 
 .navibar a {
