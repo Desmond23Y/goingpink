@@ -17,7 +17,7 @@ include('../navi_bar.php');
 <html>
 <head>
     <title>View Tickets</title>
-    <link rel="stylesheet" href="view_tickets.css">
+    <link rel="stylesheet" href="Uservewticket.css">
 </head>
 <body>
     <header>
