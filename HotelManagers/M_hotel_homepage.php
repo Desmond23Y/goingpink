@@ -19,7 +19,7 @@ session_start();
     <nav>
         <ul class="navibar">
             <li><a href="M_hotel_homepage.php">HOME</a></li>
-            <li><a href="M_view_hotel_info.php">HOTEL INFOROMATION</a></li>
+            <li><a href="M_view_hotel_info.php">HOTEL INFORMATION</a></li>
             <li><a href="M_view_hotel_booking.php">HOTEL BOOKING</a></li>
             <li><a href="../logout.php" class="right">LOGOUT</a></li>
         </ul>
@@ -39,7 +39,7 @@ session_start();
                     <div class="function-text">
                         <h2 class="hotel-database">Hotel Database</h2>
                         <p class="hotel-database">View all the existing hotel in the database.<br> You can edit and update hotel details here too.  </p>
-                        <a href="M_view_hotel_info.php" target="_blank"><button class="button">View Hotel Database</button> </a>      
+                        <a href="M_view_hotel_info.php"><button class="button">View Hotel Database</button> </a>      
                     </div>
                 </div>
             </section>
@@ -48,7 +48,7 @@ session_start();
                     <img src="/picture/generate-report.png" style="float: right;" class="generate-report">
                     <h2>Manage Hotel Bookings</h2>
                     <p class="manage-booking">View, manage, confirm all of the hotel related bookings here.</p>
-                      <a href="M_view_hotel_booking.php" target="_blank"><button class="button" id="manage-hotel-booking">Manage Bookings</button></a>
+                      <a href="M_view_hotel_booking.php"><button class="button" id="manage-hotel-booking">Manage Bookings</button></a>
                 </div>
             </section>
             
