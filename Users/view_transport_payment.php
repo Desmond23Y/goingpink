@@ -7,17 +7,17 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 
-$user_id = $_SESSION['user_Id'];
-$transport_id = $_SESSION['transport_Id'];
+$user_id = $_SESSION['user_id'];
+$transport_id = $_SESSION['transport_id'];
 
 if (isset($_GET['transport_id']) && isset($_GET['user_id'])) {
     $transport_id = $_GET['transport_id'];
 
-    $result = mysqli_query($con, "SELECT * FROM transportation_booking WHERE transport_id = '$transport_Id' AND user_id = '$user_Id'");
+    $result = mysqli_query($con, "SELECT * FROM transportation_booking WHERE transport_id = '$transport_id' AND user_id = '$user_id'");
 
     $result2 = mysqli_query($con, "SELECT * FROM user WHERE user_id = '$user_id'");
-
-    $result3 = mysqli_query($con, "SELECT * FROM transport_information WHERE transport_id = '$transport_Id'");
+    
+    $result3 = mysqli_query($con, "SELECT * FROM transport_information WHERE transport_id = '$transport_id'");
     if (!$result || !$result2 || !$result3) {
         die('Query Error: ' . mysqli_error($con));
     }

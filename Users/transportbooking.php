@@ -53,8 +53,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (mysqli_stmt_execute($stmt)) {
             mysqli_stmt_close($stmt);
 
-            $_SESSION['user_id'] = $user_Id;
-            $_SESSION['transport_id'] = $transport_Id;
+            $_SESSION['user_id'] = $userId;
+            $_SESSION['transport_id'] = $transportId;
 
             echo json_encode(['success' => true]);
             exit();
