@@ -7,7 +7,8 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 
-//include('../navi_bar.php');   #include this only when ur user is accessing it as a GUI(ok)
+$user_id = $_SESSION['user_id'];
+$transport_id = $_SESSION['transport_id'];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Retrieve POST data including the price
@@ -52,10 +53,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         mysqli_stmt_bind_param($stmt, "ssssssssd", $transportManagerId, $userId, $adminId, $transportId, $arrivalLocation, $departureLocation, $arrivalTime, $departureTime, $price);
         if (mysqli_stmt_execute($stmt)) {
             mysqli_stmt_close($stmt);
-
-            $_SESSION['user_id'] = $userId;
-            $_SESSION['transport_id'] = $transportId;
-
             echo json_encode(['success' => true]);
             exit();
         } else {
