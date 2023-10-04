@@ -50,19 +50,12 @@ if (!$result) {
                 echo '<h3> Room Availability: ' . $row["room_availability"] . '</h3>';
                 echo '<h3> Hotel Availability: ' . $row["hotel_availability"] . '</h3>';
                 echo '<h3> Hotel Price: US$ ' . $row["hotel_price"] . '</h3>';
-                
-                // Check the user type to determine what to display
-                if ($_SESSION['user_type'] == 'admin' || $_SESSION['user_type'] == 'hotel_management') {
-                    // Admins and hotel managers can edit hotel information
-                    echo '<a href="../edithotel.php?hotel_id=' . $row["hotel_id"] . '">Edit This Hotel</a>';
-                } elseif ($_SESSION['user_type'] == 'user') {
-                    // Regular users can book hotels
-                    echo '<form method="POST" action="">';
-                    echo '<button type="submit" name="book_hotel" value="' . $row["hotel_id"] . '">Book This Hotel</button>';
-                    echo '</form>';
+                echo '<form method="POST" action="">';
+                echo '<button type="submit" name="book_hotel" value="' . $row["hotel_id"] . '">Book This Hotel</button>';
+                echo '</form>';
                 }
             }
-        } else {
+         else {
             echo "No hotels available.";
         }
         ?>
