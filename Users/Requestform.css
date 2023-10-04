@@ -14,14 +14,17 @@ h2 {
 
 form {
     width: 300px;
-    margin: 8px;
+    margin: 0 auto;
     padding: 20px;
+    padding: 20%;
     background-color: rgba(255,255,255,0.1);
     border: 2px solid silver;
     border-radius: 5px;
     text-align: center;
     flex-direction: column;
+    font-size: medium;
     }
+
 
 textarea {
     resize: none;
