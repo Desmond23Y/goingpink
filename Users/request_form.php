@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <!DOCTYPE html>
 <head>
     <title>Customer Support Request Form</title>
-    <link rel="stylesheet" href="style_request_form.css">
+    <link rel="stylesheet" href="Requestform.css">
 </head>
 
 <body>
