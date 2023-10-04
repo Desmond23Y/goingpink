@@ -72,7 +72,7 @@
                         <h2>Generate Report</h2>
                         <p class="generate-report">Generate Sales, Inventory, Profit Reports here in one place.</p>
                     </div>
-                    <button class="button" id="generate-report-button">Click Me</button>
+                      <a href="generatereport.php"><button class="button" id="generate-report-button">Click Me</button></a>
                 </div>
             </section>
             <section class="section manage-booking">
