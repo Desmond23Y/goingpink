@@ -10,7 +10,12 @@ body {
     color: #db6a85;
 }
 
-
+header {
+   
+    
+    text-align: center;
+    padding: 20px 0;
+}
 
 h1 {
     margin: 0;
