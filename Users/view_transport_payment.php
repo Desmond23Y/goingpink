@@ -50,7 +50,7 @@ if (isset($_GET['transport_id']) && isset($_GET['transport_id'])) {
                 echo '<h3> Departure Time: ' . $row1["departure_time"] . '</h3>';
                 echo '<h3> Arriaval Location: ' . $row1["arrival_location"] . '</h3>';
                 echo '<h3> Departure Location: ' . $row1["departure_location"] . '</h3>';
-                echo '<h3> Hotel Price: ' . $row1["hotel_price"] . '</h3>';
+                echo '<h3> Fare Price: ' . $row1["transport_total_price"] . '</h3>';
             }
         }
         ?>
