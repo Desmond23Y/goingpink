@@ -43,9 +43,7 @@ if (!isset($_SESSION['user_id'])) {
 </head>
 
 <body>
-    <header>
-        <h1>Report Form</h1>
-    </header>
+    
      <nav>
         <ul class="navibar">
             <li><a href="homepage_support.php">HOME</a></li>
@@ -55,6 +53,9 @@ if (!isset($_SESSION['user_id'])) {
             <li><a href="../logout.php" class="right">LOGOUT</a></li>
         </ul>
     </nav>
+    <header>
+        <h1>Report Form</h1>
+    </header>
     
     <form method="post">
     <label for="title">Title:</label>
