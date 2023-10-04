@@ -1,10 +1,12 @@
 <?php
 session_start();
 include('conn.php'); 
-require_once('../navi_bar.php');
+
 
 $user_id = $_SESSION['user_id'];
 $selectedhotelid = $_SESSION['selected_hotel_id'];
+
+require_once('../navi_bar.php');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['number_of_pax']) && isset($_POST['check_in_date']) && isset($_POST['check_out_date'])) {
     $number_of_pax = $_POST['number_of_pax'];
