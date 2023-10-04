@@ -8,7 +8,7 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 $user_id = $_SESSION['user_id'];
-$transport_id = $_SESSION['selected_hotel_id'];
+$transport_id = $_SESSION['transport_id'];
 
 if (isset($_GET['transport_id']) && isset($_GET['user_id'])) {
     $transport_id = $_GET['transport_id'];
@@ -56,7 +56,7 @@ if (isset($_GET['transport_id']) && isset($_GET['user_id'])) {
         ?>
     </div>
     <div class="button">
-        <a href="hotel_payment.php">Proceed to Payment</a>
+        <a href="transport_payment.php">Proceed to Payment</a>
     </div>
 </body>
 </html>
