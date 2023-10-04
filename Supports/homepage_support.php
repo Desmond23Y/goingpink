@@ -46,9 +46,9 @@ session_start();
                       
                         <h2 class="manage-account">Manage Tickets</h2>
                         <p class="manage-account">Manage all of the tickets in one place.</p>
-                        <div class="button-container">
+                        
                               <a href="support_report.php" target="_blank"><button class="button">Manage </button></a>    
-                        </div>
+               
                     </div>
                 </div>
             </section>
