@@ -12,13 +12,10 @@ form {
     padding: 20px;
     border: 2px solid silver;
     border-radius: 5px;
-    text-align: left;
+    text-align: center;
     flex-direction: column;
     position: fixed;
     font-size: medium;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
     }
 
 button{
