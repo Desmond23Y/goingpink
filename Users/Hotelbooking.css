@@ -1,0 +1,22 @@
+h2 {
+    font-family: 'Butler';
+    font-size: 30px;
+    color: #f17492;
+    text-align: center;
+    }
+
+form {
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 2px solid silver;
+    border-radius: 5px;
+    text-align: center;
+    flex-direction: column;
+    position: fixed;
+    font-size: medium;
+    }
+
+body {
+    background-color: #f6c7c2;
+}
