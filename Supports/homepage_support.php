@@ -28,7 +28,7 @@ session_start();
         <ul class="navibar">
             <li><a href="homepage_support.php">HOME</a></li>
             <li><a href="support_report.php">REPORT</a></li>
-            <li><a href="view_own_support_report.php?user_id=<?php echo $_SESSION['user_id']; ?>">VIEW OWN REPORT</a></li>
+            <li><a href="view_own_support_report.php">VIEW OWN REPORT</a></li>
             <li><a href="view_ticket.php">VIEW TICKET</a></li>
             <li><a href="../logout.php" class="right">LOGOUT</a></li>
         </ul>
