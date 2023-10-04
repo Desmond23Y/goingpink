@@ -25,7 +25,10 @@ form {
 
 textarea {
     resize: none;
-}
+    width: 300px;
+    padding: 8px;
+    box-sizing: border-box;
+    }
 
 button{
     margin-right: 10px;
@@ -43,4 +46,4 @@ button:hover{
 
 body {
     background-color: #fff8f9;
-}
+    }
