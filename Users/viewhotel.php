@@ -41,7 +41,7 @@ if (!$result) {
         <h1>Hotel Viewing</h1>
     </header>
 
-    <div class="box">
+    <li class="box">
         <?php
         if (mysqli_num_rows($result) > 0) {
             while ($row = mysqli_fetch_assoc($result)) {
@@ -59,6 +59,6 @@ if (!$result) {
             echo "No hotels available.";
         }
         ?>
-    </div>
+    </li>
 </body>
 </html>
