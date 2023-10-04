@@ -28,16 +28,16 @@
                 <p>What report do you want to generate today?</p>
             </header>
             <div class="button-container">
-                <button class="button">User Group</button>
-                <button class="button">User Gender </button>
-                <button class="button">Hotel & Transport</button>
-                <button class="button">Ticket Type</button>
-                <button class="button">Rating</button>
-                <button class="button">Hotel Price Range</button>
-                <button class="button">User Expenses Range</button>
-                <button class="button">View Support Report</button>
-                <button class="button">View Ticket</button>
-                <button class="button">UView Invoice</button>
+                  <a href="report_user_type.php"><button class="button">User Group</button></a>
+                  <a href="report_user_gender.php" ><button class="button">User Gender </button></a>
+                  <a href="report_num_of_booking.php" ><button class="button">Hotel & Transport</button></a>
+                  <a href="report_ticket_type.php" ><button class="button">Ticket Type</button></a>
+                  <a href="report_star_rating.php" ><button class="button">Rating</button></a>
+                  <a href="report_price_range.php" ><button class="button">Hotel Price Range</button></a>
+                  <a href="report_user_expenses_range.php" ><button class="button">User Expenses Range</button></a>
+                  <a href="view_support_report.php" ><button class="button">View Support Report</button></a>
+                  <a href="../Supports/view_ticket.php" ><button class="button">View Ticket</button></a>
+                  <a href="view_invoice.php" ><button class="button">UView Invoice</button></a>
             </div>
             
 
