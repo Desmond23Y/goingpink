@@ -9,8 +9,9 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['success'])) {
-    $success = $_POST['success'];
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Retrieve POST data including the success flag
+    $success = isset($_POST['success']) ? $_POST['success'] : 'false';
 
     if ($success === 'true') {
         // Payment was successful
