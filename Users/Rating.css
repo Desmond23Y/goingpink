@@ -1,0 +1,49 @@
+h1 {
+    font-size: large;
+    font-family: 'Butler';
+    text-align: center;
+    color: #db6a85;
+    }
+
+form {
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(255,255,255,0.1);
+    border: 2px solid silver;
+    border-radius: 5px;
+    text-align: center;
+    flex-direction: column;
+    font-size: medium;
+    }
+    
+label {
+    display: block;
+    margin-bottom: 10px; 
+    margin-top: 10px;
+    }
+    
+textarea {
+    resize: none;
+    width: 300px;
+    padding: 8px;
+    box-sizing: border-box;
+    }
+    
+button{
+    margin-top: 10px;
+    padding: 12px;
+    font-size: 16px;
+    background-color: #db9d95;
+    color: #fee7eb;
+    border-radius: 4px;
+    }
+    
+button:hover{
+    background-color: #ab5288;
+    color: #f1aca4;
+    }
+
+body {
+    background-color: #fbe5e3;
+    }
