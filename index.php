@@ -114,7 +114,7 @@ include('navi_bar.php');
                    <p class="card-text">Explore our exquisite selection of hotels and start your journey to exceptional hospitality today.</p>
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
-                       <a href="../Users/viewhotel.php"target="_blank"><button type="button" class="btn btn-sm custom-button">Click Me!</button></a>
+                       <a href="../Users/viewhotel.php"><button type="button" class="btn btn-sm custom-button">Click Me!</button></a>
                       
                     </div>
                     
@@ -130,7 +130,7 @@ include('navi_bar.php');
                    <p class="card-text">Click here to check how much it costs based on your currency no matter where you're from!</p>
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group" >
-                      <a href="../api_exRates.php"target="_blank"><button type="button" class="btn btn-sm custom-button">Click Me!</button></a>                      
+                      <a href="../api_exRates.php"><button type="button" class="btn btn-sm custom-button">Click Me!</button></a>                      
                     </div>                 
                   </div>
                 </div>
@@ -144,7 +144,7 @@ include('navi_bar.php');
                      <p class="card-text">Discover our wide range of transportation options and take the first step towards seamless travel.</p>
                     <div class="d-flex justify-content-between align-items-center">
                       <div class="btn-group">
-                         <a href="../Users/viewtransport.php"target="_blank"><button type="button" class="btn btn-sm custom-button">Click Me!</button>  </a>                    
+                         <a href="../Users/viewtransport.php"><button type="button" class="btn btn-sm custom-button">Click Me!</button>  </a>                    
                       </div>                 
                     </div>
                   </div>
@@ -165,8 +165,8 @@ include('navi_bar.php');
       <div class="support-text">
         <h3 class="support-container-text">Facing a Problem? Need Help?</h3>
         <p class="support-container-text-p" style="font-size: 24px;;">Contact Our Support By Clicking the Buttons Below!</p>
-        <a href="../request_form.php" class="btn btn-lg btn-light fw-bold bg-white"target="_blank">Go To Support</a>
-        <a href="../Users/user_view_ticket.php" class="btn btn-lg btn-light fw-bold bg-white" target="_blank">View Tickets</a>
+        <a href="../request_form.php" class="btn btn-lg btn-light fw-bold bg-white">Go To Support</a>
+        <a href="../Users/user_view_ticket.php" class="btn btn-lg btn-light fw-bold bg-white" >View Tickets</a>
       </div>
      
     </div>
@@ -189,8 +189,8 @@ include('navi_bar.php');
         <h1 style="font-weight:900 ;color:#E9204F; font-family: Butler;">Write a review, make someone's trip!</h1>
         <p class="lead" style="color: #E9204F; font-family: Futura;">Stories like yours are what helps travellers have better trips. <br>Share your experience and help out a fellow traveller!</p>
         <p class="lead">
-            <a href="../Users/rating.php" class="btn btn-lg btn-light fw-bold bg-white" target="_blank">Write Review</a>
-            <a href="../Users/view_rating.php" class="btn btn-lg btn-light fw-bold bg-white" target="_blank">See Reviews</a>
+            <a href="../Users/rating.php" class="btn btn-lg btn-light fw-bold bg-white">Write Review</a>
+            <a href="../Users/view_rating.php" class="btn btn-lg btn-light fw-bold bg-white" >See Reviews</a>
         </p>
         </main>
     
