@@ -47,7 +47,7 @@ session_start();
                         <h2 class="manage-account">Manage Tickets</h2>
                         <p class="manage-account">Manage all of the tickets in one place.</p>
                         
-                              <a href="support_report.php" target="_blank"><button class="button">Manage </button></a>    
+                              <a href="support_report.php" ><button class="button">Manage </button></a>    
                
                     </div>
                 </div>
@@ -58,7 +58,7 @@ session_start();
                     <div class="function-text">
                         <h2>View Sent Report</h2>
                         <p class="generate-report">View all of your sent reports here in one place.</p>
-                            <a href="view_own_support_report.php" target="_blank"><button class="button" id="generate-report-button">Click Me</button></a>
+                            <a href="view_own_support_report.php" ><button class="button" id="generate-report-button">Click Me</button></a>
                     </div>
                 </div>
             </section>
@@ -70,7 +70,7 @@ session_start();
                             <h2>View Ticket</h2>
                         
                             <p class="manage-booking">View all the details here in one place.</p> 
-                               <a href="view_ticket.php" target="_blank"><button class="button" id="generate-report-button">Click Me</button></a>
+                               <a href="view_ticket.php" ><button class="button" id="generate-report-button">Click Me</button></a>
                     
                     </div>
 
