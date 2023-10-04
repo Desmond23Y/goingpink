@@ -40,7 +40,7 @@
             <li><a href="login.php" class="right">LOGIN</a></li>
         </ul>
     </nav>
-     <div class="background-image">
+       <div class="background-image">
             <header>
                 <h1>Admin Dashboard</h1>
         
@@ -67,7 +67,7 @@
             </section>
             <section class="section generate-report">
                 <div class="function" id="generate-report">
-                    <img src="/picture/generate-report.png" class="generate-report">
+                    <img src="/picture/generate-report.png" style="float: right;" class="generate-report">
                     <div class="function-text">
                         <h2>Generate Report</h2>
                         <p class="generate-report">Generate Sales, Inventory, Profit Reports here in one place.</p>
@@ -90,5 +90,6 @@
             
             
         </div>
-</body>
+    </body>
+
 </html>
