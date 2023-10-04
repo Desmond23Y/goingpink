@@ -45,34 +45,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $adminRow = mysqli_fetch_assoc($randomAdminResult);
     $adminId = $adminRow['admin_id'];
 
-    // Prepare the data to send to the first code block using AJAX
-    $ajaxData = [
-        'user_id' => $userId,
-        'transport_id' => $transportId,
-        'arrival_location' => $arrivalLocation,
-        'departure_location' => $departureLocation,
-        'arrival_time' => $arrivalTime,
-        'departure_time' => $departureTime,
-        'price' => $price
-    ];
-
-    // Send an AJAX request to the first code block
-    echo '<script>
-            $.ajax({
-                type: "POST",
-                url: "first_code_block.php",
-                data: ' . json_encode($ajaxData) . ',
-                success: function (response) {
-                    // Display the response to the user
-                    $("#booking-message").html(response);
-                },
-                error: function () {
-                    // Handle the error if the AJAX request fails
-                    $("#booking-message").html("An error occurred during payment.");
-                }
-            });
-        </script>';
-
     // Insert the booking into the transportation_booking table
     $query = "INSERT INTO transportation_booking (transport_manager_id, user_id, admin_id, transport_id, arrival_location, departure_location, arrival_time, departure_time, transport_total_price) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
     $stmt = mysqli_prepare($con, $query);
