@@ -6,7 +6,7 @@ h1 {
     }
 
 .box {
-    display: inline-block; 
+    display: flex; 
     width: 50%; 
     margin-bottom: 20px; 
     border: 1px solid silver;
@@ -15,7 +15,9 @@ h1 {
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
     text-align: left;
     margin: 0 auto;
+    justify-content: center;
     }
+
 
 button {
     margin-top: 10px;
