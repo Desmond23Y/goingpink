@@ -54,9 +54,13 @@ $result = mysqli_query($con, "SELECT * FROM ticket");
         }
 
         th, td {
-            border: 1px solid #FFB6C1;
+            border: 1px solid #E9204F;
             padding: 8px;
             text-align: left;
+        }
+
+        td{
+            font-family: Futura, sans-serif;
         }
 
         tr:nth-child(even) {
