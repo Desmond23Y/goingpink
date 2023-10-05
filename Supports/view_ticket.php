@@ -54,7 +54,7 @@ $result = mysqli_query($con, "SELECT * FROM ticket");
         }
 
         th, td {
-            border: 1px solid #E9204F;
+            border: 1px solid #FFB6C1;
             padding: 8px;
             text-align: left;
         }
@@ -72,7 +72,7 @@ $result = mysqli_query($con, "SELECT * FROM ticket");
         }
 
         th {
-            background-color: #FFB6C1;
+            background-color: #E9204F;
             color: white;
         }
     </style>
