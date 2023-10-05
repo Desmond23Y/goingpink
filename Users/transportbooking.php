@@ -8,7 +8,6 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 $user_id = $_SESSION['user_id'];
-$transport_id = $_SESSION['transport_id'];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Retrieve POST data including the price
