@@ -29,7 +29,7 @@ if (isset($_GET['hotel_id']) && isset($_GET['user_id'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Booking Summary</title>
-    <link rel="stylesheet" href="your_css_file.css">
+    <link rel="stylesheet" href="Viewhotelpayment.css">
 </head>
 
 <body>
