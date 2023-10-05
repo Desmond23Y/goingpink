@@ -87,7 +87,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         <p>Departure Time: <?php echo $departureTime; ?></p>
         <p>Price: <?php echo $price; ?></p>
 
-        <button class="homepage-button" onclick="window.location.href = 'index.php';">Go Back to Homepage</button>
+        <button class="homepage-button" onclick="window.location.href = '../Users/index.php';">Go Back to Homepage</button>
     </div>
 </body>
 </html>
