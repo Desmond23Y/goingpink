@@ -31,6 +31,10 @@ if (isset($_SESSION['user_id'])) {
             text-align: left;
         }
 
+        td{
+            font-family:Futura,sans-serif;
+        }
+
         tr:nth-child(even) {
             background-color: #FFE6E6;
         }
