@@ -41,6 +41,23 @@ body {
     margin-right: 10px; 
 }
 
+.navibar .dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+.navibar .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #F9B9C3;
+    min-width: 160px;
+    z-index: 1;
+}
+
+.navibar .dropdown:hover .dropdown-content {
+    display: block;
+}
+
 </style>
 
 <body>
@@ -50,7 +67,16 @@ body {
                 <li><a href="../Users/view_profile.php">PROFILE</a></li>
                 <li><a href="../Users/faq.php">FAQ</a></li>
 
-                <li><img src="../picture/logo.png" alt="Logo" class="logo"></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">FEATURES</a>
+                    <div class="dropdown-content">
+                        <a href="#">Feature 1</a>
+                        <a href="#">Feature 2</a>
+                        <a href="#">Feature 3</a>
+                    </div>
+                </li>
+
+                
                 
                 <li><a href="../logout.php" class="right">LOGOUT</a></li>
                 <li><a href="../register.php" class="right">REGISTER</a></li>            
