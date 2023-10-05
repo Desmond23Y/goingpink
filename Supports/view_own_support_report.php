@@ -20,7 +20,7 @@ if (isset($_SESSION['user_id'])) {
     <style>
 
         table {
-            width: 90%;
+            width: 100%;
             border-collapse: collapse;
             margin-top: 20px;
         }
