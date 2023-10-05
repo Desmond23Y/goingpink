@@ -33,6 +33,14 @@ body {
     color: white;
 }
 
+.logo {
+    display: inline-block;
+    vertical-align: middle;
+    width: 40px;
+    height: auto; 
+    margin-right: 10px; 
+}
+
 </style>
 
 <body>
@@ -41,6 +49,8 @@ body {
                 <li><a href="../index.php">HOME</a></li>
                 <li><a href="../Users/view_profile.php">PROFILE</a></li>
                 <li><a href="../Users/faq.php">FAQ</a></li>
+
+                <li><img src="logo.png" alt="Logo" class="logo"></li>
                 
                 <li><a href="../logout.php" class="right">LOGOUT</a></li>
                 <li><a href="../register.php" class="right">REGISTER</a></li>            
