@@ -42,8 +42,8 @@ body {
 }
 
 .navibar .dropdown {
-    float: left;
-    overflow: hidden;
+    position: relative;
+    display: inline-block;
 }
 
 .navibar .dropdown-content {
@@ -58,6 +58,11 @@ body {
     display: block;
 }
 
+.navibar .dropdown-content a {
+    display: block;
+    padding: 10px;
+    text-align: left;
+}
 </style>
 
 <body>
