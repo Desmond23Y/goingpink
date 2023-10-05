@@ -30,7 +30,7 @@ if (isset($_SESSION['user_id'])) {
     </nav>
 
     <table width="90%">
-        <tr bgcolor="#FFB6C1">
+        <tr bgcolor="#E9204F">
             <td>Report ID</td>
             <td>Support ID</td>
             <td>Report Title</td>
