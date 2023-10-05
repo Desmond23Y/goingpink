@@ -6,7 +6,7 @@ h1 {
     }
 
 .box {
-    display: inline-block; 
+    display: flex; 
     width: 50%; 
     margin-bottom: 20px; 
     border: 1px solid silver;
