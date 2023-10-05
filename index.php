@@ -165,7 +165,7 @@ include('navi_bar.php');
       <div class="support-text">
         <h3 class="support-container-text">Facing a Problem? Need Help?</h3>
         <p class="support-container-text-p" style="font-size: 24px;;">Contact Our Support By Clicking the Buttons Below!</p>
-        <a href="../request_form.php" class="btn btn-lg btn-light fw-bold bg-white">Go To Support</a>
+        <a href="../Users/request_form.php" class="btn btn-lg btn-light fw-bold bg-white">Go To Support</a>
         <a href="../Users/user_view_ticket.php" class="btn btn-lg btn-light fw-bold bg-white" >View Tickets</a>
       </div>
      
@@ -206,8 +206,7 @@ include('navi_bar.php');
           <ul class="nav justify-content-center border-bottom pb-3 mb-3">
             <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Home</a></li>
             <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Features</a></li>    
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">FAQs</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">About</a></li>
+            <li class="../Users/faq.php"><a href="#" class="nav-link px-2 text-body-secondary">FAQs</a></li>
           </ul>
           <p class="text-center text-body-secondary">© 2023 GoingPink ©</p>
         </footer>
