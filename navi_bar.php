@@ -50,7 +50,7 @@ body {
                 <li><a href="../Users/view_profile.php">PROFILE</a></li>
                 <li><a href="../Users/faq.php">FAQ</a></li>
 
-                <li><img src="logo.png" alt="Logo" class="logo"></li>
+                <li><img src="../picture/logo.png" alt="Logo" class="logo"></li>
                 
                 <li><a href="../logout.php" class="right">LOGOUT</a></li>
                 <li><a href="../register.php" class="right">REGISTER</a></li>            
