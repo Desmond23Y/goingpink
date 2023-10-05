@@ -7,15 +7,15 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     // Retrieve data sent through AJAX
-    $userId = isset($_POST['user_id']) ? $_POST['user_id'] : '';
-    $transportId = isset($_POST['transport_id']) ? $_POST['transport_id'] : '';
-    $arrivalLocation = isset($_POST['arrival_location']) ? $_POST['arrival_location'] : '';
-    $departureLocation = isset($_POST['departure_location']) ? $_POST['departure_location'] : '';
-    $arrivalTime = isset($_POST['arrival_time']) ? $_POST['arrival_time'] : '';
-    $departureTime = isset($_POST['departure_time']) ? $_POST['departure_time'] : '';
-    $price = isset($_POST['price']) ? $_POST['price'] : '';
+    $userId = isset($_GET['user_id']) ? $_GET['user_id'] : '';
+    $transportId = isset($_GET['transport_id']) ? $_GET['transport_id'] : '';
+    $arrivalLocation = isset($_GET['arrival_location']) ? $_GET['arrival_location'] : '';
+    $departureLocation = isset($_GET['departure_location']) ? $_GET['departure_location'] : '';
+    $arrivalTime = isset($_GET['arrival_time']) ? $_GET['arrival_time'] : '';
+    $departureTime = isset($_GET['departure_time']) ? $_GET['departure_time'] : '';
+    $price = isset($_GET['price']) ? $_GET['price'] : '';
 
     echo "<h2>Payment Successful</h2>";
     

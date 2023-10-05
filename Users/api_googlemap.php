@@ -273,7 +273,8 @@ $_SESSION['transportpricing'] = $transportTypes;
 
                                     // Redirect to index.php after a delay (e.g., 2 seconds)
                                     setTimeout(function () {
-                                        window.location.href = './view_transport_payment.php?transport_id='+transportId+'&user_id=<?=$_SESSION['user_id']?>';
+                                        window.location.href = './view_trasport_payment.php?'+bookParams;
+                                        //window.location.href = './view_transport_payment.php?transport_id='+transportId+'&user_id=<?=$_SESSION['user_id']?>';
                                     }, 2000);
                                 } else {
                                     alert('Booking failed');
