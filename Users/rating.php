@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if (mysqli_query($con, $insert_query)) {
             echo "<script>alert('Rating and feedback submitted successfully!');</script>";
-            header('Location: ..Users/view_rating.php'); // Redirect to the view_rating.php page
+            header('Location: Users/view_rating.php'); // Redirect to the view_rating.php page
         } else {
             echo "Error: " . mysqli_error($con);
         }
