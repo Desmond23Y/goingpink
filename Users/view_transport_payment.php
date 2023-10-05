@@ -52,6 +52,28 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             font-size: 18px;
             margin: 10px 0;
         }
+
+        .homepage-button {
+            
+          
+           
+            
+    
+            margin-top: 20px;
+            background-color: #E9204F;
+            color: #fff;
+            
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+
+        .homepage-button:hover {
+            background-color: #FF5A7D;
+        }
+
     </style>
 </head>
 <body>
@@ -64,6 +86,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         <p>Arrival Time: <?php echo $arrivalTime; ?></p>
         <p>Departure Time: <?php echo $departureTime; ?></p>
         <p>Price: <?php echo $price; ?></p>
+
+        <button class="homepage-button" onclick="window.location.href = 'index.php';">Go Back to Homepage</button>
     </div>
 </body>
 </html>
