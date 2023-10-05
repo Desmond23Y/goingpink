@@ -14,9 +14,11 @@ if (!$result) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>View Hotel Booking</title>
     <link rel="stylesheet" href="M_hotel_homepage.css">
-     <nav>
+    <nav>
         <ul class="navibar">
             <li><a href="M_hotel_homepage.php">HOME</a></li>
+            <li><a href="M_view_hotel_info.php">HOTEL INFORMATION</a></li>
+            <li><a href="M_view_hotel_booking.php">HOTEL BOOKING</a></li>
             <li><a href="../logout.php" class="right">LOGOUT</a></li>
         </ul>
     </nav>
