@@ -26,12 +26,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     <title>Payment Successful</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+            font-family: Futura, sans-serif;
+            background-color: #fbe5e3;
+            color: #65313D;
+
         }
 
         .payment-container {
-            background-color: #fff;
+            background-color: #F1ACA4;
             padding: 20px;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -42,6 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 
         h2 {
             color: #007bff;
+            font-family: Butler,serif;
         }
 
         p {
