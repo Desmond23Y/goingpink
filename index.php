@@ -130,7 +130,7 @@ include('navi_bar.php');
                    <p class="card-text">Click here to check how much it costs based on your currency no matter where you're from!</p>
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group" >
-                      <a href="../api_exRates.php"><button type="button" class="btn btn-sm custom-button">Click Me!</button></a>                      
+                      <a href="../Users/api_exRates.php"><button type="button" class="btn btn-sm custom-button">Click Me!</button></a>                      
                     </div>                 
                   </div>
                 </div>
