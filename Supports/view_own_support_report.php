@@ -17,7 +17,12 @@ if (isset($_SESSION['user_id'])) {
 <head>
     <title>View Own Support Report</title>
     <link rel="stylesheet" href="homepage_support.css">
-    
+    <style>
+        td{
+            color:white;
+        }
+    </style>
+
 </head>
 <body>
      <nav>
