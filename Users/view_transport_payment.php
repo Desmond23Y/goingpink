@@ -56,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 </head>
 <body>
     <div class="payment-container">
-        <h1>Payment Successful</h1>
+        <h1>Payment Successful!</h1>
         <p>User ID: <?php echo $userId; ?></p>
         <p>Transport ID: <?php echo $transportId; ?></p>
         <p>Arrival Location: <?php echo $arrivalLocation; ?></p>
