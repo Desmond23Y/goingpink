@@ -42,9 +42,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             text-align: center;
         }
 
-        h2 {
-            color: #007bff;
+        h1 {
+            color: #E9204F;
             font-family: Butler,serif;
+            font-weight:bold;
         }
 
         p {
@@ -55,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 </head>
 <body>
     <div class="payment-container">
-        <h2>Payment Successful</h2>
+        <h1>Payment Successful</h1>
         <p>User ID: <?php echo $userId; ?></p>
         <p>Transport ID: <?php echo $transportId; ?></p>
         <p>Arrival Location: <?php echo $arrivalLocation; ?></p>
