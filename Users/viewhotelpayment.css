@@ -6,7 +6,7 @@ h1 {
     }
 
 body {
-    display: grid;
+    display: inline-block;
     align-items: center;
     justify-content: center;
     height: 100vh;
