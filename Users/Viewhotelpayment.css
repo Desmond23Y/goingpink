@@ -5,7 +5,7 @@ h1 {
     color: #db6a85;
     }
 
-.box {
+div {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -28,7 +28,7 @@ button {
     background-color: #db9d95;
     color: #fee7eb;
     border-radius: 4px;
-    text-align: center;
+    justify-content: center;
     }
     
 button:hover {
@@ -39,3 +39,4 @@ button:hover {
 body {
     background-color: #fbd4dd;
     }
+
