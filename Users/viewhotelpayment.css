@@ -15,11 +15,12 @@ body {
     padding: 20px;
     max-width: auto; 
     font-family: 'Butler';    
-    display: grid;
+    display: block;
     align-items: center;
     justify-content: center;
     margin-bottom: 20px;
     }
+
 
 .button {
     margin-top: 10px;
