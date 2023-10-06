@@ -16,7 +16,7 @@ body {
     }
 
 .box {
-    margin-top: 20px;
+    margin-top: 30px;
     text-align: left;
     border: 1px solid #ab5368;
     padding: 20px;
@@ -28,6 +28,5 @@ body {
 .button {    
     margin-top: 30px;
     text-align: center;
-    color: #f17492;
     font-size: 20px;
     }
