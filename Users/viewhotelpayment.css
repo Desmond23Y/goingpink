@@ -6,19 +6,19 @@ h1 {
     }
 
 body {
-    display: grid;
+    display: block;
     align-items: center;
     justify-content: center;
     height: 100vh;
-    margin: 0;
     background-color: #fbd4dd
     }
 
 .box {
     text-align: left;
-    border: 1px solid #ccc;
+    border: 2px solid #ab5268;
     padding: 20px;
     max-width: 600px; 
+    font-family: 'Butler';
     }
 
 .button {
@@ -29,6 +29,7 @@ body {
     color: #fee7eb;
     border-radius: 4px;
     justify-content: center;
+    text-align: center;
     }
     
 .button:hover {
