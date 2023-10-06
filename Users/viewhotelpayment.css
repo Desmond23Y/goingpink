@@ -6,10 +6,6 @@ h1 {
     }
 
 body {
-    display: list-item;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
     background-color: #fbd4dd
     }
 
@@ -17,8 +13,11 @@ body {
     text-align: left;
     border: 2px solid #ab5268;
     padding: 20px;
-    max-width: 600px; 
-    font-family: 'Butler';
+    max-width: 400px; 
+    font-family: 'Butler';    
+    display: list-item;
+    align-items: center;
+    justify-content: center;
     }
 
 .button {
