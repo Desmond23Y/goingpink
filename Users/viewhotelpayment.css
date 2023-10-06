@@ -22,9 +22,11 @@ body {
     padding: 20px;
     max-width: auto;
     font-family: 'Butler';
+    margin: 30px;
     }
 
 a{
+    display: inline-block;
     margin-top: 100px;
     padding: 12px;
     font-size: 20px;
