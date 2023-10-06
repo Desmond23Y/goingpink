@@ -33,6 +33,7 @@ a{
     color: #fee7eb;
     border-radius: 4px;
     text-decoration: none;
+    cursor: pointer;
     }
 
 a:hover{
