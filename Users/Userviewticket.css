@@ -10,15 +10,14 @@ h1 {
     column-gap: 20px; 
     padding: 20px;
     text-align: center;
-    display: table;
+    display: block;
     justify-content: center;
     align-items: flex-start;
-    height: 50%;
     margin: 0;
 }
 
 .ticket {
-    display: table; 
+    display: block; 
     width: 50%; 
     margin-bottom: 20px; 
     border: 1px solid silver;
