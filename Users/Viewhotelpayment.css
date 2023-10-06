@@ -11,10 +11,7 @@ body {
     justify-content: center;
     width: 100vh;
     height: 100vh;
-    margin: 0;
-    }
-
-.box {
+    margin: 0;    
     text-align: center;
     border: 1px solid silver;
     padding: 20px; 
