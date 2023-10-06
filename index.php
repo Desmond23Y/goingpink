@@ -171,7 +171,7 @@ include('navi_bar.php');
      
     </div>
     <div class="right-image">
-      <img src="/picture/problem.png" alt="pink screen" style="width: 1000px;"; height="300px">
+      <img src="../picture/problem.png" alt="pink screen" style="width: 1000px;"; height="300px">
     </div>
   </div>
 </section>
