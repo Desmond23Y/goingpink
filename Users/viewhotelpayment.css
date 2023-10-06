@@ -6,9 +6,10 @@ h1 {
     }
 
 body {
+    text-align: center;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: left;
     height: 100vh;
     margin: 0;
     }
@@ -24,6 +25,3 @@ body {
 .button {
     margin-top: 20px;
     }
-
-
-
