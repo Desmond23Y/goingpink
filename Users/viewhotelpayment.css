@@ -6,11 +6,12 @@ h1 {
     }
 
 body {
-    display: flex;
+    display: block;
     align-items: center;
     justify-content: center;
     height: 100vh;
     margin: 0;
+    background-color: #fbd4dd;
     }
 
 .box {
@@ -35,5 +36,3 @@ button:hover {
     color: #f1aca4;
     }
 
-body {
-    back
