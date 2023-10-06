@@ -24,7 +24,7 @@ body {
     font-family: 'Butler';
     }
 
-.a {
+.button a {
     display: inline-block;
     margin-top: 60px;
     padding: 12px;
@@ -35,7 +35,7 @@ body {
     text-decoration: none;
     }
 
-.a:hover{
+.button a:hover{
     background-color: #ab5288;
     color: #f1aca4;
     }
