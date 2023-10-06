@@ -13,14 +13,13 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    height: 100vh;
+    height: 50%;
     margin: 0;
 }
 
 .ticket {
     display: inline-block; 
     width: 50%; 
-    height: 50%;
     margin-bottom: 20px; 
     border: 1px solid silver;
     padding: 15px;
