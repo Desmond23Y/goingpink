@@ -6,15 +6,14 @@ h1 {
     }
 
 body {
-    margin-top:30px;
     text-align: left;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: left;
     height: 100vh;
-    margin: auto;
-    background-color: #fff8f9;
+    margin: 0;
+    background-color: #fff4f6;
     }
 
 .box {
@@ -23,6 +22,7 @@ body {
     padding: 20px;
     max-width: auto;
     }
+
 
 .button {
     margin-top: 20px;
