@@ -67,7 +67,7 @@ p {
 
 .function-text {
     padding-top: 10px;
-    text-align: center; 
+    
 }
 
 /* nav bar */
@@ -76,17 +76,19 @@ body {
     padding: 0;
 }
 
+
 .navibar {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
     background-color: #F9B9C3;
-    text-align: center; 
+    font-family: Butler, serif;
 }
 
 .navibar a {
-    display: inline-block; 
+    float: left;
+    display: block;
     color: #333;
     text-align: center;
     padding: 14px 16px;
@@ -101,4 +103,3 @@ body {
     background-color: #C7949C;
     color: white;
 }
-
