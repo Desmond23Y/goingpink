@@ -42,7 +42,7 @@ p {
 .button-container {
     display: flex;
     gap: 5px;
-    justify-content: center; 
+    
 }
 
 .button:hover {
