@@ -20,6 +20,7 @@ h1 {
 .ticket {
     display: inline-block; 
     width: 50%; 
+    height: 50%;
     margin-bottom: 20px; 
     border: 1px solid silver;
     padding: 15px;
