@@ -15,15 +15,15 @@ body {
     padding: 20px 0;
 }
 
-.header h1 {
+h1 {
     margin: 0;
 }
 
-.header h2 {
+h2 {
     color: #FF5A7D;
 }
 
-.header p {
+p {
     font-family: "Futura", monospace;
     font-weight: light;
 }
