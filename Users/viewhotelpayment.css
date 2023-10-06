@@ -25,8 +25,8 @@ body {
     }
 
 a{
-    margin-top: 50px;
-    padding: 12px 25px;
+    margin-top: auto;
+    padding: 12px;
     font-size: 20px;
     background-color: #db9d95;
     color: #fee7eb;
