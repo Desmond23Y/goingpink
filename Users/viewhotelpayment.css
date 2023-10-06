@@ -5,20 +5,19 @@ h1 {
     color: #db6a85;
     }
 
-div {
+body {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100vh;
     height: 100vh;
-    margin: 0;    
-    text-align: center;
-    border: 1px solid silver;
-    padding: 20px; 
+    margin: 0;
     }
 
-h3 {
+.box {
     text-align: center;
+    border: 1px solid #ccc;
+    padding: 20px;
+    max-width: 200px; 
     }
 
 button {
@@ -37,5 +36,4 @@ button:hover {
     }
 
 body {
-    background-color: #fbd4dd;
-    }
+    back
