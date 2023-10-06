@@ -8,7 +8,9 @@ h1 {
 .box {
     text-align: left;
     justify-content: center;
-    border: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    border: 1px solid silver;
     padding: 20px;
     max-width: 200px; 
     }
@@ -26,9 +28,11 @@ h1 {
 .button:hover {
     background-color: #ab5288;
     color: #f1aca4;
+    text-align: center;
     }
 
 body {
     background-color: #fbd4dd;
+    }round-color: #fbd4dd;
     }
 
