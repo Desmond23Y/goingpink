@@ -1,4 +1,4 @@
-/* Reset some default styles */
+
 body, ul {
     margin: 0;
     padding: 0;
@@ -8,45 +8,25 @@ body {
     font-family: Butler, sans-serif !important;
 }
 
-/*
-.background-image {
-    background-image: url('/picture/barbie.png'); 
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    height: 100vh;
-}
-*/
-
-header {
+.header {
     background-color: #f17492;
     color: #fef1f4;
     text-align: center;
     padding: 20px 0;
 }
 
-h1 {
+.header h1 {
     margin: 0;
 }
 
-h2{
+.header h2 {
     color: #FF5A7D;
 }
 
-
-p{
-    font-family: "Futura ", monospace;
+.header p {
+    font-family: "Futura", monospace;
     font-weight: light;
-
 }
-img{
-    width: 40%;
-    height: 100%;
-    float: left;
-}
-
-
-
 
 .button {
     background-color: #E9204F;
@@ -56,80 +36,69 @@ img{
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    
     margin: 20px;
-    
-    
 }
 
-.button-container{
+.button-container {
     display: flex;
     gap: 5px;
-    float: left;
-    
-   
-    
+    justify-content: center; 
 }
-
 
 .button:hover {
-    background-color: #FF5A7D; /* Highlight color on hover */
+    background-color: #FF5A7D; 
 }
 
-.function{
+.function {
     height: 40%;
 }
 
-
-
-#manage-account{
+#manage-account {
     background-color: #fee7eb;
-    
 }
 
-#generate-report{
+#generate-report {
     background-color: #f0e4da;
 }
-#manage-booking{
+
+#manage-booking {
     background-color: #fee7eb;
 }
 
-
-.function-text{
+.function-text {
     padding-top: 10px;
-    padding-left: 20px;
-   
+    text-align: center; 
 }
-/* nav bar*/
 
-   body {
-        margin: 0;
-        padding: 0;
-    }
+/* nav bar */
+body {
+    margin: 0;
+    padding: 0;
+}
 
-    .navibar {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        background-color: #F9B9C3;
-    }
+.navibar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #F9B9C3;
+    text-align: center; 
+}
 
-    .navibar a {
-        float: left;
-        display: block;
-        color: #333;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
-    }
+.navibar a {
+    display: inline-block; 
+    color: #333;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
 
-    .navibar a.right {
-        float: right;
-    }
+.navibar a.right {
+    float: right;
+}
 
-    .navibar a:hover {
-        background-color: #C7949C;
-        color: white;
-    }
+.navibar a:hover {
+    background-color: #C7949C;
+    color: white;
+}
 
