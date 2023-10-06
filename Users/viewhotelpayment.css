@@ -24,9 +24,16 @@ body {
     font-family: 'Butler';
     }
 
-
-.button {    
+a{
     margin-top: 50px;
-    text-align: center;
+    padding: 12px;
     font-size: 20px;
+    background-color: #db9d95;
+    color: #fee7eb;
+    border-radius: 4px;
+    }
+
+a:hover{
+    background-color: #ab5288;
+    color: #f1aca4;
     }
