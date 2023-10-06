@@ -21,9 +21,13 @@ body {
     border: 1px solid #ab5368;
     padding: 20px;
     max-width: auto;
+    font-family: 'Butler';
     }
 
 
-.button {
-    margin-top: 20px;
+.button {    
+    margin-top: 30px;
+    text-align: center;
+    color: #f17492;
+    font-size: 20px;
     }
