@@ -101,8 +101,10 @@ if (isset($_GET['user_id'])) {
                 <input type="radio"name="gender"<?php if ($row['gender'] == "Female") { ?> checked="checked" <?php } ?> value="Female"required="required">Female
                 <br><br>
 
-                <button type="submit" value="submit">Edit User Account</button>
-            </form>
+            </form   
+                
+            ><button type="submit" value="submit">Edit User Account</button>
+            
         <?php
         }
         mysqli_close($con);
