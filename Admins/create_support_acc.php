@@ -20,6 +20,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 
 <!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="createsupportacc.css">
+</head>
+
 <body>
     <form id="request-form" method="post">
         <label for="name">Username:</label>
