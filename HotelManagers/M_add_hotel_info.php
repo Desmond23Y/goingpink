@@ -7,16 +7,23 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 
+$hotel_id = null;
+
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
-    $query = "INSERT INTO hotel_information (hotel_name, room_type, room_availability, hotel_availability, hotel_price) VALUES ('$_POST[hotel_name]', '$_POST[room_type]', '$_POST[room_availability]', '$_POST[hotel_availability]', '$_POST[hotel_price]')";
-    
-if (!mysqli_query($con, $query)) {
-    die('Error: ' . mysqli_error($con));
-}
-else {
-    echo "<script>alert('New hotel has been created!');</script>";
-}
-mysqli_stmt_close($con);
+    $hotel_name = mysqli_real_escape_string($con, $_POST['hotel_name']);
+    $room_type = mysqli_real_escape_string($con, $_POST['room_type']);
+    $room_availability = intval($_POST['room_availability']);
+    $hotel_availability = mysqli_real_escape_string($con, $_POST['hotel_availability']);
+    $hotel_price = floatval($_POST['hotel_price']);
+
+    $query = "INSERT INTO hotel_information (hotel_name, room_type, room_availability, hotel_availability, hotel_price) 
+              VALUES ('$hotel_name', '$room_type', $room_availability, '$hotel_availability', $hotel_price)";
+
+    if (mysqli_query($con, $query)) {
+        echo "<script>alert('New Hotel has been created successfully!');</script>";
+    } else {
+        echo "Error creating new hotel: " . mysqli_error($con);
+    }
 }
 ?>
 
