@@ -13,6 +13,7 @@ $result = mysqli_query($con, "SELECT * FROM user");
 <html>
 <head>
     <title>View User Accounts</title>
+    <link rel="stylesheet" href="viewuseracc.css">
 </head>
 <body>
     <a href="create_user_acc.php">Add New User Account</a></td>
