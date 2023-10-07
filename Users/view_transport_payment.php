@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Payment Successful</title>
+    <title>Booking Summary</title>
     <style>
         body {
             font-family: Futura, sans-serif;
@@ -54,11 +54,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         }
 
         .homepage-button {
-            
-          
-           
-            
-    
             margin-top: 20px;
             background-color: #E9204F;
             color: #fff;
@@ -69,7 +64,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             cursor: pointer;
         }
 
-
         .homepage-button:hover {
             background-color: #FF5A7D;
         }
@@ -78,7 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 </head>
 <body>
     <div class="payment-container">
-        <h1>Payment Successful!</h1>
+        <h1>Fare Charges</h1>
         <p>User ID: <?php echo $userId; ?></p>
         <p>Transport ID: <?php echo $transportId; ?></p>
         <p>Arrival Location: <?php echo $arrivalLocation; ?></p>
@@ -87,7 +81,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         <p>Departure Time: <?php echo $departureTime; ?></p>
         <p>Price: <?php echo $price; ?></p>
 
-        <button class="homepage-button" onclick="window.location.href = '../index.php';">Go Back to Homepage</button>
+        <button class="homepage-button" onclick="window.location.href = 'transport_payment.php'">Pay Now</button>
     </div>
 </body>
 </html>

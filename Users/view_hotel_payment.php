@@ -33,7 +33,7 @@ if (isset($_GET['hotel_id']) && isset($_GET['user_id'])) {
 </head>
 
 <body>
-<h1>Fare Summary</h1>
+<h1>Hotel Charges</h1>
     <div class="box">
         <?php
         if (isset($result) && isset($result2) && isset($result3)) {
@@ -57,7 +57,7 @@ if (isset($_GET['hotel_id']) && isset($_GET['user_id'])) {
         ?>
     </div>
     <div class="button">
-        <a href="hotel_payment.php">Proceed to Payment</a>
+        <a href="hotel_payment.php">Pay Now</a>
     </div>
 </body>
 </html>
