@@ -21,7 +21,7 @@ $result = mysqli_query($con, "SELECT * FROM ticket");
             margin: 0;
             padding: 0;
             overflow: hidden;
-            background-color: #FFB6C1;
+            background-color: #F6A2B6;
             font-family: Butler, serif;
         }
 
