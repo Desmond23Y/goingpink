@@ -1,5 +1,5 @@
 h1 {
-    font-size: 30px;
+    font-size: larger;
     font-family: 'Butler';
     text-align: center;
     color: #db6a85;
@@ -9,26 +9,22 @@ h1 {
     column-count: 2; 
     column-gap: 20px; 
     padding: 20px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
+    text-align: left;
     justify-content: center;
     align-items: flex-start;
-    height: 100vh;
+    height: auto;
     margin: 0;
 }
 
 .ticket {
-    display: flex;
-    flex-direction: column;
-    width: 50%; 
+    width: 100%; 
     margin-bottom: 20px; 
     border: 1px solid silver;
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
     text-align: left;
-    margin: 0;
+    margin: 0 auto;
 }
 
 body {
