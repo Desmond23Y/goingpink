@@ -18,7 +18,9 @@ if (!isset($_SESSION['user_id'])) {
     <title>View Support Accounts</title>
 </head>
 <body>
-    <a href="create_support_acc.php">Add New Support Account</a><br>
+    <div class="button">
+        <a href="create_support_acc.php">Add New Support Account</a><br>
+    </div>
 
     <table width="90%">
         <tr bgcolor="#FFB6C1">
