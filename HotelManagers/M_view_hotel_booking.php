@@ -2,6 +2,11 @@
 session_start();
 include('conn.php');
 
+if (!isset($_SESSION['user_id'])) {
+    header('Location: ../login.php');
+    exit();
+}
+
 $result = mysqli_query($con, "SELECT * FROM hotel_booking");
 if (!$result) {
     die('Query Error: ' . mysqli_error($con));
