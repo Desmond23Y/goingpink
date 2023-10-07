@@ -7,7 +7,7 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 
-if ($_SERVER['REQUEST_METHOD'] == "POST")
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $hotel_name = $_POST['hotel_name'];
     $room_type = $_POST['room_type'];
     $room_availability = $_POST['room_availability'];
@@ -15,14 +15,14 @@ if ($_SERVER['REQUEST_METHOD'] == "POST")
     $hotel_price = $_POST['hotel_price'];
 
     $result = "INSERT INTO hotel_information (hotel_name, room_type, room_availability, hotel_availability, hotel_price)
-                VALUES ('$hotel_name, $room_type, $room_availability, $room_availability, $hotel_availability, $hotel_price)"; 
+               VALUES ('$hotel_name, $room_type, $room_availability, $room_availability, $hotel_availability, $hotel_price)"; 
 
     if (mysqli_query($con, $result)) {
         echo "<script>alert('New Hotel have created sucessfully!');</script>";
     }else{
         echo "Error creating new hotel: " . mysqli_error($con);
     }
-    
+}   
 ?>
 
 <html>
