@@ -16,10 +16,13 @@ if (!isset($_SESSION['user_id'])) {
 <html>
 <head>
     <title>View Hotel Manager Accounts</title>
+        <link rel="stylesheet" href="viewhmgtacc.css">
 </head>
-<body>
-    <a href="create_hmgt_acc.php">Add New Hotel Manager Account</a><br>
-
+<body>    
+    <div class="button">
+        <a href="create_hmgt_acc.php">Add New Hotel Manager Account</a><br>
+    </div>
+    
     <table width="90%">
         <tr bgcolor="#FFB6C1">
             <td>Hotel Manager ID</td>
