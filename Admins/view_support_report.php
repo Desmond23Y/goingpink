@@ -9,6 +9,11 @@ if (!isset($_SESSION['user_id'])) {
 
 $result=mysqli_query($con,"SELECT* FROM report");
 ?>
+
+<head>
+    <link rel="stylesheet" href="viewsupportreport.css">
+</head>
+
 <table width="90%">
     <tr bgcolor="#FFB6C1">
         <td>Report ID</td>
