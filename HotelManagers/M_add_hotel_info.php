@@ -14,16 +14,26 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $hotel_availability = mysqli_real_escape_string($con, $_POST['hotel_availability']);
     $hotel_price = $_POST['hotel_price'];
 
-    // Corrected SQL query
-    $result = "INSERT INTO hotel_information (hotel_name, room_type, room_availability, hotel_availability, hotel_price)
-               VALUES ('$hotel_name', '$room_type', '$room_availability', '$hotel_availability', '$hotel_price')"; 
+    // Prepare the SQL statement using placeholders
+    $query = "INSERT INTO hotel_information (hotel_name, room_type, room_availability, hotel_availability, hotel_price)
+               VALUES (?, ?, ?, ?, ?)";
 
-    if (mysqli_query($con, $result)) {
+    // Create a prepared statement
+    $stmt = mysqli_prepare($con, $query);
+
+    // Bind the parameters
+    mysqli_stmt_bind_param($stmt, 'ssdss', $hotel_name, $room_type, $room_availability, $hotel_availability, $hotel_price);
+
+    // Execute the statement
+    if (mysqli_stmt_execute($stmt)) {
         echo "<script>alert('New Hotel has been created successfully!');</script>";
     } else {
         echo "Error creating new hotel: " . mysqli_error($con);
     }
-}   
+
+    // Close the statement
+    mysqli_stmt_close($stmt);
+}
 ?>
 
 <html>
@@ -64,7 +74,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             <label for="hotel_availability">Hotel Availability: </label>
             <select id="hotel_availability" name="hotel_availability" required>
                 <option value="Available">Availability</option>
-                <option valuie="Unavailable">Unavailable</option>
+                <option value="Unavailable">Unavailable</option>
             </select>
             <br><br>
             <label for="hotel_price">Hotel Price: </label>
