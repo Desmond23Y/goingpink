@@ -6,6 +6,11 @@ td {
 
 th {
     background-color: wheat;
+    margin-top: 10px;
+    }
+
+th:hover{
+    background-color: bisque;
     }
 
 tr:hover {
@@ -28,8 +33,8 @@ td a {
     }
 
 td a:hover {
-    background-color: yellow;
-    color: black;
+    background-color: black;
+    color: yellow;
     border: 1px solid black;
     cursor: pointer;
     }
