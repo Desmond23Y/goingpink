@@ -16,8 +16,10 @@ $result = mysqli_query($con, "SELECT * FROM user");
     <link rel="stylesheet" href="viewuseracc.css">
 </head>
 <body>
-    <a href="create_user_acc.php">Add New User Account</a></td>
-
+    <div class="button">
+        <a href="create_user_acc.php">Add New User Account</a></td>
+    </div>
+    
     <table width="90%">
         <tr bgcolor="#FFB6C1">
             <td>User ID</td>
