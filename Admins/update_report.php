@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <head>
     <title>Update Support Report</title>
-	<link rel="stylesheet" href="updateticket.css">
 </head>
 
 <body>
