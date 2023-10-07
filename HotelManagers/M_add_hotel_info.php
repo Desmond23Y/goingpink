@@ -14,11 +14,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $hotel_availability = $_POST['hotel_availability'];
     $hotel_price = $_POST['hotel_price'];
 
-    $query = "INSERT INTO hotel_information (hotel_name, room_type, room_availability, hotel_availability, hotel_price)
-               VALUES (?, ?, ?, ?, ?)";
+    $query = "INSERT INTO hotel_information (hotel_name, room_type, room_availability, hotel_availability, hotel_price) VALUES ($hotel_name, $room_type, $room_availability, $hotel_availability, $hotel_price)";
     
     $stmt = mysqli_prepare($con, $query);
-    mysqli_stmt_bind_param($stmt, 'ssisd', $hotel_name, $room_type, $room_availability, $hotel_availability, $hotel_price);
+    mysqli_stmt_bind_param($stmt, 'ssisi', $hotel_name, $room_type, $room_availability, $hotel_availability, $hotel_price);
     if (mysqli_stmt_execute($stmt)) {
         echo "<script>alert('New Hotel has been created successfully!');</script>";
     } else {
