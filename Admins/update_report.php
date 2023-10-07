@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <head>
     <title>Update Support Report</title>
+	<link rel="stylesheet" href="updatereport.css">
 </head>
 
 <body>
