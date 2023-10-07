@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $hotel_price = floatval($_POST['hotel_price']);
 
     $query = "INSERT INTO hotel_information (hotel_name, room_type, room_availability, hotel_availability, hotel_price) 
-              VALUES ('$hotel_name', '$room_type', $room_availability, '$hotel_availability', $hotel_price)";
+              VALUES ('$hotel_name', '$room_type', $room_availability, '$hotel_availability', '$hotel_price')";
 
     if (mysqli_query($con, $query)) {
         echo "<script>alert('New Hotel has been created successfully!');</script>";
@@ -47,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 <body>
 <h1>New Hotel Information</h1>
     <div class="box">
-        <form action="M_view_hotel_info.php" method="POST">
+        <form action="" method="POST">
             <label for="hotel_name">Hotel Name: </label>
             <input type="text" id="hotel_name" name="hotel_name" required>
             <br><br>
