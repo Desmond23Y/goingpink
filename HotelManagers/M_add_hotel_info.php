@@ -8,23 +8,15 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
-    $hotel_name = $_POST['hotel_name'];
-    $room_type = $_POST['room_type'];
-    $room_availability = $_POST['room_availability'];
-    $hotel_availability = $_POST['hotel_availability'];
-    $hotel_price = $_POST['hotel_price'];
-
-    $query = "INSERT INTO hotel_information (hotel_name, room_type, room_availability, hotel_availability, hotel_price) VALUES ($hotel_name, $room_type, $room_availability, $hotel_availability, $hotel_price)";
+    $query = "INSERT INTO hotel_information (hotel_name, room_type, room_availability, hotel_availability, hotel_price) VALUES ('$_POST[hotel_name]', '$_POST[room_type]', '$_POST[room_availability]', '$_POST[hotel_availability]', '$_POST[hotel_price]')";
     
-    $stmt = mysqli_prepare($con, $query);
-    mysqli_stmt_bind_param($stmt, 'ssisi', $hotel_name, $room_type, $room_availability, $hotel_availability, $hotel_price);
-    if (mysqli_stmt_execute($stmt)) {
-        echo "<script>alert('New Hotel has been created successfully!');</script>";
-    } else {
-        echo "Error creating new hotel: " . mysqli_error($con);
-    }
-
-    mysqli_stmt_close($stmt);
+if (!mysqli_query($con_$query)) {
+    die('Error: ' . mysqli_error($con));
+}
+else {
+    echo "<script>alert('New hotel has been created!');</script>";
+}
+mysqli_stmt_close($con);
 }
 ?>
 
@@ -60,18 +52,22 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 <option value="Presidential Suite">Presidential Suite</option>
             </select>
             <br><br>
+
             <label for="room_availability">Room Availability: </label>
             <input type="number" id="room_availability" name="room_availability" required>
             <br><br>
+
             <label for="hotel_availability">Hotel Availability: </label>
             <select id="hotel_availability" name="hotel_availability" required>
                 <option value="Available">Availability</option>
                 <option value="Unavailable">Unavailable</option>
             </select>
             <br><br>
+
             <label for="hotel_price">Hotel Price: </label>
             <input type="number" id="hotel_price" name="hotel_price" required>
             <br><br>
+
             <input type="submit" name="submit" value="Create Now">
         </form>
     </div>
