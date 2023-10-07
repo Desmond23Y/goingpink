@@ -34,9 +34,6 @@ if (!isset($_SESSION['user_id'])) {
         <?php
         // Rest of your PHP code follows here
         $result = mysqli_query($con, "SELECT * FROM transport_management");
-        if (!$result) {
-            die("Query failed: " . mysqli_error($con));
-        }
 
         while ($row = mysqli_fetch_array($result)) {
             echo '<tr>';
