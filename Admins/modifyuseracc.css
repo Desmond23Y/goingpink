@@ -5,15 +5,18 @@ h2 {
     text-align: center;
     }
 
-form {
+body {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    margin: 20px;
     }
 
 label {
+    display: flex;
+    flex-direction: column;
     margin-bottom: 8px;
     font-weight: bold;
     }
