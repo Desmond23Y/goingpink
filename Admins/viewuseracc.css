@@ -12,17 +12,17 @@
     background-color: gold;
     color: black;
     }
-
-th, td {
+td {
     border: 1px solid silver;
     padding: 12px;
     text-align: left;
+
 }
 
-tr:hover {
+td:hover {
     background-color: whitesmoke;
 }
 
-tr:nth-child(even) {
+td:nth-child(even) {
     background-color: white;
 }
