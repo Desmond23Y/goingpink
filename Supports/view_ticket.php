@@ -13,13 +13,9 @@ $result = mysqli_query($con, "SELECT * FROM ticket");
 <html>
 <head>
     <title>View Tickets</title>
-    <link rel="stylesheet" href="ticket.css">
+    <link rel="stylesheet" href="viewticket.css">
+    
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-        }
-
         .navibar {
             list-style-type: none;
             margin: 0;
@@ -46,36 +42,8 @@ $result = mysqli_query($con, "SELECT * FROM ticket");
             background-color: #C7949C;
             color: white;
         }
-
-        table {
-            width: 90%;
-            border-collapse: collapse;
-            margin: 20px auto; 
-        }
-
-        th, td {
-            border: 1px solid #FFB6C1;
-            padding: 8px;
-            text-align: left;
-        }
-
-        td{
-            font-family: Futura, sans-serif;
-        }
-
-        tr:nth-child(even) {
-            background-color: #FFE6E6;
-        }
-
-        tr:nth-child(odd) {
-            background-color: #FFF3F3;
-        }
-
-        th {
-            background-color: #E9204F;
-            color: white;
-        }
     </style>
+    
 </head>
 <body>
     <nav>
