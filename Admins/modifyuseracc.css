@@ -3,6 +3,7 @@ h2 {
     font-size: 30px;
     color: black;
     text-align: center;
+    margin-bottom: 10px;
     }
 
 body {
@@ -37,6 +38,10 @@ button{
     border-radius: 4px;
     }
 
+button:hover{
+    background-color: black;
+    color: yellow;
+    }
 button:hover{
     background-color: black;
     color: yellow;
