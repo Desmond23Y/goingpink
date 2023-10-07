@@ -9,6 +9,11 @@ if (!isset($_SESSION['user_id'])) {
 
 $result=mysqli_query($con,"SELECT* FROM invoice");
 ?>
+
+<head>
+    <link rel="stylesheet" href="viewinvoice.css">
+</head>
+
 <table width="90%">
     <tr bgcolor="#FFB6C1">
         <td>Invoice ID</td>
