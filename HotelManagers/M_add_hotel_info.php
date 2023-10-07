@@ -10,7 +10,7 @@ if (!isset($_SESSION['user_id'])) {
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $query = "INSERT INTO hotel_information (hotel_name, room_type, room_availability, hotel_availability, hotel_price) VALUES ('$_POST[hotel_name]', '$_POST[room_type]', '$_POST[room_availability]', '$_POST[hotel_availability]', '$_POST[hotel_price]')";
     
-if (!mysqli_query($con_$query)) {
+if (!mysqli_query($con, $query)) {
     die('Error: ' . mysqli_error($con));
 }
 else {
