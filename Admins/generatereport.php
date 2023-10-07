@@ -40,7 +40,7 @@
                   <a href="report_user_expenses_range.php" ><button class="button">User Expenses Range</button></a>
                   <a href="view_support_report.php" ><button class="button">View Support Report</button></a>
                   <a href="../Supports/view_ticket.php" ><button class="button">View Ticket</button></a>
-                  <a href="view_invoice.php" ><button class="button">UView Invoice</button></a>
+                  <a href="view_invoice.php" ><button class="button">View Invoice</button></a>
             </div>
             
 
