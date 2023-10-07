@@ -50,13 +50,20 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             <input type="text" id="hotel_name" name="hotel_name" required>
             <br><br>
             <label for="room_type">Room Type: </label>
-            <input type="text" id="room_type" name="room_type" required>
+            <select id="room_type" name="room_type" required>
+                <option value="Single Room">Single Room</option>
+                <option value="King Room">King Room</option>
+                <option value="Queen Room">Queen Room</option>
+                <option value="Presidential Suite">Presidential Suite</option>
+            </select>
             <br><br>
             <label for="room_availability">Room Availability: </label>
             <input type="number" id="room_availability" name="room_availability" required>
             <br><br>
             <label for="hotel_availability">Hotel Availability: </label>
-            <input type="text" id="hotel_availability" name="hotel_availability" required>
+            <select id="hotel_availability" name="hotel_availability" required>
+                <option value="Available"></option>
+                <option valuie="Unavailable"></option>
             <br><br>
             <label for="hotel_price">Hotel Price: </label>
             <input type="number" id="hotel_price" name="hotel_price" required>
