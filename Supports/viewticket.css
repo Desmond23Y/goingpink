@@ -13,11 +13,7 @@ th:hover{
     background-color: bisque;
     }
 
-tr:hover {
-    background-color: whitesmoke;
-    }
-
-tr:nth-child(even) {
+tr:nth-child(even):hover {
     background-color: whitesmoke;
     }
 
