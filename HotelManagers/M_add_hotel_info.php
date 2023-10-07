@@ -68,7 +68,7 @@ mysqli_stmt_close($con);
             <input type="number" id="hotel_price" name="hotel_price" required>
             <br><br>
 
-            <input type="submit" name="submit" value="Create Now">
+            <button type="submit">Create Hotel</button>
         </form>
     </div>
 </body>
