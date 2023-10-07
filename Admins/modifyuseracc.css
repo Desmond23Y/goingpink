@@ -19,12 +19,6 @@ body {
     max-width: 600px;
     }
 
-form {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 10px; 
-    }
-
 label {
     display: block;
     margin-bottom: 8px;
