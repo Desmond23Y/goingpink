@@ -20,7 +20,7 @@ label {
     font-weight: bold;
     }
 
-input{
+input, option, textarea {
     padding: 10px;
     box-sizing: border-box;
     margin-bottom: 15px;
