@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $hotel_name = $_POST['hotel_name'];
     $room_type = $_POST['room_type'];
     $room_availability = $_POST['room_availability'];
-    $hotel_availability = $con, $_POST['hotel_availability'];
+    $hotel_availability = $_POST['hotel_availability'];
     $hotel_price = $_POST['hotel_price'];
 
     $result = "INSERT INTO hotel_information (hotel_name, room_type, room_availability, hotel_availability, hotel_price) 
