@@ -66,9 +66,7 @@ if (isset($_GET['user_id'])) {
             <link rel="stylesheet" href="modifyuseracc.css">
         </head>
         <body>
-            <header>
-                <h2>User Account Modification</h2>
-            </header>
+            <h2>User Account Modification</h2>
             <form method="post" action="modify_user_acc.php?user_id=<?php echo $user_id; ?>">
                 <label for="name">Username:</label>
                 <input type="text" id="name" name="name" required="required" value="<?php echo $row['username']; ?>">
@@ -103,9 +101,9 @@ if (isset($_GET['user_id'])) {
                 <input type="radio"name="gender"<?php if ($row['gender'] == "Female") { ?> checked="checked" <?php } ?> value="Female"required="required">Female
                 <br><br>
 
-            </form   
+            </form>
                 
-            ><button type="submit" value="submit">Edit User Account</button>
+            <button type="submit" value="submit">Edit User Account</button>
             
         <?php
         }
