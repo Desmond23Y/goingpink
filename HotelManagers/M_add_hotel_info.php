@@ -14,23 +14,17 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $hotel_availability = $_POST['hotel_availability'];
     $hotel_price = $_POST['hotel_price'];
 
-    // Create a prepared statement
     $query = "INSERT INTO hotel_information (hotel_name, room_type, room_availability, hotel_availability, hotel_price)
                VALUES (?, ?, ?, ?, ?)";
     
     $stmt = mysqli_prepare($con, $query);
-
-    // Bind the parameters
-    mysqli_stmt_bind_param($stmt, 'ssdss', $hotel_name, $room_type, $room_availability, $hotel_availability, $hotel_price);
-
-    // Execute the statement
+    mysqli_stmt_bind_param($stmt, 'ssisd', $hotel_name, $room_type, $room_availability, $hotel_availability, $hotel_price);
     if (mysqli_stmt_execute($stmt)) {
         echo "<script>alert('New Hotel has been created successfully!');</script>";
     } else {
         echo "Error creating new hotel: " . mysqli_error($con);
     }
 
-    // Close the statement
     mysqli_stmt_close($stmt);
 }
 ?>
@@ -79,7 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             <label for="hotel_price">Hotel Price: </label>
             <input type="number" id="hotel_price" name="hotel_price" required>
             <br><br>
-            <input type="submit" name="submit" value="Create">
+            <input type="submit" name="submit" value="Create Now">
         </form>
     </div>
 </body>
