@@ -3,6 +3,7 @@ h2 {
     font-size: 30px;
     color: black;
     text-align: center;
+    margin-top: auto;
     }
 
 body {
@@ -11,7 +12,6 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 20px;
     }
 
 label {
