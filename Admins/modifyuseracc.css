@@ -8,12 +8,8 @@ h2 {
 label {
     display: block;
     margin-bottom: 8px;
-    font-weight: bold;    
-    max-width: 400px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: white;
-    border-radius: 5px;
+    font-weight: bold;
+    align-items: center;
     }
 
 input{
@@ -23,6 +19,7 @@ input{
     border: 1px solid silver;
     border-radius: 4px;
     align-items: center;
+    justify-content: center;
     }
 
 button{
