@@ -40,7 +40,7 @@ td a {
 }
 
 td a:hover {
-    background-color: #3498db;
-    color: white;
+    background-color: #green;
+    color: yellow;
     border: 1px solid black;
 }
