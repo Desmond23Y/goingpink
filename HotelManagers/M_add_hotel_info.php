@@ -8,20 +8,20 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
-    $hotel_name = mysqli_real_escape_string($con, $_POST['hotel_name']);
-    $room_type = mysqli_real_escape_string($con, $_POST['room_type']);
-    $room_availability = intval($_POST['room_availability']);
-    $hotel_availability = mysqli_real_escape_string($con, $_POST['hotel_availability']);
-    $hotel_price = floatval($_POST['hotel_price']);
-
-    $query = "INSERT INTO hotel_information (hotel_name, room_type, room_availability, hotel_availability, hotel_price)
-               VALUES ('$_POST[hotel_name]', '$_POST[room_type]', '$_POST[room_availability]', '$_POST[hotel_availability]', '$_POST[hotel_price]')";
+    $hotel_name = $_POST['hotel_name'];
+    $room_type = $_POST['room_type'];
+    $room_availability = $_POST['room_availability'];
+    $hotel_availability = $_POST['hotel_availability'];
+    $hotel_price = $_POST['hotel_price'];
 
     // Create a prepared statement
+    $query = "INSERT INTO hotel_information (hotel_name, room_type, room_availability, hotel_availability, hotel_price)
+               VALUES (?, ?, ?, ?, ?)";
+    
     $stmt = mysqli_prepare($con, $query);
 
     // Bind the parameters
-    mysqli_stmt_bind_param($stmt, 'ssdsd', $hotel_name, $room_type, $room_availability, $hotel_availability, $hotel_price);
+    mysqli_stmt_bind_param($stmt, 'ssdss', $hotel_name, $room_type, $room_availability, $hotel_availability, $hotel_price);
 
     // Execute the statement
     if (mysqli_stmt_execute($stmt)) {
