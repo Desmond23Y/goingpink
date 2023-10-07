@@ -11,7 +11,7 @@ $result=mysqli_query($con,"SELECT* FROM report");
 ?>
 
 <head>
-    <link rel="stylesheet" href="Viewsupportreport.css">
+    <link rel="stylesheet" href="viewsupportreport.css">
 </head>
 
 <table width="90%">
