@@ -57,7 +57,7 @@ $result = mysqli_query($con, "SELECT * FROM ticket");
     </nav>
 
     <table>
-        <tr>
+        <tr bgcolor="#FFB6C1">
             <th>Ticket ID</th>
             <th>Support ID</th>
             <th>User ID</th>
