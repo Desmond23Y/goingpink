@@ -47,19 +47,19 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     <div class="box">
         <form action="M_view_hotel_info.php" method="POST">
             <label for="hotel_name">Hotel Name: </label>
-            <input type="text" id="hotel_name" name="hotel_name" required value="<?php echo $row['hotel_name']; ?>">
+            <input type="text" id="hotel_name" name="hotel_name" required>
             <br><br>
             <label for="room_type">Room Type: </label>
-            <input type="text" id="room_type" name="room_type" required value="<?php echo $row['room_type']; ?>">
+            <input type="text" id="room_type" name="room_type" required>
             <br><br>
             <label for="room_availability">Room Availability: </label>
-            <input type="number" id="room_availability" name="room_availability" required value="<?php echo $row['room_availability']; ?>">
+            <input type="number" id="room_availability" name="room_availability" required>
             <br><br>
             <label for="hotel_availability">Hotel Availability: </label>
-            <input type="text" id="hotel_availability" name="hotel_availability" required value="<?php echo $row['hotel_availability']; ?>">
+            <input type="text" id="hotel_availability" name="hotel_availability" required>
             <br><br>
             <label for="hotel_price">Hotel Price: </label>
-            <input type="number" id="hotel_price" name="hotel_price" required value="<?php echo $row['hotel_price']; ?>">
+            <input type="number" id="hotel_price" name="hotel_price" required>
             <br><br>
             <input type="submit" name="submit" value="Create">
         </form>
