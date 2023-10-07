@@ -8,7 +8,7 @@
     <?php
 	include("conn.php");
         if (isset($_GET['report_id'])) {
-            $report_id = intval($_GET['report_id']); 
+            $report_id = $_GET['report_id']; 
             $result = mysqli_query($con, "SELECT * FROM report WHERE report_id = $report_id");
             
             while ($row = mysqli_fetch_array($result)) {
