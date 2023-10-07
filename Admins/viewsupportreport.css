@@ -22,3 +22,9 @@ td a {
     border: 1px solid;
     border-radius: 3px;
     }
+
+td a:hover {
+    background-color: green;
+    color: yellow;
+    border: 1px solid black;
+    }
