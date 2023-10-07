@@ -22,15 +22,6 @@ input {
     box-sizing: border-box;
     }
 
-.columns {
-    display: flex;
-    justify-content: space-between;
-    }
-
-.column {
-    width: 48%;
-    }
-
 button{
     margin-right: 10px;
     padding: 12px;
