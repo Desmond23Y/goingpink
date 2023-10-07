@@ -64,6 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             <select id="hotel_availability" name="hotel_availability" required>
                 <option value="Available"></option>
                 <option valuie="Unavailable"></option>
+            </select>
             <br><br>
             <label for="hotel_price">Hotel Price: </label>
             <input type="number" id="hotel_price" name="hotel_price" required>
