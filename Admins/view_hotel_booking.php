@@ -14,7 +14,7 @@ $result=mysqli_query($con,"SELECT* FROM hotel_booking");
 </head>
 
 <table width="90%">
-    <tr bgcolor="red">
+    <tr bgcolor="#FFB6C1">
         <td>Hotel Booking ID</td>
         <td>Hotel Manager ID</td>
         <td>User ID</td>
