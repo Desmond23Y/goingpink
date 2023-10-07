@@ -4,11 +4,6 @@ include('conn.php');
 
 $selectedHotelID = null;
 
-if (!isset($_SESSION['user_id'])) {
-    header('Location: ../login.php');
-    exit();
-}
-
 $result = mysqli_query($con, "SELECT * FROM hotel_information");
 if (!$result) {
     die('Query Error: ' . mysqli_error($con));

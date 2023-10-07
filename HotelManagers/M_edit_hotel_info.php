@@ -2,11 +2,6 @@
 session_start();
 include('conn.php');
 
-if (!isset($_SESSION['user_id'])) {
-    header('Location: ../login.php');
-    exit();
-}
-
 if (isset($_GET['hotel_id'])) {
     $hotel_id = $_GET['hotel_id']; 
     $result = mysqli_query($con, "SELECT * FROM hotel_information WHERE hotel_id = '$hotel_id'");
