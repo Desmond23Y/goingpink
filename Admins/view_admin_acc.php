@@ -20,9 +20,12 @@ $result = mysqli_query($con, "SELECT * FROM admin");
 <html>
 <head>
     <title>View Admin Accounts</title>
+    <link rel="stylesheet" href="viewadminacc.css">
 </head>
 <body>
-    <a href="create_admin_acc.php">Add New Admin Account</a><br>
+    <div class="button">
+        <a href="create_admin_acc.php">Add New Admin Account</a><br>
+    </div>
 
     <table width="90%">
         <tr bgcolor="#FFB6C1">
