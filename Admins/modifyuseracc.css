@@ -10,11 +10,10 @@ form {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 100vh;
     }
 
 label {
-    display: flex;
-    flex-direction: column;
     margin-bottom: 8px;
     font-weight: bold;
     }
