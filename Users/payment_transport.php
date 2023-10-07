@@ -5,7 +5,7 @@
 </head>
 <body>
     <h2>Payment Details</h2>
-    <form action="" method="POST">
+    <form action="invoice.php" method="POST">
         <label for="card_information">Card Information:</label>
         <input type="text" name="card_information" pattern="[0-9]{16}" placeholder="1234 1234 1234 1234" required>
         <br><br>
