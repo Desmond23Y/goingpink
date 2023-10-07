@@ -5,10 +5,14 @@ h2 {
     text-align: center;
     }
 
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    }
+
 label {
     display: block;
     margin-bottom: 8px;
-    font-weight: bold;
     }
 
 input {
@@ -16,8 +20,15 @@ input {
     padding: 8px;
     margin-bottom: 16px;
     box-sizing: border-box;
-    border: 1px solid silver;
-    border-radius: 4px;
+    }
+
+.columns {
+    display: flex;
+    justify-content: space-between;
+    }
+
+.column {
+    width: 48%;
     }
 
 button{
