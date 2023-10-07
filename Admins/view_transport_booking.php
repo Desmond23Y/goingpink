@@ -9,6 +9,11 @@ if (!isset($_SESSION['user_id'])) {
 
 $result=mysqli_query($con,"SELECT* FROM transportation_booking");
 ?>
+
+<head>
+    <link rel="stylesheet" href="viewtransportbooking.css">
+</head>
+
 <table width="90%">
     <tr bgcolor="#FFB6C1">
         <td>Transport Booking ID</td>
