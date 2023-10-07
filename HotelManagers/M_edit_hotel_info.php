@@ -48,7 +48,6 @@ if (isset($_GET['hotel_id'])) {
                     <ul class="navibar">
                         <li><a href="M_hotel_homepage.php">HOME</a></li>
                         <li><a href="M_view_hotel_info.php">BACK</a></li>
-            
                         <li><a href="../logout.php" class="right">LOGOUT</a></li>
                     </ul>
                 </nav>
