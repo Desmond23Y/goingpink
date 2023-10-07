@@ -1,0 +1,31 @@
+td {
+    border: 1px solid silver;
+    padding: 12px;
+    text-align: left;
+    }
+
+tr:hover {
+    background-color: whitesmoke;
+    }
+
+tr:nth-child(even) {
+    background-color: white;
+    }
+
+td a {
+    display: inline-block;
+    padding: 6px 10px;
+    margin: 2px;
+    color: blue;
+    background-color: yellow;
+    text-decoration: none;
+    border: 1px solid;
+    border-radius: 3px;
+    }
+
+td a:hover {
+    background-color: yellow;
+    color: black;
+    border: 1px solid black;
+    cursor: pointer;
+    }
