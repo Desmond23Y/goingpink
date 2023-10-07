@@ -16,31 +16,111 @@ $result = mysqli_query($con, "SELECT * FROM ticket");
     <link rel="stylesheet" href="viewticket.css">
     
     <style>
-        .navibar {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            background-color: #F6A2B6;
-            font-family: Butler, serif;
+    body {
+        margin: 0;
+        padding: 0;
         }
 
-        .navibar a {
-            float: left;
-            display: block;
-            color: #333;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
+    .navibar {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #FFB6C1;
+        font-family: Butler, serif;
         }
 
-        .navibar a.right {
-            float: right;
+    .navibar a {
+        float: left;
+        display: block;
+        color: #333;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
         }
 
-        .navibar a:hover {
-            background-color: #C7949C;
-            color: white;
+    .navibar a.right {
+        float: right;
+        }
+
+    .navibar a:hover {
+        background-color: #C7949C;
+        color: white;
+        }
+
+    table {
+        width: 90%;
+        border-collapse: collapse;
+        margin: 20px auto; 
+        }
+
+    .navibar {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #FFB6C1;
+        font-family: Butler, serif;
+        }
+
+    .navibar a {
+        float: left;
+        display: block;
+        color: #333;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        }
+
+    .navibar a.right {
+        float: right;
+        }    
+
+    .navibar a:hover {
+        background-color: #C7949C;
+        color: white;
+        }
+
+    table {
+        width: 90%;
+        border-collapse: collapse;
+        margin: 20px auto; 
+        }
+
+    th, td {
+        border: 1px solid #FFB6C1;
+        padding: 8px;
+        text-align: left;
+        }
+
+    tr:nth-child(even) {
+        background-color: #FFE6E6;
+        }    
+
+    td{
+        font-family: Futura, sans-serif;
+        }
+
+    tr:nth-child(odd) {
+        background-color: #FFF3F3;
+        }        
+
+    th {
+        background-color: #E9204F;
+        color: white;    
+        }    
+
+    tr:nth-child(even) {
+        background-color: #FFE6E6;
+        }
+
+    tr:nth-child(odd) {
+        background-color: #FFF3F3;
+        }
+
+    th {
+        background-color: #E9204F;
+        color: white;
         }
     </style>
     
