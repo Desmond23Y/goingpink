@@ -1,14 +1,24 @@
 #request-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    width: 300px;
+    max-width: 400px;
+    margin: 50px auto;
     padding: 20px;
-    border: 1px solid black;
-    border-radius: 8px;
     background-color: white;
+    border-radius: 5px;
+    }
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    }
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
     }
 
 button{
