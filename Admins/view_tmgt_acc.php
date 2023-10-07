@@ -16,10 +16,13 @@ if (!isset($_SESSION['user_id'])) {
 <html>
 <head>
     <title>View Transport Manager Accounts</title>
+    <link rel="stylesheet" href="viewtmgtacc.css">
 </head>
 <body>
-    <a href="create_tmgt_acc.php">Add New Transport Manager Account</a><br>
-
+    <div class="button">
+        <a href="create_tmgt_acc.php">Add New Transport Manager Account</a><br>
+    </div>
+    
     <table width="90%">
         <tr bgcolor="#FFB6C1">
             <td>Transport Manager ID</td>
