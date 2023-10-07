@@ -13,7 +13,7 @@ $result = mysqli_query($con, "SELECT * FROM ticket");
 <html>
 <head>
     <title>View Tickets</title>
-    <link rel="stylesheet" href="viewticket.css">
+    <link rel="stylesheet" href="ticket.css">
     
     <style>
     body {
