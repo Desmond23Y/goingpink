@@ -14,9 +14,8 @@ h2 {
     }
 
 form {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 10px; 
+    display: flex;
+    flex-direction: column;
     }
 
 label {
