@@ -34,10 +34,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 
 <body>
-    <header>
-        <h1>Submit request form for customer support</h1>
-    </header>
-
     <section class="request-form">
         <h2>Help Request Form</h2>
 
