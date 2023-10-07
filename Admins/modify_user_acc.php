@@ -66,7 +66,9 @@ if (isset($_GET['user_id'])) {
             <link rel="stylesheet" href="modifyuseracc.css">
         </head>
         <body>
-            <h2>User Account Modification</h2>
+            <header>
+                <h2>User Account Modification</h2>
+            </header>
             <form method="post" action="modify_user_acc.php?user_id=<?php echo $user_id; ?>">
                 <label for="name">Username:</label>
                 <input type="text" id="name" name="name" required="required" value="<?php echo $row['username']; ?>">
