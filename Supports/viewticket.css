@@ -4,12 +4,16 @@ td {
     text-align: left;
     }
 
+th {
+    background-color: wheat;
+    }
+
 tr:hover {
     background-color: whitesmoke;
     }
 
 tr:nth-child(even) {
-    background-color: white;
+    background-color: whitesmoke;
     }
 
 td a {
