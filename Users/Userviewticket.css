@@ -10,11 +10,12 @@ h1 {
     column-gap: 20px; 
     padding: 20px;
     text-align: center;
-    display: block;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    height: 100vh;
     margin: 0;
-    height: 50px
 }
 
 .ticket {
