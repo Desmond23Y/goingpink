@@ -18,7 +18,8 @@ h1 {
 }
 
 .ticket {
-    display: block; 
+    display: flex;
+    flex-direction: column;
     width: 50%; 
     margin-bottom: 20px; 
     border: 1px solid silver;
