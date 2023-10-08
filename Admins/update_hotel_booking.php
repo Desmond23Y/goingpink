@@ -12,7 +12,7 @@
             $result = mysqli_query($con, "SELECT * FROM hotel_booking WHERE hotel_booking_id = '$hotel_booking_id'");
             
             while ($row = mysqli_fetch_array($result)) {
-                if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['number_of_pax']) && isset($_POST['check_in_date']) && isset($_POST['check_out_date'])) {
+                if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['numpax']) && isset($_POST['indate']) && isset($_POST['outdate'])) {
                     // Handle form submission and update database here
 		    $hotel_booking_id = $row['hotel_booking_id']; // Get the hotel_booking_id from the row
 		    $number_of_pax = $_POST['numpax'];
