@@ -20,8 +20,8 @@ canvas {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
 
-.container {
-    max-width: 80%;
+#lineGraph{
+    max-width: 70%;
     max-height: 80%;
     margin: 0 auto;
     }
