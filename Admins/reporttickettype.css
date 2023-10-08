@@ -20,7 +20,7 @@ canvas {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
 
-#lineGraph {
+#lineChart {
     max-width: 70%;
     max-height: 60%;
     margin: 20px auto; 
