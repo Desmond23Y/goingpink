@@ -40,6 +40,8 @@
         'Hotel Management' => $countHmgt,
         'Transport Management' => $countTmgt
     );
+
+    include("Navi_bar_admin.php");
     ?>
 
     <h2>User Type Statistics</h2>
