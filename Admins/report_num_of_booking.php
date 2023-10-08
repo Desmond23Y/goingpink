@@ -12,6 +12,8 @@
 
     if (!$con) {
         die("Connection failed: " . mysqli_connect_error());
+
+    include("Navi_bar_admin.php");
     }
 
     // Query data from Table 1
