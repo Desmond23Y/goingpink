@@ -20,7 +20,7 @@ $result = mysqli_query($con, "SELECT * FROM admin");
 <html>
 <head>
     <title>View Admin Accounts</title>
-    <link rel="stylesheet" href="viewadminacc.css">
+    <link rel="stylesheet" href="Viewadminacc.css">
 </head>
 <body>
     <div class="button">
