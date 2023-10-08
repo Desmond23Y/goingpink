@@ -10,7 +10,7 @@ if (!isset($_SESSION['user_id'])) {
 $result=mysqli_query($con,"SELECT* FROM hotel_booking");
 ?>
 <head>
-    <link rel="stylesheet" href="viewhotelbooking.css">
+    <link rel="stylesheet" href="Viewhotelbooking.css">
 </head>
 
 <table width="90%">
