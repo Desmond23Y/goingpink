@@ -1,6 +1,4 @@
-<?php
-echo '<script>alert("PAYMENT SUCCESSFULLY!");</script>';
-?>
+
 
 <!DOCTYPE html>
 <html>
@@ -24,7 +22,7 @@ echo '<script>alert("PAYMENT SUCCESSFULLY!");</script>';
         <input type="text" name="cardholder_name" placeholder="Full Name on Card" required>
         <br><br>
 
-        <button type="submit">PAY NOW</button>
+        <button type="submit" <?php echo '<script>alert("Payment Successfully!")</script>' ?>>PAY NOW</button>
     </form>
 </body>
 </html>
