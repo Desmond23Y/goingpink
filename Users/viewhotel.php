@@ -8,13 +8,22 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 
-// Initialize a variable to store the selected hotel ID
+// Initialize variables to store the selected hotel ID and price
 $selectedHotelID = null;
+$selectedHotelPrice = null;
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['book_hotel'])) {
-    // If a hotel is selected for booking, store its ID in the session
+    // If a hotel is selected for booking, store its ID and price in the session
     $selectedHotelID = $_POST['book_hotel'];
     $_SESSION['selected_hotel_id'] = $selectedHotelID;
+    
+    // Retrieve the hotel price from the database based on the selected ID
+    $result = mysqli_query($con, "SELECT hotel_price FROM hotel_information WHERE hotel_id = $selectedHotelID");
+    if ($result && mysqli_num_rows($result) > 0) {
+        $row = mysqli_fetch_assoc($result);
+        $selectedHotelPrice = $row["hotel_price"];
+        $_SESSION['selected_hotel_price'] = $selectedHotelPrice;
+    }
 
     // Redirect to the hotel booking page
     header('Location: hotelbooking.php');
@@ -53,9 +62,8 @@ if (!$result) {
                 echo '<form method="POST" action="">';
                 echo '<button type="submit" name="book_hotel" value="' . $row["hotel_id"] . '">Book This Hotel</button>';
                 echo '</form>';
-                }
             }
-         else {
+        } else {
             echo "No hotels available.";
         }
         ?>
