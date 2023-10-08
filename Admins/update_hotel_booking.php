@@ -63,8 +63,8 @@
     
                 <p>
                     <label> Hotel ID: </label>
-		            <input name='hid' readonly='readonly' value="<?php echo $row['hotel_id']?>">
-		        </p>
+		    <input name='hid' readonly='readonly' value="<?php echo $row['hotel_id']?>">
+		</p>
                 
                 <p>
                     <form method="post">
