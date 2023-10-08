@@ -29,6 +29,8 @@
 
     // Close the database connection
     mysqli_close($con);
+
+    include("Navi_bar_admin.php");
     ?>
 
     <h2>Support Type Statistics</h2>
