@@ -8,16 +8,14 @@ $user_id = $_SESSION['user_id'];
 $hotel_query = "SELECT hotel_id, hotel_total_price 
                FROM hotel_booking 
                WHERE user_id = '$user_id'
-               ORDER BY hotel_id DESC
-               LIMIT 1";
+               ORDER BY hotel_id DESC";
 $hotel_result = mysqli_query($con, $hotel_query);
 
 // Query to fetch the most recent transportation booking
 $transport_query = "SELECT transport_id, transport_total_price 
                    FROM transportation_booking 
                    WHERE user_id = '$user_id'
-                   ORDER BY transport_id DESC
-                   LIMIT 1";
+                   ORDER BY transport_id DESC";
 $transport_result = mysqli_query($con, $transport_query);
 
 mysqli_close($con);
