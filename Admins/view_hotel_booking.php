@@ -39,8 +39,8 @@ $result=mysqli_query($con,"SELECT* FROM hotel_booking");
         echo'<td>'.$row["number_of_pax"].'</td>';
         echo'<td>'.$row["check_in_date"].'</td>';
         echo'<td>'.$row["check_out_date"].'</td>';
-        echo'<td><a href="admin_update_hotel_booking.php?hotel_booking_id='.$row["hotel_booking_id"].'">Update</a></td>';
-        echo'<td><a onclick="return confirm(\'Cancel '.$row["hotel_booking_id"].' booking details?\')" href="admin_cancel_hotel_booking.php?hotel_booking_id='.$row["hotel_booking_id"].'">Cancel</a></td>';
+        echo'<td><a href="update_hotel_booking.php?hotel_booking_id='.$row["hotel_booking_id"].'">Update</a></td>';
+        echo'<td><a onclick="return confirm(\'Cancel '.$row["hotel_booking_id"].' booking details?\')" href="cancel_hotel_booking.php?hotel_booking_id='.$row["hotel_booking_id"].'">Cancel</a></td>';
         echo'</tr>';
     }
     mysqli_close($con);
