@@ -2,66 +2,55 @@
 session_start();
 include('conn.php'); 
 
-
-if (!isset($_SESSION['user_id'])) {
-    header('Location: ../login.php');
-    exit();
-}
-
-// Retrieve the user's latest hotel booking
 $user_id = $_SESSION['user_id'];
-$latestHotelBookingQuery = "SELECT hotel_id, hotel_total_price FROM hotel_booking WHERE user_id = '$user_id' ORDER BY booking_timestamp DESC LIMIT 1";
-$latestHotelBookingResult = mysqli_query($con, $latestHotelBookingQuery);
 
-// Retrieve the user's latest transport booking
-$latestTransportBookingQuery = "SELECT transport_id, transport_total_price FROM transportation_booking WHERE user_id = '$user_id' ORDER BY booking_timestamp DESC LIMIT 1";
-$latestTransportBookingResult = mysqli_query($con, $latestTransportBookingQuery);
+// Query to fetch the most recent hotel booking
+$hotel_query = "SELECT hotel_id, hotel_total_price 
+               FROM hotel_booking 
+               WHERE user_id = '$user_id'
+               ORDER BY hotel_id DESC
+               LIMIT 1";
+$hotel_result = mysqli_query($con, $hotel_query);
 
-// Check if both queries were successful
-if (!$latestHotelBookingResult || !$latestTransportBookingResult) {
-    die('Query Error: ' . mysqli_error($con));
-}
+// Query to fetch the most recent transportation booking
+$transport_query = "SELECT transport_id, transport_total_price 
+                   FROM transportation_booking 
+                   WHERE user_id = '$user_id'
+                   ORDER BY transport_id DESC
+                   LIMIT 1";
+$transport_result = mysqli_query($con, $transport_query);
 
-// Fetch the latest hotel booking information
-$latestHotelBooking = mysqli_fetch_assoc($latestHotelBookingResult);
-
-// Fetch the latest transport booking information
-$latestTransportBooking = mysqli_fetch_assoc($latestTransportBookingResult);
-
-// Close the database connection
 mysqli_close($con);
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-    <title>User Latest Booking</title>
-    <!-- Add your CSS styling here if needed -->
+    <title>User Booking Details</title>
+    <link rel="stylesheet" href="havent_do.css">
 </head>
 <body>
-    <h2>User Latest Booking</h2>
-    <table>
-        <tr>
-            <th>Hotel ID</th>
-            <th>Hotel Total Price</th>
-        </tr>
-        <tr>
-            <td><?php echo $latestHotelBooking['hotel_id']; ?></td>
-            <td><?php echo $latestHotelBooking['hotel_total_price']; ?></td>
-        </tr>
-    </table>
+    <h2>User Booking Details</h2>
+    <h3>Hotel Booking:</h3>
+    <?php
+    if ($hotel_result && mysqli_num_rows($hotel_result) > 0) {
+        $hotel_row = mysqli_fetch_assoc($hotel_result);
+        echo "Hotel ID: " . $hotel_row['hotel_id'] . "<br>";
+        echo "Hotel Total Price: " . $hotel_row['hotel_total_price'] . "<br>";
+    } else {
+        echo "No hotel booking found.";
+    }
+    ?>
 
-    <br>
-
-    <table>
-        <tr>
-            <th>Transport ID</th>
-            <th>Transport Total Price</th>
-        </tr>
-        <tr>
-            <td><?php echo $latestTransportBooking['transport_id']; ?></td>
-            <td><?php echo $latestTransportBooking['transport_total_price']; ?></td>
-        </tr>
-    </table>
+    <h3>Transportation Booking:</h3>
+    <?php
+    if ($transport_result && mysqli_num_rows($transport_result) > 0) {
+        $transport_row = mysqli_fetch_assoc($transport_result);
+        echo "Transport ID: " . $transport_row['transport_id'] . "<br>";
+        echo "Transport Total Price: " . $transport_row['transport_total_price'] . "<br>";
+    } else {
+        echo "No transportation booking found.";
+    }
+    ?>
 </body>
 </html>
