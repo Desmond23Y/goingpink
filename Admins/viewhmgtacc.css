@@ -20,9 +20,7 @@ td {
     text-align: left;
     }
 
-tr:nth-child(odd) {
-    background-color: whitesmoke;
-    }
+
 
 td a {
     display: inline-block;
