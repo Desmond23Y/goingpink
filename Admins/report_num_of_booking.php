@@ -3,6 +3,7 @@
 <head>
     <title>Booking Count Report</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="usernumofbooking.css">
 </head>
 <body>
     <?php
