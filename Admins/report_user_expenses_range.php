@@ -3,6 +3,7 @@
 <head>
     <title>User Expenses Range Report</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="reportuserexpensesrange.css">
 </head>
 <body>
     <?php
