@@ -3,6 +3,7 @@
 <head>
     <title>User Type Report</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="reportusertype.css">
 </head>
 <body>
     <?php
