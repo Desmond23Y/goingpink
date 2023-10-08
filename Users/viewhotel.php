@@ -8,25 +8,14 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 
-// Initialize variables to store the selected hotel ID and price
+// Initialize a variable to store the selected hotel ID
 $selectedHotelID = null;
-$selectedHotelPrice = null;
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['book_hotel'])) {
     // If a hotel is selected for booking, store its ID in the session
     $selectedHotelID = $_POST['book_hotel'];
-    
-    // Retrieve the hotel price from the database based on the selected ID
-    $price_query = "SELECT hotel_price FROM hotel_information WHERE hotel_id = $selectedHotelID";
-    $price_result = mysqli_query($con, $price_query);
-    
-    if ($price_result && mysqli_num_rows($price_result) > 0) {
-        $price_row = mysqli_fetch_assoc($price_result);
-        $selectedHotelPrice = $price_row["hotel_price"];
-    }
-    
     $_SESSION['selected_hotel_id'] = $selectedHotelID;
-    $_SESSION['selected_hotel_price'] = $selectedHotelPrice;
+
 
     // Redirect to the hotel booking page
     header('Location: hotelbooking.php');
