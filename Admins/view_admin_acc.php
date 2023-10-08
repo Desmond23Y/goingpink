@@ -4,6 +4,7 @@ session_start();
 
 // Include the database connection file
 include("conn.php");
+include("Navi_bar_admin.php");
 
 // Check if the user is authenticated
 if (!isset($_SESSION['user_id'])) {
