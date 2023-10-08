@@ -18,7 +18,7 @@
     $query = "SELECT gender, COUNT(*) as count FROM user GROUP BY gender";
     $result = mysqli_query($con, $query);
 
-    $genderData = array();
+    $genderData = [];
     while ($row = mysqli_fetch_assoc($result)) {
         $genderData[$row['gender']] = $row['count'];
     }
