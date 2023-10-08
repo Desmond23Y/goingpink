@@ -12,25 +12,26 @@
             $result = mysqli_query($con, "SELECT * FROM hotel_booking WHERE hotel_booking_id = '$hotel_booking_id'");
             
             while ($row = mysqli_fetch_array($result)) {
-                if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-		    if (isset($_POST['numpax']) && !empty($_POST['numpax'])) {
+                if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['number_of_pax']) && isset($_POST['check_in_date']) && isset($_POST['check_out_date'])) {
                     // Handle form submission and update database here
-	                    $hotel_booking_id = $row['hotel_booking_id']; // Get the hotel_booking_id from the row
-	                    $number_of_pax = $_POST['numpax'];
-	                    $check_in_date = $_POST['indate'];
-	                    $check_out_date = $_POST['outdate'];
-                    
-			    $update_sql = "UPDATE hotel_booking SET
-			        number_of_pax = ?,
-			        check_in_date = ?,
-			        check_out_date = ?
-			        WHERE hotel_booking_id = ?";
-			
-			    $update_stmt = mysqli_prepare($con, $update_sql);
-			    mysqli_stmt_bind_param($update_stmt, "ssss", $number_of_pax, $check_in_date, $check_out_date, $hotel_booking_id);
+		    $hotel_booking_id = $row['hotel_booking_id']; // Get the hotel_booking_id from the row
+		    $number_of_pax = $_POST['numpax'];
+		    $check_in_date = $_POST['indate'];
+		    $check_out_date = $_POST['outdate'];
 
+                    if ($number_of_pax < 1) {
+		        echo "Number of guests must be at least 1.";
+		    } elseif (strtotime($check_in_date) >= strtotime($check_out_date)) {
+		        echo "Invalid check-in or check-out dates.";
 		    } else {
-        		echo "Number of Pax is required and cannot be empty.";
+			$update_sql = "UPDATE hotel_booking SET
+			   number_of_pax = ?,
+			   check_in_date = ?,
+			   check_out_date = ?
+			   WHERE hotel_booking_id = ?";
+		
+		    $update_stmt = mysqli_prepare($con, $update_sql);
+		    mysqli_stmt_bind_param($update_stmt, "ssss", $number_of_pax, $check_in_date, $check_out_date, $hotel_booking_id);
     		    }
                     
                     if (mysqli_stmt_execute($update_stmt)) {
