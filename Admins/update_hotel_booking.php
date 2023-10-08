@@ -46,7 +46,25 @@
                     <input name='hbid' readonly='readonly' value="<?php echo $row['hotel_booking_id']?>">
                 </p>
                 
-                <!-- Other fields... -->
+                 <p>
+                    <label> Hotel Manager ID: </label>
+                    <input name='hmid' readonly='readonly' value="<?php echo $row['hotel_manager_id']?>">
+                </p>
+                
+                <p>
+                    <label> User ID: </label>
+                    <input name='uid' readonly='readonly' value="<?php echo $row['user_id']?>">
+                </p>
+
+                <p>
+                    <label> Admin ID: </label>
+                    <input name='aid' readonly='readonly' value="<?php echo $row['admin_id']?>">
+                </p>
+    
+                <p>
+                    <label> Hotel ID: </label>
+		            <input name='hid' readonly='readonly' value="<?php echo $row['hotel_id']?>">
+		        </p>
                 
                 <p>
                     <form method="post">
