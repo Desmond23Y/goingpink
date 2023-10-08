@@ -22,7 +22,7 @@ canvas {
 
 #pieChart {
     max-width: 80%;
-    max-height: 60%;
+    height: 60%;
     margin: 20px auto; 
     display: block;
     }
