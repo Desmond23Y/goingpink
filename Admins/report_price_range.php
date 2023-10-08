@@ -24,7 +24,6 @@
         '$200 - $499',
         '$500 - $799',
         'Over $800'
-        
     );
 
     // Initialize an array to store the count of hotels in each price category
