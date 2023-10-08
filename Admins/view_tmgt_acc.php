@@ -16,7 +16,7 @@ if (!isset($_SESSION['user_id'])) {
 <html>
 <head>
     <title>View Transport Manager Accounts</title>
-    <link rel="stylesheet" href="viewtmgtacc.css">
+    <link rel="stylesheet" href="Viewtmgtacc.css">
 </head>
 <body>
     <div class="button">
