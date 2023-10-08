@@ -11,7 +11,7 @@ $result=mysqli_query($con,"SELECT* FROM transportation_booking");
 ?>
 
 <head>
-    <link rel="stylesheet" href="viewtransportbooking.css">
+    <link rel="stylesheet" href="Viewtransportbooking.css">
 </head>
 
 <table width="90%">
