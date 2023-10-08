@@ -20,8 +20,8 @@ td {
     text-align: left;
     }
 
-tr:nth-child(even) {
-    background-color: white;
+tr:nth-child(odd) {
+    background-color: whitesmoke;
     }
 
 td a {
