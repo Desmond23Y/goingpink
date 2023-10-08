@@ -16,7 +16,7 @@ if (!isset($_SESSION['user_id'])) {
 <html>
 <head>
     <title>View Hotel Manager Accounts</title>
-        <link rel="stylesheet" href="viewhmgtacc.css">
+        <link rel="stylesheet" href="Viewhmgtacc.css">
 </head>
 <body>    
     <div class="button">
