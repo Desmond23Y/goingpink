@@ -54,8 +54,13 @@
                     y: {
                         beginAtZero: true
                     }
-                }
-            }
+                },
+                plugins: {
+                    legend: {
+                        display: false, // Hide the legend
+                    },
+                },
+            },
         });
     </script>
 </body>
