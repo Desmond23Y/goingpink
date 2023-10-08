@@ -19,7 +19,7 @@ canvas {
     }
 
 #areaChart {
-    width: 100%; 
+    MAX-width: 60%; 
     margin: 20px auto; 
     display: block;
     }
