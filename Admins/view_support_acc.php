@@ -16,7 +16,7 @@ if (!isset($_SESSION['user_id'])) {
 <html>
 <head>
     <title>View Support Accounts</title>
-    <link rel="stylesheet" href="viewsupportacc.css">
+    <link rel="stylesheet" href="Viewsupportacc.css">
 </head>
 <body>
     <div class="button">
