@@ -21,7 +21,7 @@ td {
     }
 
 tr:nth-child(even) {
-    background-color: white;
+    background-color: whitesmoke;
     }
 
 td a {
