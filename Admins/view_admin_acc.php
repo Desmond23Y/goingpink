@@ -4,7 +4,6 @@ session_start();
 
 // Include the database connection file
 include("conn.php");
-include("Navi_bar_admin.php");
 
 // Check if the user is authenticated
 if (!isset($_SESSION['user_id'])) {
@@ -15,6 +14,7 @@ if (!isset($_SESSION['user_id'])) {
 // Execute a MySQL query to fetch admin records
 $result = mysqli_query($con, "SELECT * FROM admin");
 
+include("Navi_bar_admin.php");
 ?>
 
 <!DOCTYPE html>
