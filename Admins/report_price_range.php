@@ -3,6 +3,7 @@
 <head>
     <title>Hotel Price Report</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="reportpricerange.css">
 </head>
 <body>
     <?php
