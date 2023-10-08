@@ -11,7 +11,7 @@ $result=mysqli_query($con,"SELECT* FROM invoice");
 ?>
 
 <head>
-    <link rel="stylesheet" href="viewinvoice.css">
+    <link rel="stylesheet" href="Viewinvoice.css">
 </head>
 
 <table width="90%">
