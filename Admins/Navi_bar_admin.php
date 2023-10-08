@@ -13,6 +13,7 @@
     overflow: hidden;
     background-color: #F9B9C3;
     font-family: Butler, serif;
+    font-size: 15px;
     }
 
 .navibar a {
