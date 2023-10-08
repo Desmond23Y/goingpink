@@ -21,7 +21,8 @@ canvas {
     }
 
 #lineGraph{
-    max-width: 60%;
+    max-width: 70%;
     max-height: 60%;
     margin: 0 auto;
+    display: block;
     }
