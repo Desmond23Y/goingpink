@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('conn.php');
+include('conn.php'); 
 
 $user_id = $_SESSION['user_id'];
 $selectedhotelid = $_SESSION['selected_hotel_id'];
@@ -28,12 +28,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['number_of_pax']) && i
     } elseif (strtotime($check_in_date) >= strtotime($check_out_date)) {
         echo "Invalid check-in or check-out dates.";
     } else {
-        // Calculate the total amount based on the selectedHotelPrice and number_of_pax
-        $total_amount = $selectedHotelPrice * $number_of_pax;
-
-        // Get the current date
-        $invoice_date = date('Y-m-d');
-
         // Check if the selected hotel ID exists in the hotel_information table
         $check_hotel_query = "SELECT * FROM hotel_information WHERE hotel_id = '$selectedhotelid'";
         $result = mysqli_query($con, $check_hotel_query);
@@ -59,18 +53,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['number_of_pax']) && i
                 // Insert the hotel booking with the hotel_total_price
                 $hotel_booking_query = "INSERT INTO hotel_booking (user_id, hotel_id, number_of_pax, check_in_date, check_out_date, hotel_manager_id, admin_id, hotel_total_price) 
                                         VALUES ('$user_id', '$selectedhotelid', '$number_of_pax', '$check_in_date', '$check_out_date', '$hotel_manager_id', '$admin_id', '$selectedHotelPrice')";
-
+            
                 if (mysqli_query($con, $hotel_booking_query)) {
-                    // Insert invoice data into the invoice table
-                    $invoice_query = "INSERT INTO invoice (user_id, hotel_booking_id, total_amount, invoice_date) 
-                                      VALUES ('$user_id', LAST_INSERT_ID(), '$total_amount', '$invoice_date')";
-                    if (mysqli_query($con, $invoice_query)) {
-                        header("Location: view_hotel_payment.php?hotel_id=$selectedhotelid&user_id=$user_id");
-                    } else {
-                        echo "Error inserting invoice data: " . mysqli_error($con);
-                    }
+                    header("Location: view_hotel_payment.php?hotel_id=$selectedhotelid&user_id=$user_id");
                 } else {
-                    echo "Error inserting hotel booking: " . mysqli_error($con);
+                    echo "Error: " . mysqli_error($con);
                 }
             } else {
                 echo "Error selecting hotel manager and admin.";
