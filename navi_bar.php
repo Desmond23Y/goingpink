@@ -51,6 +51,7 @@ body {
                 <li><a href="../index.php">HOME</a></li>
                 <li><a href="../Users/view_profile.php">PROFILE</a></li>
                 <li><a href="../Users/faq.php">FAQ</a></li>
+                <li><a href="../Users/invoice.php">Check Booking History</a></li>
 
                
 
