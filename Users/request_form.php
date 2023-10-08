@@ -12,7 +12,7 @@ if (!isset($_SESSION['user_id'])) {
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $user_id = $_SESSION['user_id'];
 
-    $result = mysqli_query($con, "SELECT support_id FROM support");
+    $result = mysqli_query($con, "SELECT support_id FROM support ORDER BY RAND() LIMIT 1");
     $row = mysqli_fetch_assoc($result);
     $spt_id = $row['support_id'];
     $sql = "INSERT INTO ticket (support_id, user_id, contact_name, support_type, ticket_description, ticket_status) VALUES ('$spt_id', '$user_id', '$_POST[name]', '$_POST[support]', '$_POST[description]', 'Created')";
