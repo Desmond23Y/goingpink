@@ -5,7 +5,17 @@ include('conn.php');
 $user_id = $_SESSION['user_id'];
 $selectedhotelid = $_SESSION['selected_hotel_id'];
 
+// Fetch the hotel_price based on selectedhotelid
+$hotel_price_query = "SELECT hotel_price FROM hotel_information WHERE hotel_id = '$selectedhotelid'";
+$hotel_price_result = mysqli_query($con, $hotel_price_query);
 
+if ($hotel_price_result && mysqli_num_rows($hotel_price_result) > 0) {
+    $hotel_price_row = mysqli_fetch_assoc($hotel_price_result);
+    $selectedHotelPrice = $hotel_price_row['hotel_price'];
+} else {
+    echo "Error fetching hotel price.";
+    exit();
+}
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['number_of_pax']) && isset($_POST['check_in_date']) && isset($_POST['check_out_date'])) {
     $number_of_pax = $_POST['number_of_pax'];
@@ -40,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['number_of_pax']) && i
                 $hotel_manager_id = $manager_row['hotel_manager_id'];
                 $admin_id = $admin_row['admin_id'];
 
-                // Insert the hotel booking
+                // Insert the hotel booking with the hotel_total_price
                 $hotel_booking_query = "INSERT INTO hotel_booking (user_id, hotel_id, number_of_pax, check_in_date, check_out_date, hotel_manager_id, admin_id, hotel_total_price) 
                                         VALUES ('$user_id', '$selectedhotelid', '$number_of_pax', '$check_in_date', '$check_out_date', '$hotel_manager_id', '$admin_id', '$selectedHotelPrice')";
             
