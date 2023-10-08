@@ -10,6 +10,8 @@ if (!isset($_SESSION['user_id'])) {
     header('Location: login.php'); // Redirect to the login page if not authenticated
     exit(); // Terminate script execution
 }
+
+include("Navi_bar_admin.php");
 ?>
 
 <!DOCTYPE html>
