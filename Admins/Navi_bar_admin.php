@@ -54,7 +54,7 @@
             <li><a href="generatereport.php">GENERATE REPORT</a></li>
             <li><a href="view_hotel_booking.php">MANAGE HOTEL BOOKING</a></li>
             <li><a href="view_transport_booking.php">MANAGE TRANSPORT BOOKING</a></li>
-            <li><a href="../logout.php">LOGOUT</a></li>
+            <li><a href="../logout.php" class="right">LOGOUT</a></li>
         </ul>
     </nav>
 </body>
