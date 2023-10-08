@@ -24,6 +24,7 @@
         '$200 - $499',
         '$500 - $799',
         'Over $800'
+        
     );
 
     // Initialize an array to store the count of hotels in each price category
@@ -45,6 +46,8 @@
 
     // Close the database connection
     mysqli_close($con);
+
+    include("Navi_bar_admin.php");
     ?>
 
     <h2>Hotel Price Statistics</h2>
