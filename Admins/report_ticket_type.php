@@ -3,6 +3,7 @@
 <head>
     <title>Support Type Report</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="reporttickettype.css">
 </head>
 <body>
     <?php
