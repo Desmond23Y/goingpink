@@ -14,7 +14,7 @@ $latestHotelBookingQuery = "SELECT hotel_id, hotel_total_price FROM hotel_bookin
 $latestHotelBookingResult = mysqli_query($con, $latestHotelBookingQuery);
 
 // Retrieve the user's latest transport booking
-$latestTransportBookingQuery = "SELECT transport_id, transport_total_price FROM transport_booking WHERE user_id = '$user_id' ORDER BY booking_timestamp DESC LIMIT 1";
+$latestTransportBookingQuery = "SELECT transport_id, transport_total_price FROM transportation_booking WHERE user_id = '$user_id' ORDER BY booking_timestamp DESC LIMIT 1";
 $latestTransportBookingResult = mysqli_query($con, $latestTransportBookingQuery);
 
 // Check if both queries were successful
