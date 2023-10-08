@@ -3,6 +3,7 @@
 <head>
     <title>Star Rating Report</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="reportstarrating.css">
 </head>
 <body>
     <?php
