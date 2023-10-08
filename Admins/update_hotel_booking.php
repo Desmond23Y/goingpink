@@ -69,13 +69,13 @@
                 <p>
                     <form method="post">
                         <label for="numpax">Number of Pax:</label>
-                        <input type="number" id="numpax" name="numpax" required="required" value="<?php echo $row['number_of_pax']?>"><br>
+                        <input type="number" id="numpax" name="numpax" required="required" value="<?php echo $row['number_of_pax']?>"><br><br>
                         
                         <label for="indate">Check in date:</label>
-                        <input type="date" id="indate" name="indate" required="required" value="<?php echo $row['check_in_date']?>"><br>
+                        <input type="date" id="indate" name="indate" required="required" value="<?php echo $row['check_in_date']?>"><br><br>
                         
                         <label for="outdate">Check out date:</label>
-                        <input type="date" id="outdate" name="outdate" required="required" value="<?php echo $row['check_out_date']?>"><br>
+                        <input type="date" id="outdate" name="outdate" required="required" value="<?php echo $row['check_out_date']?>"><br><br>
 
                         <button type="submit" value="submit">Edit Booking</button>
                     </form><br>
