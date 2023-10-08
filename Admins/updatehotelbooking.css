@@ -26,19 +26,10 @@ label {
     font-weight: bold;
     }
 
-input, select {
+input {
     padding: 10px;
     box-sizing: border-box;
     margin-bottom: 15px;
-    border: 1px solid silver;
-    border-radius: 4px;
-    }
-
-textarea {
-    resize: none;
-    width: 300px;
-    padding: 8px;
-    box-sizing: border-box;
     border: 1px solid silver;
     border-radius: 4px;
     }
