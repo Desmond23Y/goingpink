@@ -20,9 +20,8 @@ canvas {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
 
-#lineChart {
-    max-width: 60%;
+.container {
+    max-width: 600px;
     max-height: 80%;
-    margin: 20px auto; 
-    display: block;
+    margin: 0 auto;
     }
