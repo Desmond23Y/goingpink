@@ -13,7 +13,7 @@ $result = mysqli_query($con, "SELECT * FROM user");
 <html>
 <head>
     <title>View User Accounts</title>
-    <link rel="stylesheet" href="viewuseracc.css">
+    <link rel="stylesheet" href="Viewuseracc.css">
 </head>
 <body>
     <div class="button">
