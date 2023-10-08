@@ -45,6 +45,8 @@
 
     // Close the database connection
     mysqli_close($con);
+
+    include("Navi_bar_admin.php");
     ?>
 
     <h2>User Expenses Statistics</h2>
