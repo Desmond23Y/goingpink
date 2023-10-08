@@ -1,4 +1,6 @@
 body {
+    font-family: 'Butler';
+    font-size: 20px;
     margin: 0;
     padding: 20px;
     text-align: center;
@@ -19,7 +21,7 @@ canvas {
     }
 
 #areaChart {
-    MAX-width: 60%; 
+    max-width: 60%;
     margin: 20px auto; 
     display: block;
     }
