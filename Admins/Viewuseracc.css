@@ -20,12 +20,8 @@ td {
     text-align: left;
     }
 
-tr:hover {
-    background-color: whitesmoke;
-}
-
 tr:nth-child(even) {
-    background-color: white;
+    background-color: whitesmoke;
 }
 
 td a {
