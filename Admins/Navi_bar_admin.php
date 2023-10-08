@@ -24,10 +24,6 @@
     text-decoration: none;
     }
 
-.navibar a.right {
-    float: right;
-    }
-
 .navibar a:hover {
     background-color: #C7949C;
     color: white;
@@ -46,15 +42,15 @@
     <nav>
         <ul class="navibar">
             <li><a href="homepage_admin.php">HOME</a></li>
-            <li><a href="view_user_acc.php" class="right">MANAGE USER</a></li>
-            <li><a href="view_hmgt_acc.php" class="right">MANAGE HOTEL</a></li>
-            <li><a href="view_tmgt_acc.php" class="right">MANAGE TRANSPORT</a></li>
-            <li><a href="view_support_acc.php" class="right">MANAGE SUPPORT</a></li>
-            <li><a href="view_admin_acc.php" class="right">MANAGE ADMIN</a></li>
-            <li><a href="generatereport.php" class="right">GENERATE REPORT</a></li>
-            <li><a href="view_hotel_booking.php" class="right">MANAGE HOTEL BOOKING</a></li>
-            <li><a href="view_transport_booking.php" class="right">MANAGE TRANSPORT BOOKING</a></li>
-            <li><a href="../logout.php" class="right">LOGOUT</a></li>
+            <li><a href="view_user_acc.php">MANAGE USER</a></li>
+            <li><a href="view_hmgt_acc.php">MANAGE HOTEL</a></li>
+            <li><a href="view_tmgt_acc.php">MANAGE TRANSPORT</a></li>
+            <li><a href="view_support_acc.php">MANAGE SUPPORT</a></li>
+            <li><a href="view_admin_acc.php">MANAGE ADMIN</a></li>
+            <li><a href="generatereport.php">GENERATE REPORT</a></li>
+            <li><a href="view_hotel_booking.php">MANAGE HOTEL BOOKING</a></li>
+            <li><a href="view_transport_booking.php">MANAGE TRANSPORT BOOKING</a></li>
+            <li><a href="../logout.php">LOGOUT</a></li>
         </ul>
     </nav>
 </body>
