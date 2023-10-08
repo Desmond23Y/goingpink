@@ -1,3 +1,7 @@
+<?php
+echo '<script>alert("PAYMENT SUCCESSFULLY!");</script>';
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
