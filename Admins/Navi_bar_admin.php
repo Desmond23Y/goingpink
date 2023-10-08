@@ -24,6 +24,10 @@
     text-decoration: none;
     }
 
+.navibar a.right {
+    float: right;
+    }
+
 .navibar a:hover {
     background-color: #C7949C;
     color: white;
