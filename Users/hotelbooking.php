@@ -4,7 +4,7 @@ include('conn.php');
 
 $user_id = $_SESSION['user_id'];
 $selectedhotelid = $_SESSION['selected_hotel_id'];
-$selectedHotelPrice = $_SESSION['selected_hotel_price'];
+
 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['number_of_pax']) && isset($_POST['check_in_date']) && isset($_POST['check_out_date'])) {
