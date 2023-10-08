@@ -13,14 +13,16 @@ $selectedHotelID = null;
 $selectedHotelPrice = null;
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['book_hotel'])) {
-    // If a hotel is selected for booking, store its ID and price in the session
+    // If a hotel is selected for booking, store its ID in the session
     $selectedHotelID = $_POST['book_hotel'];
     
     // Retrieve the hotel price from the database based on the selected ID
-    $result = mysqli_query($con, "SELECT hotel_price FROM hotel_information WHERE hotel_id = $selectedHotelID");
-    if ($result && mysqli_num_rows($result) > 0) {
-        $row = mysqli_fetch_assoc($result);
-        $selectedHotelPrice = $row["hotel_price"];
+    $price_query = "SELECT hotel_price FROM hotel_information WHERE hotel_id = $selectedHotelID";
+    $price_result = mysqli_query($con, $price_query);
+    
+    if ($price_result && mysqli_num_rows($price_result) > 0) {
+        $price_row = mysqli_fetch_assoc($price_result);
+        $selectedHotelPrice = $price_row["hotel_price"];
     }
     
     $_SESSION['selected_hotel_id'] = $selectedHotelID;
