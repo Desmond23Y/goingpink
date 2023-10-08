@@ -57,7 +57,7 @@ if (isset($_GET['hotel_id']) && isset($_GET['user_id'])) {
         ?>
     </div>
     <div class="button">
-        <a href="hotel_payment.php">Proceed</a>
+        <a href="payment_hotel.php">Proceed</a>
     </div>
 </body>
 </html>
