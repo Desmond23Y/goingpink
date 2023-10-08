@@ -4,7 +4,8 @@ include('conn.php');
 
 $user_id = $_SESSION['user_id'];
 $selectedhotelid = $_SESSION['selected_hotel_id'];
-$selectedHotelPrice = $_SESSION['selected_hotel_price'];
+
+
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['number_of_pax']) && isset($_POST['check_in_date']) && isset($_POST['check_out_date'])) {
     $number_of_pax = $_POST['number_of_pax'];
@@ -39,12 +40,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['number_of_pax']) && i
                 $hotel_manager_id = $manager_row['hotel_manager_id'];
                 $admin_id = $admin_row['admin_id'];
 
-                // Insert the hotel booking with the hotel_total_price
+                // Insert the hotel booking
                 $hotel_booking_query = "INSERT INTO hotel_booking (user_id, hotel_id, number_of_pax, check_in_date, check_out_date, hotel_manager_id, admin_id, hotel_total_price) 
                                         VALUES ('$user_id', '$selectedhotelid', '$number_of_pax', '$check_in_date', '$check_out_date', '$hotel_manager_id', '$admin_id', '$selectedHotelPrice')";
             
                 if (mysqli_query($con, $hotel_booking_query)) {
-                    header("Location: view_hotel_payment.php?hotel_id=$selectedhotelid&user_id=$user_id&hotel_total_price=$selectedHotelPrice");
+                    header("Location: view_hotel_payment.php?hotel_id=$selectedhotelid&user_id=$user_id");
                 } else {
                     echo "Error: " . mysqli_error($con);
                 }
