@@ -12,8 +12,6 @@
 
     if (!$con) {
         die("Connection failed: " . mysqli_connect_error());
-
-    include("Navi_bar_admin.php");
     }
 
     // Query data from Table 1
@@ -28,6 +26,8 @@
 
     // Close the database connection
     mysqli_close($con);
+
+    include("Navi_bar_admin.php");
     ?>
 
     <h2>Booking Statistics</h2>
