@@ -22,11 +22,11 @@ body {
     padding: 0;
     }
 
-.navibar a {
+.navibar li {
     float: left;
     }
 
-.navibar a.right {
+.navibar li.right {
     float: right;
     }
 
@@ -78,6 +78,7 @@ body {
                     <a href="view_support_acc.php">SUPPORT</a>
                     <a href="view_admin_acc.php">ADMIN</a>
                 </div>
+            </li>
             <li><a href="generatereport.php">GENERATE REPORT</a></li>
             <li><a href="view_hotel_booking.php">MANAGE HOTEL BOOKING</a></li>
             <li><a href="view_transport_booking.php">MANAGE TRANSPORT BOOKING</a></li>
