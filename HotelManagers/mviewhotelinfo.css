@@ -3,34 +3,30 @@ h1 {
     font-family: 'Butler';
     text-align: center;
     color: black;
-}
+    }
 
-.ticket-list {
-    column-count: 2; 
-    column-gap: 20px; 
-    padding: 20px;
-    text-align: center;
-    display: flex;
+body {
     justify-content: center;
-    align-items: flex-start;
-    height: 100vh;
-    margin: 0;
+    align-items: center;
+    margin: 10px;
+    padding: 0;
     }
 
 .box {
-    display: inline-block; 
-    width: 50%; 
-    margin-bottom: 20px; 
     border: 1px solid silver;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
-    text-align: left;
-    margin: 0 auto;
+    padding: 10px;
+    border-radius: 5px;
     }
 
-.column {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 10px;
+button{
+    padding: 12px;
+    font-size: 16px;
+    background-color: black;
+    color: white;
+    border-radius: 4px;
+    }
+
+button:hover{
+    background-color: black;
+    color: yellow;
     }
