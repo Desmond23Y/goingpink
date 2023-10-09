@@ -41,7 +41,7 @@
         'Transport Management' => $countTmgt
     );
 
-    include("Navi_bar_admin.php");
+    include("Navi_generate_report.php");
     ?>
 
     <h2>User Type Statistics</h2>
