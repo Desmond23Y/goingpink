@@ -50,6 +50,13 @@ if (mysqli_num_rows($hotel_result) > 0) {
         function showPaymentStatus() {
             alert("Payment Successful!");
         }
+        function formatExpirationDate(input) {
+            input.value = input.value.replace(/\D/g, '');
+            
+            if (input.value.length >= 2 && input.value.charAt(1) !== '/') {
+                input.value = input.value.substring(0, 2) + '/' + input.value.substring(2);
+            }
+        }
     </script>
 </head>
 <body>
