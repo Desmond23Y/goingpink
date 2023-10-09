@@ -29,14 +29,24 @@
     float: right;
     }
 
+.dropdown-content {
+    display: none;
+    position: absolute;
+    z-index: 1;
+}
+
 .navibar a:hover, .dropdown:hover .dropbtn,.dropdown-content a:hover {
     background-color: #C7949C;
     color: white;
     }
 
+.dropdown {
+    display: inline-block   
+    }
+
 .dropdown:hover, .dropdown-content {
     display: block;
-}
+    }
 
 .logo {
     display: inline-block;
