@@ -1,5 +1,5 @@
 .button a {
-    display: flex;
+    display: inline-block;
     padding: 12px;
     font-size: 20px;
     background-color: #f6a2b6;
