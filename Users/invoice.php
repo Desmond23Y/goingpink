@@ -10,7 +10,7 @@ if (!isset($_SESSION['user_id'])) {
 $user_id = $_SESSION['user_id'];
 
 // Query to retrieve invoice details based on the user ID
-$invoice_query = "SELECT invoice_id, user_id, hotel_booking_id, transport_booking_id, invoice_date, invoice_status, total_amount
+$invoice_query = "SELECT invoice_id, hotel_booking_id, transport_booking_id, invoice_date, invoice_status, total_amount
                  FROM invoice
                  WHERE user_id = '$user_id'";
 
@@ -34,7 +34,6 @@ if (!$invoice_result) {
     <table>
         <tr>
             <th>Invoice ID</th>
-            <th>User ID</th>
             <th>Hotel Booking ID</th>
             <th>Transport Booking ID</th>
             <th>Invoice Date</th>
@@ -45,7 +44,6 @@ if (!$invoice_result) {
         while ($row = mysqli_fetch_assoc($invoice_result)) {
             echo '<tr>';
             echo '<td>' . $row["invoice_id"] . '</td>';
-            echo '<td>' . $row["user_id"] . '</td>';
             echo '<td>' . $row["hotel_booking_id"] . '</td>';
             echo '<td>' . $row["transport_booking_id"] . '</td>';
             echo '<td>' . $row["invoice_date"] . '</td>';
