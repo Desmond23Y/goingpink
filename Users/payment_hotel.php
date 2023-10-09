@@ -32,8 +32,8 @@ if (mysqli_num_rows($hotel_result) > 0) {
     $hotel_total_price = $hotel_data['hotel_total_price'];
 
     // Insert the booking data into the invoice table
-    $insert_invoice_query = "INSERT INTO invoice (user_id, hotel_booking_id, total_amount, invoice_date)
-                             VALUES ('$user_id', '$hotel_booking_id', '$hotel_total_price', '$currentDate')";
+    $insert_invoice_query = "INSERT INTO invoice (user_id, hotel_booking_id, total_amount, invoice_date, invoice_status)
+                             VALUES ('$user_id', '$hotel_booking_id', '$hotel_total_price', '$currentDate', 'Created')";
     $insert_invoice_result = mysqli_query($con, $insert_invoice_query);
 
     if (!$insert_invoice_result) {
