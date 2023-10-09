@@ -16,7 +16,7 @@ body {
     font-size: 15px;
     }
 
-.navibar .dropdown-content {
+.navibar a {
     list-style-type: none;
     margin: 0;
     padding: 0;
