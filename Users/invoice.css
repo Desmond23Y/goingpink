@@ -3,3 +3,9 @@ th {
     padding: 12px;
     text-align: left;
     }
+
+td {
+    border: 1px solid silver;
+    padding: 12px;
+    text-align: left;
+    }
