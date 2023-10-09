@@ -83,8 +83,8 @@ img{
 /* Style for the background image */
 .background-image {
     background-image: url('/picture/download\ \(2\).png'); 
-    background-size: cover;
+    background-size: auto;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    opacity: 50%;
+    opacity: 100%;
 }
