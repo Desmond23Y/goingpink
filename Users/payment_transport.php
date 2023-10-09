@@ -1,3 +1,44 @@
+<?php
+session_start();
+include('conn.php');
+
+// Check if the user is logged in
+if (!isset($_SESSION['user_id'])) {
+    header('Location: ../login.php');
+    exit();
+}
+
+$user_id = $_SESSION['user_id'];
+
+// Fetch the user's latest transport booking
+$transport_query = "SELECT transport_booking_id, transport_total_price 
+               FROM transport_booking 
+               WHERE user_id = '$user_id'
+               ORDER BY transport_booking_id DESC
+               LIMIT 1"; // Fetch only the latest booking
+$transport_result = mysqli_query($con, $transport_query);
+
+if (!$transport_result) {
+    die('Query Error: ' . mysqli_error($con));
+}
+
+// Fetch the transport booking data
+if (mysqli_num_rows($transport_result) > 0) {
+    $transport_data = mysqli_fetch_assoc($transport_result);
+    $transport_booking_id = $transport_data['transport_booking_id'];
+    $transport_total_price = $transport_data['transport_total_price'];
+
+    // Insert the booking data into the invoice table
+    $insert_invoice_query = "INSERT INTO invoice (user_id, transport_booking_id, total_amount)
+                             VALUES ('$user_id', '$transport_booking_id', '$transport_total_price')";
+    $insert_invoice_result = mysqli_query($con, $insert_invoice_query);
+
+    if (!$insert_invoice_result) {
+        die('Insert Error: ' . mysqli_error($con));
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
