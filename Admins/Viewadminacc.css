@@ -1,17 +1,18 @@
 .button a {
-    display: inline-block;
+    display: flex;
     padding: 12px;
     font-size: 20px;
-    background-color: black;
+    background-color: #f6a2b6;
     color: white;
     border-radius: 4px;
     text-decoration: none;
     margin-bottom: 10px;
+    margin-top: 20px;
     }
 
 .button a:hover{
-    background-color: gold;
-    color: black;
+    background-color: #f9bfcd;
+    color: #e5d0be;
     }
 
 td {
