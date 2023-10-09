@@ -16,21 +16,21 @@ body {
     font-size: 15px;
     }
 
-.navibar ul {
+.dropdown-content {
     list-style-type: none;
     margin: 0;
     padding: 0;
     }
 
-.navibar li {
+.navibar  {
     float: left;
     }
 
-.navibar li.right {
+.navibar a.right {
     float: right;
     }
 
-.navibar li a, .dropdown-content a {
+.navibar a, .dropdown-content a {
     display: block;
     color: white;
     text-align: center;
