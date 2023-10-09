@@ -1,8 +1,8 @@
-<<<<<<< HEAD
 <?php
 session_start();
 include('conn.php');
 
+// Check if the user is logged in
 if (!isset($_SESSION['user_id'])) {
     header('Location: ../login.php');
     exit();
@@ -38,6 +38,7 @@ if (mysqli_num_rows($hotel_result) > 0) {
     }
 }
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -60,11 +61,9 @@ if (mysqli_num_rows($hotel_result) > 0) {
         <label for="cvc">CVC:</label>
         <input type="text" id="cvc" name="cvc" pattern="[0-9]{3}" placeholder="CVC" required>
         <br><br>
-
         <label for="cardholder_name">Cardholder name:</label>
         <input type="text" name="cardholder_name" placeholder="Full Name on Card" required>
         <br><br>
-
         <button type="submit">PAY NOW</button>
     </form>
 </body>
