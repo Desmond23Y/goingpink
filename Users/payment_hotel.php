@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Payment Details</details></title>
+    <title>Payment Details</title>
     <script>
         function showPaymentStatus() {
             alert("Payment Successful!");
