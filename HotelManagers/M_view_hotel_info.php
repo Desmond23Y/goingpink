@@ -16,6 +16,7 @@ if (!$result) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hotel Information</title>
     <link rel="stylesheet" href="M_hotel_homepage.css">
+    <link rel="stylesheet" href="mviewhotelinfo.css">
     <nav>
         <ul class="navibar">
             <li><a href="M_hotel_homepage.php">HOME</a></li>
@@ -40,7 +41,7 @@ if (!$result) {
                 echo '<h3> Hotel Price: US$ ' . $row["hotel_price"] . '</h3>';
                 
                 if ($_SESSION['user_type'] == 'admin' || $_SESSION['user_type'] == 'hotel_management') {
-                    echo '<a href="M_edit_hotel_info.php?hotel_id=' . $row["hotel_id"] . '">Edit This Hotel</a>';
+                    echo '<a href="M_edit_hotel_info.php?hotel_id=' . $row["hotel_id"] . '" class="edit-button">Edit This Hotel</a>';
                 }
             }
         } else {
