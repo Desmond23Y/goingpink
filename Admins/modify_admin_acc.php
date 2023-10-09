@@ -42,6 +42,8 @@ if (isset($_GET['admin_id'])) {
                 }
             }
         }
+
+        include("Navi_generate_report.php");
         ?>
         <!DOCTYPE html>
         <html>
