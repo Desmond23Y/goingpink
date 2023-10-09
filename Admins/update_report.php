@@ -35,6 +35,8 @@
                 }
                 
                 // Display report information and form
+		    
+	include("Navi_update_report.php");	
     ?>
 	
                 <p>
