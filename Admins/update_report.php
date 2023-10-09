@@ -5,9 +5,9 @@
 </head>
 
 <body>
-	include("Navi_update_report.php");
     <h2>Report Update</h2>
     <?php
+	include("Navi_update_report.php");
 	include("conn.php");
         if (isset($_GET['report_id'])) {
             $report_id = $_GET['report_id']; 
