@@ -6,14 +6,14 @@ h1 {
     }
 
 .box {
-    display: inline-block; 
+    display: block; 
     width: 50%; 
     margin: 20px auto; 
     border: 1px solid silver;
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
-    text-align: center;
+    text-align: left;
     align-items: center;
     justify-content: center;
     }
