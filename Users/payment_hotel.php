@@ -22,7 +22,7 @@ if (!$hotel_result) {
     die('Query Error: ' . mysqli_error($con));
 }
 
-$currentDate = ('Y-m-d');
+$currentDate = date('Y-m-d');
 
 
 // Fetch the hotel booking data

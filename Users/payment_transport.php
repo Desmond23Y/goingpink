@@ -22,7 +22,7 @@ if (!$transport_result) {
     die('Query Error: ' . mysqli_error($con));
 }
 
-$currentDate = ('Y-m-d');
+$currentDate = date('Y-m-d');
 
 // Fetch the transport booking data
 if (mysqli_num_rows($transport_result) > 0) {
