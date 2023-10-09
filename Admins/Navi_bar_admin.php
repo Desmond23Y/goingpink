@@ -47,11 +47,14 @@
     <nav>
         <ul class="navibar">
             <li><a href="homepage_admin.php">HOME</a></li>
-            <li><a href="view_user_acc.php">MANAGE USER</a></li>
-            <li><a href="view_hmgt_acc.php">MANAGE HOTEL</a></li>
-            <li><a href="view_tmgt_acc.php">MANAGE TRANSPORT</a></li>
-            <li><a href="view_support_acc.php">MANAGE SUPPORT</a></li>
-            <li><a href="view_admin_acc.php">MANAGE ADMIN</a></li>
+            <li class="dropdown">
+                <a class="dropbtn">MANAGE</a>
+                <div class="dropdown-content">
+                    <a href="view_user_acc.php">USER</a>
+                    <a href="view_hmgt_acc.php">HOTEL</a>
+                    <a href="view_tmgt_acc.php">TRANSPORT</a>
+                    <a href="view_support_acc.php">SUPPORT</a>
+                    <a href="view_admin_acc.php">ADMIN</a>
             <li><a href="generatereport.php">GENERATE REPORT</a></li>
             <li><a href="view_hotel_booking.php">MANAGE HOTEL BOOKING</a></li>
             <li><a href="view_transport_booking.php">MANAGE TRANSPORT BOOKING</a></li>
