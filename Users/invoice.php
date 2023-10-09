@@ -19,6 +19,9 @@ $invoice_result = mysqli_query($con, $invoice_query);
 if (!$invoice_result) {
     die('Query Error: ' . mysqli_error($con));
 }
+
+include_once('../navi_bar.php');
+
 ?>
 
 <html>
