@@ -5,7 +5,6 @@
 </head>
 
 <body>
-    <h2>Booking Update</h2>
     <?php
         include("conn.php");
         if (isset($_GET['hotel_booking_id'])) {
@@ -39,9 +38,12 @@
                         }
                     }
                 }
-
                 // Display hotel_booking information and form
+		    
+		include("Navi_update_hotel_booking.php");
     ?>
+		<h2>Booking Update</h2>
+	
                 <p>
                     <label> Hotel Booking ID: </label>
                     <input name='hbid' readonly='readonly' value="<?php echo $row['hotel_booking_id']?>">
