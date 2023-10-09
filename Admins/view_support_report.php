@@ -9,7 +9,7 @@ if (!isset($_SESSION['user_id'])) {
 
 $result=mysqli_query($con,"SELECT* FROM report");
 
-include("Navi_bar_admin.php");
+include("Navi_generate_report.php");
 ?>
 
 <head>
