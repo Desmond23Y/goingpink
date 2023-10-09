@@ -43,7 +43,7 @@ if (isset($_GET['admin_id'])) {
             }
         }
 
-        include("Navi_generate_report.php");
+        include("Navi_modify_admin.php");
         ?>
         <!DOCTYPE html>
         <html>
