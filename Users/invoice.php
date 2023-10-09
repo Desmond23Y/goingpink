@@ -1,54 +1,59 @@
 <?php
 session_start();
-include('conn.php'); 
+include('conn.php');
+
+if (!isset($_SESSION['user_id'])) {
+    header('Location: ../login.php');
+    exit();
+}
 
 $user_id = $_SESSION['user_id'];
 
-// Query to fetch the most recent hotel booking
-$hotel_query = "SELECT hotel_id, hotel_total_price 
-               FROM hotel_booking 
-               WHERE user_id = '$user_id'
-               ORDER BY hotel_id DESC";
-$hotel_result = mysqli_query($con, $hotel_query);
+// Query to retrieve invoice details based on the user ID
+$invoice_query = "SELECT invoice_id, user_id, hotel_booking_id, transport_booking_id, invoice_date, invoice_status, total_amount
+                 FROM invoice
+                 WHERE user_id = '$user_id'";
 
-// Query to fetch the most recent transportation booking
-$transport_query = "SELECT transport_id, transport_total_price 
-                   FROM transportation_booking 
-                   WHERE user_id = '$user_id'
-                   ORDER BY transport_id DESC";
-$transport_result = mysqli_query($con, $transport_query);
+$invoice_result = mysqli_query($con, $invoice_query);
 
-mysqli_close($con);
+if (!$invoice_result) {
+    die('Query Error: ' . mysqli_error($con));
+}
 ?>
 
-<!DOCTYPE html>
 <html>
 <head>
-    <title>User Booking Details</title>
-    <link rel="stylesheet" href="havent_do.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice Details</title>
+    <!-- Add your CSS stylesheets here -->
 </head>
-<body>
-    <h2>User Booking Details</h2>
-    <h3>Hotel Booking:</h3>
-    <?php
-    if ($hotel_result && mysqli_num_rows($hotel_result) > 0) {
-        $hotel_row = mysqli_fetch_assoc($hotel_result);
-        echo "Hotel ID: " . $hotel_row['hotel_id'] . "<br>";
-        echo "Hotel Total Price: " . $hotel_row['hotel_total_price'] . "<br>";
-    } else {
-        echo "No hotel booking found.";
-    }
-    ?>
 
-    <h3>Transportation Booking:</h3>
-    <?php
-    if ($transport_result && mysqli_num_rows($transport_result) > 0) {
-        $transport_row = mysqli_fetch_assoc($transport_result);
-        echo "Transport ID: " . $transport_row['transport_id'] . "<br>";
-        echo "Transport Total Price: " . $transport_row['transport_total_price'] . "<br>";
-    } else {
-        echo "No transportation booking found.";
-    }
-    ?>
+<body>
+    <h1>Invoice Details</h1>
+    <table>
+        <tr>
+            <th>Invoice ID</th>
+            <th>User ID</th>
+            <th>Hotel Booking ID</th>
+            <th>Transport Booking ID</th>
+            <th>Invoice Date</th>
+            <th>Invoice Status</th>
+            <th>Total Amount</th>
+        </tr>
+        <?php
+        while ($row = mysqli_fetch_assoc($invoice_result)) {
+            echo '<tr>';
+            echo '<td>' . $row["invoice_id"] . '</td>';
+            echo '<td>' . $row["user_id"] . '</td>';
+            echo '<td>' . $row["hotel_booking_id"] . '</td>';
+            echo '<td>' . $row["transport_booking_id"] . '</td>';
+            echo '<td>' . $row["invoice_date"] . '</td>';
+            echo '<td>' . $row["invoice_status"] . '</td>';
+            echo '<td>' . $row["total_amount"] . '</td>';
+            echo '</tr>';
+        }
+        ?>
+    </table>
 </body>
 </html>
