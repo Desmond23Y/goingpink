@@ -31,9 +31,6 @@ if (isset($_GET['hotel_id']) && isset($_GET['user_id'])) {
         die('Query Error: ' . mysqli_error($con));
     }
 }
-
-include_once('../navi_bar.php');
-
 ?>
 
 <html>
@@ -46,30 +43,30 @@ include_once('../navi_bar.php');
 
 <body>
 <h1>Hotel Charges</h1>
-    <div class="box">
-        <?php
-        if (isset($result) && isset($result2) && isset($result3)) {
-            if (mysqli_num_rows($result) > 0 && mysqli_num_rows($result2) > 0 && mysqli_num_rows($result3) > 0) {
-                $row1 = mysqli_fetch_assoc($result);
-                $row2 = mysqli_fetch_assoc($result2);
-                $row3 = mysqli_fetch_assoc($result3);
+<div class="box">
+    <?php
+    if (isset($result) && isset($result2) && isset($result3)) {
+        if (mysqli_num_rows($result) > 0 && mysqli_num_rows($result2) > 0 && mysqli_num_rows($result3) > 0) {
+            $row1 = mysqli_fetch_assoc($result);
+            $row2 = mysqli_fetch_assoc($result2);
+            $row3 = mysqli_fetch_assoc($result3);
 
-                echo '<h3> Username: '. $row2["username"] . '</h3>';
-                echo '<h3> Phone number: ' . $row2["phone_number"] . '</h3>';
-                echo '<h3> Email: ' . $row2["email"] . '</h3>';
-                echo '<h3> Booking ID: ' . $row1["hotel_booking_id"] . '</h3>';
-                echo '<h3> Hotel Name: ' . $row3["hotel_name"] . '</h3>';
-                echo '<h3> Room type: ' . $row3["room_type"] . '</h3>';
-                echo '<h3> Check in Date: ' . $row1["check_in_date"] . '</h3>';
-                echo '<h3> Check out Date: ' . $row1["check_out_date"] . '</h3>';
-                echo '<h3> Number of Guests: ' . $row1["number_of_pax"] . '</h3>';
-                echo '<h3> Hotel Price: ' . $row3["hotel_price"] . '</h3>';
-            }
+            echo '<h3> Username: '. $row2["username"] . '</h3>';
+            echo '<h3> Phone number: ' . $row2["phone_number"] . '</h3>';
+            echo '<h3> Email: ' . $row2["email"] . '</h3>';
+            echo '<h3> Booking ID: ' . $row1["hotel_booking_id"] . '</h3>';
+            echo '<h3> Hotel Name: ' . $row3["hotel_name"] . '</h3>';
+            echo '<h3> Room type: ' . $row3["room_type"] . '</h3>';
+            echo '<h3> Check in Date: ' . $row1["check_in_date"] . '</h3>';
+            echo '<h3> Check out Date: ' . $row1["check_out_date"] . '</h3>';
+            echo '<h3> Number of Guests: ' . $row1["number_of_pax"] . '</h3>';
+            echo '<h3> Hotel Price: ' . $row3["hotel_price"] . '</h3>';
         }
-        ?>
-    </div>
-    <div class="button">
-        <a href="payment_hotel.php">Proceed</a>
-    </div>
+    }
+    ?>
+</div>
+<div class="button">
+    <a href="payment_hotel.php">Proceed</a>
+</div>
 </body>
 </html>
