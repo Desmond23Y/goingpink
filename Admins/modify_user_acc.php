@@ -59,7 +59,7 @@ if (isset($_GET['user_id'])) {
             }
         }
 
-        include("Navi_modify_user.php);
+        include("Navi_modify_user.php");
         ?>
         <!DOCTYPE html>
         <html>
