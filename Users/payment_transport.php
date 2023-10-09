@@ -12,7 +12,7 @@ $user_id = $_SESSION['user_id'];
 
 // Fetch the user's latest transport booking
 $transport_query = "SELECT transport_booking_id, transport_total_price 
-               FROM transport_booking 
+               FROM transportation_booking 
                WHERE user_id = '$user_id'
                ORDER BY transport_booking_id DESC
                LIMIT 1"; // Fetch only the latest booking
