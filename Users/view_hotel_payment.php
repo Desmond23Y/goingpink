@@ -31,6 +31,9 @@ if (isset($_GET['hotel_id']) && isset($_GET['user_id'])) {
         die('Query Error: ' . mysqli_error($con));
     }
 }
+
+include_once('../navi_bar.php');
+
 ?>
 
 <html>
