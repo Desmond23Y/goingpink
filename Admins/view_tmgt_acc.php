@@ -7,7 +7,7 @@ include("conn.php");
 
 // Check if the user is authenticated
 if (!isset($_SESSION['user_id'])) {
-    header('Location: login.php'); // Redirect to the login page if not authenticated
+    header('Location: ../login.php'); // Redirect to the login page if not authenticated
     exit(); // Terminate script execution
 }
 
