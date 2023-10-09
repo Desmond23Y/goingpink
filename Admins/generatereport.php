@@ -1,5 +1,5 @@
 <?php
-
+include("Navi_bar_admin.php");
 ?>
 <html>
    
