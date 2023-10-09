@@ -27,7 +27,7 @@
     // Close the database connection
     mysqli_close($con);
 
-    include("Navi_bar_admin.php");
+    include("Navi_generate_report.php");
     ?>
 
     <h2>Booking Statistics</h2>
