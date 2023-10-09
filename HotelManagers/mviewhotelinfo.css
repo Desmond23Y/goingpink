@@ -1,18 +1,1 @@
-h1 {
-    font-size: 30px;
-    font-family: 'Butler';
-    text-align: center;
-    color: black;
-    }
 
-.edit-button {
-    padding: 12px;
-    font-size: 16px;
-    background-color: black;
-    color: white;
-    border-radius: 4px;
-    }
-.edit-button:hover {
-    background-color: black;
-    color: yellow;
-    }
