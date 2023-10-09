@@ -1,4 +1,4 @@
-h1 {
+h2 {
     font-family: 'Butler';
     font-size: 30px;
     color: black;
@@ -8,6 +8,7 @@ h1 {
 form {
     max-width: 400px;
     margin: 0 auto;
+    margin-bottom: 10px;
     }
 
 label {
