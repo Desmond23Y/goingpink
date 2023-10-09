@@ -22,7 +22,7 @@ body {
     padding: 0;
     }
 
-.navibar li {
+.navibar a {
     float: left;
     }
 
