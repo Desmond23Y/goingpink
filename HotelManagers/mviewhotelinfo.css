@@ -6,17 +6,16 @@ h1 {
     }
 
 .box {
-    width: 50%;
+    display: inline-block; 
+    width: 50%; 
+    margin: 20px auto; 
     border: 1px solid silver;
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
-    text-align: left;    
-    display: flex;
-    flex-direction: column;
+    text-align: center;
     align-items: center;
     justify-content: center;
-    height: 100vh; 
     }
 
 .edit-button {
