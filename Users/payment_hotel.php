@@ -1,3 +1,43 @@
+<<<<<<< HEAD
+<?php
+session_start();
+include('conn.php');
+
+if (!isset($_SESSION['user_id'])) {
+    header('Location: ../login.php');
+    exit();
+}
+
+$user_id = $_SESSION['user_id'];
+
+// Fetch the user's latest hotel booking
+$hotel_query = "SELECT hotel_booking_id, hotel_total_price 
+               FROM hotel_booking 
+               WHERE user_id = '$user_id'
+               ORDER BY hotel_booking_id DESC
+               LIMIT 1"; // Fetch only the latest booking
+$hotel_result = mysqli_query($con, $hotel_query);
+
+if (!$hotel_result) {
+    die('Query Error: ' . mysqli_error($con));
+}
+
+// Fetch the hotel booking data
+if (mysqli_num_rows($hotel_result) > 0) {
+    $hotel_data = mysqli_fetch_assoc($hotel_result);
+    $hotel_booking_id = $hotel_data['hotel_booking_id'];
+    $hotel_total_price = $hotel_data['hotel_total_price'];
+
+    // Insert the booking data into the invoice table
+    $insert_invoice_query = "INSERT INTO invoice (user_id, hotel_booking_id, total_amount)
+                             VALUES ('$user_id', '$hotel_booking_id', '$hotel_total_price')";
+    $insert_invoice_result = mysqli_query($con, $insert_invoice_query);
+
+    if (!$insert_invoice_result) {
+        die('Insert Error: ' . mysqli_error($con));
+    }
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
