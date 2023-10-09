@@ -16,7 +16,7 @@
     font-size: 15px;
     }
 
-.navibar a {
+.navibar a{
     float: left;
     display: block;
     color: #333;
@@ -29,10 +29,14 @@
     float: right;
     }
 
-.navibar a:hover {
+.navibar a:hover, .dropdown:hover .dropbtn,.dropdown-content a:hover {
     background-color: #C7949C;
     color: white;
     }
+
+.dropdown:hover, .dropdown-content {
+    display: block;
+}
 
 .logo {
     display: inline-block;
@@ -55,6 +59,7 @@
                     <a href="view_tmgt_acc.php">TRANSPORT</a>
                     <a href="view_support_acc.php">SUPPORT</a>
                     <a href="view_admin_acc.php">ADMIN</a>
+                </div>
             <li><a href="generatereport.php">GENERATE REPORT</a></li>
             <li><a href="view_hotel_booking.php">MANAGE HOTEL BOOKING</a></li>
             <li><a href="view_transport_booking.php">MANAGE TRANSPORT BOOKING</a></li>
