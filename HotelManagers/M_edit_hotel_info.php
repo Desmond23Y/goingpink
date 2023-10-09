@@ -39,6 +39,7 @@ if (isset($_GET['hotel_id'])) {
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
                 <title>Edit Hotel Information</title>
                 <link rel="stylesheet" href="M_hotel_homepage.css">
+                <link rel="stylesheet" href="medithotelinfo.css">
                  <nav>
                     <ul class="navibar">
                         <li><a href="M_hotel_homepage.php">HOME</a></li>
