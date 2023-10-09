@@ -10,6 +10,15 @@ if (!isset($_SESSION['user_id'])) {
 $user_id = $_SESSION['user_id'];
 $hotel_id = $_SESSION['selected_hotel_id'];
 
+$hotel_query = "SELECT hotel_id, hotel_total_price 
+               FROM hotel_booking 
+               WHERE user_id = '$user_id'
+               ORDER BY hotel_id DESC LIMIT 1";
+$hotel_result = mysqli_query($con, $hotel_query);
+if (!hotel_result) {
+    die('Query Error: ' . mysqli_error($con));
+}
+
 if (isset($_GET['hotel_id']) && isset($_GET['user_id'])) {
     $hotel_id = $_GET['hotel_id'];
 
