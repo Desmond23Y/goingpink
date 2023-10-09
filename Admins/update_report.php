@@ -5,6 +5,7 @@
 </head>
 
 <body>
+	include("Navi_update_report.php");
     <h2>Report Update</h2>
     <?php
 	include("conn.php");
@@ -35,8 +36,6 @@
                 }
                 
                 // Display report information and form
-		    
-	include("Navi_update_report.php");	
     ?>
 	
                 <p>
