@@ -8,7 +8,6 @@ h2 {
 form {
     max-width: 400px;
     margin: 0 auto;
-    margin-bottom: 10px;
     }
 
 label {
@@ -21,4 +20,18 @@ input {
     padding: 8px;
     margin-bottom: 16px;
     box-sizing: border-box;
+    }
+
+#submit {
+    margin-right: 10px;
+    padding: 12px;
+    font-size: 16px;
+    background-color: black;
+    color: white;
+    border-radius: 4px;
+    }
+
+#submit:hover{
+    background-color: black;
+    color: yellow;
     }
