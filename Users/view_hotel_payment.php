@@ -15,7 +15,7 @@ $hotel_query = "SELECT hotel_id, hotel_total_price
                WHERE user_id = '$user_id'
                ORDER BY hotel_id DESC LIMIT 1";
 $hotel_result = mysqli_query($con, $hotel_query);
-if (!hotel_result) {
+if (!$hotel_result) {
     die('Query Error: ' . mysqli_error($con));
 }
 
