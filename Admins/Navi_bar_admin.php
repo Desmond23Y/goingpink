@@ -16,7 +16,7 @@ body {
     font-size: 15px;
     }
 
-.dropdown-content {
+.navibar .dropdown-content {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -30,7 +30,7 @@ body {
     float: right;
     }
 
-.navibar a {
+.navibar a, .dropdown-content a {
     display: block;
     color: white;
     text-align: center;
