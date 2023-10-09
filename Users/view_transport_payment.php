@@ -24,71 +24,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Booking Summary</title>
-    <style>
-        body {
-            font-family: Futura, sans-serif;
-            background-color: #fbe5e3;
-            color: #65313D;
-
-        }
-
-        .payment-container {
-            background-color: #F1ACA4;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-            max-width: 400px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        h1 {
-            color: #E9204F;
-            font-family: Butler,serif;
-            font-weight:bold;
-        }
-
-        p {
-            font-size: 18px;
-            margin: 10px 0;
-        }
-
-        .homepage-button {
-            margin-top: 20px;
-            background-color: #E9204F;
-            color: #fff;
-            
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .homepage-button:hover {
-            background-color: #FF5A7D;
-        }
-
-    </style>
+    <link rel="stylesheet" href="viewhotelpayment.css">
 </head>
 <body>
-    <div class="payment-container">
+    <div class="box">
         <h1>Fare Charges</h1>
-        <p>User ID: <?php echo $userId; ?></p>
-        <p>Transport ID: <?php echo $transportId; ?></p>
-        <p>Arrival Location: <?php echo $arrivalLocation; ?></p>
-        <p>Departure Location: <?php echo $departureLocation; ?></p>
-        <p>Arrival Time: <?php echo $arrivalTime; ?></p>
-        <p>Departure Time: <?php echo $departureTime; ?></p>
-        <p>Price: <?php echo $price; ?></p>
-
-        <button class="homepage-button" onclick="window.location.href = 'payment_transport.php'">Proceed</button>
+        <?php
+        echo '<h3> User ID: ' . $userId . '</h3>';
+        echo '<h3> Transport ID: ' . $transportId . '</h3>';
+        echo '<h3> Arrival Location: ' . $arrivalLocation . '</h3>';
+        echo '<h3> Departure Location: ' . $departureLocation . '</h3>';
+        echo '<h3> Arrival Time: ' . $arrivalTime . '</h3>';
+        echo '<h3> Departure Time: ' . $departureTime . '</h3>';
+        echo '<h3> Price: ' . $price . '</h3>';
+    }else {
+    echo '<p>No transport booking found.</p>';
+}       
+        ?>
     </div>
+<div class="button">
+    <a href="payment_transport.php">Proceed</a>
+</div>
 </body>
 </html>
-
-<?php
-} else {
-    // Invalid request
-    echo "Invalid request.";
-}
-?>

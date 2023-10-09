@@ -35,8 +35,8 @@ $row = mysqli_fetch_assoc($latest_booking_result);
 </head>
 
 <body>
-<h1>Hotel Charges</h1>
 <div class="box">
+    <h1>Hotel Charges</h1>
     <?php
     if ($row) {
         echo '<h3> Username: '. $row["username"] . '</h3>';
