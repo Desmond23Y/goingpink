@@ -30,7 +30,7 @@ body {
     float: right;
     }
 
-.navibar a, .dropdown-content a {
+.navibar a {
     display: block;
     color: white;
     text-align: center;
