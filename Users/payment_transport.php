@@ -22,6 +22,8 @@ if (!$transport_result) {
     die('Query Error: ' . mysqli_error($con));
 }
 
+$currentDate = ('Y-m-d');
+
 // Fetch the transport booking data
 if (mysqli_num_rows($transport_result) > 0) {
     $transport_data = mysqli_fetch_assoc($transport_result);
@@ -29,8 +31,8 @@ if (mysqli_num_rows($transport_result) > 0) {
     $transport_total_price = $transport_data['transport_total_price'];
 
     // Insert the booking data into the invoice table
-    $insert_invoice_query = "INSERT INTO invoice (user_id, transport_booking_id, total_amount)
-                             VALUES ('$user_id', '$transport_booking_id', '$transport_total_price')";
+    $insert_invoice_query = "INSERT INTO invoice (user_id, transport_booking_id, total_amount, invoice_date)
+                             VALUES ('$user_id', '$transport_booking_id', '$transport_total_price', '$currentDate')";
     $insert_invoice_result = mysqli_query($con, $insert_invoice_query);
 
     if (!$insert_invoice_result) {
