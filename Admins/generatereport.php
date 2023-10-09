@@ -24,7 +24,7 @@
     </head>
 
     <body>
-        <div class="backgroun-image">
+        <div class="background-image">
             <header>
                 <h1>Generate Report Page</h1>
         
