@@ -1,8 +1,9 @@
-h2 {
+h1 {
     font-family: 'Butler';
     font-size: 30px;
     color: black;
     text-align: center;
+    margin-bottom: 10px;
     }
 
 form {
