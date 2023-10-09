@@ -5,12 +5,6 @@ h1 {
     color: black;
     }
 
-.box {
-    border: 1px solid silver;
-    padding: 10px;
-    border-radius: 5px;
-    }
-
 .edit-button {
     padding: 12px;
     font-size: 16px;
