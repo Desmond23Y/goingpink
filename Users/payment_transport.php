@@ -31,8 +31,8 @@ if (mysqli_num_rows($transport_result) > 0) {
     $transport_total_price = $transport_data['transport_total_price'];
 
     // Insert the booking data into the invoice table
-    $insert_invoice_query = "INSERT INTO invoice (user_id, transport_booking_id, total_amount, invoice_date)
-                             VALUES ('$user_id', '$transport_booking_id', '$transport_total_price', '$currentDate')";
+    $insert_invoice_query = "INSERT INTO invoice (user_id, transport_booking_id, total_amount, invoice_date, invoice_status)
+                             VALUES ('$user_id', '$transport_booking_id', '$transport_total_price', '$currentDate', 'Created')";
     $insert_invoice_result = mysqli_query($con, $insert_invoice_query);
 
     if (!$insert_invoice_result) {
