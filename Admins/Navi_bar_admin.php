@@ -55,11 +55,11 @@ ul li:hover ul.dropdown {
             <li>
                 <a>MANAGE</a>
                 <ul class="dropdown">
-                    <a href="view_user_acc.php">USER</a>
-                    <a href="view_hmgt_acc.php">HOTEL</a>
-                    <a href="view_tmgt_acc.php">TRANSPORT</a>
-                    <a href="view_support_acc.php">SUPPORT</a>
-                    <a href="view_admin_acc.php">ADMIN</a>
+                    <li><a href="view_user_acc.php">USER</a></li>
+                    <li><a href="view_hmgt_acc.php">HOTEL</a></li>
+                    <li><a href="view_tmgt_acc.php">TRANSPORT</a></li>
+                    <li><a href="view_support_acc.php">SUPPORT</a></li>
+                    <li><a href="view_admin_acc.php">ADMIN</a></li>
                 </ul>
             </li>
             <li><a href="generatereport.php">GENERATE REPORT</a></li>
