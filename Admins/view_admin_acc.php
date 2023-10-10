@@ -30,7 +30,7 @@ include("Navi_bar_admin.php");
 
     <table width="90%">
         <tr bgcolor="#FFB6C1">
-            <th>Admin ID</t>
+            <th>Admin ID</th>
             <th>Username</th>
             <th>Edit</th>
             <th>Delete</th>
