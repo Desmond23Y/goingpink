@@ -26,15 +26,6 @@ ul li a {
     font-size: 15px;
     }
 
-ul li a.dropdown {
-    display: block;
-    padding: 20px 25px;
-    color: #333;
-    text-decoration: none;
-    text-align: center;
-    font-size: 15px;
-    }
-
 ul li ul.dropdown-content li {
     display: block;
     }
@@ -62,7 +53,7 @@ ul li:hover ul.dropdown-content {
         <ul class="navibar">
             <li><a href="homepage_admin.php">HOME</a></li>
             <li>
-                <a class="dropdown">MANAGE</a>
+                <a>MANAGE</a>
                 <ul class="dropdown-content">
                     <a href="view_user_acc.php">USER</a>
                     <a href="view_hmgt_acc.php">HOTEL</a>
