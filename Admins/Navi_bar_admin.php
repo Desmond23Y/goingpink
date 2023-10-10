@@ -26,6 +26,15 @@ ul li a {
     font-size: 15px;
     }
 
+ul li a.dropdown {
+    display: block;
+    padding: 20px 25px;
+    color: #333;
+    text-decoration: none;
+    text-align: center;
+    font-size: 15px;
+    }
+
 ul li ul.dropdown-content li {
     display: block;
     }
