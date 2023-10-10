@@ -26,11 +26,11 @@ ul li a {
     font-size: 15px;
     }
 
-ul li ul.dropdown-content li {
+ul li ul.dropdown li {
     display: block;
     }
 
-ul li ul.dropdown-content {
+ul li ul.dropdown {
     width: 100%;
     background-color: #F9B9C3;
     position: absolute;
@@ -43,7 +43,7 @@ ul li a:hover {
     color: white;
     }
 
-ul li:hover ul.dropdown-content {
+ul li:hover ul.dropdown {
     display: block;
 }
 </style>
@@ -54,7 +54,7 @@ ul li:hover ul.dropdown-content {
             <li><a href="homepage_admin.php">HOME</a></li>
             <li>
                 <a>MANAGE</a>
-                <ul class="dropdown-content">
+                <ul class="dropdown">
                     <a href="view_user_acc.php">USER</a>
                     <a href="view_hmgt_acc.php">HOTEL</a>
                     <a href="view_tmgt_acc.php">TRANSPORT</a>
