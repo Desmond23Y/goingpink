@@ -25,7 +25,7 @@ if (!$hotel_result) {
 $currentDate = date('Y-m-d');
 
 // Query to randomly select an available admin
-$random_admin_query = "SELECT admin_id FROM admin WHERE is_available = 1 ORDER BY RAND() LIMIT 1";
+$random_admin_query = "SELECT admin_id FROM admin ORDER BY RAND() LIMIT 1";
 $admin_result = mysqli_query($con, $random_admin_query);
 
 if (!$admin_result) {
