@@ -1,5 +1,5 @@
 <?php
-include('conn.php'); // Include your database connection file
+include('conn.php'); 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Retrieve the selected transport_type from the AJAX request
