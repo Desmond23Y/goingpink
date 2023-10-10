@@ -24,6 +24,18 @@ if (!$hotel_result) {
 
 $currentDate = date('Y-m-d');
 
+// Query to randomly select an available admin
+$random_admin_query = "SELECT admin_id FROM admin WHERE is_available = 1 ORDER BY RAND() LIMIT 1";
+$admin_result = mysqli_query($con, $random_admin_query);
+
+if (!$admin_result) {
+    die('Query Error: ' . mysqli_error($con));
+}
+
+// Fetch the randomly selected admin ID
+$row = mysqli_fetch_assoc($admin_result);
+$selected_admin_id = $row['admin_id'];
+
 
 // Fetch the hotel booking data
 if (mysqli_num_rows($hotel_result) > 0) {
@@ -32,8 +44,8 @@ if (mysqli_num_rows($hotel_result) > 0) {
     $hotel_total_price = $hotel_data['hotel_total_price'];
 
     // Insert the booking data into the invoice table
-    $insert_invoice_query = "INSERT INTO invoice (user_id, hotel_booking_id, total_amount, invoice_date, invoice_status)
-                             VALUES ('$user_id', '$hotel_booking_id', '$hotel_total_price', '$currentDate', 'Created')";
+    $insert_invoice_query = "INSERT INTO invoice (user_id, hotel_booking_id, total_amount, invoice_date, invoice_status, admin_id)
+                             VALUES ('$user_id', '$hotel_booking_id', '$hotel_total_price', '$currentDate', 'Created', $selected_admin_id)";
     $insert_invoice_result = mysqli_query($con, $insert_invoice_query);
 
     if (!$insert_invoice_result) {
