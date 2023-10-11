@@ -23,10 +23,12 @@ label {
     }
 
 input {
-    width: 100%;
+    width: 50%;
     padding: 8px;
     margin-bottom: 16px;
+    margin-left: 10px;
     box-sizing: border-box;
+    border: #65313D;
     }
 
 button{
@@ -36,6 +38,7 @@ button{
     background-color: #E9204F;
     color: white;
     border-radius: 4px;
+    text-align: center;
     }
 
 button:hover{
