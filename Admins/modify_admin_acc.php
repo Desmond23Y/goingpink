@@ -49,7 +49,7 @@ if (isset($_GET['admin_id'])) {
         <html>
         <head>
             <title>Modify Admin Account</title>
-            <link rel="stylesheet" href="modifyadminacc.css">
+            <link rel="stylesheet" href="modifyhmgtacc.css">
         </head>
         <body>
             <h2>Admin Account Modification</h2>
