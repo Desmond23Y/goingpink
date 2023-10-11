@@ -101,11 +101,9 @@ if (isset($_GET['user_id'])) {
                 <input type="radio"name="gender"<?php if ($row['gender'] == "Male") { ?> checked="checked" <?php } ?> value="Male"required="required">Male 
                 <input type="radio"name="gender"<?php if ($row['gender'] == "Female") { ?> checked="checked" <?php } ?> value="Female"required="required">Female
                 <br><br>
-
-            </form>
                 
-            <button type="submit" value="submit">Edit User Account</button>
-            
+                <button type="submit" value="submit">Edit User Account</button>
+            </form>
         <?php
         }
         mysqli_close($con);
