@@ -49,7 +49,7 @@ if (isset($_GET['transport_manager_id'])) {
         <html>
         <head>
             <title>Modify Transport Manager Account</title>
-            <link rel="stylesheet" href="modifyhmgtacc.css">
+            <link rel="stylesheet" href="Modifyhmgtacc.css">
         </head>
         <body>
             <h2>Transport Manager Account Modification</h2>
