@@ -18,7 +18,7 @@ include("Navi_bar_admin.php");
 <html>
 <head>
     <title>View Support Accounts</title>
-    <link rel="stylesheet" href="Viewsupportacc.css">
+    <link rel="stylesheet" href="viewhmgtacc.css">
 </head>
 <body>
     <div class="button">
