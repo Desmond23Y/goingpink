@@ -15,10 +15,10 @@ form {
 label {
     font-family: 'Futura';
     font-weight: bold;
+    margin-bottom: ;
     }
 
 input {
-    justify-content: left;
     padding: 10px;
     box-sizing: border-box;
     margin-bottom: 15px;
@@ -26,9 +26,8 @@ input {
     border-radius: 4px;
     }
 
-button {
-    display: flex;
-    flex-direction: column;
+.button {
+    justify-content: center;
     align-items: center;
     padding: 12px;
     font-size: 16px;
@@ -38,7 +37,7 @@ button {
     margin-bottom: 20px;
     }
 
-button:hover{
+.button:hover{
     background-color: black;
     color: yellow;
     }
