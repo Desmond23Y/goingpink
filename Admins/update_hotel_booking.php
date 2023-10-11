@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
     <title>Update Hotel Booking</title>
-	<link rel="stylesheet" href="updatehotelbooking.css">
+	<link rel="stylesheet" href="Updatehotelbooking.css">
 </head>
 
 <body>
