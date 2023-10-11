@@ -1,5 +1,5 @@
 <?php
-include('Navi_modify_user.php')
+include('Navi_modify_user.php');
 include('conn.php');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
