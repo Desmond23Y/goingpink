@@ -8,18 +8,18 @@ h2 {
 form {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     height: 100vh;
     }
 
 label {
+    justify-content: center;
     font-family: 'Futura';
     margin-bottom: 8px;
     font-weight: bold;
     }
 
 input {
+    align-items: center;
     padding: 10px;
     box-sizing: border-box;
     margin-bottom: 15px;
