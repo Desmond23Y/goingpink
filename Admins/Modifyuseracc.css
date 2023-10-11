@@ -5,6 +5,10 @@ h2 {
     text-align: center;
     }
 
+body {
+    background-color: #FBE5E3;
+    }
+    
 form {
     display: flex;
     flex-direction: column;
