@@ -1,4 +1,5 @@
 <?php
+include("Navi_modify_user.php");
 // Include the database connection
 include("conn.php");
 
@@ -58,8 +59,6 @@ if (isset($_GET['user_id'])) {
                 }
             }
         }
-
-        include("Navi_modify_user.php");
         ?>
         <!DOCTYPE html>
         <html>
