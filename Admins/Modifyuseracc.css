@@ -1,13 +1,15 @@
 h2 {
     font-family: 'Butler';
     font-size: 30px;
-    color: #F490A8;
+    color: black;
     text-align: center;
     }
 
 body {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     height: 100vh;
     }
 
@@ -22,19 +24,19 @@ input {
     padding: 10px;
     box-sizing: border-box;
     margin-bottom: 15px;
-    border: 1px solid #65313D;
+    border: 1px solid silver;
     border-radius: 4px;
     }
 
 button {
     padding: 12px;
     font-size: 16px;
-    background-color: #E9204F;
+    background-color: black;
     color: white;
     border-radius: 4px;
     }
 
 button:hover{
-    background-color: #FF5A7D;
-    color: white;
+    background-color: black;
+    color: yellow;
     }
