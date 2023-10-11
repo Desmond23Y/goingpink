@@ -24,16 +24,16 @@ include("Navi_bar_admin.php");
     
     <table width="90%">
         <tr bgcolor="#FFB6C1">
-            <td>User ID</td>
-            <td>Username</td>
-            <td>First Name</td>
-            <td>Last Name</td>
-            <td>Email</td>
-            <td>Phone Number</td>
-            <td>DOB</td>
-            <td>Gender</td>
-            <td>Modify</td>
-            <td>Delete</td>
+            <th>User ID</th>
+            <th>Username</th>
+            <th>First Name</th>
+            <th>Last Name</t>
+            <th>Email</th>
+            <th>Phone Number</th>
+            <th>DOB</th>
+            <th>Gender</th>
+            <th>Modify</th>
+            <th>Delete</th>
         </tr>
 <?php
 while ($row = mysqli_fetch_array($result)) {
