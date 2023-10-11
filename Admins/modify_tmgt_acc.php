@@ -43,8 +43,6 @@ if (isset($_GET['transport_manager_id'])) {
                 }
             }
         }
-
-        include("Navi_modify_tmgt.php");
         ?>
         <!DOCTYPE html>
         <html>
