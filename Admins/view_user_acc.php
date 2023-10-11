@@ -15,7 +15,7 @@ include("Navi_bar_admin.php");
 <html>
 <head>
     <title>View User Accounts</title>
-    <link rel="stylesheet" href="Viewuseracc.css">
+    <link rel="stylesheet" href="viewhmgtacc.css">
 </head>
 <body>
     <div class="button">
