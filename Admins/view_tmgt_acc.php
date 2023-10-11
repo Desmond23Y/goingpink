@@ -18,7 +18,7 @@ include("Navi_bar_admin.php");
 <html>
 <head>
     <title>View Transport Manager Accounts</title>
-    <link rel="stylesheet" href="Viewtmgtacc.css">
+    <link rel="stylesheet" href="viewhmgtacc.css">
 </head>
 <body>
     <div class="button">
