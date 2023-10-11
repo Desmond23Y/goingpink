@@ -10,6 +10,7 @@ form {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: fit-content;
     }
 
 label {
@@ -27,6 +28,7 @@ input {
     }
 
 button {
+    text-align: center;
     padding: 12px;
     font-size: 16px;
     background-color: black;
