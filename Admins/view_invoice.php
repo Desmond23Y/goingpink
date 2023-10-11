@@ -18,14 +18,14 @@ include("Navi_generate_report.php");
 
 <table width="90%">
     <tr bgcolor="#FFB6C1">
-        <td>Invoice ID</td>
-        <td>User ID</td>
-        <td>Admin ID</td>
-        <td>Hotel Booking ID</td>
-        <td>Transport Booking ID</td>
-        <td>Invoice Date</td>
-        <td>Invoice Status</td>
-        <td>Total Amount</td>
+        <th>Invoice ID</th>
+        <th>User ID</th>
+        <th>Admin ID</th>
+        <th>Hotel Booking ID</th>
+        <th>Transport Booking ID</th>
+        <th>Invoice Date</th>
+        <th>Invoice Status</th>
+        <th>Total Amount</th>
 
     </tr>
 
