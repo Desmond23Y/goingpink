@@ -18,14 +18,14 @@ include("Navi_generate_report.php");
 
 <table width="90%">
     <tr bgcolor="#FFB6C1">
-        <td>Report ID</td>
-        <td>Support ID</td>
-        <td>Report Title</td>
-        <td>Priority</td>
-        <td>Report Description</td>
-        <td>Report Status</td>
-        <td>Report Comment</td>
-        <td>Edit</td>
+        <th>Report ID</th>
+        <th>Support ID</th>
+        <th>Report Title</th>
+        <th>Priority</th>
+        <th>Report Description</th>
+        <th>Report Status</th>
+        <th>Report Comment</th>
+        <th>Edit</th>
 
     </tr>
 
