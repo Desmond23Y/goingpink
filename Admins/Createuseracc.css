@@ -1,19 +1,26 @@
+body {
+    background-color: #FBE5E3;
+    }
+
 h1 {
     font-family: 'Butler';
     font-size: 30px;
     text-align: center;
+    color: #F490A8;
     }
 
 h3 {
     font-family: 'Butler';
     font-size: 20px;
     text-align: center;
+    color: #F490A8;
     }
 
 h2 {
     font-family: 'Butler';
     font-size: 40px;
     text-align: center;
+    color: #F490A8;
     }
 
 #login-container {
@@ -27,24 +34,21 @@ h2 {
 #signup-form {
     width: 300px;
     padding: 20px;
-    border: 1px solid black;
+    border: 1px solid #65313D;
     border-radius: 8px;
-    background-color: white;
-}
+    background-color: #F1ACA4;
+    }   
 
 button{
     margin-right: 10px;
     padding: 12px;
     font-size: 16px;
-    background-color: white;
-    color: black;
+    background-color: #E9204F;
+    color: white;
     border-radius: 4px;
     }
 
 button:hover{
-    background-color: black;
-    color: gold;
+    background-color: #FF5A7D;
+    color: white;
     }
-
-
-    
