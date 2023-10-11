@@ -1,0 +1,58 @@
+h2 {
+    font-family: 'Butler';
+    font-size: 30px;
+    color: black;
+    text-align: center;
+    }
+
+p {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    }
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    }
+
+label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 8px;
+    font-weight: bold;
+    }
+
+input, select {
+    padding: 10px;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+    border: 1px solid silver;
+    border-radius: 4px;
+    }
+
+textarea {
+    resize: none;
+    width: 300px;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid silver;
+    border-radius: 4px;
+    }
+
+button {
+    margin-top: 10px;
+    padding: 12px;
+    font-size: 16px;
+    background-color: black;
+    color: white;
+    border-radius: 4px;
+    }
+
+button:hover {
+    background-color: black;
+    color: yellow;
+    }
