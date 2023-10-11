@@ -47,7 +47,7 @@ if (isset($_GET['hotel_manager_id'])) {
         <html>
         <head>
             <title>Modify Hotel Manager Account</title>
-            <link rel="stylesheet" href="modifyhmgtacc.css">
+            <link rel="stylesheet" href="Modifyhmgtacc.css">
         </head>
         <body>
             <h2>Hotel Manager Account Modification</h2>
