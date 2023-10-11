@@ -13,8 +13,7 @@ form {
     }
 
 label {
-    display: flex;
-    flex-direction: column;
+    font-family: 'Futura';
     margin-bottom: 8px;
     font-weight: bold;
     }
