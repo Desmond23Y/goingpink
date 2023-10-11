@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <!DOCTYPE html>
 <head>
-    <link rel="stylesheet" href="createadminacc.css">
+    <link rel="stylesheet" href="Createhmgtacc.css">
 </head>
 
 <body>
