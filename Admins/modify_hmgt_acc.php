@@ -1,5 +1,5 @@
 <?php
-include("Navi_modify_hmgt.php")
+include("Navi_modify_hmgt.php");
 // Include the database connection
 include("conn.php");
 
