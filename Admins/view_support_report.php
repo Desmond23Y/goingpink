@@ -13,7 +13,7 @@ include("Navi_generate_report.php");
 ?>
 
 <head>
-    <link rel="stylesheet" href="Viewsupportreport.css">
+    <link rel="stylesheet" href="viewhmgtacc.css">
 </head>
 
 <table width="90%">
