@@ -33,14 +33,6 @@
     background-color: #C7949C;
     color: white;
     }
-
-.logo {
-    display: inline-block;
-    vertical-align: middle;
-    width: 40px;
-    height: auto; 
-    margin-right: 10px; 
-    }
 </style>
 
 <body>
