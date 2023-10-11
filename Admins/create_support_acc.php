@@ -1,4 +1,5 @@
 <?php
+include('Navi_modify_support.php');
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     include("conn.php");
     if (strlen($_POST['name']) < 5 || strlen($_POST['name']) > 50) {
@@ -21,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <!DOCTYPE html>
 <head>
-    <link rel="stylesheet" href="createsupportacc.css">
+    <link rel="stylesheet" href="Createhmgtacc.css">
 </head>
 
 <body>
