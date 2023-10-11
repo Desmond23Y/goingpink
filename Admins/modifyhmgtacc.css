@@ -14,14 +14,13 @@ form {
     margin: 0 auto;
     font-family: 'Futura';
     background-color: #F1ACA4;
-    border: #65313D;
-    justify-content: center;
-    align-items: center;
+    border: 2px solid #65313D;
     }
 
 label {
     display: block;
     margin-bottom: 8px;
+    margin-left: 5px;
     }
 
 input {
