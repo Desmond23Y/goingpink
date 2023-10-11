@@ -15,6 +15,8 @@ form {
     font-family: 'Futura';
     background-color: #F1ACA4;
     border: #65313D;
+    justify-content: center;
+    align-items: center;
     }
 
 label {
