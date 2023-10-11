@@ -1,8 +1,11 @@
+body {
+    background-color: #FBE5E3;
+    }
+
 #request-form {
     max-width: 400px;
     margin: 50px auto;
     padding: 20px;
-    background-color: white;
     border-radius: 5px;
     }
 
@@ -17,7 +20,7 @@ input {
     padding: 8px;
     margin-bottom: 16px;
     box-sizing: border-box;
-    border: 1px solid silver;
+    border: 1px solid #65313D;
     border-radius: 4px;
     }
 
@@ -25,12 +28,12 @@ button{
     margin-right: 10px;
     padding: 12px;
     font-size: 16px;
-    background-color: black;
+    background-color: #E9204F;
     color: white;
     border-radius: 4px;
     }
 
 button:hover{
-    background-color: black;
-    color: gold;
+    background-color: #FF5A7D;
+    color: white;
     }
