@@ -65,7 +65,7 @@ if (isset($_GET['user_id'])) {
         <html>
         <head>
             <title>Modify User Account</title>
-            <link rel="stylesheet" href="modifyhmgtacc.css">
+            <link rel="stylesheet" href="modifyuseracc.css">
         </head>
         <body>
             <h2>User Account Modification</h2>
