@@ -13,24 +13,18 @@ form {
     max-width: 400px;
     margin: 0 auto;
     font-family: 'Futura';
-    background-color: #F1ACA4;
-    border: 2px solid #65313D;
-    border-radius: 4px;
     }
 
 label {
     display: block;
     margin-bottom: 8px;
-    margin-left: 10px;
     }
 
 input {
-    width: 50%;
+    width: 100%;
     padding: 8px;
     margin-bottom: 16px;
-    margin-left: 10px;
     box-sizing: border-box;
-    border: #65313D;
     }
 
 button{
@@ -40,9 +34,6 @@ button{
     background-color: #E9204F;
     color: white;
     border-radius: 4px;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
     }
 
 button:hover{
