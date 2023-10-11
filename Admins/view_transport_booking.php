@@ -18,16 +18,16 @@ include("Navi_bar_admin.php");
 
 <table width="90%">
     <tr bgcolor="#FFB6C1">
-        <td>Transport Booking ID</td>
-        <td>Transport Manager ID</td>
-        <td>User ID</td>
-        <td>Admin ID</td>
-        <td>Transport ID</td>
-        <td>Arrival Time</td>
-        <td>Departure Time</td>
-        <td>Arrival Location</td>
-        <td>Departure Location</td>
-        <td>Cancel</td>
+        <th>Transport Booking ID</th>
+        <th>Transport Manager ID</th>
+        <th>User ID</th>
+        <th>Admin ID</th>
+        <th>Transport ID</th>
+        <th>Arrival Time</th>
+        <th>Departure Time</th>
+        <th>Arrival Location</th>
+        <th>Departure Location</th>
+        <th>Cancel</th>
     </tr>
 
 <?php
