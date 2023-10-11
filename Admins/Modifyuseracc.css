@@ -5,11 +5,10 @@ h2 {
     text-align: center;
     }
 
-form {
+body {
     display: flex;
     flex-direction: column;
     height: 100vh;
-    align-items: center;
     }
 
 label {
@@ -20,10 +19,11 @@ label {
     }
 
 input {
-    width: 100%;
     padding: 10px;
     box-sizing: border-box;
     margin-bottom: 15px;
+    border: 1px solid #65313D;
+    border-radius: 4px;
     }
 
 button {
