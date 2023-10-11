@@ -20,6 +20,8 @@ label {
     }
 
 input {
+    display: flex;
+    flex-direction: column;
     padding: 10px;
     box-sizing: border-box;
     margin-bottom: 15px;
