@@ -43,8 +43,6 @@ if (isset($_GET['support_id'])) {
                 }
             }
         }
-
-        include("Navi_modify_support.php");
         ?>
         <!DOCTYPE html>
         <html>
