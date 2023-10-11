@@ -49,7 +49,7 @@ if (isset($_GET['support_id'])) {
         <html>
         <head>
             <title>Modify Support Account</title>
-            <link rel="stylesheet" href="modifysupportacc.css">
+            <link rel="stylesheet" href="modifyhmgtacc.css">
         </head>
         <body>
             <h2>Support Account Modification</h2>
