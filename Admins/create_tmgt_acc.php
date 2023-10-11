@@ -1,4 +1,5 @@
 <?php
+include('Navi_modify_tmgt.php');
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     include("conn.php");
     if (strlen($_POST['name']) < 5 || strlen($_POST['name']) > 50) {
