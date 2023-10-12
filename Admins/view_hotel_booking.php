@@ -1,6 +1,6 @@
-<?php 
-session_start();
+<?php
 include("Navi_bar_admin.php");
+session_start();
 include("conn.php");
 
 if (!isset($_SESSION['user_id'])) {
