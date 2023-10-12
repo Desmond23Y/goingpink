@@ -77,9 +77,7 @@ body {
     <div class="navibar">
         <a href="homepage_admin.php">HOME</a></li>
         <div class="dropdown">
-            <button class="dropbtn">MANAGE
-                <i class="fa fa-caret-down"></i>
-            </button>
+            <a class="dropbtn">MANAGE</a>
             <div class="dropdown-content">
                 <a href="view_user_acc.php">USER</a>
                 <a href="view_hmgt_acc.php">HOTEL</a>           
