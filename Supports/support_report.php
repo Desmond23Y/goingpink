@@ -76,11 +76,7 @@ if (!isset($_SESSION['user_id'])) {
     <title>Report to Admin</title>
 </head>
 
-<body>
-    <header>
-        <h1>Report Form</h1>
-    </header>
-
+<body>    
     <nav>
     <ul class="navibar">
         <li><a href="homepage_support.php">HOME</a></li>
@@ -90,7 +86,10 @@ if (!isset($_SESSION['user_id'])) {
         <li><a href="../logout.php" class="right">LOGOUT</a></li>
     </ul>
     </nav>
-    
+    <header>
+        <h1>Report Form</h1>
+    </header>
+
     <form method="post">
     <label for="title">Title:</label>
     <input type="text" id="title" name="title" required="required"><br>
