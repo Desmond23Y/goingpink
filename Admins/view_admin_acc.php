@@ -1,5 +1,4 @@
 <?php
-include("Navi_bar_admin.php");
 // Start a session (must be the first thing in the script)
 session_start();
 
@@ -14,6 +13,9 @@ if (!isset($_SESSION['user_id'])) {
 
 // Execute a MySQL query to fetch admin records
 $result = mysqli_query($con, "SELECT * FROM admin");
+
+include("Navi_bar_admin.php");
+
 ?>
 
 <!DOCTYPE html>
