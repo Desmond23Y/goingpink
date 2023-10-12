@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <html>
 <style>
-    
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+
 body {
     margin: 0;
     padding: 0;
@@ -47,6 +52,7 @@ body {
 
 .dropdown-content {
     display: none;
+    position: static;
     background-color: #f9f9f9;
     min-width: 160px;
     z-index: 1;
@@ -67,7 +73,7 @@ body {
 
 </style>
 
-<body>
+<nav>
     <div class="navibar">
         <a href="homepage_admin.php">HOME</a></li>
         <div class="dropdown">
@@ -85,5 +91,5 @@ body {
         <a href="view_transport_booking.php">MANAGE TRANSPORT BOOKING</a>
         <a href="../logout.php" class="right">LOGOUT</a>
     </div>
-</body>
+</nav>
 </html>
