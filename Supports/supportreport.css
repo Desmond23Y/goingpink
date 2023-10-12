@@ -39,6 +39,9 @@ textarea {
     box-sizing: border-box;
     border: 1px solid #65313D;
     border-radius: 4px;
+    }
+
+#description {
     resize: none;
     }
 
