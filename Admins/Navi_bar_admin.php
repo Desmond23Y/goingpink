@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <style>
-.navbar {
+.navibar {
     overflow: hidden;
     background-color: #333;
     }
 
-.navbar a {
+.navibar a {
     float: left;
     font-size: 16px;
     color: white;
@@ -15,7 +15,7 @@
     text-decoration: none;
     }
 
-.navbar a:hover {
+.navibar a:hover {
     background-color: #ddd;
     color: black;
     }
