@@ -62,7 +62,7 @@ include("Navi_bar_admin.php");
             <section class="section manage-booking">
                 <div class="function" id="manage-booking">
                    
-                    <di>class="function-text">
+                    <div>class="function-text">
                         <h2>Manage Booking</h2>
                         <p class="manage-booking">Manage all of the users' transport and hotel booking here.</p>     
                     </div>             
