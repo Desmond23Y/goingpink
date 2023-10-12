@@ -70,7 +70,7 @@ if (!isset($_SESSION['user_id'])) {
         background-color: #C7949C;
         color: white;
         }
-            
+        
         </style>
     
     <title>Report to Admin</title>
