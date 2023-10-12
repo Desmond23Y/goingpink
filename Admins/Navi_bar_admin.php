@@ -1,79 +1,72 @@
 <!DOCTYPE html>
 <html>
 <style>
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    }
-
-body {
-    font-family: 'Butler'
-    }
-
 .navibar {
-    text-align: center;
-    color: #F9B9C3;
-    }
+    background-color: #333;
+}
 
 .navibar ul {
-    display: inline-flex;
-    list-style: none;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.navibar li {
+    float: left;
+}
+
+.navibar a {
+    display: block;
     color: white;
-    }
-
-.navibar ul li {
-    width: 120px;
-    margin: 15px;
-    padding: 15px;
-    }
-
-.navibar ul li a {
+    text-align: center;
+    padding: 14px 16px;
     text-decoration: none;
-    color: white;
-    }
+}
 
-.navibar ul li:hover {
-    background-color: #C7949C;
-    color: white;
-    border-radius: 3px;
-    }
+.navibar a:hover {
+    background-color: #ddd;
+    color: black;
+}
 
 .dropdown {
     display: none;
-    }
-
-.navibar ul li:hover .dropdown {
-    display:block;
     position: absolute;
-    background-color: #F9B9C3;
-    margin-top: 15px;
-    margin-left: 15px;
-    }
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
 
-.navibar ul li:hover .dropdown {
+.dropdown ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown li {
     display: block;
-    margin: 10px;
-    }
+}
 
-.navibar ul li:hover .dropdown ul li {
-    width: 150px;
-    padding: 10px;
-    border-bottom: 1px solid #65313D;
-    background: transparent;
-    border-radius: 0;
+.dropdown a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
     text-align: left;
-    }
+}
 
-.navibar ul li:hover .dropdown ul li:last-child {
-    border-bottom: none;
-    }    
+.dropdown a:hover {
+    background-color: #ddd;
+}
 
-.navibar ul li:hover .dropdown ul li a:hover {
-    background-color: #C7949C;
-    color: white;
-    }
+.navibar li:hover .dropdown {
+    display: block;
+}
 
+.dropdown {
+    left: 0;
+}
 </style>
 
 <body>
