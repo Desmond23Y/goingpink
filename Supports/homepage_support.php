@@ -1,6 +1,6 @@
 <?php
-include("Navi_bar_support.php")
 session_start();
+include("Navi_bar_support.php")
 ?>
 <!DOCTYPE html>
 <html>
