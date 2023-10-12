@@ -30,7 +30,6 @@ if (!isset($_SESSION['user_id'])) {
      <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
-        <link rel="stylesheet" href="homepage_support.css">
         <link rel="stylesheet" href="supportreport.css">
     
         <!-- Include Bootstrap-->
@@ -44,18 +43,17 @@ if (!isset($_SESSION['user_id'])) {
     <title>Report to Admin</title>
 </head>
 
-     <nav>
-        <ul class="navibar">
-            <li><a href="homepage_support.php">HOME</a></li>
-            <li><a href="support_report.php">REPORT</a></li>
-            <li><a href="view_own_support_report.php">VIEW OWN REPORT</a></li>
-            <li><a href="view_ticket.php">VIEW TICKET</a></li>
-            <li><a href="../logout.php" class="right">LOGOUT</a></li>
-        </ul>
-    </nav>
+<nav>
+    <ul class="navibar">
+        <li><a href="homepage_support.php">HOME</a></li>
+        <li><a href="support_report.php">REPORT</a></li>
+        <li><a href="view_own_support_report.php">VIEW OWN REPORT</a></li>
+        <li><a href="view_ticket.php">VIEW TICKET</a></li>
+        <li><a href="../logout.php" class="right">LOGOUT</a></li>
+    </ul>
+</nav>
 
 <body>
-    
     <header>
         <h1>Report Form</h1>
     </header>
