@@ -1,18 +1,14 @@
 <!DOCTYPE html>
 <html>
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    }
-
+    
 body {
     margin: 0;
     padding: 0;
     }
 
 .navibar {
+    overflow: hidden;
     background-color: #333;
     width: 100%;
     }
@@ -51,7 +47,6 @@ body {
 
 .dropdown-content {
     display: none;
-    position: absolute;
     background-color: #f9f9f9;
     min-width: 160px;
     z-index: 1;
