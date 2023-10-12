@@ -1,4 +1,3 @@
-
 body, ul {
     margin: 0;
     padding: 0;
@@ -27,20 +26,15 @@ h1 {
     margin: 0;
 }
 
-
-
 p{
     font-family: "Futura ", monospace;
 }
+
 img{
     width: 40%;
     height:20%;
-
     float: left;
 }
-
-
-
 
 .button {
     background-color: #E9204F;
@@ -50,18 +44,13 @@ img{
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    
     margin: 20px;
-    
-    
 }
 
 .button-container{
     display: flex;
     gap: 5px;
     margin-left: 50%;
-   
-    
 }
 
 
@@ -79,7 +68,6 @@ img{
 
 #manage-report{
     background-color: #fee7eb;
-    
 }
 
 #contact-admin{
@@ -90,38 +78,4 @@ img{
 .function-text{
     padding-top: 10px;
     padding-left: 20px;
-   
 }
-
-/* nav bar*/
-
-   body {
-        margin: 0;
-        padding: 0;
-    }
-
-    .navibar {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        background-color: #F9B9C3;
-    }
-
-    .navibar a {
-        float: left;
-        display: block;
-        color: #333;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
-    }
-
-    .navibar a.right {
-        float: right;
-    }
-
-    .navibar a:hover {
-        background-color: #C7949C;
-        color: white;
-    }
