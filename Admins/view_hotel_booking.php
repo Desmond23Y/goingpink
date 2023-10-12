@@ -1,5 +1,4 @@
 <?php
-include("Navi_bar_admin.php");
 session_start();
 include("conn.php");
 
@@ -28,7 +27,9 @@ $result=mysqli_query($con,"SELECT* FROM hotel_booking");
         <th>Update</th>
         <th>Cancel</th>
     </tr>
-
+    
+include("Navi_bar_admin.php");
+    
 <?php
     while($row=mysqli_fetch_array($result))
     {
