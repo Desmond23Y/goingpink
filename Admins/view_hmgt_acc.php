@@ -1,4 +1,5 @@
 <?php
+include("Navi_bar_admin.php");
 // Start a session (must be the first thing in the script)
 session_start();
 
@@ -11,7 +12,6 @@ if (!isset($_SESSION['user_id'])) {
     exit(); // Terminate script execution
 }
 
-include("Navi_bar_admin.php");
 ?>
 
 <!DOCTYPE html>
