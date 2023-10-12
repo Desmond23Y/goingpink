@@ -1,6 +1,6 @@
 <?php
 include("Navi_bar_admin.php");
-
+?>
     <!DOCTYPE html>
     <html>
         <head>
@@ -75,5 +75,4 @@ include("Navi_bar_admin.php");
             
         </div>
     </body>
-?>
 </html>
