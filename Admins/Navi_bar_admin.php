@@ -2,93 +2,100 @@
 <html>
 <style>
 * {
-    margin: 0;
     padding: 0;
+    margin: 0;
     box-sizing: border-box;
     }
 
 body {
-    margin: 0;
-    padding: 0;
+    font-family: 'Butler'
     }
 
 .navibar {
-    overflow: hidden;
-    background-color: #333;
-    width: 100%;
-    }
-
-.navibar a {
-    float: left;
-    font-size: 16px;
-    color: white;
     text-align: center;
-    padding: 14px 16px;
+    color: #F9B9C3;
+    }
+
+.navibar ul {
+    display: inline-flex;
+    list-style: none;
+    color: white;
+    }
+
+.navibar ul li {
+    width: 120px;
+    margin: 15px;
+    padding: 15px;
+    }
+
+.navibar ul li a {
     text-decoration: none;
+    color: white;
     }
 
-.navibar a:hover {
-    background-color: #ddd;
-    color: black;
-    }
-
-.navibar a.right {
-    float: right;
+.navibar ul li:hover {
+    background-color: #C7949C;
+    color: white;
+    border-radius: 3px;
     }
 
 .dropdown {
-    float: left;
-    overflow: hidden;
-    }
-
-.dropdown .dropbtn {
-    font-size: 16px;
-    border: none;
-    outline: none;
-    color: white;
-    padding: 14px 16px;
-    background-color: inherit;
-    }
-
-.dropdown-content {
     display: none;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    z-index: 1;
     }
 
-.dropdown-content a {
-    float: none;
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
+.navibar ul li:hover .dropdown {
+    display:block;
+    position: absolute;
+    background-color: #F9B9C3;
+    margin-top: 15px;
+    margin-left: 15px;
+    }
+
+.navibar ul li:hover .dropdown {
     display: block;
+    margin: 10px;
+    }
+
+.navibar ul li:hover .dropdown ul li {
+    width: 150px;
+    padding: 10px;
+    border-bottom: 1px solid #65313D;
+    background: transparent;
+    border-radius: 0;
     text-align: left;
     }
 
-.dropdown:hover .dropdown-content {
-    display: block; 
+.navibar ul li:hover .dropdown ul li:last-child {
+    border-bottom: none;
+    }    
+
+.navibar ul li:hover .dropdown ul li a:hover {
+    background-color: #C7949C;
+    color: white;
     }
 
 </style>
 
-<nav>
+<body>
     <div class="navibar">
-        <a href="homepage_admin.php">HOME</a></li>
-        <div class="dropdown">
-            <a class="dropbtn">MANAGE</a>
-            <div class="dropdown-content">
-                <a href="view_user_acc.php">USER</a>
-                <a href="view_hmgt_acc.php">HOTEL</a>           
-                <a href="view_tmgt_acc.php">TRANSPORT</a>
-                <a href="view_support_acc.php">SUPPORT</a>
-                <a href="view_admin_acc.php">ADMIN</a>
-            </div>    
-        </div>    
-        <a href="generatereport.php">GENERATE REPORT</a>
-        <a href="view_hotel_booking.php">MANAGE HOTEL BOOKING</a>
-        <a href="view_transport_booking.php">MANAGE TRANSPORT BOOKING</a>
-        <a href="../logout.php" class="right">LOGOUT</a>
+        <ul>
+            <li><a href="homepage_admin.php">HOME</a></li>
+                <li><a>MANAGE</a>
+                    <div class="dropdown">
+                        <ul>
+                            <li><a href="view_user_acc.php">USER</a></li>
+                            <li><a href="view_hmgt_acc.php">HOTEL</a></li>
+                            <li><a href="view_tmgt_acc.php">TRANSPORT</a></li>
+                            <li><a href="view_support_acc.php">SUPPORT</a></li>
+                            <li><a href="view_admin_acc.php">ADMIN</a></li>
+                        </ul>
+                    </div>
+                </li>
+            <li><a href="generatereport.php">GENERATE REPORT</a></li>
+            <li><a href="view_hotel_booking.php">MANAGE HOTEL BOOKING</a></li>
+            <li><a href="view_transport_booking.php">MANAGE TRANSPORT BOOKING</a></li>
+            <li><a href="../logout.php" class="right">LOGOUT</a></li>
+        </ul>
     </div>
-</nav>
+</body>
 </html>
