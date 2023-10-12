@@ -1,5 +1,5 @@
 <?php
-include("Navi_generate_report.php");
+include("Navi_bar_admin.php");
 ?>
 <!DOCTYPE html>
 <html>
