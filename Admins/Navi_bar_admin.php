@@ -13,7 +13,6 @@ body {
     }
 
 .navibar {
-    overflow: hidden;
     background-color: #333;
     width: 100%;
     }
