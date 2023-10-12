@@ -52,7 +52,6 @@ body {
 
 .dropdown-content {
     display: none;
-    position: static;
     background-color: #f9f9f9;
     min-width: 160px;
     z-index: 1;
