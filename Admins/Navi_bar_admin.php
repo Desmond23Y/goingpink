@@ -49,24 +49,22 @@ ul li:hover ul.dropdown {
 </style>
 
 <body>
-    <nav>
-        <ul class="navibar">
-            <li><a href="homepage_admin.php">HOME</a></li>
+    <div class="navibar">
+        <li><a href="homepage_admin.php">HOME</a></li>
             <li>
                 <a>MANAGE</a>
-                <ul class="dropdown">
-                    <li><a href="view_user_acc.php">USER</a></li>
-                    <li><a href="view_hmgt_acc.php">HOTEL</a></li>
-                    <li><a href="view_tmgt_acc.php">TRANSPORT</a></li>
-                    <li><a href="view_support_acc.php">SUPPORT</a></li>
-                    <li><a href="view_admin_acc.php">ADMIN</a></li>
-                </ul>
+                    <ul class="dropdown">
+                        <li><a href="view_user_acc.php">USER</a></li>
+                        <li><a href="view_hmgt_acc.php">HOTEL</a></li>
+                        <li><a href="view_tmgt_acc.php">TRANSPORT</a></li>
+                        <li><a href="view_support_acc.php">SUPPORT</a></li>
+                        <li><a href="view_admin_acc.php">ADMIN</a></li>
+                    </ul>
             </li>
             <li><a href="generatereport.php">GENERATE REPORT</a></li>
             <li><a href="view_hotel_booking.php">MANAGE HOTEL BOOKING</a></li>
             <li><a href="view_transport_booking.php">MANAGE TRANSPORT BOOKING</a></li>
             <li><a href="../logout.php" class="right">LOGOUT</a></li>
-        </ul>
-    </nav>
+    </div>
 </body>
 </html>
