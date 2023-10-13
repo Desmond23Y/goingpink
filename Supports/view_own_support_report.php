@@ -18,6 +18,7 @@ if (isset($_SESSION['user_id'])) {
     <title>View Own Support Report</title>
     <link rel="stylesheet" href="homepage_support.css">
     <style>
+        
         table {
             justify-content: center;
             align-items: center;
@@ -47,6 +48,7 @@ if (isset($_SESSION['user_id'])) {
             background-color: #E9204F;
             color: white;
         }
+        
     </style>
 </head>
 <body>
