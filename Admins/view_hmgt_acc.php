@@ -12,7 +12,6 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 include("Navi_bar_admin.php");
-
 ?>
 
 <!DOCTYPE html>
