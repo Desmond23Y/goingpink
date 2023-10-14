@@ -10,7 +10,6 @@ if (!isset($_SESSION['user_id'])) {
 $result=mysqli_query($con,"SELECT* FROM transportation_booking");
 
 include("Navi_bar_admin.php");
-
 ?>
 
 <head>
