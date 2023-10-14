@@ -69,7 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             <input type="number" id="hotel_price" name="hotel_price" required>
             <br><br>
 
-            <button type="submit">Create Hotel</button>
+            <button type="submit" class="button">Create Hotel</button>
         </form>
     </div>
 </body>
