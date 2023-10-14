@@ -52,7 +52,7 @@ session_start();
             background-color: #C7949C;
             color: white;
             }
-    </style>
+        </style>
     </head>
      
 <body>
