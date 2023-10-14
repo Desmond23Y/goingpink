@@ -10,7 +10,6 @@ if (!isset($_SESSION['user_id'])) {
 $result=mysqli_query($con,"SELECT* FROM hotel_booking");
 
 include("Navi_bar_admin.php");
-
 ?>
 <head>
     <link rel="stylesheet" href="viewhmgtacc.css">
