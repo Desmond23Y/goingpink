@@ -78,21 +78,21 @@ $result = mysqli_query($con, "SELECT * FROM ticket");
         }        
 
     td a {
-    display: inline-block;
-    padding: 6px 10px;
-    margin: 2px;
-    color: white;
-    background-color: #E9204F;
-    text-decoration: none;
-    border: 1px solid;
-    border-radius: 3px;
-    }
+        display: inline-block;
+        padding: 6px 10px;
+        margin: 2px;
+        color: white;
+        background-color: #E9204F;
+        text-decoration: none;
+        border: 1px solid #65313D;
+        border-radius: 3px;
+        }    
 
-td a:hover {
-    background-color: #FF5A7D;
-    color: white;
-    border: 1px solid;
-    }
+    td a:hover {
+        background-color: #FF5A7D;
+        color: white;
+        border: 1px solid #65313D;;
+        }
     </style>
     
 </head>
