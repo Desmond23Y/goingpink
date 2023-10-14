@@ -59,3 +59,10 @@ button:hover {
     background-color: #FF5A7D;
     color: white;
     }
+
+    header {
+    background-color: #f17492;
+    color: #fef1f4;
+    text-align: center;
+    padding: 20px 0;
+}
