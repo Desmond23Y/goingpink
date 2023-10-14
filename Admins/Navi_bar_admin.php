@@ -4,7 +4,7 @@
 body {
     margin: 0;
     padding: 0;
-    } 
+    }
 
 .navibar {
     list-style-type: none;
@@ -12,12 +12,11 @@ body {
     padding: 0;
     overflow: hidden;
     background-color: #F9B9C3;
-    font-family: 'Butler';
     }
 
 .navibar a {
     float: left;
-    display: block;
+    font-size: 16px;
     color: #333;
     text-align: center;
     padding: 14px 16px;
@@ -34,55 +33,55 @@ body {
     }
 
 .dropdown {
-        float: left;
-        overflow: hidden;
+    float: left;
+    overflow: hidden;
+    position: static;
     }
 
 .dropdown .dropbtn {
-        font-size: 16px;
-        border: none;
-        outline: none;
-        color: #333;
-        padding: 14px 16px;
-        background-color: #F9B9C3;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: #333;
+    padding: 14px 16px;
+    background-color: #F9B9C3;
     }
     
 .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: #F9B9C3;
-        min-width: 160px;
-        z-index: 1;
+    display: none;
+    position: absolute;
+    background-color: #F9B9C3;
+    min-width: 160px;
+    z-index: 1;
     }    
 
 .dropdown-content a {
-        float: none;
-        color: #333;
-        padding: 12px 16px;
-        text-decoration: none;
-        display: block;
-        text-align: left;
+    float: none;
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
     }
 
 .dropdown:hover .dropdown-content {
-        display: block;
+    display: block;
     }
-
 </style>
 
 <body>
     <div class="navibar">
         <a href="homepage_admin.php">HOME</a>
             <div class="dropdown">
-                <button class="dropbtn">MANAGE
+                <button class="dropbtn">MANAGE ACCOUNT
                     <i class="fa fa-caret-down"></i>
                 </button>
                 <div class="dropdown-content">
-                <a href="view_user_acc.php">USER</a>
-                <a href="view_hmgt_acc.php">HOTEL</a>
-                <a href="view_tmgt_acc.php">TRANSPORT</a>
-                <a href="view_support_acc.php">SUPPORT</a>
-                <a href="view_admin_acc.php">ADMIN</a>
+                    <a href="view_user_acc.php">USER</a>
+                    <a href="view_hmgt_acc.php">HOTEL</a>
+                    <a href="view_tmgt_acc.php">TRANSPORT</a>
+                    <a href="view_support_acc.php">SUPPORT</a>
+                    <a href="view_admin_acc.php">ADMIN</a>
                 </div>
             </div>
         <a href="generatereport.php">GENERATE REPORT</a>
@@ -90,5 +89,4 @@ body {
         <a href="view_transport_booking.php">MANAGE TRANSPORT BOOKING</a>
         <a href="../logout.php" class="right">LOGOUT</a>
     </div>
-</body>
 </html>
