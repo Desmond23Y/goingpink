@@ -53,9 +53,8 @@ img{
     margin-left: 50%;
 }
 
-
 .button:hover {
-    background-color: #FF5A7D; /* Highlight color on hover */
+    background-color: #FF5A7D; 
 }
 
 .function{
