@@ -57,6 +57,7 @@ if (mysqli_num_rows($hotel_result) > 0) {
 <html>
 <head>
     <title>Payment Details</title>
+    <link rel="stylesheet" href="paymenthotel.css">
     <script>
         function showPaymentStatus() {
             alert("Payment Successful!");
