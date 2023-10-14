@@ -2,7 +2,7 @@ h1 {
     font-size: 30px;
     font-family: 'Butler';
     text-align: center;
-    color: black;
+   
     }
 
 .box {
@@ -19,7 +19,7 @@ h1 {
     background-color: #f1aca4;
     }
 
-button {
+.button {
     padding: 12px;
     font-size: 16px;
     background-color: #E9204F;
@@ -28,7 +28,7 @@ button {
     text-decoration: none;
     }
 
-button:hover {
+.button:hover {
     background-color: #FF5A7D;
     color: white;
     }
