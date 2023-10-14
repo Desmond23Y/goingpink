@@ -76,6 +76,23 @@ $result = mysqli_query($con, "SELECT * FROM ticket");
     tr:nth-child(odd) {
         background-color: #FFF3F3;
         }        
+
+    td a {
+    display: inline-block;
+    padding: 6px 10px;
+    margin: 2px;
+    color: white;
+    background-color: #E9204F;
+    text-decoration: none;
+    border: 1px solid;
+    border-radius: 3px;
+    }
+
+td a:hover {
+    background-color: #FF5A7D;
+    color: white;
+    border: 1px solid;
+    }
     </style>
     
 </head>
