@@ -7,15 +7,15 @@ h1 {
     font-size: 30px;
     color: #F490A8;
     text-align: center;
-    margin-top: 10px;
+    margin-top: 20px;
     }
 
 form {
-    font-family: 'Futura';
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-family: 'Futura';
     }
 
 label {
@@ -44,7 +44,7 @@ textarea {
 
 #description {
     resize: none;
-    }
+}
 
 button {
     margin-top: 10px;
