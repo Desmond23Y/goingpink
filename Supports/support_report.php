@@ -43,6 +43,7 @@ if (!isset($_SESSION['user_id'])) {
         body {
         margin: 0;
         padding: 0;
+        background-color: #FBE5E3;
         }
 
         .navibar {
