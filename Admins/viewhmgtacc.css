@@ -62,12 +62,12 @@ td a {
     color: white;
     background-color: #E9204F;
     text-decoration: none;
-    border: 1px solid;
+    border: 1px solid #65313D;
     border-radius: 3px;
     }
 
 td a:hover {
     background-color: #FF5A7D;
     color: white;
-    border: 1px solid;
+    border: 1px solid #65313D;
     }
