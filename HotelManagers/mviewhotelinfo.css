@@ -16,18 +16,67 @@ h1 {
     text-align: left;
     align-items: center;
     justify-content: center;
+    background-color: #f1aca4;
     }
 
-.edit-button {
+button {
     padding: 12px;
     font-size: 16px;
-    background-color: black;
+    background-color: #E9204F;
     color: white;
     border-radius: 4px;
     text-decoration: none;
     }
 
-.edit-button:hover {
-    background-color: black;
-    color: yellow;
+button:hover {
+    background-color: #FF5A7D;
+    color: white;
     }
+
+
+/* Reset some default styles */
+body, ul {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Futura, sans-serif !important;
+    background-color: #fbe5e3;
+
+}
+
+header {
+    background-color: #f17492;
+    color: #fef1f4;
+    text-align: center;
+    padding: 20px 0;
+}
+
+h1 {
+    margin: 0;
+    font-family: Butler, serif !important;
+}
+
+
+
+p{
+    font-family: "Futura", monospace;
+}
+
+
+
+.button-container{
+    display: flex;
+    gap: 5px;
+    margin-left: 50%;
+   
+    
+}
+
+
+
+
+
+
+
