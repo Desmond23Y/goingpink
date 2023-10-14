@@ -57,6 +57,7 @@ if (mysqli_num_rows($transport_result) > 0) {
 <html>
 <head>
     <title>Payment Details</title>
+    <link rel="stylesheet" href="paymenthotel.css">
     <script>
         function showPaymentStatus() {
             alert("Payment Successful!");
