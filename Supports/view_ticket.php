@@ -91,7 +91,7 @@ $result = mysqli_query($con, "SELECT * FROM ticket");
     td a:hover {
         background-color: #FF5A7D;
         color: white;
-        border: 1px solid #65313D;;
+        border: 1px solid #65313D;
         }
     </style>
     
