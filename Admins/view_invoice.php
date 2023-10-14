@@ -10,7 +10,6 @@ if (!isset($_SESSION['user_id'])) {
 $result=mysqli_query($con,"SELECT* FROM invoice");
 
 include("Navi_generate_report.php");
-
 ?>
 
 <head>
