@@ -28,7 +28,12 @@ input {
     margin-bottom: 16px;
     box-sizing: border-box;
     }
-
+header {
+        background-color: #f17492;
+        color: #fef1f4;
+        text-align: center;
+        padding: 20px 0;
+    }
 button {
     margin-right: 10px;
     padding: 12px;

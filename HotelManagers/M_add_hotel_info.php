@@ -37,7 +37,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 </head>
 
 <body>
-<h1>New Hotel Information</h1>
+<header>
+    <h1>New Hotel Information</h1>
+</header>
     <div class="box">
         <form action="" method="POST">
             <label for="hotel_name">Hotel Name: </label>

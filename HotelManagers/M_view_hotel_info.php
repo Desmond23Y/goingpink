@@ -28,7 +28,9 @@ if (!$result) {
 </head>
 
 <body>
-<h1>Hotel Information</h1>
+<header>
+    <h1>Hotel Information</h1>
+</header>
     <div class="box">
         <?php
         if ($result->num_rows > 0) {
