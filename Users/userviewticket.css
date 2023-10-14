@@ -1,8 +1,8 @@
 h1 {
-    font-size: larger;
+    font-size: 30px;
     font-family: 'Butler';
     text-align: center;
-    color: #db6a85;
+    color: #F490A8;
 }
 
 .ticket-list {
@@ -21,7 +21,7 @@ h1 {
     display: inline-block; 
     width: 50%; 
     margin-bottom: 20px; 
-    border: 1px solid silver;
+    border: 1px solid #65313D;
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
@@ -30,6 +30,6 @@ h1 {
 }
 
 body {
-    background-color: #fff4f6;
+    background-color: #FBE5E3;
 }
 
