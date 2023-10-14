@@ -1,3 +1,9 @@
+body {
+    font-family: Futura, sans-serif !important;
+    background-color: #fbe5e3;
+
+}
+
 h1 {
     font-family: 'Butler';
     font-size: 30px;
@@ -27,12 +33,12 @@ button {
     margin-right: 10px;
     padding: 12px;
     font-size: 16px;
-    background-color: black;
+    background-color: #E9204F;
     color: white;
     border-radius: 4px;
     }
 
 button:hover{
-    background-color: black;
-    color: yellow;
+    background-color: #FF5A7D;
+    color: white;
     }
