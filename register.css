@@ -15,7 +15,7 @@ h3 {
 h2 {
     font-family: 'Butler';
     font-size: 50px;
-    color: #f490a8;
+    color: #F490A8;
     text-align: center;
     }
 
@@ -34,19 +34,17 @@ form {
     }
 
 button{
-    margin-right: 10px;
     padding: 12px;
     font-size: 16px;
-    background-color: #db9d95;
-    color: #fee7eb;
+    background-color: #E9204F;
+    color: white;
     border-radius: 4px;
     }
 
 button:hover{
-    background-color: #ab5288;
-    color: #f1aca4;
+    background-color: #FF5A7D;
+    color: white;
     }
-
 
 body {
     background-image: url("picture/Register.jpg");
@@ -56,7 +54,3 @@ body {
     background-position: center;
     background-position-y: 20px;
     }
-
-testing {
-    
-}
