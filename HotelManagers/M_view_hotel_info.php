@@ -14,7 +14,7 @@ if (!$result) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hotel Information</title>
+    <title>Hotel </title>
     <link rel="stylesheet" href="mviewhotelinfo.css">
     <nav>
         <ul class="navibar">
