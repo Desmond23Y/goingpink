@@ -13,7 +13,7 @@ if (!$result) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>View Hotel Booking</title>
-    <link rel="stylesheet" href="M_hotel_homepage.css">
+    <link rel="stylesheet" href="mviewhotelinfo.css">
     <nav>
         <ul class="navibar">
         <li><a href="M_hotel_homepage.php">HOME</a></li>
