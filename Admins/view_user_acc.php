@@ -10,8 +10,8 @@ if (!isset($_SESSION['user_id'])) {
 $result = mysqli_query($con, "SELECT * FROM user");
 
 include("Navi_bar_admin.php");
-
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
