@@ -25,28 +25,32 @@ jobs:
       uses: actions/checkout@v3
 
     - name: 📂 Sync files
-      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      uses: kevinpainchaud/simple-ftp-deploy-action@v1.2.1
       with:
-        server: goingpink.atwebpages.com
-        username: ${{ secrets.FTP_USERNAME2 }}
-        password: ${{ secrets.FTP_PASSWORD2 }}
-        server-dir: /htdocs/
-        timeout: 180
+        ftp_host: goingpink.atwebpages.com
+        ftp_username: ${{ secrets.FTP_USERNAME2 }}
+        ftp_password: ${{ secrets.FTP_PASSWORD2 }}
+        local_source_dir: "./"
+        dist_target_dir: "/htdocs"
+        delete: "false"
+        only_newer: "true"
+        exclude: "'^.github/'"
 
   web-deploy2:
     name: 🎉 Backup Deploy
     runs-on: ubuntu-latest
-    environment: default
     steps:
-    - name: 🚚 Get latest code
-      uses: actions/checkout@v3
-
-    - name: 📂 Sync files
-      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
-      with:
-        server: files.000webhost.com
-        username: ${{ secrets.FTP_USERNAME }}
-        password: ${{ secrets.FTP_PASSWORD }}
-        server-dir: /public_html/
-        timeout: 180
+      - name: Get latest code (again)
+        uses: actions/checkout@v2
+      # Here is the deployment action
+      - name: Upload from whatever dir via FTP
+        uses: airvzxf/ftp-deployment-action@latest
+        with:
+          server: files.000webhost.com
+          user: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local_dir: "./"
+          delete: "false"
+          max_retries: "25"
+          ftp_nop_interval: "10"
   
