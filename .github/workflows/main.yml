@@ -27,7 +27,7 @@ jobs:
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
-        server: fdb1034.awardspace.net
+        server: goingpink.atwebpages.com
         username: ${{ secrets.FTP_USERNAME2 }}
         password: ${{ secrets.FTP_PASSWORD2 }}
         server-dir: /htdocs/
