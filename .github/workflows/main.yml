@@ -50,9 +50,8 @@ jobs:
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@v3.1.2
       with:
-        server: files.000webhost.com
-        username: ${{ secrets.FTP_USERNAME }}
-        password: ${{ secrets.FTP_PASSWORD }}
-        server-dir: /public_html/
-        timeout: 360
+        ftp-server: ftp://files.000webhost.com/public_html
+        ftp-username: ${{ secrets.FTP_USERNAME }}
+        ftp-password: ${{ secrets.FTP_PASSWORD }}
+        git-ftp-args: --insecure
   
