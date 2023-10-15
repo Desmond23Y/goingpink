@@ -34,23 +34,25 @@ jobs:
         dist_target_dir: "/htdocs"
         delete: "false"
         only_newer: "true"
-        exclude: "'^.github/'"
+        ignore_time: "true"
+        exclude: "'^.github/' '^.git/'"
 
   web-deploy2:
     name: 🎉 Backup Deploy
     runs-on: ubuntu-latest
+    environment: default
     steps:
-      - name: Get latest code (again)
-        uses: actions/checkout@v2
-      # Here is the deployment action
-      - name: Upload from whatever dir via FTP
-        uses: airvzxf/ftp-deployment-action@latest
-        with:
-          server: files.000webhost.com
-          user: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          local_dir: "./"
-          delete: "false"
-          max_retries: "25"
-          ftp_nop_interval: "10"
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v2.1.0
+      with:
+        fetch-depth: 3
+
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@v3.1.2
+      with:
+        server: files.000webhost.com
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        server-dir: /public_html/
+        timeout: 360
   
