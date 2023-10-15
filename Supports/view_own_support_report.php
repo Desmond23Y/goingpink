@@ -20,8 +20,6 @@ if (isset($_SESSION['user_id'])) {
     <style>
         
         table {
-            justify-content: center;
-            align-items: center;
             border-collapse: collapse;
             margin-top: 20px auto;
         }
