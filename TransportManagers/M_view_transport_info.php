@@ -18,7 +18,7 @@ if (!$result) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hotel Information</title>
-    <link rel="stylesheet" href="M_transport_homepage.css">
+    <link rel="stylesheet" href="mviewtransportinfo.css">
     <nav>
         <ul class="navibar">
             <li><a href="M_transport_homepage.php">HOME</a></li>
@@ -30,7 +30,9 @@ if (!$result) {
 </head>
 
 <body>
-<h1>Transport Information</h1>
+    <header>
+        <h1>Transport Information</h1>
+    </header>
     <div class="box">
         <?php
         if ($result->num_rows > 0) {
@@ -39,7 +41,7 @@ if (!$result) {
                 echo '<h3> Price per KM: US$' . $row["transport_price_perKM"] . '</h3>';
 
                 if ($_SESSION['user_type'] == 'admin' || $_SESSION['user_type'] == 'transport_management') {
-                    echo '<a href="M_edit_transport_info.php?transport_id=' . $row["transport_id"] . '">Edit This Transport</a>';
+                    echo '<a href="M_edit_transport_info.php?transport_id=' . $row["transport_id"] . '" class="button">Edit This Transport</a>';
                 }
             }
         } else {

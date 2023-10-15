@@ -1,0 +1,119 @@
+h1 {
+    font-size: 30px;
+    font-family: 'Butler';
+    text-align: center;
+   
+    }
+
+.box {
+    display: block; 
+    width: 30%; 
+    margin: 20px auto; 
+    border: 1px solid silver;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+    text-align: left;
+    align-items: center;
+    justify-content: center;
+    background-color: #f1aca4;
+    }
+
+.button {
+    padding: 12px;
+    font-size: 16px;
+    background-color: #E9204F;
+    color: white;
+    border-radius: 4px;
+    text-decoration: none;
+    }
+
+.button:hover {
+    background-color: #FF5A7D;
+    color: white;
+    }
+
+
+/* Reset some default styles */
+body, ul {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Futura, sans-serif !important;
+    background-color: #fbe5e3;
+
+}
+
+header {
+    background-color: #f17492;
+    color: #fef1f4;
+    text-align: center;
+    padding: 20px 0;
+}
+
+h1 {
+    margin: 0;
+    font-family: Butler, serif !important;
+}
+
+
+
+p{
+    font-family: "Futura", monospace;
+}
+
+
+
+.button-container{
+    display: flex;
+    gap: 5px;
+    margin-left: 50%;
+   
+    
+}
+
+header {
+    background-color: #f17492;
+    color: #fef1f4;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* navbar*/
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.navibar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #F9B9C3;
+}
+
+.navibar a {
+    float: left;
+    display: block;
+    color: #333;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navibar a.right {
+    float: right;
+}
+
+.navibar a:hover {
+    background-color: #C7949C;
+    color: white;
+}
+
+
+
+
+

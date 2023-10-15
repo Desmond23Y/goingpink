@@ -54,7 +54,9 @@ if (isset($_GET['transport_id'])) {
         </head>
 
         <body>
-            <h1>Edit Transport Information</h1>
+            <header>
+                <h1>Edit Transport Information</h1>
+            </header>
             <div class="box">
                 <form action="M_edit_transport_info.php?transport_id=<?php echo $transport_id; ?>" method="POST">
                     <label for="transport_type">Transport Type: </label>

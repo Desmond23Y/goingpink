@@ -13,7 +13,7 @@ if (!$result) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>View Transport Booking</title>
-    <link rel="stylesheet" href="M_transport_homepage.css">
+    <link rel="stylesheet" href="mviewtransportinfo.css">
      <nav>
         <ul class="navibar">
             <li><a href="M_transport_homepage.php">HOME</a></li>
@@ -25,7 +25,10 @@ if (!$result) {
 </head>
 
 <body>
-<h1>Transport Booking</h1>
+    <header>
+    <h1>Transport Booking</h1>
+    </header>
+
     <div class="box">
         <?php
         if ($result->num_rows > 0) {
