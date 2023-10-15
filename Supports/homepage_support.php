@@ -1,6 +1,4 @@
-<?php
-session_start();
-?>
+
 <!DOCTYPE html>
 <html>
      <head>
@@ -75,41 +73,46 @@ session_start();
             </header>
             <section class="section manage-ticket">
                 <div class="function" id="manage-ticket">
-                  
-                    <div class="function-text">
-                      
-                        <h2 class="manage-account">Manage Tickets</h2>
-                        <p class="manage-account">Manage all of the tickets in one place.</p>
-                        
-                              <a href="support_report.php" ><button class="button">Manage </button></a>    
-               
+                    <div class="content-container">
+                        <div class="function-text">
+                            <h2 class="manage-account">Manage Tickets</h2>
+                            <p class="manage-account">Manage all of the tickets in one place.</p>
+                            <a href="support_report.php" ><button class="button">Manage</button></a>
+                        </div>
+                        <div class="image-container">
+                            <img src="/picture/ticket.jpg" alt="Image">
+                        </div>
                     </div>
                 </div>
             </section>
+            
             <section class="section manage-report">
                 <div class="function" id="manage-report">
-                  
-                    <div class="function-text">
-                        <h2>View Sent Report</h2>
-                        <p class="generate-report">View all of your sent reports here in one place.</p>
-                            <a href="view_own_support_report.php" ><button class="button" id="generate-report-button">Click Me</button></a>
+                    <div class="content-container">
+                        <div class="function-text">
+                            <h2>View Sent Report</h2>
+                            <p class="generate-report">View all of your sent reports here in one place.</p>
+                            <a href="view_own_support_report.php"><button class="button" id="generate-report-button">Click Me</button></a>
+                        </div>
+                        <div class="image-container">
+                            <img src="/picture/report.jpg" alt="Image 2">
+                        </div>
                     </div>
                 </div>
             </section>
-            <section class="section contact-admin">
-                <div class="function" id="contact-admin">
-                  
-                
+            
+            <section class="section view-ticket">
+                <div class="function" id="view-ticket">
+                    <div class="content-container">
                         <div class="function-text">
                             <h2>View Ticket</h2>
-                        
-                            <p class="manage-booking">View all the details here in one place.</p> 
-                               <a href="view_ticket.php" ><button class="button" id="generate-report-button">Click Me</button></a>
-                    
+                            <p class="view-ticket">View all the details here in one place.</p>
+                            <a href="view_ticket.php"><button class="button" id="view-ticket-button">Click Me</button></a>
+                        </div>
+                        <div class="image-container">
+                            <img src="/picture/viewtickets.jpg" alt="Image 3">
+                        </div>
                     </div>
-
-                    </h6>
-                   
                 </div>
             </section>
             
