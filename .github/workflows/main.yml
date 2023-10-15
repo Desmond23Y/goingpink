@@ -43,15 +43,18 @@ jobs:
     environment: default
     steps:
     - name: 🚚 Get latest code
-      uses: actions/checkout@v2.1.0
-      with:
-        fetch-depth: 3
+      uses: actions/checkout@v3
 
     - name: 📂 Sync files
-      uses: SamKirkland/FTP-Deploy-Action@v3.1.2
+      uses: kevinpainchaud/simple-ftp-deploy-action@v1.2.1
       with:
-        ftp-server: ftp://files.000webhost.com/public_html
-        ftp-username: ${{ secrets.FTP_USERNAME }}
-        ftp-password: ${{ secrets.FTP_PASSWORD }}
-        git-ftp-args: --insecure
+        ftp_host: files.000webhost.com
+        ftp_username: ${{ secrets.FTP_USERNAME }}
+        ftp_password: ${{ secrets.FTP_PASSWORD }}
+        local_source_dir: "./"
+        dist_target_dir: "/public_html"
+        delete: "false"
+        only_newer: "true"
+        ignore_time: "true"
+        exclude: "'^.github/' '^.git/'"
   
