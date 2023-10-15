@@ -1,6 +1,4 @@
-<?php
-include("Navi_bar_admin.php");
-?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -32,41 +30,56 @@ include("Navi_bar_admin.php");
             </header>
             <section class="section manage-account">
                 <div class="function" id="manage-account">
-                    
-                    <div class="function-text">
-                    
-                        <h2>Manage Account</h2>
-                        <p class="manage-account">Manage all of your stakeholder's account in one place.</p>
-                 
-                        
-                        <div class="button-container">
-                            <a href="view_user_acc.php" ><button class="button">User</button></a>
-                            <a href="view_hmgt_acc.php"><button class="button">Hotel </button></a>
-                            <a href="view_tmgt_acc.php"><button class="button">Transport</button></a>
-                            <a href="view_support_acc.php" ><button class="button">Support</button></a>
-                            <a href="view_admin_acc.php"><button class="button">Admin</button></a>
+                    <div class="content-container">
+                        <div class="function-text">
+                            <h2>Manage Account</h2>
+                            <p class="manage-account">Manage all of your stakeholder's account in one place.</p>
+                            
+                            <div class="button-container">
+                                <a href="view_user_acc.php"><button class="button">User</button></a>
+                                <a href="view_hmgt_acc.php"><button class="button">Hotel</button></a>
+                                <a href="view_tmgt_acc.php"><button class="button">Transport</button></a>
+                                <a href="view_support_acc.php"><button class="button">Support</button></a>
+                                <a href="view_admin_acc.php"><button class="button">Admin</button></a>
+                            </div>
+                        </div>
+                        <div class="image-container">
+                            <img src="/picture/report.jpg" alt="Image 1">
                         </div>
                     </div>
                 </div>
             </section>
+
             <section class="section generate-report">
                 <div class="function" id="generate-report">
-                  
-                    <div class="function-text">
-                        <h2>Generate Report</h2>
-                        <p class="generate-report">Generate Sales, Inventory, Profit Reports here in one place.</p>
+                    <div class="content-container">
+                        <div class="function-text">
+                            <h2>Generate Report</h2>
+                            <p class="generate-report">Generate Sales, Inventory, Profit Reports here in one place.</p>
+                            <a href="generatereport.php"><button class="button" id="generate-report-button">Click Me</button></a>
+                        </div>
+                        <div class="image-container">
+                            <img src="/picture/generate-report.jpg" alt="Image 2">
+                        </div>
+                       
                     </div>
-                      <a href="generatereport.php"><button class="button" id="generate-report-button">Click Me</button></a>
                 </div>
             </section>
-            <section class="section manage-booking">
+
+           <section class="section manage-booking">
                 <div class="function" id="manage-booking">
-                    <div class="function-text">
-                        <h2>Manage Booking</h2>
-                        <p class="manage-booking">Manage all of the users' transport and hotel booking here.</p>     
-                    </div>             
-                    <a href="view_hotel_booking.php" ><button class="button">Hotel </button></a>
-                    <a href="view_transport_booking.php" ><button class="button">Transport</button></a>
+                    <div class="content-container">
+                        <div class="function-text">
+                            <h2>Manage Booking</h2>
+                            <p class="manage-booking">Manage all of the users' transport and hotel booking here.</p>
+                            <a href="view_hotel_booking.php"><button class="button">Hotel</button></a>
+                            <a href="view_transport_booking.php"><button class="button">Transport</button></a>
+                        </div>
+                        <div class="image-container">
+                            <img src="/picture/manage-booking.jpg" alt="Image 3">
+                        </div>
+                       \
+                    </div>
                 </div>
             </section>
             

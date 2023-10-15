@@ -7,6 +7,8 @@ body {
     font-family: Butler, sans-serif !important;
 }
 
+
+
 header {
     background-color: #f17492;
     color: #fef1f4;
@@ -18,13 +20,14 @@ h1 {
     margin: 0;
 }
 
-h2 {
-    color: #FF5A7D;
+p{
+    font-family: "Futura ", monospace;
 }
 
-p {
-    font-family: "Futura", monospace;
-    font-weight: light;
+img{
+    width: 40%;
+    height:20%;
+    float: left;
 }
 
 .button {
@@ -35,35 +38,93 @@ p {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin: 20px;
+    margin: 15px;
 }
 
-.button-container {
+.button-container{
     display: flex;
     gap: 5px;
-    
+   
 }
 
 .button:hover {
     background-color: #FF5A7D; 
 }
 
-.function {
+.function{
     height: 40%;
 }
 
-#manage-account {
+#manage-account{
+    background-color:#f0e4da;
+}
+
+#generate-report{
     background-color: #fee7eb;
 }
 
-#generate-report {
+#manage-booking{
     background-color: #f0e4da;
 }
 
-#manage-booking {
-    background-color: #fee7eb;
+.function-text{
+    padding-top: 10px;
+    padding-left: 20px;
+}
+
+/* nav bar*/
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.navibar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #F9B9C3;
+}
+
+.navibar a {
+    float: left;
+    display: block;
+    color: #333;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navibar a.right {
+    float: right;
+}
+
+.navibar a:hover {
+    background-color: #C7949C;
+    color: white;
+}
+
+
+.content-container {
+    display: flex;
+    flex-direction: row; 
+    align-items: center; 
+}
+
+.image-container {
+    flex: 1; 
+    order: 1;
+    display: flex;
+    align-items: stretch; 
 }
 
 .function-text {
-    padding-top: 10px;
+    flex: 2;  
+    padding: 10px 20px;
+    margin-left: 50px;
+    order: 2; 
+}
+img {
+    width: 100%; 
+    height: 100%; 
 }
