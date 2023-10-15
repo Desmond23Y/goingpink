@@ -27,9 +27,9 @@ jobs:
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
-        server: ftpupload.net
-        username: ${{ secrets.FTP_USERNAME1 }}
-        password: ${{ secrets.FTP_PASSWORD1 }}
+        server: fdb1034.awardspace.net
+        username: ${{ secrets.FTP_USERNAME2 }}
+        password: ${{ secrets.FTP_PASSWORD2 }}
         server-dir: /htdocs/
         timeout: 180
 
