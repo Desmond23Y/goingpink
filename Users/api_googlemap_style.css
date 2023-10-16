@@ -6,6 +6,8 @@ h2 {
     }
 
 body {
+    justify-content: center;
+    align-items: center;
     background-color: #FBE5E3;
     }
 
