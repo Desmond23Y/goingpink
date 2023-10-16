@@ -86,15 +86,6 @@ body {
     background-color: #F9B9C3;
 }
 
-.navibar a {
-    float: left;
-    display: block;
-    color: #333;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
 .navibar a.right {
     float: right;
 }
