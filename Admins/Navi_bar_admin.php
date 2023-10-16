@@ -56,15 +56,6 @@
         min-width: 160px;
         }    
     
-    .dropdown-content a {
-        float: none;
-        color: #333;
-        padding: 12px 16px;
-        text-decoration: none;
-        display: block;
-        text-align: center;
-        }
-    
     .dropdown:hover .dropdown-content {
         display: block;
         }
