@@ -107,9 +107,6 @@ mysqli_close($con);
             <input type="checkbox" id="remember_me" name="remember_me">
             <label for="remember_me">Remember Me</label><br><br>
 
-            <input type="checkbox" id="terms_and_conditions" name="terms_and_conditions" required>
-            <label for="terms_and_conditions">I accept the <a href="./Users/policy.html" target="_blank">Terms and Conditions</a></label><br><br>
-
             <input type="hidden" name="remembered_username" id="remembered_username">
             
             <button type="submit">Login</button>
