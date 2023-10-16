@@ -14,7 +14,6 @@
         padding: 0;
         overflow: hidden;
         background-color: #F9B9C3;
-        z-index: 1;
         }
     
     .navibar a {
