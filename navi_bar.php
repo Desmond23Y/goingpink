@@ -47,6 +47,10 @@ body {
     background-color: #F9B9C3;
     }
     
+    .dropdown a:hover {
+    background-color: #C7949C;
+    color: white;
+    }
 .dropdown-content {
     display: none;
     position: absolute;
