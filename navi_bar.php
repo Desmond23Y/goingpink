@@ -74,7 +74,7 @@ body {
 <body>
       
             <div class="navibar">
-                <a href="../index.php">HOME</a>
+                <a href="index.php">HOME</a>
                 <a href="../Users/view_profile.php">PROFILE</a>
                 <a href="../Users/faq.php">FAQ</a>
                     <div class="dropdown" style="font-family: Butler;">
