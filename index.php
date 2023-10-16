@@ -24,7 +24,7 @@ include('navi_bar.php');
         const carousel = new bootstrap.Carousel(myCarouselElement, {
         interval: 2000,
         touch: false
-        })
+        });
     </script>
 
 </head>
