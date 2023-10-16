@@ -35,7 +35,6 @@ body {
 .dropdown {
     float: left;
     overflow: hidden;
-    position: static;
     }
 
 .dropdown .dropbtn {
