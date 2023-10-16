@@ -38,7 +38,6 @@
         float: left;
         overflow: hidden;
         position: static;
-        z-index: 3;
         }
     
     .dropdown .dropbtn {
@@ -55,8 +54,6 @@
         position: absolute;
         background-color: #F9B9C3;
         min-width: 160px;
-        z-index: 3;
-        top: 100%
         }    
     
     .dropdown-content a {
