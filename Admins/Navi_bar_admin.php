@@ -37,8 +37,8 @@
     .dropdown {
         float: left;
         overflow: hidden;
-        position: relative;
-        z-index: 2;
+        position: static;
+        z-index: 3;
         }
     
     .dropdown .dropbtn {
