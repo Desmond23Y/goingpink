@@ -17,8 +17,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Validate user inputs
     if (empty($username) || empty($password)) {
         echo "Username and password are required.";
-    } elseif (!isset($_POST['terms_and_conditions'])) {
-        echo "You must accept the Terms and Conditions to proceed.";
     } else {
         // Prepare and execute the UNION query to check if the user exists in any table
         $union_query = "
