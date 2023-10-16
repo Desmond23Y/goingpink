@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <?php
-        include_once('../navi_bar.php');
-    ?>
     <title>Tourism FAQ - Malaysia</title>
     <style>
         /* Style for FAQ dropdowns */
@@ -29,6 +26,9 @@
     </style>
 </head>
 <body>
+    <?php
+        include_once('../navi_bar.php');
+    ?>
     <h1>Tourism FAQ - Malaysia</h1>
     
     <!-- FAQ Dropdown 1 -->

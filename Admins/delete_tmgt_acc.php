@@ -1,5 +1,5 @@
 <?php
-include("conn.php");
+include("../conn.php");
 
 $transport_manager_id = $_GET['transport_manager_id'];
 

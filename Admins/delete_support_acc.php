@@ -1,5 +1,5 @@
 <?php
-include("conn.php");
+include("../conn.php");
 
 $support_id = $_GET['support_id'];
 

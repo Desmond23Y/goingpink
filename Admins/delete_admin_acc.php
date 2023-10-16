@@ -1,5 +1,5 @@
 <?php
-include("conn.php");
+include("../conn.php");
 
 $admin_id = $_GET['admin_id'];
 

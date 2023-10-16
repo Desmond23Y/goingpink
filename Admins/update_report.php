@@ -7,7 +7,7 @@
 <body>
     <?php
 	include("Navi_update_report.php");
-	include("conn.php");
+	include("../conn.php");
         if (isset($_GET['report_id'])) {
             $report_id = $_GET['report_id']; 
             $result = mysqli_query($con, "SELECT * FROM report WHERE report_id = $report_id");

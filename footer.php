@@ -1,6 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
 <style>
 body {
     margin: 0;
@@ -19,11 +16,7 @@ body {
     bottom: 0;
 }
 </style>
-</head>
-    
-<body>
-    <div class="footer">
-        <p>&copy; 2023 GoingPink</p>
-    </div>
-</body>
-</html>
+<div class="footer">
+    <p>&copy; 2023 GoingPink</p>
+</div>
+

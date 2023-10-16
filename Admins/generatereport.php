@@ -1,6 +1,3 @@
-<?php
-include("Navi_bar_admin.php");
-?>
 <html>
    
     <head>
@@ -24,6 +21,9 @@ include("Navi_bar_admin.php");
     </head>
 
     <body>
+        <?php
+            include("Navi_bar_admin.php");
+        ?>
         <div class="background-image">
             <header>
                 <h1>Generate Report Page</h1>

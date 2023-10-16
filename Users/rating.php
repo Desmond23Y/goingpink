@@ -2,7 +2,7 @@
 // Start or resume the session
 session_start();
 
-include('conn.php');
+include("../conn.php");
 
 if (!isset($_SESSION['user_id'])) {
     header('Location: ../login.php');
@@ -35,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 }
-include_once('../navi_bar.php');
+
 mysqli_close($con);
 ?>
 
@@ -48,6 +48,9 @@ mysqli_close($con);
     <link rel="stylesheet" href="Rating.css">
 </head>
 <body>
+    <?php
+        include_once('../navi_bar.php');
+    ?>
     <header>
         <h1>Rate and Provide Feedback</h1>
     </header>

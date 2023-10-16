@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('conn.php');
+include("../conn.php");
 
 $result = mysqli_query($con, "SELECT * FROM transportation_booking");
 if (!$result) {

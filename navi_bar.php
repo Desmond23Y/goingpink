@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html>
 <style>
 body {
     margin: 0;
@@ -75,33 +73,29 @@ body {
 
 </style>
 
-<body>
-      
-            <div class="navibar">
-                <a href="/index.php">HOME</a>
-                <a href="../Users/view_profile.php">PROFILE</a>
-                <a href="../Users/faq.php">FAQ</a>
-                    <div class="dropdown" style="font-family: Butler;">
-                        <button class="dropbtn" style="font-family: Butler;">FUNCTIONS
-                            <i class="fa fa-caret-down"></i>
-                        </button>
-                        <div class="dropdown-content">
-                            <a href="../Users/viewhotel.php">VIEW AND BOOK HOTEL</a>
-                            <a href="../Users/api_exRates.php">CURRENCY EXCHANGE RATES</a>
-                            <a href="../Users/viewtransport.php">VIEW AND BOOK TRANSPORT</a>                 
-                            <a href="../Users/invoice.php">CHECK BOOKING HISTORY</a>
+    <div class="navibar">
+        <a href="/index.php">HOME</a>
+        <a href="../Users/view_profile.php">PROFILE</a>
+        <a href="../Users/faq.php">FAQ</a>
+            <div class="dropdown" style="font-family: Butler;">
+                <button class="dropbtn" style="font-family: Butler;">FUNCTIONS
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="../Users/viewhotel.php">VIEW AND BOOK HOTEL</a>
+                    <a href="../Users/api_exRates.php">CURRENCY EXCHANGE RATES</a>
+                    <a href="../Users/viewtransport.php">VIEW AND BOOK TRANSPORT</a>                 
+                    <a href="../Users/invoice.php">CHECK BOOKING HISTORY</a>
 
-                            <a href="../Users/request_form.php">GO TO SUPPORT</a>
-                            <a href="../Users/user_view_ticket.php">VIEW CREATED TICKETS</a>
+                    <a href="../Users/request_form.php">GO TO SUPPORT</a>
+                    <a href="../Users/user_view_ticket.php">VIEW CREATED TICKETS</a>
 
-                            <a href="../Users/rating.php">WRITE REVIEW</a>
-                            <a href="../Users/view_rating.php">VIEW REVIEW</a>
-                        </div>
-                    </div>              
-                <a href="../logout.php" class="right">LOGOUT</a>
-                <a href="../register.php" class="right">REGISTER</a>
-                <a href="../login.php" class="right">LOGIN</a>
-            </div>
-       
-</body>
-</html>
+                    <a href="../Users/rating.php">WRITE REVIEW</a>
+                    <a href="../Users/view_rating.php">VIEW REVIEW</a>
+                </div>
+            </div>              
+        <a href="../logout.php" class="right">LOGOUT</a>
+        <a href="../register.php" class="right">REGISTER</a>
+        <a href="../login.php" class="right">LOGIN</a>
+    </div>
+

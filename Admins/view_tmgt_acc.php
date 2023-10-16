@@ -3,7 +3,7 @@
 session_start();
 
 // Include the database connection file
-include("conn.php");
+include("../conn.php");
 
 // Check if the user is authenticated
 if (!isset($_SESSION['user_id'])) {
@@ -11,7 +11,7 @@ if (!isset($_SESSION['user_id'])) {
     exit(); // Terminate script execution
 }
 
-include("Navi_bar_admin.php");
+
 ?>
 
 <!DOCTYPE html>
@@ -21,6 +21,9 @@ include("Navi_bar_admin.php");
     <link rel="stylesheet" href="viewhmgtacc.css">
 </head>
 <body>
+    <?php
+        include("Navi_bar_admin.php");
+    ?>
     <div class="button">
         <a href="create_tmgt_acc.php">Add New Transport Manager Account</a><br>
     </div>

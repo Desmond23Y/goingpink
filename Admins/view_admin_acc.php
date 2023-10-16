@@ -3,7 +3,7 @@
 session_start();
 
 // Include the database connection file
-include("conn.php");
+include("../conn.php");
 
 // Check if the user is authenticated
 if (!isset($_SESSION['user_id'])) {
@@ -14,7 +14,7 @@ if (!isset($_SESSION['user_id'])) {
 // Execute a MySQL query to fetch admin records
 $result = mysqli_query($con, "SELECT * FROM admin");
 
-include("Navi_bar_admin.php");
+
 ?>
 
 <!DOCTYPE html>
@@ -24,6 +24,9 @@ include("Navi_bar_admin.php");
     <link rel="stylesheet" href="viewhmgtacc.css">
 </head>
 <body>
+    <?php
+        include("Navi_bar_admin.php");
+    ?>
     <div class="button">
         <a href="create_admin_acc.php">Add New Admin Account</a><br>
     </div>

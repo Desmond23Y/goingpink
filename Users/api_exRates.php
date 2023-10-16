@@ -1,7 +1,3 @@
-<?php
-include('../navi_bar.php');
-?>
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -11,6 +7,9 @@ include('../navi_bar.php');
   </head>
 
   <body>
+    <?php
+      include('../navi_bar.php');
+    ?>
     <div class="wrapper">
       <div class="api-details">
         <img src="api_exRates_icon.svg" class="api-icon" />

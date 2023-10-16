@@ -1,7 +1,6 @@
 <?php
-include("Navi_modify_user.php");
 // Include the database connection
-include("conn.php");
+include("../conn.php");
 
 if (isset($_GET['user_id'])) {
     $user_id = $_GET['user_id']; 
@@ -67,6 +66,9 @@ if (isset($_GET['user_id'])) {
             <link rel="stylesheet" href="Modifyuseracc.css">
         </head>
         <body>
+            <?php
+                include("Navi_modify_user.php");
+            ?>
             <h2>User Account Modification</h2>
             <form method="post" action="modify_user_acc.php?user_id=<?php echo $user_id; ?>">
                 <label for="name">Username:</label>

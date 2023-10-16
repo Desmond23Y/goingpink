@@ -1,7 +1,6 @@
 <?php
-include("Navi_modify_tmgt.php");
 // Include the database connection
-include("conn.php");
+include("../conn.php");
 
 if (isset($_GET['transport_manager_id'])) {
     $transport_manager_id = $_GET['transport_manager_id']; 
@@ -51,6 +50,9 @@ if (isset($_GET['transport_manager_id'])) {
             <link rel="stylesheet" href="Modifyhmgtacc.css">
         </head>
         <body>
+            <?php
+                include("Navi_modify_tmgt.php");
+            ?>
             <h2>Transport Manager Account Modification</h2>
             <form method="post" action="modify_tmgt_acc.php?transport_manager_id=<?php echo $transport_manager_id; ?>">
                 <label for="name">Username:</label>

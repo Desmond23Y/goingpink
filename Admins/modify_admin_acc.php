@@ -1,6 +1,6 @@
 <?php
 // Include the database connection
-include("conn.php");
+include("../conn.php");
 
 if (isset($_GET['admin_id'])) {
     $admin_id = $_GET['admin_id']; 
@@ -43,7 +43,6 @@ if (isset($_GET['admin_id'])) {
             }
         }
 
-        include("Navi_modify_admin.php");
         ?>
         <!DOCTYPE html>
         <html>
@@ -52,6 +51,9 @@ if (isset($_GET['admin_id'])) {
             <link rel="stylesheet" href="Modifyhmgtacc.css">
         </head>
         <body>
+            <?php
+                include("Navi_modify_admin.php");
+            ?>
             <h2>Admin Account Modification</h2>
             <form method="post" action="modify_admin_acc.php?admin_id=<?php echo $admin_id; ?>">
                 <label for="name">Username:</label>

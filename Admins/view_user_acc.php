@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("conn.php");
+include("../conn.php");
 
 if (!isset($_SESSION['user_id'])) {
     header('Location: ../login.php');
@@ -9,7 +9,7 @@ if (!isset($_SESSION['user_id'])) {
 
 $result = mysqli_query($con, "SELECT * FROM user");
 
-include("Navi_bar_admin.php");
+
 ?>
 
 <!DOCTYPE html>
@@ -19,6 +19,9 @@ include("Navi_bar_admin.php");
     <link rel="stylesheet" href="viewhmgtacc.css">
 </head>
 <body>
+    <?php
+        include("Navi_bar_admin.php");
+    ?>
     <div class="button">
         <a href="create_user_acc.php">Add New User Account</a></td>
     </div>

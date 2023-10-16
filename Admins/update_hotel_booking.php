@@ -6,7 +6,7 @@
 
 <body>
     <?php
-        include("conn.php");
+        include("../conn.php");
         if (isset($_GET['hotel_booking_id'])) {
             $hotel_booking_id = $_GET['hotel_booking_id']; 
             $result = mysqli_query($con, "SELECT * FROM hotel_booking WHERE hotel_booking_id = '$hotel_booking_id'");

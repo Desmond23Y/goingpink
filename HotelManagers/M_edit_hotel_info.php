@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('conn.php');
+include("../conn.php");
 
 if (isset($_GET['hotel_id'])) {
     $hotel_id = $_GET['hotel_id']; 

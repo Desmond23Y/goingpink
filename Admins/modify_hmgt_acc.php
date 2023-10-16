@@ -1,7 +1,6 @@
 <?php
-include("Navi_modify_hmgt.php");
 // Include the database connection
-include("conn.php");
+include("../conn.php");
 
 if (isset($_GET['hotel_manager_id'])) {
     $hotel_manager_id = $_GET['hotel_manager_id']; 
@@ -51,6 +50,9 @@ if (isset($_GET['hotel_manager_id'])) {
             <link rel="stylesheet" href="Modifyhmgtacc.css">
         </head>
         <body>
+            <?php
+                include("Navi_modify_hmgt.php");
+            ?>
             <h2>Hotel Manager Account Modification</h2>
             <form method="post" action="modify_hmgt_acc.php?hotel_manager_id=<?php echo $hotel_manager_id; ?>">
                 <label for="name">Username:</label>

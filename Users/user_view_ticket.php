@@ -1,15 +1,11 @@
 <?php
 session_start();
-include('conn.php');
-
+include("../conn.php");
 
 if (!isset($_SESSION['user_id'])) {
     header('Location: ../login.php');
     exit();
 }
-
-
-include('../navi_bar.php');
 ?>
 
 
@@ -20,6 +16,9 @@ include('../navi_bar.php');
     <link rel="stylesheet" href="userviewticket.css">
 </head>
 <body>
+    <?php
+        include('../navi_bar.php');
+    ?>
     <header>
         <h1>View Tickets</h1>
     </header>

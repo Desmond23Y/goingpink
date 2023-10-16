@@ -1,6 +1,6 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    include("conn.php");
+    include("../conn.php");
     if (strlen($_POST['name']) < 5 || strlen($_POST['name']) > 50) {
         echo "Length of username must be between 5 and 50 characters.";
     } elseif (strlen($_POST['password']) < 5 || strlen($_POST['password']) > 50) {

@@ -1,15 +1,12 @@
 <?php
 session_start();
-include('conn.php');
+include("../conn.php");
 
 // Check if the user is logged in
 if (!isset($_SESSION['user_id'])) {
     header('Location: ../login.php');
     exit();
 }
-
-// Include the navigation bar (moved here to avoid output before header)
-include('../navi_bar.php');
 
 $result = mysqli_query($con, "SELECT * FROM transport_information");
 if (!$result) {
@@ -31,6 +28,9 @@ if (!$result) {
     </style>
 </head>
 <body>
+    <?php
+        include('../navi_bar.php');
+    ?>
     <header>
         <h1>Transportation Information</h1>
     </header>

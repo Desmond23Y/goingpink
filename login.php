@@ -83,10 +83,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 mysqli_close($con);
 ?>
 
-<?php
-include_once('navi_bar.php');
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -96,6 +92,9 @@ include_once('navi_bar.php');
     <link rel="stylesheet" href="Login.css">
 </head>
 <body>
+    <?php
+        include_once('navi_bar.php');
+    ?>
     <header>
         <h1>Welcome to Going Pink!</h1>
         <h3>"The only Travel System Service you ever need!"</h3>

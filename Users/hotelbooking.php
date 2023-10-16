@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('conn.php'); 
+include("../conn.php");
 
 $user_id = $_SESSION['user_id'];
 $selectedhotelid = $_SESSION['selected_hotel_id'];

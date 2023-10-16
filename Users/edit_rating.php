@@ -3,7 +3,7 @@
 session_start();
 
 include('../navi_bar.php');
-include('conn.php');
+include("../conn.php");
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $new_rating = $_POST['new_rating'];

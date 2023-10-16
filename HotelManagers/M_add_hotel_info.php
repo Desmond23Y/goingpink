@@ -1,5 +1,5 @@
 <?php
-include('conn.php');
+include("../conn.php");
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $hotel_name = $_POST['hotel_name'];

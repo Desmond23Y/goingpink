@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('conn.php');
+include("../conn.php");
 
 if (!isset($_SESSION['user_id'])) {
     header('Location: ../login.php');
@@ -30,8 +30,6 @@ if (mysqli_num_rows($result) > 0) {
     $date_of_birth = $user_data['date_of_birth'];
     $gender = $user_data['gender'];
 }
-
-include('../navi_bar.php');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['username'];
@@ -85,6 +83,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="stylesheet" href="Editprofile.css">
 </head>
 <body>
+    <?php
+        include('../navi_bar.php');
+    ?>
     <h1>Edit Profile</h1>
     <div class="container">
     <form action="edit_profile.php" method="POST">

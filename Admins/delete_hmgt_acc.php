@@ -1,5 +1,5 @@
 <?php
-include("conn.php");
+include("../conn.php");
 
 $hotel_manager_id = $_GET['hotel_manager_id'];
 

@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html>
 <style>
     body {
     margin: 0;
@@ -43,7 +41,6 @@
     }
 </style>
 
-<body>
     <nav>
         <ul class="navibar">
             <li><a href="homepage_admin.php">HOME</a></li>
@@ -51,5 +48,3 @@
             <li><a href="../logout.php" class="right">LOGOUT</a></li>
         </ul>
     </nav>
-</body>
-</html>

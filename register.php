@@ -1,5 +1,4 @@
 <?php
-include('navi_bar.php');
 include('conn.php');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -51,6 +50,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="stylesheet" href="register.css">
 </head>
 <body>
+    <?php
+        include('navi_bar.php');
+    ?>
     <header>
         <h1>Welcome to Going Pink!</h1>
         <h3>"The only Travel System Service you ever need!"</h3>

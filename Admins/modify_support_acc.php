@@ -1,7 +1,6 @@
 <?php
-include("Navi_modify_support.php");
 // Include the database connection
-include("conn.php");
+include("../conn.php");
 
 if (isset($_GET['support_id'])) {
     $support_id = $_GET['support_id']; 
@@ -51,6 +50,9 @@ if (isset($_GET['support_id'])) {
             <link rel="stylesheet" href="Modifyhmgtacc.css">
         </head>
         <body>
+            <?php
+                include("Navi_modify_support.php");
+            ?>
             <h2>Support Account Modification</h2>
             <form method="post" action="modify_support_acc.php?support_id=<?php echo $support_id; ?>">
                 <label for="name">Username:</label>
