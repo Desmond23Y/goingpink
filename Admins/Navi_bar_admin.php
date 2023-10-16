@@ -14,7 +14,6 @@
         padding: 0;
         overflow: hidden;
         background-color: #F9B9C3;
-        position: relative;
         z-index: 1;
         }
     
