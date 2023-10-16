@@ -79,6 +79,12 @@ img{
     align-items: stretch; 
 }
 
+.content-container {
+    display: flex;
+    flex-direction: row; 
+    align-items: center; 
+}
+
 .function-text {
     flex: 2;  
     padding: 10px 20px;
