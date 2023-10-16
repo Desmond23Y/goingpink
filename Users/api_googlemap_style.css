@@ -10,6 +10,8 @@ body {
     }
 
 label {
+    justify-content: center;
+    align-items: center;
     margin-top: 20px;
     display: flex;
     flex-direction: column;
@@ -18,6 +20,9 @@ label {
     }
 
 input, select {
+    justify-content: center;
+    align-items: center;
+    text-align: left;
     padding: 10px;
     box-sizing: border-box;
     margin-bottom: 15px;
