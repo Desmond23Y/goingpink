@@ -26,6 +26,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo "Invalid email address. Please try again.";
     } elseif (strlen($phone_number) < 9 || strlen($phone_number) > 12) {
         echo "Invalid phone number. Please try again.";
+    } elseif (!isset($_POST['terms_and_conditions'])) {
+        echo "You must accept the Terms and Conditions to proceed.";
     } else {
         // Prepare and execute the SQL query
         $new_user_query = "INSERT INTO user (username, password, first_name, last_name, email, phone_number, date_of_birth, gender) 
@@ -79,6 +81,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             <p>Date of Birth:</p>
             <input type="date" id="date_of_birth" name="date_of_birth" required><br><br>
+
+            <input type="checkbox" id="terms_and_conditions" name="terms_and_conditions" required>
+            <label for="terms_and_conditions">I accept the <a href="./Users/policy.html" target="_blank">Terms and Conditions</a></label><br><br>
 
             <p>Gender:</p>
             <input type="radio" id="html" name="gender" value="male"><label for="male">Male</label><br>
