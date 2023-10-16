@@ -55,7 +55,7 @@
         background-color: #F9B9C3;
         min-width: 160px;
         z-index: 2;
-        top: 100%;
+        bottom: 0;
         }    
     
     .dropdown-content a {
