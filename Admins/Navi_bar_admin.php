@@ -38,6 +38,7 @@
         float: left;
         overflow: hidden;
         position: static;
+        z-index: 2;
         }
     
     .dropdown .dropbtn {
