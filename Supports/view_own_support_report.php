@@ -28,7 +28,7 @@ if (isset($_SESSION['user_id'])) {
             }
 
         th, td {
-            border: 1px solid #E9204F;
+            border: 1px solid #65313D;
             padding: 8px;
             text-align: left;
         }
