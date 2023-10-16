@@ -49,6 +49,10 @@ if (isset($_SESSION['user_id'])) {
             background-color: #E9204F;
             color: white;
         }
+
+        body{
+            background-color: #fbe5e3;
+        }
         
     </style>
 </head>

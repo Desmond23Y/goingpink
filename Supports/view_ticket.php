@@ -19,6 +19,8 @@ $result = mysqli_query($con, "SELECT * FROM ticket");
     body {
         margin: 0;
         padding: 0;
+        background-color: #fbe5e3;
+        
         }
 
     .navibar {
