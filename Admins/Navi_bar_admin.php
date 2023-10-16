@@ -14,7 +14,6 @@
         padding: 0;
         overflow: hidden;
         background-color: #F9B9C3;
-        position: relative;
         }
     
     .navibar a {
@@ -38,7 +37,8 @@
     .dropdown {
         float: left;
         overflow: hidden;
-        position: static;
+        position: relative;
+        z-index: 2;
         }
     
     .dropdown .dropbtn {
@@ -55,7 +55,7 @@
         position: absolute;
         background-color: #F9B9C3;
         min-width: 160px;
-        z-index: 2;
+        z-index: 3;
         top: 100%
         }    
     
