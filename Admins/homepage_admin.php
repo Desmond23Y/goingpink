@@ -2,8 +2,6 @@
 include("Navi_bar_admin.php");
 ?>
 
-<?php
-
 <!DOCTYPE html>
 <html>
     <head>
