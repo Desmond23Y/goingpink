@@ -35,7 +35,6 @@ session_start();
   <div class="backgroun-image">
             <header>
                 <h1>Welcome Back to the Transport Management Page!</h1>
-        
                 <p>What do you want to do today?</p>
             </header>
               <section class="section transport-database">
@@ -59,11 +58,6 @@ session_start();
                     </div>
                 </div>
             </section>
-         
-            
-
-            
         </div>
-
 </body>
 </html>

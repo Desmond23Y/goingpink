@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
      <head>
@@ -50,8 +49,6 @@
                 background-color: #C7949C;
                 color: white;
                 }
-
-                
         </style>
     </head>
      
@@ -68,7 +65,6 @@
       <div class="backgroun-image">
             <header>
                 <h1>Support Dashboard</h1>
-        
                 <p>What do you want to do today?</p>
             </header>
             <section class="section manage-ticket">
@@ -115,9 +111,6 @@
                     </div>
                 </div>
             </section>
-            
-        
         </div>
-
 </body>
 </html>

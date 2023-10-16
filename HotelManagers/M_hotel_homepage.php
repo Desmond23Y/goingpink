@@ -40,7 +40,7 @@ session_start();
                     <div class="function-text">
                         <h2 class="hotel-database">Hotel Database</h2>
                         <p class="hotel-database">View all the existing hotel in the database.<br> You can edit and update hotel details here too.  </p>    
-                        <a href="M_view_hotel_info.php"><button class="button">View Hotel Database</button> </a>      
+                        <a href="M_view_hotel_info.php"><button class="button">View Hotel Database</button> </a>
                         <a href="M_add_hotel_info.php"><button class="button">Add Hotel</button> </a>
                     </div>
                 </div>

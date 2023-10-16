@@ -1,7 +1,6 @@
 <?php
 // Start or resume the session
 session_start();
-
 include('conn.php');
 
 // Check if "Remember Me" is checked and the cookie exists
@@ -79,7 +78,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 }
-
 mysqli_close($con);
 ?>
 

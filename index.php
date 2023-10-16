@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="index_styles.css">
     <!-- Include Bootstrap-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-
     <!--Import Butler & Futura Font-->
     <style>
      @import url('https://fonts.cdnfonts.com/css/butler');
@@ -16,7 +15,6 @@
     <!--Javascript-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
         const myCarouselElement = document.querySelector('#myCarousel')
-
         const carousel = new bootstrap.Carousel(myCarouselElement, {
         interval: 2000,
         touch: false
@@ -67,9 +65,6 @@
     </button>
   </div>
 
-
-    <!--Reasons to Use-->
-
     <section class="reason">
         <div class="reason-container">
           <div class="reason-content">
@@ -89,10 +84,6 @@
           </div>
         </div>
       </section>
-      
-
-    <!--Main Features-->
- 
       
   <section class="main-features" >
       <div class="features-container" >
@@ -130,7 +121,7 @@
                     <div class="d-flex justify-content-between align-items-center">
                       <div class="btn-group" >
                         <a href="../Users/api_exRates.php"><button type="button" class="btn btn-sm custom-button">Click Me!</button></a>                      
-                      </div>                 
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -144,11 +135,11 @@
                       <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
                           <a href="../Users/viewtransport.php"><button type="button" class="btn btn-sm custom-button">Click Me!</button>  </a>                    
-                        </div>                 
+                        </div>
                       </div>
                     </div>
                   </div>
-              </div>       
+              </div>
             </div>
           </div>
         </div>
@@ -163,7 +154,7 @@
       <div class="support">
         <div class="support-text">
           <h3 class="support-container-text">Facing a Problem? Need Help?</h3>
-          <p class="support-container-text-p" style="font-size: 24px;;">Contact Our Support By Clicking the Buttons Below!</p>
+          <p class="support-container-text-p" style="font-size: 24px;">Contact Our Support By Clicking the Buttons Below!</p>
           <a href="../Users/request_form.php" class="btn btn-lg btn-light fw-bold bg-white">Go To Support</a>
           <a href="../Users/user_view_ticket.php" class="btn btn-lg btn-light fw-bold bg-white" >View Tickets</a>
         </div>
@@ -180,7 +171,7 @@
       <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
           <header class="mb-auto">
           <div>
-              <!--just to allocate some space here-->        
+              <!--just to allocate some space here-->
           </div>
           </header>
       
@@ -192,9 +183,8 @@
               <a href="../Users/view_rating.php" class="btn btn-lg btn-light fw-bold bg-white" >See Reviews</a>
           </p>
           </main>
-      
+
           <footer class="mt-auto text-white-50">
-        
           </footer>
       </div>
   </div>

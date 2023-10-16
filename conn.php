@@ -1,5 +1,5 @@
 <?php
-// make the mysql query try and switch over on failure
+// make mysql query try and switch over on failure
 $con = '';
 try {
     mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT); 
@@ -10,5 +10,4 @@ try {
 if ($con->connect_error) {
     die("Could not connect to the server!: " . $con->connect_error);
 }
-
 ?>
