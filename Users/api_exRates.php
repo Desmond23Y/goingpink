@@ -4,6 +4,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Exchange Rates Converter</title>
     <link rel="stylesheet" href="api_exRates_styles.css" />
+    <style>
+        @import url('https://fonts.cdnfonts.com/css/butler');
+        @import url('https://fonts.cdnfonts.com/css/futura-pt');
+     </style>
   </head>
 
   <body>
@@ -25,7 +29,7 @@
         <select id="to-currency-select"></select>
       </div>
       
-      <button id="convert-button">Convert</button>
+      <button id="convert-button" style="font-weight: 600;" style="margin-top: 20px;">Convert</button>
       <br>
       <p id="result"></p>
     </div>

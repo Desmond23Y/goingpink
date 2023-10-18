@@ -65,7 +65,7 @@ if (!$result) {
 
     <div class="bottom-button">
         <form method="POST" action="api_googlemap.php">
-            <button type="submit">Click here to book a ride</button>
+            <button type="submit" style="font-weight: bold;">Click here to book a ride</button>
         </form>
     </div>
 </body>

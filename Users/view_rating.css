@@ -28,7 +28,7 @@ a {
     text-decoration: none;
     color: #E9204F;
     margin-right: 5px;
-    font-weight: bold;
+ 
 }
 
 a:hover {
@@ -52,7 +52,7 @@ ul {
 button {
     background-color: #E9204F;
     color: #fff;
-    font-weight: bold;
+    
     padding: 10px 20px;
     border: none;
     border-radius: 5px;

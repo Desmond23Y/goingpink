@@ -66,7 +66,7 @@ mysqli_close($con);
             <label for="feedback">Feedback:</label>
             <textarea id="feedback" name="feedback" rows="4" cols="50" required></textarea><br><br>
 
-            <button type="submit">Submit</button>
+            <button type="submit" style="margin-top: 10px;">Submit</button>
         </form>
     </div>
 </body>

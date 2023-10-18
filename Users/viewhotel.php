@@ -38,9 +38,7 @@ if (!$result) {
     <link rel="stylesheet" href="viewhotel.css">
 </head>
 <body>
-    <header>
         <h1>Hotel Viewing</h1>
-    </header>
 
     <li class="hotel-item">
         <?php
@@ -52,7 +50,7 @@ if (!$result) {
                 echo '<h3> Hotel Availability:<span class="thin-font"> ' . $row["hotel_availability"] . '</span></h3>';
                 echo '<h3> Hotel Price: <span class="thin-font">US$ ' . $row["hotel_price"] . '</span></h3>';
                 echo '<form method="POST" action="">';
-                echo '<button type="submit" name="book_hotel" value="' . $row["hotel_id"] . '">Book This Hotel</button>';
+                echo '<button type="submit" style="font-weight:bold" name="book_hotel" value="' . $row["hotel_id"] . '">Book This Hotel</button>';
                 echo '</form>';
                 echo '<br>';
                 }
