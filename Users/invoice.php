@@ -33,7 +33,9 @@ include_once('../navi_bar.php');
 </head>
 
 <body>
+
     <h1>Invoice Details</h1>
+
     <table>
         <tr>
             <th>Invoice ID</th>

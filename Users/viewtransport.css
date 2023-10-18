@@ -9,20 +9,13 @@ body {
     background-color: #f5f5f5;
 }
 
-header {
-    background-color: #E9204F;
-    color: #fff;
-    text-align: center;
-    padding: 20px 0;
-    font-family: Butler, serif;
-   
-}
 
 h1 {
-    margin: 0;
-    font-size: 24px;
-    font-family: Butler, serif;
-}
+    font-size: 30px;
+    font-family: 'Butler';
+    text-align: center;
+    color: #F490A8;
+    }
 
 .transport-item {
     background-color: #F1ACA4;

@@ -11,5 +11,12 @@ td {
     }
 
 body {
-    background-color: pink;
+    background-color: #fbe5e3;
 }
+
+h1 {
+    font-size: 30px;
+    font-family: 'Butler';
+    text-align: center;
+    color: #F490A8;
+    }
