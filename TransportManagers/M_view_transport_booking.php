@@ -40,6 +40,8 @@ if (!$result) {
                 echo '<h3> Departure Time: ' . $row["departure_time"] . '</h3>';
                 echo '<h3> Arrival Location: ' . $row["arrival_location"] . '</h3>';
                 echo '<h3> Departure Location: ' . $row["departure_location"] . '</h3>';
+                echo '<br>';
+                echo '<br>';
             }
         } else {
             echo "No transport booking available";
