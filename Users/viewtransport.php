@@ -39,8 +39,8 @@ if (!$result) {
         <?php
         if (mysqli_num_rows($result) > 0) {
             while ($row = mysqli_fetch_assoc($result)) {
-                echo '<h3>Transport Type: ' . $row["transport_type"] . '</h3>';
-                echo '<h3>Price per KM: US$' . $row["transport_price_perKM"] . '</h3>';
+                echo '<h3>Transport Type:   <span class="thin-font">' . $row["transport_type"] . '</span></h3>';
+                echo '<h3>Price per KM:   <span class="thin-font">US$' . $row["transport_price_perKM"] . '</span></h3>';
 
                 // Check for type of car and display the image accordingly
                 if ($row["transport_type"] == "Luxury 4-seater car") {
@@ -54,7 +54,8 @@ if (!$result) {
                 } elseif ($row["transport_type"] == "4-seater Car") {
                     echo '<img src="../picture/4_seater_car.png" alt="4-seater Car">';
                 } 
-                
+                echo '<br>';
+                echo '<br>';
             }
         } else {
             echo "No transportation information available.";

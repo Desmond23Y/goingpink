@@ -7,6 +7,9 @@ h1 {
 
 body {
     background-color: #FBE5E3;
+    color: #65313D;
+    font-family: 'Futura PT', !important;
+
     }
 
 .ticket-list {
@@ -14,6 +17,9 @@ body {
     margin: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Futura PT', !important;
+
+    
     }
 
 .ticket {    

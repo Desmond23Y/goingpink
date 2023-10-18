@@ -46,6 +46,10 @@ mysqli_close($con);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rating and Feedback</title>
     <link rel="stylesheet" href="Rating.css">
+    <style>
+     @import url('https://fonts.cdnfonts.com/css/butler');
+     @import url('https://fonts.cdnfonts.com/css/futura-pt');
+    </style>
 </head>
 <body>
     <?php

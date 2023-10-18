@@ -31,6 +31,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <title>Customer Support Request Form</title>
     <link rel="stylesheet" href="Requestform.css">
+    <style>
+     @import url('https://fonts.cdnfonts.com/css/butler');
+     @import url('https://fonts.cdnfonts.com/css/futura-pt');
+    </style>
 </head>
 
 <body>

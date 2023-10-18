@@ -5,6 +5,12 @@ h1 {
     color: #F490A8;
     }
 
+body {
+
+    background-color: #FBE5E3;
+   
+    }
+    
 form {
     width: 300px;
     margin: 0 auto;
@@ -44,6 +50,3 @@ button:hover{
     color: white;
     }
 
-body {
-    background-color: #FBE5E3;
-    }

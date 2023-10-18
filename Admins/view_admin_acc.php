@@ -32,7 +32,7 @@ $result = mysqli_query($con, "SELECT * FROM admin");
     </div>
 
     <table width="90%">
-        <tr bgcolor="#FFB6C1">
+        <tr>
             <th>Admin ID</th>
             <th>Username</th>
             <th>Edit</th>

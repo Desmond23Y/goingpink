@@ -35,25 +35,26 @@ if (!$result) {
 <html>
 <head>
     <title>Going Pink Hotel Viewing</title>
-    <link rel="stylesheet" href="view_rating.css">
+    <link rel="stylesheet" href="viewhotel.css">
 </head>
 <body>
     <header>
         <h1>Hotel Viewing</h1>
     </header>
 
-    <li class="box">
+    <li class="hotel-item">
         <?php
         if (mysqli_num_rows($result) > 0) {
             while ($row = mysqli_fetch_assoc($result)) {
-                echo '<h3> Hotel Name: ' . $row["hotel_name"] . '</h3>';
-                echo '<h3> Room Type: ' . $row["room_type"] . '</h3>';
-                echo '<h3> Room Availability: ' . $row["room_availability"] . '</h3>';
-                echo '<h3> Hotel Availability: ' . $row["hotel_availability"] . '</h3>';
-                echo '<h3> Hotel Price: US$ ' . $row["hotel_price"] . '</h3>';
+                echo '<h3> Hotel Name: <span class="thin-font"> ' . $row["hotel_name"] . '</span></h3>';
+                echo '<h3> Room Type:<span class="thin-font"> ' . $row["room_type"] . '</span></h3>';
+                echo '<h3> Room Availability: <span class="thin-font">' . $row["room_availability"] . '</span></h3>';
+                echo '<h3> Hotel Availability:<span class="thin-font"> ' . $row["hotel_availability"] . '</span></h3>';
+                echo '<h3> Hotel Price: <span class="thin-font">US$ ' . $row["hotel_price"] . '</span></h3>';
                 echo '<form method="POST" action="">';
                 echo '<button type="submit" name="book_hotel" value="' . $row["hotel_id"] . '">Book This Hotel</button>';
                 echo '</form>';
+                echo '<br>';
                 }
             }
          else {

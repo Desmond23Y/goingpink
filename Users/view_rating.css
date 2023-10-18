@@ -1,8 +1,4 @@
 
-body, ul {
-    margin: 0;
-    padding: 0;
-}
 
 body {
     font-family: Futura, sans-serif;
@@ -10,18 +6,13 @@ body {
     color: #65313D;
 }
 
-header {
-   
-    
-    text-align: center;
-    padding: 20px 0;
-}
 
 h1 {
-    margin: 0;
-    font-family: Butler, serif;
-    color: #db6a85
-}
+    font-size: 30px;
+    font-family: 'Butler';
+    text-align: center;
+    color: #F490A8;
+    }
 
 #ratings-container {
    
@@ -31,10 +22,6 @@ h1 {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-}
 
 
 a {

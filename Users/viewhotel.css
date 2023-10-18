@@ -4,9 +4,8 @@
 body {
     font-family: Futura, sans-serif;
     background-color: #fbe5e3;
-    
+    color: #65313D;
 }
-
 
 h1 {
     font-size: 30px;
@@ -15,7 +14,8 @@ h1 {
     color: #F490A8;
     }
 
-.transport-item {
+
+.hotel-item{
     background-color: #F1ACA4;
     padding: 20px;
     margin: 20px;
@@ -23,23 +23,24 @@ h1 {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
-    color: #65313D;
+
+
+a {
+    text-decoration: none;
+    color: #E9204F;
+    margin-right: 5px;
+    font-weight: bold;
 }
 
-img {
-    max-width: 100%; 
-    height: auto;
-    display: block;
-    margin: 0 auto 20px; 
+a:hover {
+    text-decoration: underline;
 }
 
-.bottom-button {
-    text-align: center;
-    margin-top: 20px;
+ul {
+    list-style: none;
+    padding: 0;
 }
+
 
 button {
     background-color: #E9204F;
@@ -54,6 +55,10 @@ button {
 button:hover {
     background-color: #FF5A7D;
 }
+
+
+
+
 
 .thin-font {
     font-weight: lighter; 
