@@ -27,6 +27,10 @@ if (!$result) {
             <li><a href="../logout.php" class="right">LOGOUT</a></li>
         </ul>
     </nav>
+    <style>
+     @import url('https://fonts.cdnfonts.com/css/butler');
+     @import url('https://fonts.cdnfonts.com/css/futura-pt');
+     </style>
 </head>
 
 <body>
