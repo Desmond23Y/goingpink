@@ -37,7 +37,7 @@ if (!isset($_SESSION['user_id'])) {
 
         if (mysqli_num_rows($ticket_result) > 0) {
             while ($ticket_row = mysqli_fetch_assoc($ticket_result)) {
-                echo '<div class="ticket">';
+                echo '<div class="box">';
                 echo '<h3>Ticket ID: ' . $ticket_row["ticket_id"] . '</h3>';
                 echo '<p>Contact Name: ' . $ticket_row["contact_name"] . '</p>';
                 echo '<p>Support Type: ' . $ticket_row["support_type"] . '</p>';

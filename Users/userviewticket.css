@@ -10,16 +10,10 @@ body {
     }
 
 .ticket-list {
-    column-count: 2; 
-    column-gap: 20px; 
     padding: 20px;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    max-width: fit-content;
-    height: 100vh;
-    margin: 0;
+    margin: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
 
 .ticket {    
@@ -34,6 +28,13 @@ body {
     margin: 0 auto;
     }
 
+    .box {
+        margin-bottom: 20px;
+        border: 1px solid #ddd;
+        padding: 10px;
+        border-radius: 5px;
+        background-color: #F1ACA4;
+    }
 body {
     background-color: #FBE5E3;
     }    
