@@ -35,6 +35,11 @@ if (!$result) {
         <?php
         if ($result->num_rows > 0) {
             while ($row = mysqli_fetch_assoc($result)) {
+
+                $hotelImageSrc = "../picture/hotel" . $row["hotel_id"] . ".jpg"; // 
+        
+                echo '<img src="' . $hotelImageSrc . '" alt="' . $row["hotel_name"] . '" class="hotel-image">';
+
                 echo '<h3> Hotel Name:  <span class="thin-font"> ' . $row["hotel_name"] . '</span></h3>';
                 echo '<h3> Room Type:   <span class="thin-font">' . $row["room_type"] . '</span></h3>';
                 echo '<h3> Room Availability:  <span class="thin-font"> ' . $row["room_availability"] . '</span></h3>';
