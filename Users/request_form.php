@@ -31,6 +31,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <title>Customer Support Request Form</title>
     <link rel="stylesheet" href="Requestform.css">
+    <style>
+     @import url('https://fonts.cdnfonts.com/css/butler');
+     @import url('https://fonts.cdnfonts.com/css/futura-pt');
+    </style>
 </head>
 
 <body>
@@ -53,7 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <label for="description">Description:</label>
             <textarea id="text" name="description" rows="5" cols="50" required="required"></textarea><br>
 
-            <button type="submit" value="Submit">Submit Form</button>
+            <button type="submit" value="Submit" style="margin-top: 10px;">Submit Form</button>
         </form><br>
     </section>
 </body>

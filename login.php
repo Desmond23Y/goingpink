@@ -86,15 +86,19 @@ mysqli_close($con);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Travel Service Management</title>
     <link rel="stylesheet" href="Login.css">
+    <style>
+        @import url('https://fonts.cdnfonts.com/css/butler');
+        @import url('https://fonts.cdnfonts.com/css/futura-pt');
+     </style>
 </head>
 <body>
     <?php
         include_once('navi_bar.php');
     ?>
-    <header>
+ 
         <h1>Welcome to Going Pink!</h1>
         <h3>"The only Travel System Service you ever need!"</h3>
-    </header>
+ 
     <div id="login-container">
         <h2>Login</h2>
         <form id="login-form" method="POST" action="">

@@ -46,6 +46,10 @@ mysqli_close($con);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rating and Feedback</title>
     <link rel="stylesheet" href="Rating.css">
+    <style>
+     @import url('https://fonts.cdnfonts.com/css/butler');
+     @import url('https://fonts.cdnfonts.com/css/futura-pt');
+    </style>
 </head>
 <body>
     <?php
@@ -62,7 +66,7 @@ mysqli_close($con);
             <label for="feedback">Feedback:</label>
             <textarea id="feedback" name="feedback" rows="4" cols="50" required></textarea><br><br>
 
-            <button type="submit">Submit</button>
+            <button type="submit" style="margin-top: 10px;">Submit</button>
         </form>
     </div>
 </body>

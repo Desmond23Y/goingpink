@@ -39,6 +39,7 @@ if (!$result) {
                 echo '<h3> Number of Pax: ' . $row["number_of_pax"] . '</h3>';
                 echo '<h3> Check In Date: ' . $row["check_in_date"] . '</h3>';
                 echo '<h3> Check Out Date: ' . $row["check_out_date"] . '</h3>';
+                echo '<br>';
             }
         } else {
             echo "No hotel booking available";

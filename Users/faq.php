@@ -23,6 +23,30 @@
             border-radius: 5px;
             margin-top: 5px;
         }
+        body {
+           background-color: #FBE5E3;
+        }
+
+        h1 {
+            font-size: 30px;
+            font-family: 'Butler';
+            text-align: center;
+            color: #F490A8;
+            }
+
+        .faq-dropdown {
+            background-color: #F1ACA4;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            color: #65313D;
+        }
+
+        .faq-answer{
+            background-color: #FBE5E3;
+        }
+
     </style>
 </head>
 <body>

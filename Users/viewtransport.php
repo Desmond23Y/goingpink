@@ -39,8 +39,8 @@ if (!$result) {
         <?php
         if (mysqli_num_rows($result) > 0) {
             while ($row = mysqli_fetch_assoc($result)) {
-                echo '<h3>Transport Type: ' . $row["transport_type"] . '</h3>';
-                echo '<h3>Price per KM: US$' . $row["transport_price_perKM"] . '</h3>';
+                echo '<h3>Transport Type:   <span class="thin-font">' . $row["transport_type"] . '</span></h3>';
+                echo '<h3>Price per KM:   <span class="thin-font">US$' . $row["transport_price_perKM"] . '</span></h3>';
 
                 // Check for type of car and display the image accordingly
 
@@ -53,7 +53,8 @@ if (!$result) {
                 } elseif ($row["transport_type"] == "4-seater Car") {
                     echo '<img src="../picture/4_seater_car.png" alt="4-seater Car">';
                 } 
-                
+                echo '<br>';
+                echo '<br>';
             }
         } else {
             echo "No transportation information available.";
@@ -63,7 +64,7 @@ if (!$result) {
 
     <div class="bottom-button">
         <form method="POST" action="api_googlemap.php">
-            <button type="submit">Click here to book a ride</button>
+            <button type="submit" style="font-weight: bold;">Click here to book a ride</button>
         </form>
     </div>
 </body>

@@ -1,74 +1,73 @@
 <style>
-body {
-    margin: 0;
-    padding: 0;
-    }
+     @import url('https://fonts.cdnfonts.com/css/butler');
+     @import url('https://fonts.cdnfonts.com/css/futura-pt');
+    .navibar {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #F9B9C3;
+        font-family: Butler;
+        }
 
-.navibar {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #F9B9C3;
-    }
+    .navibar a {
+        float: left;
+        font-size: 16px;
+        color: #333;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        }
 
-.navibar a {
-    float: left;
-    font-size: 16px;
-    color: #333;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    }
+    .navibar a.right {
+        float: right;   
+        }
 
-.navibar a.right {
-    float: right;   
-    }
+    .navibar a:hover {
+        background-color: #C7949C;
+        color: white;
+        }
 
-.navibar a:hover {
-    background-color: #C7949C;
-    color: white;
-    }
+    .dropdown {
+        float: left;
+        overflow: hidden;
+        position: static;
+        }
 
-.dropdown {
-    float: left;
-    overflow: hidden;
-    position: static;
-    }
+    .dropdown .dropbtn {
+        font-size: 16px;
+        border: none;
+        outline: none;
+        color: #333;
+        padding: 14px 16px;
+        background-color: #F9B9C3;
+        font-family: Butler;
+        }
+        
+        .dropdown a:hover {
+        background-color: #C7949C;
+        color: white;
+        }
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #F9B9C3;
+        min-width: 160px;
+        z-index: 1;
+        }    
 
-.dropdown .dropbtn {
-    font-size: 16px;
-    border: none;
-    outline: none;
-    color: #333;
-    padding: 14px 16px;
-    background-color: #F9B9C3;
-    }
-    
-    .dropdown a:hover {
-    background-color: #C7949C;
-    color: white;
-    }
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #F9B9C3;
-    min-width: 160px;
-    z-index: 1;
-    }    
+    .dropdown-content a {
+        float: none;
+        color: #333;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: center;
+        }
 
-.dropdown-content a {
-    float: none;
-    color: #333;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    }
-
-.dropdown:hover .dropdown-content {
-    display: block;
-    }
+    .dropdown:hover .dropdown-content {
+        display: block;
+        }
 
 
 </style>
@@ -77,8 +76,8 @@ body {
     <a href="/index.php">HOME</a>
     <a href="../Users/view_profile.php">PROFILE</a>
     <a href="../Users/faq.php">FAQ</a>
-        <div class="dropdown" style="font-family: Butler;">
-            <button class="dropbtn" style="font-family: Butler;">FUNCTIONS
+        <div class="dropdown" >
+            <button class="dropbtn">FUNCTIONS
                 <i class="fa fa-caret-down"></i>
             </button>
             <div class="dropdown-content">

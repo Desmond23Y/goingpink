@@ -31,7 +31,7 @@ textarea {
     }
 
 button{
-    margin-top: 10px;
+    
     padding: 12px;
     font-size: 16px;
     background-color: #E9204F;
@@ -46,4 +46,5 @@ button:hover{
 
 body {
     background-color: #FBE5E3;
+    font-family: 'Futura';
     }

@@ -14,14 +14,16 @@ if (!isset($_SESSION['user_id'])) {
 <head>
     <title>View Tickets</title>
     <link rel="stylesheet" href="userviewticket.css">
+    <style>
+     @import url('https://fonts.cdnfonts.com/css/butler');
+     @import url('https://fonts.cdnfonts.com/css/futura-pt');
+    </style>
 </head>
 <body>
     <?php
         include('../navi_bar.php');
     ?>
-    <header>
         <h1>View Tickets</h1>
-    </header>
 
     <div class="ticket-list">
         <?php
@@ -37,14 +39,14 @@ if (!isset($_SESSION['user_id'])) {
 
         if (mysqli_num_rows($ticket_result) > 0) {
             while ($ticket_row = mysqli_fetch_assoc($ticket_result)) {
-                echo '<div class="ticket">';
+                echo '<div class="box">';
                 echo '<h3>Ticket ID: ' . $ticket_row["ticket_id"] . '</h3>';
-                echo '<p>Contact Name: ' . $ticket_row["contact_name"] . '</p>';
-                echo '<p>Support Type: ' . $ticket_row["support_type"] . '</p>';
-                echo '<p>Description: ' . $ticket_row["ticket_description"] . '</p>';
-                echo '<p>Status: ' . $ticket_row["ticket_status"] . '</p>';
-                echo '<p>Priority: ' . $ticket_row["ticket_priority"] . '</p>';
-                echo '<p>Solution: ' . $ticket_row["ticket_solution"] . '</p>';
+                echo '<p><b>Contact Name:</b> ' . $ticket_row["contact_name"] . '</p>';
+                echo '<p><b>Support Type:</b>  ' . $ticket_row["support_type"] . '</p>';
+                echo '<p><b>Description:</b>  ' . $ticket_row["ticket_description"] . '</p>';
+                echo '<p><b>Status:</b>  ' . $ticket_row["ticket_status"] . '</p>';
+                echo '<p><b>Priority:</b>  ' . $ticket_row["ticket_priority"] . '</p>';
+                echo '<p><b>Solution: </b> ' . $ticket_row["ticket_solution"] . '</p>';
                 echo '</div>';
             }
         } else {

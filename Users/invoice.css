@@ -1,17 +1,7 @@
-th {
-    border: 1px solid silver;
-    padding: 12px;
-    text-align: left;
-    }
-
-td {
-    border: 1px solid silver;
-    padding: 12px;
-    text-align: left;
-    }
-
 body {
-    background-color: #fbe5e3;
+    background-color: #FBE5E3;
+    
+
 }
 
 h1 {
@@ -20,3 +10,73 @@ h1 {
     text-align: center;
     color: #F490A8;
     }
+.button {
+    text-align: center;
+}
+
+.button a {
+    display: inline-block;
+    padding: 12px;
+    font-size: 20px;
+    background-color: #E9204F;
+    color: white;
+    border-radius: 4px;
+    text-decoration: none;
+    margin-top: 20px;
+}
+
+.button a:hover {
+    background-color: #FF5A7D;
+    color: white;
+}
+
+table {
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+    width: 90%;
+    border-collapse: collapse;
+    background-color: #FFF3F3; /* Add a background color for the table */
+}
+
+th {
+    font-family: 'Butler';
+    background-color: #E9204F;
+    color: white;
+    border: 1px solid #FFB6C1;
+    padding: 8px;
+    text-align: left;
+}
+
+td {
+    font-family: 'Futura';
+    text-align: left;
+    border: 1px solid #FFB6C1;
+    padding: 8px;
+    text-align: left;
+}
+
+tr:nth-child(odd) {
+    background-color: #FFF3F3;
+}
+
+tr:nth-child(even) {
+    background-color: #FFE6E6;
+}
+
+td a {
+    display: inline-block;
+    padding: 6px 10px;
+    margin: 2px;
+    color: white;
+    background-color: #E9204F;
+    text-decoration: none;
+    border: 1px solid #65313D;
+    border-radius: 3px;
+}
+
+td a:hover {
+    background-color: #FF5A7D;
+    color: white;
+    border: 1px solid #65313D;
+}

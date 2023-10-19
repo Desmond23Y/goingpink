@@ -40,11 +40,15 @@ if (!$result) {
                 echo '<h3> Room Availability: ' . $row["room_availability"] . '</h3>';
                 echo '<h3> Hotel Availability: ' . $row["hotel_availability"] . '</h3>';
                 echo '<h3> Hotel Price: US$ ' . $row["hotel_price"] . '</h3>';
-                
+                echo '<br>';
+
                 if ($_SESSION['user_type'] == 'admin' || $_SESSION['user_type'] == 'hotel_management') {
-                    echo '<a href="M_edit_hotel_info.php?hotel_id=' . $row["hotel_id"] . '" class="button">Edit This Hotel</a>';
+                    echo '<a href="M_edit_hotel_info.php?hotel_id=' . $row["hotel_id"] . '" class="button edit-button">Edit This Hotel</a>';
+                    
                 }
+               
             }
+          
         } else {
             echo "No hotels available";
         }
