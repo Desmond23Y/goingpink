@@ -63,7 +63,7 @@ if (!$result) {
                     echo '<img src="../picture/hotel/d1.jpg" alt="d1-hotel">';
                 } elseif ($row["hotel_name"] == "Elegant Relax Hotel") {
                     echo '<img src="../picture/hotel/d2.jpg" alt="d2-hotel">';
-                } elseif ($row["hotel_name"] != "Hotel") {
+                } else {
                      echo '<img src="../picture/hotel/defaulthotel.jpg" alt="defaulthotel-hotel">';
 
 
@@ -80,7 +80,7 @@ if (!$result) {
                 echo '<br>';
                 }
             }
-         else {
+        } else {
             echo "No hotels available.";
         }
         ?>
