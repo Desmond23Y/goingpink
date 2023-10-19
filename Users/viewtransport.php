@@ -52,7 +52,7 @@ if (!$result) {
                 } elseif ($row["transport_type"] == "6-seater Car") {
                     echo '<img src="../picture/6_seater_car.png" alt="6-seater Car">';
                 } elseif ($row["transport_type"] == "4-seater Car") {
-                    echo '<img src="../picture/4_seater_car.png" alt="4-seater Car">';
+                    echo '<img src="../picture/4_seater_car.jpeg" alt="4-seater Car">';
                 } 
                 echo '<br>';
                 echo '<br>';
