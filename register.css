@@ -48,9 +48,21 @@ button:hover{
 
 body {
     background-image: url("picture/Register.jpg");
-    background-size: cover;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-position: center;
-    background-position-y: 20px;
-    }
+    background-position: center top;
+    background-color: #000;
+}
+    
+#navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+   
+}
+
+html{
+    background-color: #000;
+}

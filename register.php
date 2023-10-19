@@ -50,10 +50,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <title>Travel Service Management</title>
     <link rel="stylesheet" href="register.css">
 </head>
-<body>
+<body style="background-color:#3b4446;">
+<div id="navbar">
     <?php
         include('navi_bar.php');
     ?>
+</div>
     <header>
         <h1>Welcome to Going Pink!</h1>
         <h3>"The only Travel System Service you ever need!"</h3>
