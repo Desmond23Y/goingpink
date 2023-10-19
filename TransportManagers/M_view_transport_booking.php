@@ -33,13 +33,13 @@ if (!$result) {
         <?php
         if ($result->num_rows > 0) {
             while ($row = mysqli_fetch_assoc($result)) {
-                echo '<h3> Transport Booking ID: ' . $row["transport_booking_id"] . '</h3>';
-                echo '<h3> Transport ID: ' . $row["transport_id"] . '</h3>';
-                echo '<h3> User ID: ' . $row["user_id"] . '</h3>';
-                echo '<h3> Arrival Time: ' . $row["arrival_time"] . '</h3>';
-                echo '<h3> Departure Time: ' . $row["departure_time"] . '</h3>';
-                echo '<h3> Arrival Location: ' . $row["arrival_location"] . '</h3>';
-                echo '<h3> Departure Location: ' . $row["departure_location"] . '</h3>';
+                echo '<h3> Transport Booking ID:  <span class="thin-font">' . $row["transport_booking_id"] . '</span></h3>';
+                echo '<h3> Transport ID:  <span class="thin-font">' . $row["transport_id"] . '</span></h3>';
+                echo '<h3> User ID:  <span class="thin-font">' . $row["user_id"] . '</span></h3>';
+                echo '<h3> Arrival Time:  <span class="thin-font">' . $row["arrival_time"] . '</span></h3>';
+                echo '<h3> Departure Time:  <span class="thin-font">' . $row["departure_time"] . '</span></h3>';
+                echo '<h3> Arrival Location:  <span class="thin-font">' . $row["arrival_location"] . '</span></h3>';
+                echo '<h3> Departure Location:  <span class="thin-font">' . $row["departure_location"] . '</span></h3>';
                 echo '<br>';
                 echo '<br>';
             }
