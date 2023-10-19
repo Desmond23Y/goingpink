@@ -8,8 +8,8 @@ h1 {
 
 .box {
     display: block; 
-    width: 30%; 
-    margin: 20px auto; 
+    
+    margin: 20px ; 
     border: 1px solid silver;
     padding: 15px;
     border-radius: 8px;
@@ -122,3 +122,9 @@ body {
 }
 
 
+img {
+    max-width: 100%; 
+    height: auto;
+    display: block;
+    margin: 0 auto 20px; 
+}

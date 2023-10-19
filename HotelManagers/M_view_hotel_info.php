@@ -16,6 +16,10 @@ if (!$result) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hotel </title>
     <link rel="stylesheet" href="mviewhotelinfo.css">
+    <style>
+    @import url('https://fonts.cdnfonts.com/css/butler');
+    @import url('https://fonts.cdnfonts.com/css/futura-pt');
+    </style>
     <nav>
         <ul class="navibar">
             <li><a href="M_hotel_homepage.php">HOME</a></li>
