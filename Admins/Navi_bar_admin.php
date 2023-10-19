@@ -17,8 +17,8 @@
         float: left;
         font-size: 16px;
         color: #333;
-        text-align: center;
-        padding: 14px 16px;
+      
+        padding: 14px ;
         text-decoration: none;
         }
     
@@ -50,9 +50,13 @@
         display: none;
         position: absolute;
         background-color: #F9B9C3;
-        min-width: 160px;
-        }    
-    
+        width: 160px;
+        }   
+
+    .dropdown-content a {
+    display: block;
+    clear: both;
+    }
     .dropdown:hover .dropdown-content {
         display: block;
         }
@@ -72,6 +76,25 @@
                     <a href="view_admin_acc.php">ADMIN</a>
                 </div>
             </div>
+            <div class="dropdown">
+                <button class="dropbtn">GENERATE REPORT
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                 <a href="report_user_type.php">User Group</a>
+                  <a href="report_user_gender.php" >User Gender </a>
+                  <a href="report_num_of_booking.php" >Hotel & Transport</a>
+                  <a href="report_ticket_type.php" >Ticket Type</a>
+                  <a href="report_star_rating.php" >Rating</a>
+                  <a href="report_price_range.php" >Hotel Price Range</a>
+                  <a href="report_user_expenses_range.php" >User Expenses Range</a>
+                  <a href="view_support_report.php" >View Support Report</a>
+                  <a href="../Supports/view_ticket.php" >View Ticket</a>
+                  <a href="view_invoice.php" >View Invoice</a>
+                </div>
+            </div>
+
+
         <a href="generatereport.php">GENERATE REPORT</a>
         <a href="view_hotel_booking.php">MANAGE HOTEL BOOKING</a>
         <a href="view_transport_booking.php">MANAGE TRANSPORT BOOKING</a>
