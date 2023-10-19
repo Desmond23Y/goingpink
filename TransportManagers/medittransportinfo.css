@@ -57,25 +57,7 @@ h1 {
 p{
     font-family: "Futura ", monospace;
 }
-img{
-    width: 40%;
-    height: 100%;
-    float: left;
-}
 
-.button {
-    background-color: #E9204F;
-    color: #fff;
-    font-weight: bold;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    
-    margin: 20px;
-    
-    
-}
 
 .button-container{
     display: flex;
@@ -85,22 +67,48 @@ img{
     
 }
 
-.button:hover {
-    background-color: #FF5A7D; /* Highlight color on hover */
+
+
+form label {
+    display: block;
+    margin-bottom: 10px; 
+    margin-top: 10px;
+    font-weight: bold;
 }
 
-.function{
-    height: 40%;
+form input[type="text"] {
+    resize: none;
+    width: 300px;
+    padding: 8px;
+    box-sizing: border-box;
 }
 
-#transport-database{
-    background-color: #fee7eb;
+/* Style for the submit button */
+form button[type="submit"] {
+    background-color: #E9204F;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    
+    margin: 20px;}
+
+
+form button:hover {
+    background-color: #FF5A7D;  
 }
-#manage-transport-booking{
-    background-color: #f0e4da;
-}
-.function-text{
-    padding-top: 10px;
-    padding-left: 20px;
-   
+
+.box{
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #F1ACA4;
+    border: 2px solid #65313D;
+    border-radius: 5px;
+    text-align: center;
+    flex-direction: column;
+    font-size: medium;
+    margin-top: 50px;
 }
