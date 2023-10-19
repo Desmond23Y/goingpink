@@ -33,12 +33,12 @@ if (!$result) {
         <?php
         if ($result->num_rows > 0) {
             while ($row = mysqli_fetch_assoc($result)) {
-                echo '<h3> Hotel Booking ID: ' . $row["hotel_booking_id"] . '</h3>';
-                echo '<h3> User ID: ' . $row["user_id"] . '</h3>';
-                echo '<h3> Hotel ID: ' . $row["hotel_id"] . '</h3>';
-                echo '<h3> Number of Pax: ' . $row["number_of_pax"] . '</h3>';
-                echo '<h3> Check In Date: ' . $row["check_in_date"] . '</h3>';
-                echo '<h3> Check Out Date: ' . $row["check_out_date"] . '</h3>';
+                echo '<h3> Hotel Booking ID:  <span class="thin-font">' . $row["hotel_booking_id"] . '</span></h3>';
+                echo '<h3> User ID:  <span class="thin-font">' . $row["user_id"] . '</span></h3>';
+                echo '<h3> Hotel ID: <span class="thin-font"> ' . $row["hotel_id"] . '</span></h3>';
+                echo '<h3> Number of Pax:  <span class="thin-font">' . $row["number_of_pax"] . '</span></h3>';
+                echo '<h3> Check In Date:  <span class="thin-font">' . $row["check_in_date"] . '</span></h3>';
+                echo '<h3> Check Out Date:  <span class="thin-font">' . $row["check_out_date"] . '</span></h3>';
                 echo '<br>';
             }
         } else {
