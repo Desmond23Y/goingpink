@@ -5,9 +5,6 @@ body {
     font-family: Futura, sans-serif;
     background-color: #fbe5e3;
     color: #65313D;
-    display: flex;
-    justify-content: center; 
-    align-items: center; 
 }
 
 h1 {
@@ -24,10 +21,6 @@ h1 {
     margin: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center; 
-    display: flex; 
-    flex-direction: column; 
-    align-items: center; 
 }
 
 
@@ -66,11 +59,4 @@ button:hover {
 
 .thin-font {
     font-weight: lighter; 
-}
-img {
-    
-    max-width: 100%; 
-    height: 388px; 
-    display: block; 
-    margin: 0 auto; 
 }
