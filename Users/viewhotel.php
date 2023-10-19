@@ -78,7 +78,7 @@ if (!$result) {
                 echo '<br>';
                 }
             }
-        } else {
+         else {
             echo "No hotels available.";
         }
         ?>
