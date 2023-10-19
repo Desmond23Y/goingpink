@@ -28,6 +28,10 @@ $_SESSION['transportpricing'] = $transportTypes;
     <title>Going Pink Transport Booking</title>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBS7LY-BaBKUS0xIRTNJKXtfsLEZv_5OG8&libraries=places&callback=initAutocomplete" async defer></script>
     <link rel="stylesheet" href="api_googlemap_style.css">
+    <style>
+     @import url('https://fonts.cdnfonts.com/css/butler');
+     @import url('https://fonts.cdnfonts.com/css/futura-pt');
+    </style>
 
 </head>
 
@@ -88,6 +92,7 @@ $_SESSION['transportpricing'] = $transportTypes;
     </div>
     <input type="text" id="price" readonly />
     <input type="hidden" id="hiddenPrice" name="price" value="" />
+    <br>
 
     <!-- Add a map container -->
     <div id="map" style="height: 400px;"></div>
