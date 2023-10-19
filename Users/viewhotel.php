@@ -63,9 +63,9 @@ if (!$result) {
                     echo '<img src="../picture/hotel/d1.jpg" alt="d1-hotel">';
                 } elseif ($row["hotel_name"] == "Elegant Relax Hotel") {
                     echo '<img src="../picture/hotel/d2.jpg" alt="d2-hotel">';
-                } elseif {
+                } else {
                      echo '<img src="../picture/hotel/defaulthotel.jpg" alt="defaulthotel-hotel">';
-
+                }
 
                 echo '<h3> Hotel Name: <span class="thin-font"> ' . $row["hotel_name"] . '</span></h3>';
                 echo '<h3> Room Type:<span class="thin-font"> ' . $row["room_type"] . '</span></h3>';
