@@ -1,14 +1,11 @@
 <?php
 session_start();
-include("../conn.php");
-include('../navi_bar.php');
-
 // Check if the user is logged in
 if (!isset($_SESSION['user_id'])) {
     header('Location: ../login.php'); // Redirect to the login page if not logged in
     exit();
 }
-
+include("../conn.php");
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $user_id = $_SESSION['user_id'];
 
@@ -39,6 +36,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 
 <body>
+    <?php
+        include('../navi_bar.php');
+    ?>
     <section class="request-form">
         <h2>Help Request Form</h2>
 
