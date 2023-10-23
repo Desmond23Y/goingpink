@@ -9,7 +9,7 @@
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (isset($_POST['email']) && !empty($_POST['email'])) {
             echo "Gmail submitted. You will be redirected to the index page in a moment...";   
-            header('index.php'); 
+            header('Location: index.php'); 
             exit();
         } else {
 
