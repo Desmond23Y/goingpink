@@ -114,7 +114,7 @@ mysqli_close($con);
             <input type="hidden" name="remembered_username" id="remembered_username">
             
             <button type="submit">Login</button>
-            <p><a href="forgotpass.php">Reset Password</a></p>
+            <p><a href="mailto:goingpink123@gmail.com">Reset Password</a></p>
         </form>
         <p id="login-message"></p>
         <button id="logout-btn" style="display: none;">Logout</button>
