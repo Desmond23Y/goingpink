@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Enter Your Gmail</title>
+    <link rel="stylesheet" href="modifyhmgtacc.css">
 </head>
 <body>
     <h1>Enter Your Gmail Address</h1>
