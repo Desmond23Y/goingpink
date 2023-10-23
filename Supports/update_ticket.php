@@ -3,7 +3,7 @@
      <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
-        <link rel="stylesheet" href="homepage_support.css">
+        <link rel="stylesheet" href="updateticket.css">
         <!-- Include Bootstrap-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
         <title>Update Customer Support Request</title>
@@ -15,7 +15,7 @@
     <title>Report to Admin</title>
 </head>
 
-<body>
+<body style="background-color: #FBE5E3;">
     
      <nav>
         <ul class="navibar">
@@ -29,7 +29,9 @@
 
 
 <body>
-    <h2>Ticket Update</h2>
+    <header>
+        <h1>Ticket Update</h1>
+    </header>
     <?php
         include("../conn.php");
         if (isset($_GET['ticket_id'])) {
@@ -63,6 +65,7 @@
                 
                 // Display ticket information and form
     ?>
+    <form>
                 <p>
                     <label> Ticket ID: </label>
                     <input name='ticket_id' readonly='readonly' value="<?php echo $row['ticket_id']?>">
@@ -92,7 +95,7 @@
                     <label> Ticket Description: </label>
                     <input name='desc' readonly='readonly' value="<?php echo $row['ticket_description']?>">
                 </p>
-
+    </form>
                 <form method="post">
                     <label for="status">Choose the Ticket Status:</label>
                     <select name="status" id="status" required="required">
@@ -101,7 +104,7 @@
                         <option value="Pending" <?php if ($row['ticket_status'] == 'Pending') echo 'selected'; ?>>Pending</option>
                         <option value="Resolved" <?php if ($row['ticket_status'] == 'Resolved') echo 'selected'; ?>>Resolved</option>
                         <option value="Closed" <?php if ($row['ticket_status'] == 'Closed') echo 'selected'; ?>>Closed</option>
-                    </select><br><br>
+                    </select><br>
 
                     <label for="priority">Choose the Ticket Priority:</label>
                     <select name="priority" id="priority" required="required">
@@ -109,10 +112,10 @@
                         <option value="High" <?php if ($row['ticket_priority'] == 'High') echo 'selected'; ?>>High</option>
                         <option value="Medium" <?php if ($row['ticket_priority'] == 'Medium') echo 'selected'; ?>>Medium</option>
                         <option value="Low" <?php if ($row['ticket_priority'] == 'Low') echo 'selected'; ?>>Low</option>
-                    </select><br><br>
+                    </select><br>
 
                     <label for="solution">Solution for this Problem:</label>
-                    <textarea id="text" name="solution" rows="5" cols="50"><?php echo $row['ticket_solution']?></textarea><br><br>
+                    <textarea id="text" name="solution" rows="5" cols="50"><?php echo $row['ticket_solution']?></textarea><br>
 
                     <button type="submit" value="Submit">Update Ticket</button>
                 </form><br>

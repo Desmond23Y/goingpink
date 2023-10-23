@@ -1,0 +1,92 @@
+.navibar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #F9B9C3;
+}
+
+.navibar a {
+    float: left;
+    display: block;
+    color: #333;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navibar a.right {
+    float: right;
+}
+
+.navibar a:hover {
+    background-color: #C7949C;
+    color: white;
+}
+
+body {
+    background-color: #FBE5E3;
+    }
+
+h1 {
+    font-family: 'Butler';
+    font-size: 30px;
+    color: #F490A8;
+    text-align: center;
+    margin-top: 20px;
+    }
+
+label {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 8px;
+    font-weight: bold;
+    }
+
+input, select {
+    padding: 10px;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+    border: 1px solid #65313D;
+    border-radius: 4px;
+    }
+
+textarea {
+    width: 300px;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #65313D;
+    border-radius: 4px;
+    }
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Futura';
+    }
+
+    button {
+        margin-top: 10px;
+        padding: 12px;
+        font-size: 16px;
+        background-color: #E9204F;
+        color: white;
+        border: 2px solid #65313D;
+        border-radius: 4px;
+        }
+    
+    button:hover {
+        background-color: #FF5A7D;
+        color: white;
+        }
+    
+    header {
+        background-color: #f17492;
+        color: #fef1f4;
+        text-align: center;
+        padding: 20px 0;
+        }
