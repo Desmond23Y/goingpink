@@ -64,7 +64,7 @@
     </nav>
       <div class="backgroun-image">
             <header>
-                <h1>Support Dashboard</h1>
+                <h1>Suppor Dashboard</h1>
                 <p>What do you want to do today?</p>
             </header>
             <section class="section manage-ticket">
