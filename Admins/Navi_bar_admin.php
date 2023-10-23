@@ -94,8 +94,6 @@
                 </div>
             </div>
 
-
-        <a href="generatereport.php">GENERATE REPORT</a>
         <a href="view_hotel_booking.php">MANAGE HOTEL BOOKING</a>
         <a href="view_transport_booking.php">MANAGE TRANSPORT BOOKING</a>
         <a href="../logout.php" class="right">LOGOUT</a>
