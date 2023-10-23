@@ -7,16 +7,12 @@
 <body>
     <?php
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        // Check if the form was submitted
         if (isset($_POST['email']) && !empty($_POST['email'])) {
-            // Display a confirmation message
-            echo "Gmail submitted. You will be redirected to the index page in a moment...";
-            
-            // Redirect to index.php after a delay
-            header('Refresh: 5; URL=index.php'); // Redirect after 5 seconds
+            echo "Gmail submitted. You will be redirected to the index page in a moment...";   
+            header('index.php'); 
             exit();
         } else {
-            // Handle any validation errors or other logic here
+
             echo "Please enter a valid Gmail address.";
         }
     }
