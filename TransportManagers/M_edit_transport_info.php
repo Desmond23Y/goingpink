@@ -41,7 +41,7 @@ if (isset($_GET['transport_id'])) {
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>Edit Transport Information</title>
-            <link rel="stylesheet" href="M_transport_homepage.css">
+            <link rel="stylesheet" href="medittransportinfo.css">
              <nav>
                 <ul class="navibar">
                     <li><a href="M_transport_homepage.php">HOME</a></li>
@@ -65,7 +65,8 @@ if (isset($_GET['transport_id'])) {
                     <label for="transport_price_perKM">Transport  Price Per KM </label>
                     <input type="text" id="transport_price_perKM" name="transport_price_perKM" required value="<?php echo $row['transport_price_perKM']; ?>">
                     <br><br>
-                    <input type="submit" name="submit" value="Save Changes">
+                    <button type="submit" name="submit" value="Save Changes">Save Changes</button>
+
                 </form>
             </div>
         <?php

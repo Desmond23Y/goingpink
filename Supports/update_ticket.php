@@ -101,7 +101,7 @@
                         <option value="Pending" <?php if ($row['ticket_status'] == 'Pending') echo 'selected'; ?>>Pending</option>
                         <option value="Resolved" <?php if ($row['ticket_status'] == 'Resolved') echo 'selected'; ?>>Resolved</option>
                         <option value="Closed" <?php if ($row['ticket_status'] == 'Closed') echo 'selected'; ?>>Closed</option>
-                    </select><br>
+                    </select><br><br>
 
                     <label for="priority">Choose the Ticket Priority:</label>
                     <select name="priority" id="priority" required="required">
@@ -109,10 +109,10 @@
                         <option value="High" <?php if ($row['ticket_priority'] == 'High') echo 'selected'; ?>>High</option>
                         <option value="Medium" <?php if ($row['ticket_priority'] == 'Medium') echo 'selected'; ?>>Medium</option>
                         <option value="Low" <?php if ($row['ticket_priority'] == 'Low') echo 'selected'; ?>>Low</option>
-                    </select><br>
+                    </select><br><br>
 
                     <label for="solution">Solution for this Problem:</label>
-                    <textarea id="text" name="solution" rows="5" cols="50"><?php echo $row['ticket_solution']?></textarea><br>
+                    <textarea id="text" name="solution" rows="5" cols="50"><?php echo $row['ticket_solution']?></textarea><br><br>
 
                     <button type="submit" value="Submit">Update Ticket</button>
                 </form><br>
