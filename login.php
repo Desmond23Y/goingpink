@@ -114,10 +114,10 @@ mysqli_close($con);
             <input type="hidden" name="remembered_username" id="remembered_username">
             
             <button type="submit">Login</button>
+            <p><a href="forgotpass.php">Reset Password</a></p>
         </form>
         <p id="login-message"></p>
         <button id="logout-btn" style="display: none;">Logout</button>
-        <p><a href="forgotpass.php">Reset Password</a></p>
     </div>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
