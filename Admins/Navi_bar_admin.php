@@ -17,7 +17,6 @@
         float: left;
         font-size: 16px;
         color: #333;
-      
         padding: 14px ;
         text-decoration: none;
         }
