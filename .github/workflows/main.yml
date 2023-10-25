@@ -57,4 +57,20 @@ jobs:
         only_newer: "true"
         ignore_time: "true"
         exclude: "'^.github/' '^.git/'"
+
+  web-deploy3:
+    name: 🎉 Deploy (aeonfree)
+    runs-on: self-hosted
+    environment: default
+    steps:
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v3
+    
+    - name: 📂 Backup 
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      with:
+        server: ftpupload.net
+        username: ${{ secrets.FTP_USERNAME1 }}
+        password: ${{ secrets.FTP_PASSWORD1 }}
+        server-dir: /htdocs/
   
