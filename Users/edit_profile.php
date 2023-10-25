@@ -56,8 +56,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo "Invalid email address. Please try again.";
     } elseif (strlen($phone_number) < 9 || strlen($phone_number) > 12) {
         echo "Invalid phone number. Please try again.";
-    } elseif (!isset($_POST['terms_and_conditions'])) {
-        echo "You must accept the Terms and Conditions to proceed.";
     } else {
         // Update profile information
         $update_profile_query = "UPDATE `user` SET 
@@ -112,7 +110,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <br><br>
 
         <label for="new_password">New Password (Leave blank to keep current password):</label>
-        <input type="password" id="new_password" name="new_password" value="">
+        <input type="password" id="new_password" name="new_password" value="<?php echo $password; ?>">
         <br><br>
 
         <label for="first_name">First Name:</label>
