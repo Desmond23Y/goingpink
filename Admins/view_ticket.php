@@ -14,6 +14,54 @@ $result = mysqli_query($con, "SELECT * FROM ticket");
 <head>
     <title>View Tickets</title>
     <link rel="stylesheet" href=""generatereport.css">
+    <style>
+            table {
+        width: 90%;
+        border-collapse: collapse;
+        margin: 20px auto; 
+        }
+
+    th, td {
+        border: 1px solid #FFB6C1;
+        padding: 8px;
+        text-align: left;
+        }
+        
+    td{
+        font-family: Futura, sans-serif;
+        }
+        
+    tr:nth-child(even) {
+        background-color: #FFE6E6;
+        }
+        
+    th {
+        background-color: #E9204F;
+        color: white;    
+        }    
+
+    tr:nth-child(odd) {
+        background-color: #FFF3F3;
+        }        
+
+    td a {
+        display: inline-block;
+        padding: 6px 10px;
+        margin: 2px;
+        color: white;
+        background-color: #E9204F;
+        text-decoration: none;
+        border: 1px solid #65313D;
+        border-radius: 3px;
+        }    
+
+    td a:hover {
+        background-color: #FF5A7D;
+        color: white;
+        border: 1px solid #65313D;
+        }
+    </style>
+    </style>
 
 <body>
     <table>
