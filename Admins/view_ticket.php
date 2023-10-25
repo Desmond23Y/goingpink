@@ -90,7 +90,6 @@ $result = mysqli_query($con, "SELECT * FROM ticket");
             echo '<td>' . $row["ticket_status"] . '</td>';
             echo '<td>' . $row["ticket_priority"] . '</td>';
             echo '<td>' . $row["ticket_solution"] . '</td>';
-            echo '<td><a href="update_ticket.php?ticket_id=' . $row["ticket_id"] . '">Edit</a></td>';
             echo '</tr>';
         }
         mysqli_close($con);
