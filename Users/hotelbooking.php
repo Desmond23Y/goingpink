@@ -50,9 +50,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['number_of_pax']) && i
                 $hotel_manager_id = $manager_row['hotel_manager_id'];
                 $admin_id = $admin_row['admin_id'];
 
-                // Insert the hotel booking with the hotel_total_price
+                // Calculate the number of days
+                $check_in_timestamp = strtotime($check_in_date);
+                $check_out_timestamp = strtotime($check_out_date);
+                $number_of_days = floor(($check_out_timestamp - $check_in_timestamp) / (60 * 60 * 24));
+
+                // Calculate the total price based on the number of guests and number of days
+                $totalPrice = $selectedHotelPrice * $number_of_pax * $number_of_days;
+
+                // Insert the hotel booking with the calculated hotel_total_price
                 $hotel_booking_query = "INSERT INTO hotel_booking (user_id, hotel_id, number_of_pax, check_in_date, check_out_date, hotel_manager_id, admin_id, hotel_total_price) 
-                                        VALUES ('$user_id', '$selectedhotelid', '$number_of_pax', '$check_in_date', '$check_out_date', '$hotel_manager_id', '$admin_id', '$selectedHotelPrice')";
+                                        VALUES ('$user_id', '$selectedhotelid', '$number_of_pax', '$check_in_date', '$check_out_date', '$hotel_manager_id', '$admin_id', '$totalPrice')";
             
                 if (mysqli_query($con, $hotel_booking_query)) {
                     header("Location: view_hotel_payment.php?hotel_id=$selectedhotelid&user_id=$user_id");
@@ -68,6 +76,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['number_of_pax']) && i
     }
 }
 ?>
+
 
 <!DOCTYPE html>
 <html>
