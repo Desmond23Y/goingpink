@@ -32,7 +32,7 @@
         }
     
     .dropdown {
-        float: left;
+        float: center;
         overflow: hidden;
         position: static;
         }
