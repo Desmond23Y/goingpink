@@ -37,10 +37,11 @@ jobs:
         ignore_time: "true"
         exclude: "'^.github/' '^.git/'"
 
-  web-deploy2:
-    name: 🎉 Backup Deploy
+  web-deploy2-0:
+    name: 🎉 000webhost.old
     runs-on: ubuntu-latest
     environment: default
+    if: ${{false}}
     steps:
     - name: 🚚 Get latest code
       uses: actions/checkout@v3
@@ -58,9 +59,25 @@ jobs:
         ignore_time: "true"
         exclude: "'^.github/' '^.git/'"
 
+  web-deploy2-1:
+    name: 🎉 000webhost.new
+    runs-on: ubuntu-latest
+    environment: default
+    steps:
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v3
+    
+    - name: 📂 Backup 
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      with:
+        server: files.000webhost.com
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        server-dir: /public_html/
+
   web-deploy3:
-    name: 🎉 Deploy (aeonfree)
-    runs-on: self-hosted
+    name: 🎉 Backup Deploy
+    runs-on: ubuntu-latest
     environment: default
     steps:
     - name: 🚚 Get latest code
