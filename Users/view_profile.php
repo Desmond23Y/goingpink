@@ -47,25 +47,9 @@ include('../navi_bar.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>View Profile</title>
      <link rel="stylesheet" href="Editprofile.css">
-
 <style>
-    .button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    text-decoration: none;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.button:hover {
-    background-color: #0056b3;
-}
     @import url('https://fonts.cdnfonts.com/css/butler');
-    @import url('https://fonts.cdnfonts.com/css/futura-pt');
-    
+    @import url('https://fonts.cdnfonts.com/css/futura-pt'); 
 </style>
 </head>
 <body>
