@@ -88,7 +88,7 @@ include('../navi_bar.php');
         <label for="female">Female</label><br>
 
         <br><br> 
-        <a href="edit_profile.php" class="button">Edit Profile</a>
+        <button href="edit_profile.php">Edit Profile</button>
         </form>
     </div>
 </body>
