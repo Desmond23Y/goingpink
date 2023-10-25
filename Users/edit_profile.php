@@ -41,6 +41,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $gender = $_POST['gender'];
     $new_password = $_POST['new_password'];
 
+    if (empty($username) || empty($first_name) || empty($last_name) || empty($email) || empty($phone_number) || empty($date_of_birth)) {
+        echo "All fields are required. Please fill in all the required fields.";
+    } else {
+
     // Validate user inputs
     if (strlen($username) < 5 || strlen($username) > 50) {
         echo "Length of username must be between 5 and 50 characters.";
@@ -106,7 +110,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <form action="edit_profile.php" method="POST">
         
         <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required placeholder="<?php echo $username; ?>">
+        <input type="text" id="username" name="username" value="<?php echo $username; ?>">
         <br><br>
 
         <label for="new_password">New Password (Leave blank to keep current password):</label>
