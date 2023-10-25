@@ -106,7 +106,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <form action="edit_profile.php" method="POST">
         
         <label for="username">Username:</label>
-        <input type="text" id="username" name="username" value="<?php echo $username; ?>">
+        <input type="text" id="username" name="username" required placeholder="<?php echo $username; ?>">
         <br><br>
 
         <label for="new_password">New Password (Leave blank to keep current password):</label>
