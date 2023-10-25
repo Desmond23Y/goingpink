@@ -110,7 +110,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <br><br>
 
         <label for="new_password">New Password (Leave blank to keep current password):</label>
-        <input type="password" id="new_password" name="new_password" value="<?php echo $password; ?>">
+        <input type="text" id="new_password" name="new_password" value="<?php echo $password; ?>">
         <br><br>
 
         <label for="first_name">First Name:</label>
