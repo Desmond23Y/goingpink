@@ -75,7 +75,6 @@ $result = mysqli_query($con, "SELECT * FROM ticket");
             <th>Ticket Status</th>
             <th>Ticket Priority</th>
             <th>Ticket Solution</th>
-            <th>Edit</th>
         </tr>
 
         <?php
