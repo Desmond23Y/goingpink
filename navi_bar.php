@@ -1,6 +1,12 @@
 <style>
      @import url('https://fonts.cdnfonts.com/css/butler');
      @import url('https://fonts.cdnfonts.com/css/futura-pt');
+
+     body {
+        margin: 0;
+        padding: 0;
+          }
+          
     .navibar {
         list-style-type: none;
         margin: 0;
