@@ -31,7 +31,7 @@ jobs:
         ftp_username: ${{ secrets.FTP_USERNAME2 }}
         ftp_password: ${{ secrets.FTP_PASSWORD2 }}
         local_source_dir: "./"
-        dist_target_dir: "/htdocs"
+        dist_target_dir: "/htdocs/goingpink.atwebpages.com/"
         delete: "false"
         only_newer: "true"
         ignore_time: "true"
