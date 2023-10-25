@@ -89,7 +89,7 @@
                   <a href="report_price_range.php" >Hotel Price Range</a>
                   <a href="report_user_expenses_range.php" >User Expenses Range</a>
                   <a href="view_support_report.php" >View Support Report</a>
-                  <a href="../Supports/view_ticket.php" >View Ticket</a>
+                  <a href="view_ticket.php" >View Ticket</a>
                   <a href="view_invoice.php" >View Invoice</a>
                 </div>
             </div>
