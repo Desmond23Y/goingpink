@@ -32,7 +32,7 @@
         }
     
     .dropdown {
-        float: center;
+        float: left;
         overflow: hidden;
         position: static;
         }
@@ -54,12 +54,14 @@
         }   
 
     .dropdown-content a {
-    display: block;
-    clear: both;
-    }
+        display: block;
+        clear: both;
+        }
+        
     .dropdown:hover .dropdown-content {
         display: block;
         }
+        
     </style>
 
     <div class="navibar">
