@@ -41,34 +41,53 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $gender = $_POST['gender'];
     $new_password = $_POST['new_password'];
 
-    // Update profile information
-    $update_profile_query = "UPDATE `user` SET 
-        username = '$username',
-        first_name = '$first_name',
-        last_name = '$last_name',
-        email = '$email',
-        phone_number = '$phone_number',
-        date_of_birth = '$date_of_birth',
-        gender = '$gender'
-        WHERE user_id = '$user_id'";
-
-    if (mysqli_query($con, $update_profile_query)) {
-        echo "<script>alert('Profile updated successfully!');</script>";
+    // Validate user inputs
+    if (strlen($username) < 5 || strlen($username) > 50) {
+        echo "Length of username must be between 5 and 50 characters.";
+    } elseif (!empty($new_password) && (strlen($new_password) < 5 || strlen($new_password) > 50)) {
+        echo "Password length must be between 5 and 50 characters. Please try again.";
+    } elseif (!empty($new_password) && !preg_match('/[A-Z]/', $new_password)) {
+        echo "Password must contain at least one UPPERCASE letter. Please try again.";
+    } elseif (!empty($new_password) && !preg_match('/[a-z]/', $new_password)) {
+        echo "Password must contain at least one lowercase letter. Please try again.";
+    } elseif (!empty($new_password) && !preg_match('/[^a-zA-Z0-9]/', $new_password)) {
+        echo "Password must contain at least one special character. Please try again.";
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        echo "Invalid email address. Please try again.";
+    } elseif (strlen($phone_number) < 9 || strlen($phone_number) > 12) {
+        echo "Invalid phone number. Please try again.";
+    } elseif (!isset($_POST['terms_and_conditions'])) {
+        echo "You must accept the Terms and Conditions to proceed.";
     } else {
-        echo "Error updating profile: " . mysqli_error($con);
-    }
-
-    // Check if the new password is provided and update it
-    if (!empty($new_password)) {
-        // Update the password in the database
-        $update_password_query = "UPDATE `user` SET 
-            password = '$new_password'
+        // Update profile information
+        $update_profile_query = "UPDATE `user` SET 
+            username = '$username',
+            first_name = '$first_name',
+            last_name = '$last_name',
+            email = '$email',
+            phone_number = '$phone_number',
+            date_of_birth = '$date_of_birth',
+            gender = '$gender'
             WHERE user_id = '$user_id'";
 
-        if (mysqli_query($con, $update_password_query)) {
-            echo "<script>alert('Password updated successfully!');</script>";
+        if (mysqli_query($con, $update_profile_query)) {
+            echo "<script>alert('Profile updated successfully!');</script>";
         } else {
-            echo "Error updating password: " . mysqli_error($con);
+            echo "Error updating profile: " . mysqli_error($con);
+        }
+
+        // Check if the new password is provided and update it
+        if (!empty($new_password)) {
+            // Update the password in the database
+            $update_password_query = "UPDATE `user` SET 
+                password = '$new_password'
+                WHERE user_id = '$user_id'";
+
+            if (mysqli_query($con, $update_password_query)) {
+                echo "<script>alert('Password updated successfully!');</script>";
+            } else {
+                echo "Error updating password: " . mysqli_error($con);
+            }
         }
     }
 }
@@ -83,9 +102,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="stylesheet" href="Editprofile.css">
 </head>
 <body>
-    <?php
-        include('../navi_bar.php');
-    ?>
+    <?php include('../navi_bar.php'); ?>
     <h1>Edit Profile</h1>
     <div class="container">
     <form action="edit_profile.php" method="POST">
@@ -95,7 +112,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <br><br>
 
         <label for="new_password">New Password (Leave blank to keep current password):</label>
-        <input type="text" id="new_password" name="new_password" value="<?php echo $password; ?>">
+        <input type="password" id="new_password" name="new_password" value="">
         <br><br>
 
         <label for="first_name">First Name:</label>
@@ -127,9 +144,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         <br><br>
         
-        <button type="submit" value="Save Changes">Save Changes</button>
+        <button type="submit" name="submit" value="Save Changes">Save Changes</button>
     </form>
     </div>
 </body>
 </html>
-
