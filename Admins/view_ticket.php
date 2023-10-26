@@ -1,6 +1,7 @@
 <?php
 session_start();
 include("../conn.php");
+include("Navi_update_hotel_booking.php");
 
 if (!isset($_SESSION['user_id'])) {
     header('Location: ../login.php');
