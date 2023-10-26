@@ -49,6 +49,7 @@ $row = mysqli_fetch_assoc($latest_booking_result);
         echo '<h3> Check out Date: ' . $row["check_out_date"] . '</h3>';
         echo '<h3> Number of Guests: ' . $row["number_of_pax"] . '</h3>';
         echo '<h3> Hotel Price: ' . $row["hotel_price"] . '</h3>';
+        echo '<h3> Total Amount: ' .$row["hotel_total_price] . '<h3>';
     } else {
         echo '<p>No hotel booking found.</p>';
     }
