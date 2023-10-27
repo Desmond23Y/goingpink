@@ -26,7 +26,6 @@ $_SESSION['transportpricing'] = $transportTypes;
 
 <head>
     <title>Going Pink Transport Booking</title>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBS7LY-BaBKUS0xIRTNJKXtfsLEZv_5OG8&libraries=places&callback=initAutocomplete" async defer></script>
     <link rel="stylesheet" href="api_googlemap_style.css">
     <style>
      @import url('https://fonts.cdnfonts.com/css/butler');
@@ -103,7 +102,7 @@ $_SESSION['transportpricing'] = $transportTypes;
 
         var placeSearch, originautocomplete, destinationautocomplete, map, marker, selectedLocation;
 
-        function initAutocomplete() {
+        function callback() {
             originautocomplete = new google.maps.places.Autocomplete(
                 document.getElementById('originautocomplete'), {
                     fields: ["address_components", "geometry"],
@@ -306,5 +305,5 @@ $_SESSION['transportpricing'] = $transportTypes;
 }
     </script>
 </body>
-
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBS7LY-BaBKUS0xIRTNJKXtfsLEZv_5OG8&libraries=places&callback=callback" async defer></script>
 </html>
